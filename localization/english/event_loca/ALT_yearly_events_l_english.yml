@@ -1,0 +1,63 @@
+﻿l_english:
+  ALT_yearly_events.0010.title: "A Healer in the Hills"
+  ALT_yearly_events.0010.desc: "Rumors have spread through your realm of a miracle worker who has set up camp in the hills nearby. People whisper that they can cure any disease, heal any wound, and even bring the dying back from the brink of death. Desperate peasants flock to them, seeking relief from plagues and injuries that not even your finest physicians could treat.\n\n\nThough you know little of their methods, the tales of their success are undeniable. Should you pay them a visit?"
+  ALT_yearly_events.0010.a: "I will visit this healer myself."
+  ALT_yearly_events.0010.b: "I will ignore this."
+
+  ALT_yearly_events.0011.title: "A Strange Encounter"
+  ALT_yearly_events.0011.desc: "The healer's camp is modest, a simple tent surrounded by patients waiting for their turn. Inside, you find the miracle worker, a calm, unassuming figure dressed in simple robes. Their eyes glint with intelligence, and their hands glow faintly as they lay them upon a patient, closing a festering wound in seconds. You feel a strange energy in the air, though you cannot place its source.\n\n\n\n'Welcome,' the healer says with a smile. 'I sense your skepticism, but I assure you, my power is real. How may I serve you today?"
+  ALT_yearly_events.0011.a: "How do you perform these miracles?"
+
+  ALT_yearly_events.0012.title: "A Strange Encounter 2"
+  ALT_yearly_events.0012.desc: "The healer smiles, stepping closer. 'My power comes not from the gods, but from an ancient art known to only a few,' they say. 'I have learned to control the very flesh, to command the body to heal itself. This is not a miracle—it is mastery over life itself.'\n\n\nThey pause, studying you. 'I see potential in you. If you wish to learn this magic of the flesh, I can teach you... but it is not without sacrifice.'"
+  ALT_yearly_events.0012.a: "Teach me your ways"
+  ALT_yearly_events.0012.b: "This is unnatural sorcery!"
+  ALT_yearly_events.0012.c: "I do not meddle with such dark powers"
+
+  ALT_yearly_events.0020.title: "A Book of Living Flesh"
+  ALT_yearly_events.0020.desc: "While walking through forest, your eyes catch sight of something strange and grotesque hidden beneath the rubble. It appears to be a book, but instead of leather or parchment, it is bound in writhing flesh. The cover twitches as if alive, and faint veins pulse across its surface. It exudes a strange warmth and almost seems to breathe.\n\n\nIn the center of the cover, a single eye opens, gazing at you, and the pages—made of some unnatural material—whisper with the promise of forbidden knowledge. As you stare at the grotesque book, you feel both disgust and curiosity.\n\nWhatever is inside, you feel it is powerful."
+  ALT_yearly_events.0020.a: "I must learn what secrets this book holds!"
+  ALT_yearly_events.0020.b: "This is an abomination! Destroy it immediately!"
+  ALT_yearly_events.0020.c: "Sell it to the highest bidder."
+
+  ALT_yearly_events.0030.title: "A Cunning Offer"
+  ALT_yearly_events.0030.desc: "The trickster sits in your dungeons, shackled and bruised after their capture. They were caught red-handed, using sleight of hand and other tricks to cheat nobles out of their gold and pride. It was only a matter of time before they were exposed. As you visit them in the dark cell, you expect defiance or begging for mercy. Instead, they offer you a sly smile, their eyes gleaming with something far more dangerous than mere tricks.\n\n\n'I know you're angry,' they say, leaning closer, despite the chains. 'But what if I told you that my skills go beyond simple card games or sleight of hand? I have mastered a far more powerful art—Mensomancy. Magic of the mind. I can control thoughts, twist emotions, bend people to my will without them ever knowing. I could teach you this magic... if you let me walk free. A fair trade, don't you think? My freedom... for power.'"
+  ALT_yearly_events.0030.a: "Teach me the magic of Mensomancy, and I will release you."
+  ALT_yearly_events.0030.b: "You think I'm foolish enough to trust you?"
+
+  ALT_yearly_events.0040.title: "The Unsettling Stone"
+  ALT_yearly_events.0040.desc: "During a routine walk through your lands, or perhaps after an uneventful day in the council chambers, something strange catches your attention. A dull, unremarkable rock lies on the ground, half-buried in dirt. At first, you consider walking past it, but something about the stone holds your gaze. Despite its plain appearance, you feel an odd pull—an urge that grows stronger the longer you stare. Your hand moves toward it, almost without thinking, as if the rock is calling to you."
+  ALT_yearly_events.0040.a: "Pick it up"
+  ALT_yearly_events.0040.b: "Ignore and walk away"
+
+  ALT_yearly_events.0050.title: "The Mysterious Constructor"
+  ALT_yearly_events.0050.desc: "In a small town not far from your own, word spreads about an astonishing constructor who seems to defy the laws of nature with their work. They have no known history or formal apprenticeship yet are said to possess an innate talent that leaves others in awe. The buildings they create are flawless in design, standing tall against the ravages of time and weather. The locals whisper that these constructions feel alive, as if they breathe with a life of their own.\n\n\nIntrigued by these tales, you decide to visit this remarkable constructor. Upon arrival, you are greeted by the sight of a magnificent building that appears to shimmer in the sunlight. As you approach, the constructor steps out—an unassuming figure with a confident demeanor and a twinkle in their eye. They smile warmly at you, yet you cannot shake the feeling that something extraordinary lies beneath the surface of their seemingly humble exterior."
+  ALT_yearly_events.0050.a: "I must know their secret"
+  ALT_yearly_events.0050.b: "Walk away"
+
+  ALT_yearly_events.0051.title: "The Art of Materomancy"
+  ALT_yearly_events.0051.desc: "With a calm voice, the constructor explains, 'You wish to know my secret? It is not talent alone that has brought me here. I am a Materomancer. I shape stone and earth with my will, bending the very nature of matter to create my visions. Would you care to learn this art? It requires dedication, but the rewards are great.'"
+  ALT_yearly_events.0051.a: "Teach me the ways of Materomancy!"
+  ALT_yearly_events.0051.a.tt: "#low The constructor begins your training, sharing secrets of stone and earth manipulation, which expands your capabilities significantly.#!"
+  ALT_yearly_events.0051.b: "I will not dabble in such unnatural arts."
+  ALT_yearly_events.0051.b.tt: "#low The constructor nods, understanding your reluctance, but a hint of disappointment flickers in their eyes.#!"
+  ALT_yearly_events.0051.c: "This is unnatural sorcery!"
+
+  ALT_yearly_events.0060.title: "The Stony Tome"
+  ALT_yearly_events.0060.desc: "While exploring the caverns near your castle, you stumble upon a peculiar artifact: a book constructed entirely of stone, with intricate carvings that seem to pulse with latent energy. The cover is rough, and the pages are crafted from a blend of solid minerals, making it both heavy and strangely beautiful. Intrigued, you carefully pry it open, revealing a wealth of knowledge inscribed within its rocky confines.\n\n\nAs you begin to read, you discover that the book contains the ancient art of Materomancy—the magic of controlling and manipulating nonliving materials like stone, metal, and earth. The text is complex, filled with diagrams, rituals, and spells that speak of the power to shape and command the very world around you. You realize that this knowledge could grant you incredible abilities, should you choose to study it further."
+  ALT_yearly_events.0060.a: "Study it further"
+  ALT_yearly_events.0060.b: "Witchcraft! Destroy it!"
+  ALT_yearly_events.0060.c: "Sell it to highest bider"
+
+  ALT_yearly_events.0070.title: "The Prophetic Seer"
+  ALT_yearly_events.0070.desc: "In the bustling market of a nearby town, you hear the chatter of locals speaking in reverent tones about a mysterious seer. They claim this individual can glimpse into the future, offering profound insights and warnings that have proven true time and again. Eager to discover the truth, you make your way through the crowded streets, drawn by the allure of their promised visions.\n\n\nUpon reaching a small tent draped in shimmering fabric, you find the seer seated at a low table, surrounded by an assortment of curious trinkets and mystical symbols. Their eyes glint with an otherworldly light, and as you approach, they smile knowingly, as if they have been expecting you.\n\n\n'Welcome, traveler,' they say, their voice smooth and calming. 'I see you seek knowledge beyond the veil of time. What questions do you bring?'"
+  ALT_yearly_events.0070.a: "Teach me your ways, O wise seer!"
+  ALT_yearly_events.0070.b: "Witch! Burn them!"
+  ALT_yearly_events.0070.c: "I have no need for your services."
+  ALT_yearly_events.0070.tt: "Look in theirs eyes, It is almost like they predicted this outcome."
+
+  ALT_yearly_events.0080.title: "Visions of the Aetherimancy"
+  ALT_yearly_events.0080.desc: "As night descends upon your realm, you retire to your chambers, feeling a sense of longing for knowledge that surpasses the ordinary. You drift into sleep, only to be greeted by a tapestry of vibrant colors and swirling energies. In this dream state, you find yourself standing on a bridge of light that stretches across an endless void, where time and space weave together in a cosmic dance.\n\n\nBefore you, luminous figures emerge from the ether, their forms constantly shifting, representing the forces of creation and destruction. They speak in harmonious whispers, their voices resonating with the vibrations of the universe. 'You seek the knowledge of Aetherimancy,' they say in unison, 'a power that transcends the physical realm. Embrace the moment of enlightenment, and the secrets of the cosmos shall be revealed to you.'\n\n\nAs they speak, visions flood your mind—fragments of time unspooling before you, distant futures unfolding, and the interconnectedness of all things becoming clear. With each heartbeat, you grasp the essence of reality itself, understanding how to manipulate the fabric of existence."
+  ALT_yearly_events.0080.a: "I will embrace these teachings"
+  ALT_yearly_events.0080.b: "I fear this knowledge may be too great for me."
+  ALT_yearly_events.0080.c: "Fight against this dream"

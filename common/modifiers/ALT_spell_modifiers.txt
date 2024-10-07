@@ -1,0 +1,169 @@
+﻿ALT_ritual_of_treatment_modifier = {
+    icon = health_positive
+    negate_health_penalty_add = 1.5
+}
+
+ALT_ritual_of_decline_modifier = {
+    icon = health_negative
+    health = -0.5
+}
+
+ALT_ritual_of_long_life_modifier = {
+    icon = health_positive
+    health = 3
+}
+
+
+
+ALT_ritual_of_clear_mind_modifier = {
+    icon = learning_positive
+    monthly_lifestyle_xp_gain_mult = 0.25
+}
+
+ALT_ritual_of_cluttery_mind_modifier = {
+    icon = learning_negative
+    monthly_lifestyle_xp_gain_mult = -0.5
+}
+
+ALT_ritual_of_perfect_mind_modifier = {
+    icon = learning_positive
+    monthly_lifestyle_xp_gain_mult = 0.6
+}
+ALT_ritual_of_empty_mind_modifier = {
+    icon = learning_negative
+    monthly_lifestyle_xp_gain_mult = -0.8
+}
+
+ALT_ritual_of_good_impressions_modifier = {
+    icon = county_modifier_opinion_positive
+    general_opinion = 25
+}
+ALT_ritual_of_bad_impressions_modifier = {
+    icon = county_modifier_opinion_negative
+    general_opinion = -25
+}
+
+ALT_ritual_of_eternal_servitude_modifier = {
+    icon = stress_negative
+    diplomacy = -5
+    martial = -5
+    stewardship = -5
+    intrigue = -5
+    learning = -5
+}
+
+
+
+ALT_ritual_of_iron_stone_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 1
+}
+
+ALT_ritual_of_dirt_stone_modifier = {
+    icon = county_modifier_development_positive
+    build_gold_cost = -0.25
+    build_speed = -0.25
+}
+
+ALT_ritual_of_broken_stones_modifier = {
+    icon = county_modifier_development_negative
+    build_gold_cost = 0.25
+    build_speed = 0.25
+}
+
+ALT_ritual_of_beautiful_city_modifier = {
+    icon = county_modifier_development_positive
+    county_opinion_add = 50
+}
+
+ALT_ritual_of_hideous_city_modifier = {
+    icon = county_modifier_development_negative
+    county_opinion_add = -50
+}
+
+
+
+
+ALT_ritual_of_good_luck_modifier = {
+    icon = magic_positive
+    owned_hostile_scheme_success_chance_max_add = 15
+    enemy_hostile_scheme_success_chance_max_add = -15
+    enemy_scheme_secrecy_add = -15
+    owned_scheme_secrecy_add = 15
+}
+ALT_ritual_of_bad_luck_modifier = {
+    icon = magic_negative
+    owned_hostile_scheme_success_chance_max_add = -15
+    enemy_hostile_scheme_success_chance_max_add = 15
+    enemy_scheme_secrecy_add = 15
+    owned_scheme_secrecy_add = -15
+}
+
+ALT_ritual_of_fast_movement_modifier = {
+    icon = magic_positive
+    prowess_no_portrait = 4
+    movement_speed = 0.25
+    character_travel_speed_mult = 0.25
+}
+
+ALT_ritual_of_slow_movement_modifier = {
+    icon = magic_negative
+    prowess_no_portrait = -4
+    movement_speed = -0.25
+    character_travel_speed_mult = -0.25
+}
+
+ALT_ritual_of_future_insight_modifier = {
+    icon = magic_positive
+    owned_hostile_scheme_success_chance_max_add = 30
+    enemy_hostile_scheme_success_chance_max_add = -30
+    enemy_scheme_secrecy_add = -30
+    owned_scheme_secrecy_add = 30
+}
+
+ALT_ritual_of_fast_time_modifier = {
+    icon = magic_negative
+    diplomacy = -4
+    martial = -4
+    stewardship = -4
+    intrigue = -4
+    learning = -4
+}
+
+ALT_ritual_of_slow_time_modifier = {
+    icon = magic_positive
+    diplomacy = 4
+    martial = 4
+    stewardship = 4
+    intrigue = 4
+    learning = 4
+}
+
+ALT_ritual_of_teleportation_modifier = {
+    icon = magic_positive
+    movement_speed = 50
+    character_travel_speed_mult = 50
+}
+ALT_ritual_of_space_blocked_modifier = {
+    icon = magic_negative
+    movement_speed = -50
+    character_travel_speed_mult = -50
+}
+
+ALT_ritual_of_stopping_time_modifier = {
+    icon = magic_positive
+    diplomacy = 10
+    martial = 10
+    stewardship = 10
+    intrigue = 10
+    learning = 10
+}
+
+ALT_ritual_of_delay_death_mark_modifier = {
+    icon = magic_positive
+    health = 200
+}
+ALT_ritual_of_death_mark_modifier = {
+    icon = magic_negative
+    health = -150
+}

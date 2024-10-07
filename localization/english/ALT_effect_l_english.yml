@@ -1,0 +1,17 @@
+﻿l_english:
+  ALT_SCHOOL_XP_GAIN: "Gain [SCOPE.GetValue('xp_loca')|P0] experience point in [Localize(Concatenate('ALT_school_',Concatenate(SCOPE.GetFlagName('school_loca'),'_name')))]"
+  ALT_has_pursuit_of_type: "Already has pursuit of this type!"
+
+  ALT_become_biomancer: "Become Biomancer"
+  ALT_become_mensomancer: "Become Mensomancer"
+  ALT_become_materomacer: "Become Materomancer"
+  ALT_become_aetherimancer: "Become Aetherimancer"
+
+  ALT_is_mage: "Is a mage"
+
+  ALT_target_character: "Target must be an Character"
+  ALT_target_artifact: "Target must be an Artifact"
+  ALT_target_title: "Target must be an Title"
+  ALT_sacrifice_character: "Sacrifice must be an Character"
+  ALT_sacrifice_artifact: "Sacrifice must be an Artifact"
+  ALT_sacrifice_title: "Sacrifice must be an Title"

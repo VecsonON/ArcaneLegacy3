@@ -1,0 +1,44 @@
+﻿l_english:
+
+ ARCANE_VIEW_HEADING: "Arcane"
+ ARCANE_RITUALS: "rituals"
+ ARCANE_LEARNING: "Studies"
+ ARCANE_PURSUITS: "Pursuits"
+
+ arcane_start_learning: "Study"
+
+ choose_ritual: "Chose"
+ ALT_target: "Target:"
+ ALT_sacrifice: "Sacrifice:"
+
+ ALT_execute: "Start"
+
+ ALT_delete_pursuit_tt: "Abandon Pursuit"
+ ALT_pause_pursuit_tt: "Pause Pursuit"
+
+ ALT_ritual_casting_time: "Casting will last roughly: ~#V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
+ ALT_pursuit_casting_time: "Done in roughly: #V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
+
+ ALT_archmaster_name: "Archmaster ritual"
+ ALT_master_name: "Master ritual"
+ ALT_expert_name: "Expert ritual"
+ ALT_adept_name: "Adept ritual"
+ ALT_apprentice_name: "Apprentice ritual"
+ ALT_novice_name: "Novice ritual"
+
+ ALT_school_level_archmaster: "Archmaster"
+ ALT_school_level_master: "Master"
+ ALT_school_level_expert: "Expert"
+ ALT_school_level_adept: "Adept"
+ ALT_school_level_apprentice: "Apprentice"
+ ALT_school_level_novice: "Novice"
+ ALT_school_level_none: "Zero"
+
+ ALT_pursuit_events.0001.title: "Pursuit is Finished!"
+ ALT_pursuit_events.0001.desc: "Pursuit is finished."
+ ALT_pursuit_events.0001.a: "..."
+ ALT_pursuit_events.0001.b: "Leave it for later"
+ ALT_pursuit_events.0001.b.tt: "Pause current pursuit."
+ 
+ ALT_sacrifice_is_not_available: "Sacrifice is not longer available!"
+ ALT_target_is_not_available: "Target is not longer available!"

@@ -1,0 +1,83 @@
+﻿ATL_select_character_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes } }
+
+	send_option = {
+		flag = ALT_target	
+		localization = ATL_select_target
+	}
+	send_option = {
+		is_valid = { 
+			 trigger_if = { limit = { NOT = { scope:actor = scope:recipient } } scope:recipient = {is_imprisoned_by = scope:actor  }} 
+		}
+		flag = ALT_sacrifice	
+		localization = ATL_select_sacrifice
+	}
+	on_accept = {
+		if = { limit = { scope:ALT_target = yes } scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_target } } }
+		else = { scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_sacriface } } }
+	}
+	auto_accept = yes
+}
+ATL_select_artifact_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	target_type = artifact
+	target_filter = recipient_artifacts
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes } scope:recipient = { any_character_artifact = { count > 0 } } }
+	send_option = {
+		flag = ALT_target	
+		localization = ATL_select_target
+	}
+	send_option = {
+		is_valid = { scope:target ?= { custom_tooltip = { text = ATL_select_sacrifice_artifact artifact_owner = scope:actor } } }
+		flag = ALT_sacrifice	
+		localization = ATL_select_sacrifice
+	}
+	on_accept = {
+		if = { limit = { scope:ALT_target = yes } scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_artifact TARGET = scope:target SAVE_AS = sellected_target } } }
+		else = { scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_artifact TARGET = scope:target SAVE_AS = sellected_sacriface } } }
+	}
+	auto_accept = yes
+}
+ATL_select_title_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	target_type = title
+	target_filter = recipient_realm_titles
+	can_be_picked_title = {
+		scope:target = { tier = tier_county }
+	}
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes } scope:recipient = { is_landed = yes } }
+	send_option = {
+		flag = ALT_target	
+		localization = ATL_select_target
+	}
+	send_option = {
+		is_valid = { scope:target ?= { holder = scope:actor } }
+		flag = ALT_sacrifice	
+		localization = ATL_select_sacrifice
+	}
+	on_accept = {
+		if = { limit = { scope:ALT_target = yes } scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_title TARGET = scope:target SAVE_AS = sellected_target } } }
+		else = { scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_title TARGET = scope:target SAVE_AS = sellected_sacriface } } }
+	}
+	auto_accept = yes
+}

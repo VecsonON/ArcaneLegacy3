@@ -1,0 +1,39 @@
+﻿ALT_has_pursuit_of_type = {
+    custom_tooltip = {
+        text = ALT_has_pursuit_of_type
+        OR = {
+            trigger_if = { limit = { has_variable_list = pursuits } 
+                any_in_list = {
+                    variable = pursuits			
+                    count > 0
+                    var:type = $TYPE$
+                }
+            }
+            trigger_if = { limit = { has_variable = current_pursuit } 
+                var:current_pursuit ?= {
+                    var:type = $TYPE$
+                }
+            }
+        }
+    }
+}
+ALT_has_X_xp_of_school = {
+    switch = {
+        trigger = $SCHOOL$
+        flag:ALT_school_biomancy =  { xp_ALT_school_biomancy >= $COUNT$ }
+        flag:ALT_school_mensomancy =  { xp_ALT_school_mensomancy >= $COUNT$ }
+        flag:ALT_school_materomancy =  { xp_ALT_school_materomancy >= $COUNT$ }
+        flag:ALT_school_aetherimancy =  { xp_ALT_school_aetherimancy >= $COUNT$ }
+    }
+}
+ALT_is_mage = {
+    custom_tooltip = {
+        text =  ALT_is_mage
+        OR = {
+            has_character_flag = ALT_know_biomancy
+            has_character_flag = ALT_know_mensomancy
+            has_character_flag = ALT_know_materomancy
+            has_character_flag = ALT_know_aetherimancy
+        }
+    }
+}

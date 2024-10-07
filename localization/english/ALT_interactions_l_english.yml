@@ -1,0 +1,8 @@
+﻿l_english:
+  ATL_select_character_interaction: "Select [character|E] As..."
+  ATL_select_artifact_interaction: "Select [artifact|E] As..."
+  ATL_select_title_interaction: "Select [title|E] As..."
+
+  ATL_select_target: "Target"
+  ATL_select_sacrifice: "Sacrifice"
+  ATL_select_sacrifice_artifact: "[target.GetName] is #bold not#! held by #V you#!"

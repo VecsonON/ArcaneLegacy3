@@ -1,0 +1,7 @@
+﻿ALT_sercitude_hook = {
+	strong = yes
+}
+ALT_eternal_sercitude_hook = {
+	strong = yes
+    perpetual = yes
+}

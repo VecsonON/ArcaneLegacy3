@@ -1,0 +1,124 @@
+﻿ALT_school_biomancy_level = { 
+	type = character
+	log_loc_errors = no
+	text = {
+		localization_key = ALT_school_level_archmaster
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_archmaster }
+	}
+	text = {
+		localization_key = ALT_school_level_master
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_master }
+	}
+	text = {
+		localization_key = ALT_school_level_expert
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_expert }
+	}
+	text = {
+		localization_key = ALT_school_level_adept
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_adept }
+	}
+	text = {
+		localization_key = ALT_school_level_apprentice
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_apprentice }
+	}
+	text = {
+		localization_key = ALT_school_level_novice
+		trigger = { xp_ALT_school_biomancy >= school_xp_threshold_novice }
+	}
+	text = {
+		localization_key = ALT_school_level_none
+	}
+}
+ALT_school_mensomancy_level = { 
+	type = character
+	log_loc_errors = no
+	text = {
+		localization_key = ALT_school_level_archmaster
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_archmaster }
+	}
+	text = {
+		localization_key = ALT_school_level_master
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_master }
+	}
+	text = {
+		localization_key = ALT_school_level_expert
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_expert }
+	}
+	text = {
+		localization_key = ALT_school_level_adept
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_adept }
+	}
+	text = {
+		localization_key = ALT_school_level_apprentice
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_apprentice }
+	}
+	text = {
+		localization_key = ALT_school_level_novice
+		trigger = { xp_ALT_school_mensomancy >= school_xp_threshold_novice }
+	}
+	text = {
+		localization_key = ALT_school_level_none
+	}
+}
+ALT_school_materomancy_level = { 
+	type = character
+	log_loc_errors = no
+	text = {
+		localization_key = ALT_school_level_archmaster
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_archmaster }
+	}
+	text = {
+		localization_key = ALT_school_level_master
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_master }
+	}
+	text = {
+		localization_key = ALT_school_level_expert
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_expert }
+	}
+	text = {
+		localization_key = ALT_school_level_adept
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_adept }
+	}
+	text = {
+		localization_key = ALT_school_level_apprentice
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_apprentice }
+	}
+	text = {
+		localization_key = ALT_school_level_novice
+		trigger = { xp_ALT_school_materomancy >= school_xp_threshold_novice }
+	}
+	text = {
+		localization_key = ALT_school_level_none
+	}
+}
+ALT_school_aetherimancy_level = { 
+	type = character
+	log_loc_errors = no
+	text = {
+		localization_key = ALT_school_level_archmaster
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_archmaster }
+	}
+	text = {
+		localization_key = ALT_school_level_master
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_master }
+	}
+	text = {
+		localization_key = ALT_school_level_expert
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_expert }
+	}
+	text = {
+		localization_key = ALT_school_level_adept
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_adept }
+	}
+	text = {
+		localization_key = ALT_school_level_apprentice
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_apprentice }
+	}
+	text = {
+		localization_key = ALT_school_level_novice
+		trigger = { xp_ALT_school_aetherimancy >= school_xp_threshold_novice }
+	}
+	text = {
+		localization_key = ALT_school_level_none
+	}
+}

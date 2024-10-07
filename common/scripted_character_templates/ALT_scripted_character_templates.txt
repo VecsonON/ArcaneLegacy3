@@ -1,0 +1,84 @@
+﻿biomancer = {
+	age = { 20 70 }
+	gender_female_chance = 50
+	dynasty = none
+
+	random_traits_list = {
+		count = { 0 4 }
+		scholar = {}
+		chaste = {}
+		diligent = {}
+		patient = {}
+		humble = {}
+		shy = {}
+		content = {}
+		cynical = {}
+		lazy = {}
+	}
+	random_traits = yes	
+	martial = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	stewardship = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	diplomacy = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	intrigue = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	learning = {
+		min_template_low_skill
+		max_template_high_skill
+	}
+	after_creation = {
+		add_character_flag = ALT_know_biomancy
+	}
+}
+materomancer = {
+	age = { 20 70 }
+	gender_female_chance = 50
+	dynasty = none
+
+	random_traits_list = {
+		count = { 0 4 }
+		scholar = {}
+		chaste = {}
+		diligent = {}
+		patient = {}
+		humble = {}
+		shy = {}
+		content = {}
+		cynical = {}
+		lazy = {}
+	}
+	random_traits = yes	
+	martial = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	stewardship = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	diplomacy = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	intrigue = {
+		min_template_low_skill
+		max_template_medium_skill
+	}
+	learning = {
+		min_template_low_skill
+		max_template_high_skill
+	}
+	after_creation = {
+		add_character_flag = ALT_know_materomancy
+	}
+}

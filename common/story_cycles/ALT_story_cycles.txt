@@ -1,0 +1,43 @@
+﻿ALT_story_cycle_pursuit = {
+
+	on_setup = {
+		set_variable = {
+			name  = total_progress
+			value = 0
+		}
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		end_story = yes
+	}
+
+}
+ALT_story_cycle_ritual = {
+
+	on_setup = {
+
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		end_story = yes
+	}
+}
+ALT_story_cycle_complex_marker = {
+
+	on_setup = {
+		
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		end_story = yes
+	}
+}

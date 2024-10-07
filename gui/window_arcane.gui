@@ -1,0 +1,762 @@
+﻿window = {
+	name = "window_arcane_view"
+	parentanchor = top|left
+	layer = middle
+
+	movable = no
+	
+
+	using = Window_Size_Sidebar
+	using = Window_Background_Sidebar
+	
+	visible = "[And(GetVariableSystem.Exists('ALT_arcane_tab'), Not(IsLeftWindowOpen)))]"
+	
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+
+		on_start = "[GetVariableSystem.Set('arcane_gui_tab', 'casting' )]"
+		on_start = "[GetVariableSystem.Set( 'hide_bottom_left_HUD', 'true' )]"
+		on_start = "[GetScriptedGui('initiate_starting_arcane_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+
+		on_start = "[GetVariableSystem.Clear('ALT_arcane_tab')]"
+		on_start = "[GetVariableSystem.Clear( 'hide_bottom_left_HUD')]"
+		on_start = "[GetScriptedGui('initiate_clearning_arcane_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+	}
+	
+	vbox = {
+		using = Window_Margins_Sidebar
+		widget_header_with_picture = {
+			name = "header"
+			size = { 0 180 }
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = fixed
+
+			blockoverride "size" {
+				size = { 100% 200 }
+			}
+
+			blockoverride "header_text"
+			{
+				text = "ARCANE_VIEW_HEADING"
+				using = tooltip_es
+
+				state = {
+					name = "faith_view_refresh"
+					using = Animation_Refresh_FadeOut
+				}
+
+				state = {
+					using = Animation_Refresh_FadeIn
+				}
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Clear('ALT_arcane_tab')]"
+			}
+
+			blockoverride "button_back"
+			{
+				visible = "[HasViewHistory]"
+				onclick = "[OpenFromViewHistory]"
+				tooltip = "[GetViewHistoryTooltip]"
+			}
+
+			blockoverride "button_me"
+			{
+				onclick = "[DefaultOnCharacterClick(GetPlayer.GetID)]"
+			}
+
+			blockoverride "illustration_texture"
+			{
+				texture = "gfx/interface/illustrations/event_scenes/study_physician.dds"
+				spriteType = stretched
+				fittype = centercrop
+				alpha = 0.35
+			}
+
+			hbox = {
+				visible = "[GetPlayer.MakeScope.Var('current_pursuit').IsSet]"
+				hbox = {
+					margin_top = 50
+					layoutpolicy_vertical = expanding
+					spacing = 20
+					widget = {
+						name = "player_arcane_activity_widget"
+						datacontext = "[GetPlayer.MakeScope.Var('current_pursuit')]"
+						size = { 90 90 }
+						
+						icon = {
+							texture = "gfx/interface/buttons/button_lifestyles_base.dds"
+							size = { 100% 100% }
+						}
+
+						icon = {
+							name = "progress_frame"
+							texture = "gfx/interface/progressbars/action_progress_frame.dds"
+							alwaystransparent = yes
+							size = { 100% 100% }
+							parentanchor = center
+							alpha = 0.5
+						}
+
+						progresspie = {
+							name = "progress"
+							size = { 78 78 }
+							texture = "gfx/interface/progressbars/action_progress_thin.dds"
+							framesize = { 128 128 }
+							frame = 2
+							widgetanchor = center
+							parentanchor = center
+							value = "[GetPlayer.MakeScope.Var('current_pursuit').Var('total_progress').GetValue]"
+							min = 0
+							max = 100
+						}
+
+						widget = {
+							size = { 45 45 }
+							alwaystransparent = yes
+
+							highlight_icon = {
+								position = { 13 14 }
+								size = { 64 64 }
+								alwaystransparent = yes
+								texture = "[GetCultureInnovationType(GetPlayer.MakeScope.Var('current_pursuit').Var('icon').GetFlagName).GetIcon]"
+								block "effect" {}
+							}
+						}
+					}
+					vbox = {
+						text_single = {
+							text = "[Localize(Concatenate(Concatenate('pursuit_',GetPlayer.MakeScope.Var('current_pursuit').Var('type').GetFlagName),'_name'))]"
+							default_format = "#T;charioteer_blue"
+						}
+						text_single = {
+							text = "[Localize(GetScriptedGui('ALT_pursuit_time_calculate').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+							max_width = 250
+						}
+					}
+					vbox = {
+						spacing = 15
+						button_abandon_activity = {
+
+							tooltip = "ALT_delete_pursuit_tt"
+
+							onclick = "[GetScriptedGui('ALT_delete_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pursuit',GetPlayer.MakeScope.Var('current_pursuit').Story.MakeScope).End)]"
+
+						}
+						button_pause_activity = {
+
+							tooltip = "ALT_pause_pursuit_tt"
+
+							onclick = "[GetScriptedGui('ALT_pause_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pursuit',GetPlayer.MakeScope.Var('current_pursuit').Story.MakeScope).End)]"
+
+						}
+					}
+				}
+			}
+		}
+		### Tabs
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			name = "tabs"
+
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				onclick = "[GetVariableSystem.Set( 'arcane_gui_tab', 'casting' )]"
+				onclick = "[GetScriptedGui('initiate_starting_arcane_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'casting' )]"
+				text = "ARCANE_RITUALS"
+				default_format = "#low"
+
+				using = tooltip_below
+			}
+
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				onclick = "[GetVariableSystem.Set( 'arcane_gui_tab', 'learning' )]"
+				onclick = "[GetScriptedGui('initiate_starting_arcane_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'learning' )]"
+				text = "ARCANE_LEARNING"
+				default_format = "#low"
+
+				using = tooltip_below
+			}
+
+			button_tab = {
+				layoutpolicy_horizontal = expanding
+				onclick = "[GetVariableSystem.Set( 'arcane_gui_tab', 'activities' )]"
+				onclick = "[GetScriptedGui('initiate_starting_arcane_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				down = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'activities' )]"
+				text = "ARCANE_PURSUITS"
+				default_format = "#low"
+
+				using = tooltip_below
+			}
+		}
+
+		vbox = {
+			name = "tab_learning"
+			margin_top = 25
+			visible = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'learning' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+
+			scrollbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				blockoverride "scrollbox_content" {
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('arcane_schools')]"
+						layoutpolicy_horizontal = expanding
+						spacing = 10
+
+						item = {
+							widget = {									
+								size = { 570 120 }
+								
+								icon = {
+        							texture = "gfx/interface/buttons/button_standard_clean.dds"
+									
+									spriteType = Corneredtiled
+									spriteborder = { 4 4 }
+									framesize = { 252 80 }
+									size = { 100% 100% }
+									
+
+									hbox = {
+										hbox = {
+											margin = { 25 0 }
+											widget = {
+												size = { 45 45 }
+												alwaystransparent = yes
+
+												highlight_icon = {
+													position = { -10 -10 }
+													size = { 64 64 }
+													alwaystransparent = yes
+													texture = "[GetCultureInnovationType(Concatenate(Concatenate('pursuit_',Scope.GetFlagName),'_icon')).GetIcon]"
+													block "effect" {}
+												}
+											}
+										}
+										
+										divider_light = {
+											layoutpolicy_vertical = expanding
+										}
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											margin_bottom = 20
+											vbox = {
+												layoutpolicy_horizontal = expanding
+												text_single = {
+													text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+												}
+												text_single = {
+													text ="[Localize(Concatenate(Scope.GetFlagName,'_level'))]"
+												}
+											}
+											vbox = {
+												layoutpolicy_horizontal = growing
+												button_standard_clean = {
+													enabled = "[GetScriptedGui('ALT_start_learning_pursuit_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('type',MakeScopeFlag(Scope.GetFlagName)).End)]"
+													onclick = "[GetVariableSystem.Set( 'arcane_gui_tab', 'learning' )]"
+													text = "arcane_start_learning"
+													onclick = "[GetScriptedGui('ALT_start_learning_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('type',MakeScopeFlag(Scope.GetFlagName)).AddScope('icon',MakeScopeFlag(Concatenate(Concatenate('pursuit_',Scope.GetFlagName),'_icon'))).End)]"
+													tooltip = "[GetScriptedGui('ALT_start_learning_pursuit_sgui').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('type',MakeScopeFlag(Scope.GetFlagName)).AddScope('icon',MakeScopeFlag(Concatenate(Concatenate('pursuit_',Scope.GetFlagName),'_icon'))).End)]"
+													using = tooltip_below
+												}
+											}
+										}
+										widget = {
+											allow_outside = yes
+											progressbar_standard = {
+												position = { -470 90 }
+												size = { 450 20 }
+												
+												min = 0
+												max = 100
+												value = "[GetPlayer.MakeScope.ScriptValue(Concatenate('xp_',Scope.GetFlagName))]"
+												tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_tooltip'))]"
+												
+												widget_level_marker = {
+													position = { -215 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_novice'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_novice_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 30 30 }
+															texture = "gfx/icons/alt/icon_novice.dds" 
+														} 
+													}
+												}
+												widget_level_marker = {
+													position = { -150 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_apprentice'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_apprentice_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 32 32 }
+															texture = "gfx/icons/alt/icon_app.dds" 
+														} 
+													}
+												}
+												widget_level_marker = {
+													position = { -70 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count', MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_adept'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_adept_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 32 32 }
+															texture = "gfx/icons/alt/icon_adept.dds" 
+														} 
+													}
+												}
+												widget_level_marker = {
+													position = { 20 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_expert'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_expert_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 32 32 }
+															texture = "gfx/icons/alt/icon_expert.dds" 
+														} 
+													}
+												}
+												widget_level_marker = {
+													position = { 110 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_master'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_master_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 32 32 }
+															texture = "gfx/icons/alt/icon_master.dds" 
+														} 
+													}
+												}
+												widget_level_marker = {
+													position = { 200 0 }
+													scale = 1
+													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_archmaster'))).End)]" }
+
+													blockoverride "marker_tooltip" { tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_archmaster_tooltip'))]" using = tooltip_se }
+
+													blockoverride "marker_text" { 
+														icon = { 
+															position = { -16 -15 }
+															size = { 32 32 }
+															texture = "gfx/icons/alt/icon_archmaster.dds" 
+														} 
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		vbox = {
+			name = "tab_casting"
+			margin_top = 5
+			visible = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'casting' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			
+
+			hbox = {
+				layoutpolicy_horizontal = expanding
+				name = "tabs"
+				scrollarea = {
+					size = { 100 50 }
+
+					layoutpolicy_horizontal = expanding
+
+					scrollbarpolicy_vertical = always_off
+					scrollbarpolicy_horizontal = as_needed
+
+					scrollbar_vertical = { using = Scrollbar_Vertical }
+					scrollbar_horizontal = { using = Scrollbar_Horizontal }
+					background = { using = Background_Area }
+
+					scrollwidget = {
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							hbox = {
+								datamodel = "[GetPlayer.MakeScope.GetList('arcane_schools')]"
+								layoutpolicy_horizontal = expanding
+								item = {
+									button_tab = {
+										layoutpolicy_horizontal = expanding
+										onclick = "[GetVariableSystem.Set( 'arcane_gui_casting_tab',Scope.GetFlagName)]"
+										down = "[GetVariableSystem.HasValue( 'arcane_gui_casting_tab', Scope.GetFlagName )]"
+										text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))]"
+
+										using = tooltip_below
+									}
+								}
+							}
+
+						}
+						
+					}
+				}
+			}
+			vbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				scrollbox = {
+					layoutpolicy_vertical = expanding
+					layoutpolicy_horizontal = expanding
+					blockoverride "scrollbox_content" {
+						vbox = {
+							datamodel = "[GetPlayer.MakeScope.GetList(Concatenate(GetVariableSystem.Get('arcane_gui_casting_tab'), '_ritual_list'))]"
+							layoutpolicy_horizontal = expanding
+							spacing = 10
+							item = {
+								widget = {									
+									size = { 570 70 }
+								
+									icon = {
+										texture = "gfx/interface/buttons/button_standard_clean.dds"
+										
+										spriteType = Corneredtiled
+										spriteborder = { 4 4 }
+										framesize = { 252 80 }
+										size = { 100% 100% }
+										hbox = {
+											margin = { 5 0 }
+
+											vbox = {
+												text_single = {
+													text = "[Localize(Concatenate(Scope.Var('type').GetFlagName,'_name'))]"
+													default_format = "#T"
+												}
+												text_single = {
+													text = "[Localize(Concatenate(Scope.Var('level').GetFlagName,'_name'))]"
+												}
+												
+											}
+											button_standard_big = {
+												#layoutpolicy_horizontal = expanding
+												size = { 150 30 }
+												texture = "gfx/interface/buttons/button_standard_clean.dds"
+												background = {
+													using = Background_Area_ExtraDark
+												}
+												text = "choose_ritual"
+												enabled = "[GetScriptedGui('ALT_chosing_ritual_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('exp_target_type', MakeScopeFlag(Scope.Var('target_type').GetFlagName)).AddScope('exp_sacrifice_type', MakeScopeFlag(Scope.Var('sacrifice_type').GetFlagName)).End)]"
+												onclick = "[GetScriptedGui('ALT_chosing_ritual_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('ritual', Scope.Story.MakeScope).AddScope('exp_target_type', MakeScopeFlag(Scope.Var('target_type').GetFlagName)).AddScope('exp_sacrifice_type', MakeScopeFlag(Scope.Var('sacrifice_type').GetFlagName)).End)]"
+												tooltip = "[GetScriptedGui('ALT_chosing_ritual_sgui').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('exp_target_type', MakeScopeFlag(Scope.Var('target_type').GetFlagName)).AddScope('exp_sacrifice_type', MakeScopeFlag(Scope.Var('sacrifice_type').GetFlagName)).End)]"
+												using = tooltip_below
+											}
+											
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			vbox = {
+				visible = "[GetPlayer.MakeScope.GetVariable('sellected_ritual').IsSet]"
+				layoutpolicy_horizontal = expanding
+				spacing = 5
+				margin = { 10 10 }
+				widget = {
+					size = { 550 150 }
+					hbox = {
+						layoutpolicy_horizontal = expanding
+						vbox = {
+							visible = "[Not(EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('target_type').GetFlagName,'ALT_none'))]"
+							layoutpolicy_horizontal = growing 
+							size = { 85 0 }
+							text_single = {
+								text = "ALT_target"
+							}
+							portrait_head_small = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_target').Var('type').GetFlagName,'ALT_character')]"
+								datacontext = "[GetPlayer.MakeScope.GetVariable('sellected_target').Var('target').GetCharacter]"
+							}
+							coa_title_medium = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_target').Var('type').GetFlagName,'ALT_title')]"
+								datacontext = "[GetPlayer.MakeScope.Var('sellected_target').Var('target').Title]"
+							}
+							icon_artifact = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_target').Var('type').GetFlagName,'ALT_artifact')]"
+								datacontext = "[GetPlayer.MakeScope.Var('sellected_target').Var('target').Artifact]"
+							}
+						}
+						scrollbox = {
+							layoutpolicy_horizontal = expanding 
+							layoutpolicy_vertical = expanding
+							blockoverride "scrollbox_content"
+							{	
+								text_multi = {
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									margin = { 5 0 }
+									autoresize = yes
+									max_width = 350
+									text = "[GetScriptedGui(Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName,'_sgui')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+
+								block "extra_content" {}
+							}
+						}
+						
+						vbox = {
+							visible = "[Not(EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('sacrifice_type').GetFlagName,'ALT_none'))]"
+							layoutpolicy_horizontal = growing 
+							text_single = {
+								text = "ALT_sacrifice"
+							}
+							portrait_head_small = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_sacriface').Var('type').GetFlagName,'ALT_character')]"
+								datacontext = "[GetPlayer.MakeScope.GetVariable('sellected_sacriface').Var('target').GetCharacter]"
+							}
+							coa_title_medium = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_sacriface').Var('type').GetFlagName,'ALT_title')]"
+								datacontext = "[GetPlayer.MakeScope.Var('sellected_sacriface').Var('target').Title]"
+							}
+							icon_artifact = {
+								visible = "[EqualTo_string(GetPlayer.MakeScope.GetVariable('sellected_sacriface').Var('type').GetFlagName,'ALT_artifact')]"
+								datacontext = "[GetPlayer.MakeScope.Var('sellected_sacriface').Var('target').Artifact]"
+							}
+						}
+					}
+				}
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					spacing = 20
+					icon = {
+						texture = "gfx/interface/icons/icon_time.dds"
+						tooltip = "[GetScriptedGui('ALT_ritual_time_calculate').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('monthly_progress',MakeScopeValue(GetPlayer.MakeScope.ScriptValue(Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName,'_gain')))).End)]"
+					}
+					button_standard_big = {
+						layoutpolicy_horizontal = expanding
+						size = { 120 40 }
+						texture = "gfx/interface/buttons/button_standard_clean.dds"
+						background = {
+							using = Background_Area_ExtraDark
+						}
+						text = "ALT_execute"
+						enabled = "[GetScriptedGui(Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName,'_sgui')).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						onclick = "[GetScriptedGui('ALT_start_casting_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('type',MakeScopeFlag(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName)).AddScope('monthly_progress',MakeScopeValue(GetPlayer.MakeScope.ScriptValue(Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName,'_gain')))).AddScope('icon',MakeScopeFlag(Concatenate('pursuit_',Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('school').GetFlagName,'_icon')))).End)]"
+						tooltip = "[GetScriptedGui(Concatenate(GetPlayer.MakeScope.GetVariable('sellected_ritual').Var('type').GetFlagName,'_sgui')).BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('tooltip', MakeScopeValue('(CFixedPoint)1')).End)]"
+						using = tooltip_below
+					}
+					button_icon = {
+						block "button1" { size = { 37.5 37.5 } }
+						filter_mouse = all
+						texture = "gfx/interface/buttons/button_round_big.dds"
+
+						button_icon = {
+							name = "abandon_activity"
+							texture = "gfx/interface/icons/flat_icons/window_close.dds"
+							parentanchor = center
+							alwaystransparent = yes
+							
+							block "button2" { size = { 25 25 } }
+						}
+						onclick = "[GetScriptedGui('ALT_deselect_ritual_gui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+					}
+				}
+			}
+		}
+		vbox = {
+			name = "tab_activities"
+			margin_top = 25
+			visible = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'activities' )]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			scrollbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				blockoverride "scrollbox_content" {
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.GetList('pursuits')]"
+						layoutpolicy_horizontal = expanding
+						spacing = 10
+
+						item = {
+							
+							hbox = {
+								layoutpolicy_horizontal = expanding
+
+								button_activity_entry = {
+									layoutpolicy_horizontal = expanding
+																		
+									onclick = "[GetScriptedGui('ALT_resume_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pursuit',Scope.Story.MakeScope).End)]"
+									
+									# clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_start_game"
+									
+									tooltip = "ALT_pause_pursuit_tt"
+								}
+
+								spacer = { min_width = 8 }
+
+								button_abandon_activity = {
+
+									tooltip = "ALT_delete_pursuit_tt"
+
+									onclick = "[GetScriptedGui('ALT_delete_pursuit_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('pursuit',Scope.Story.MakeScope).End)]"
+
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+container = {
+	name = "window_arcane_tab_button"
+	parentanchor = bottom|left
+	position = { -5 -400 }
+	alwaystransparent = no
+	layer = top
+	visible = "[And(And(Or(Not(IsObserver), GetPlayer.IsValid), GetScriptedGui('initiate_starting_arcane_gui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('player',GetPlayer.MakeScope).End)),And(Not(GetVariableSystem.Exists('ALT_arcane_tab')), Not(IsLeftWindowOpen))))]"
+	button_hud_character_bar = {
+		name = "arcane_button"
+		datacontext = "[GetPlayer.GetFaith]"
+		parentanchor = left
+
+		onclick = "[OpenGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[ToggleGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[GetVariableSystem.Toggle('ALT_arcane_tab')]"
+
+		using = tooltip_es
+
+
+		highlight_icon = {
+			texture = "gfx/icons/alt/arcane.dds"
+			size = { 40 40 }
+			position = { 0 1 }
+			parentanchor = center
+
+			glow = {
+				color = { 0 0 0 0.8 }
+				glow_radius = 3
+				using = Glow_Standard
+			}
+		}
+	}
+	
+
+}
+
+types ArcaneTypes
+{
+	type button_activity_entry = button_standard {
+		size = { -1 65 }
+		
+		layoutpolicy_horizontal = expanding
+
+		hbox = {
+			
+			container = { min_width = 16 }
+			hbox = {
+				highlight_icon = {
+					size = { 32 32 }
+					alwaystransparent = yes
+					texture = "[GetCultureInnovationType(Scope.Var('icon').GetFlagName).GetIcon]"
+					block "effect" {}
+				}
+				margin_right = 10
+			}
+			divider_light = {
+				layoutpolicy_vertical = expanding
+			}
+
+			text_single = {
+				margin_left = 10
+				layoutpolicy_horizontal = growing
+				name = "title"
+				text = "[Localize(Concatenate(Concatenate('pursuit_',Scope.Var('type').GetFlagName),'_name'))]"
+				default_format = "#clickable"
+				align = nobaseline
+				alwaystransparent = yes
+			}
+
+			hbox = {
+				margin_right = 38				
+				margin_left = 38				
+				text_label_center = {
+					#layoutpolicy_horizontal = growing
+					#align = right
+					name = "progress"
+					raw_text = "[Scope.Var('total_progress').GetValue]%"
+					default_format = "#T;I"
+					fontsize = 22
+					margin_top = 2
+					margin_bottom = 8
+				}
+			}
+		}
+	}
+	type button_abandon_activity = button_icon {
+		block "button1" { size = { 37.5 37.5 } }
+		filter_mouse = all
+		texture = "gfx/interface/buttons/button_round_big.dds"
+
+		button_icon = {
+			name = "abandon_activity"
+			texture = "gfx/interface/icons/flat_icons/window_close.dds"
+			parentanchor = center
+			alwaystransparent = yes
+			
+			block "button2" { size = { 25 25 } }
+		}
+	}
+	type button_pause_activity = button_icon {
+		block "button1" { size = { 37.5 37.5 } }
+		filter_mouse = all
+		texture = "gfx/interface/buttons/button_round_big.dds"
+
+		button_icon = {
+			name = "pause_activity"
+			texture = "gfx/interface/icons/flat_icons/pause.dds"
+			parentanchor = center
+			alwaystransparent = yes
+			
+			block "button2" { size = { 25 25 } }
+		}
+	}
+}

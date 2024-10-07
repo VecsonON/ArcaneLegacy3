@@ -1,0 +1,2 @@
+﻿gui/window_arcane.gui = window_arcane_view
+gui/window_arcane.gui = window_arcane_tab_button

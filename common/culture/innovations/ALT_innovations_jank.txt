@@ -1,0 +1,24 @@
+﻿pursuit_ALT_school_biomancy_icon = {
+	icon = "gfx/icons/alt/biomancy.dds"
+	potential = { always = yes }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+pursuit_ALT_school_mensomancy_icon = {
+	icon = "gfx/icons/alt/mensomancy.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+pursuit_ALT_school_materomancy_icon = {
+	icon = "gfx/icons/alt/materomancy.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}
+pursuit_ALT_school_aetherimancy_icon = {
+	icon = "gfx/icons/alt/aetherimancy.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}

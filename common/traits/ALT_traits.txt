@@ -1,0 +1,4 @@
+﻿ALT_golem = {
+	can_have_children = no
+    prowess = 10
+}

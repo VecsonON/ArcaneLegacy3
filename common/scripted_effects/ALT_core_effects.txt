@@ -1,0 +1,144 @@
+﻿ALT_start_pursuit_effect = {
+    if = { limit = { NOT = { ALT_has_pursuit_of_type = { TYPE = $TYPE$ } } } 
+        create_story = {
+            type = ALT_story_cycle_pursuit
+            save_scope_as = temp_pursuit
+        }
+        if = { limit = { has_variable = current_pursuit } 
+            add_to_variable_list = { name = pursuits target = var:current_pursuit }
+        }
+        hidden_effect_new_object = {
+            scope:temp_pursuit = {
+                set_variable = {
+                    name = type
+                    value = $TYPE$
+                }
+                set_variable = {
+                    name = monthly_progress
+                    value = $MONTHLY_PROGRESS$
+                }
+                set_variable = {
+                    name = target
+                    value = $TARGET$
+                }
+                set_variable = {
+                    name = sacrifice
+                    value = $SACRIFICE$
+                }
+                set_variable = {
+                    name = icon
+                    value = $ICON$
+                }
+            }
+        }
+        set_variable = {
+            name = current_pursuit
+            value = scope:temp_pursuit
+        }
+    }
+}
+
+ALT_pause_current_pursuit_effect = {
+    if = { limit = { has_variable = current_pursuit } 
+        add_to_variable_list = { name = pursuits target = var:current_pursuit }
+        remove_variable = current_pursuit
+    }
+}
+ALT_resume_paused_pursuit_effect = {
+    if = { limit = { has_variable = current_pursuit } 
+        add_to_variable_list = { name = pursuits target = var:current_pursuit }
+        remove_variable = current_pursuit
+    }
+    remove_list_variable = {
+        name = pursuits
+        target = $pursuit$
+    }
+    set_variable = {
+        name = current_pursuit
+        value = $pursuit$
+    }
+    if = { limit = { var:current_pursuit.var:total_progress >= 100 } 
+        trigger_event = ALT_pursuit_events.0001
+    }
+}
+ALT_delete_pursuit_effect = {
+    if = { limit = { var:current_pursuit ?= $pursuit$ } 
+        remove_variable = current_pursuit
+    }
+    else = {
+        remove_list_variable = {
+            name = pursuits
+            target = $pursuit$
+        }
+    }
+}
+
+
+ALT_school_xp_gain = {
+    save_scope_value_as = { name = xp_loca value = $COUNT$ }
+    save_scope_value_as = { name = school_loca value = flag:$SCHOOL$ }
+    custom_tooltip = {
+        text = "ALT_SCHOOL_XP_GAIN"
+        if = { limit = { NOT = { has_variable = ALT_school_$SCHOOL$_xp } } 
+            set_variable = { name = ALT_school_$SCHOOL$_xp value = 0 }
+        }
+        change_variable = {
+            name = ALT_school_$SCHOOL$_xp
+            add = $COUNT$
+        }
+    }
+}
+
+ALT_make_complex_marker = {
+    create_story = {
+        type = ALT_story_cycle_complex_marker
+        save_scope_as = temp_complex_marker
+    }
+    hidden_effect_new_object = {
+        scope:temp_complex_marker = {
+            set_variable = { name = type value = $TYPE$ }
+            set_variable = { name = target value = $TARGET$ }
+        }
+        set_variable = { name = $SAVE_AS$ value = scope:temp_complex_marker }
+    }
+}
+
+ALT_create_ritual = {
+    create_story = {
+        type = ALT_story_cycle_ritual
+        save_scope_as = temp_ritual
+    }
+    scope:temp_ritual = {
+        set_variable = { name = type value = $TYPE$ }
+        set_variable = { name = level value = $LEVEL$ }
+        set_variable = { name = target_type value = $TARGET_TYPE$ }
+        set_variable = { name = sacrifice_type value = $SACRIFICE_TYPE$ }
+        set_variable = { name = school value = flag:$SCHOOL$ }
+    }
+    add_to_variable_list = { name = $SCHOOL$_ritual_list target = scope:temp_ritual }
+}
+
+ALT_become_biomancer = {
+    custom_tooltip = {
+        text = ALT_become_biomancer
+        add_character_flag = ALT_know_biomancy
+    }
+}
+ALT_become_mensomancer = {
+    custom_tooltip = {
+        text = ALT_become_mensomancer
+        add_character_flag = ALT_know_mensomancy
+    }
+}
+ALT_become_materomacer = {
+    custom_tooltip = {
+        text = ALT_become_materomacer
+        add_character_flag = ALT_know_materomancy
+    }
+}
+ALT_become_aetherimancer = {
+    custom_tooltip = {
+        text = ALT_become_aetherimancer
+        add_character_flag = ALT_know_aetherimancy
+    }
+}

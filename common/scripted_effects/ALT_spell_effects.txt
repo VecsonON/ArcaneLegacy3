@@ -1,0 +1,1264 @@
+﻿### BIOMANCY
+ALT_ritual_of_treatment_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_treatment_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+ALT_ritual_of_decline_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_decline_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+
+ALT_ritual_of_health_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = maimed } remove_trait = maimed }
+                    1 = { trigger = { has_trait = one_eyed } remove_trait = one_eyed }
+                    1 = { trigger = { has_trait = one_legged } remove_trait = one_legged }
+                    1 = { trigger = { has_trait = disfigured } remove_trait = disfigured }
+                    1 = { trigger = { has_trait = infirm } remove_trait = infirm }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+ALT_ritual_of_maiming_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { NOT = { has_trait = maimed } } add_trait = maimed }
+                    1 = { trigger = { NOT = { has_trait = one_eyed } } add_trait = one_eyed }
+                    1 = { trigger = { NOT = { has_trait = one_legged } } add_trait = one_legged }
+                    1 = { trigger = { NOT = { has_trait = disfigured } } add_trait = disfigured }
+                    1 = { trigger = { NOT = { has_trait = infirm } } add_trait = infirm }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+
+ALT_ritual_of_curing_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = clubfooted } remove_trait = clubfooted }
+                    1 = { trigger = { has_trait = hunchbacked } remove_trait = hunchbacked }
+                    1 = { trigger = { has_trait = lisping } remove_trait = lisping }
+                    1 = { trigger = { has_trait = stuttering } remove_trait = stuttering }
+                    1 = { trigger = { has_trait = inbred } remove_trait = inbred }
+                    1 = { trigger = { has_trait = spindly } remove_trait = spindly }
+                    1 = { trigger = { has_trait = scaly } remove_trait = scaly }
+                    1 = { trigger = { has_trait = wheezing } remove_trait = wheezing }
+                    1 = { trigger = { has_trait = bleeder } remove_trait = bleeder }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+ALT_ritual_of_bad_health_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { NOT = { has_trait = clubfooted } } add_trait = clubfooted }
+                    1 = { trigger = { NOT = { has_trait = hunchbacked } } add_trait = hunchbacked }
+                    1 = { trigger = { NOT = { has_trait = lisping } } add_trait = lisping }
+                    1 = { trigger = { NOT = { has_trait = stuttering } } add_trait = stuttering }
+                    1 = { trigger = { NOT = { has_trait = inbred } } add_trait = inbred }
+                    1 = { trigger = { NOT = { has_trait = spindly } } add_trait = spindly }
+                    1 = { trigger = { NOT = { has_trait = scaly } } add_trait = scaly }
+                    1 = { trigger = { NOT = { has_trait = wheezing } } add_trait = wheezing }
+                    1 = { trigger = { NOT = { has_trait = bleeder } } add_trait = bleeder }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+        increase_wounds_effect = { REASON = torture }
+    }
+}
+
+ALT_ritual_of_long_life_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_character_modifier = ALT_ritual_of_long_life_modifier
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+}
+ALT_ritual_of_rotten_blood_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = physique_good_3 } change_trait_rank = { trait = physique_good rank = 2 } }
+                    1 = { trigger = { has_trait = physique_good_2 } change_trait_rank = { trait = physique_good rank = 1 } }
+                    1 = { trigger = { has_trait = physique_good_1 } remove_trait = physique_good_1 add_trait = physique_bad_1 }
+                    1 = { trigger = { has_trait = physique_bad_1 } change_trait_rank = { trait = physique_bad rank = 2 } }
+                    1 = { trigger = { has_trait = physique_bad_2 } change_trait_rank = { trait = physique_bad rank = 3 } }
+
+                    1 = { trigger = { has_trait = beauty_good_3 } change_trait_rank = { trait = beauty_good rank = 2 } }
+                    1 = { trigger = { has_trait = beauty_good_2 } change_trait_rank = { trait = beauty_good rank = 1 } }
+                    1 = { trigger = { has_trait = beauty_good_1 } remove_trait = beauty_good_1 add_trait = beauty_bad_1 }
+                    1 = { trigger = { has_trait = beauty_bad_1 } change_trait_rank = { trait = beauty_bad rank = 2 } }
+                    1 = { trigger = { has_trait = beauty_bad_2 } change_trait_rank = { trait = beauty_bad rank = 3 } }
+
+                    1 = { trigger = { NOT = { has_trait = physique_bad has_trait = physique_good } } add_trait = physique_bad_1 }
+                    1 = { trigger = { NOT = { has_trait = beauty_bad has_trait = beauty_good } } add_trait = beauty_bad_1 }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    
+}
+
+
+ALT_ritual_of_golden_blood_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = physique_good_2 } change_trait_rank = { trait = physique_good rank = 3 } }
+                    1 = { trigger = { has_trait = physique_good_1 } change_trait_rank = { trait = physique_good rank = 2 } }
+                    1 = { trigger = { has_trait = physique_bad_1 } remove_trait = physique_bad_1 add_trait = physique_good_1 }
+                    1 = { trigger = { has_trait = physique_bad_2 } change_trait_rank = { trait = physique_bad rank = 1 } }
+                    1 = { trigger = { has_trait = physique_bad_3 } change_trait_rank = { trait = physique_bad rank = 2 } }
+
+                    1 = { trigger = { has_trait = beauty_good_2 } change_trait_rank = { trait = beauty_good rank = 3 } }
+                    1 = { trigger = { has_trait = beauty_good_1 } change_trait_rank = { trait = beauty_good rank = 2 } }
+                    1 = { trigger = { has_trait = beauty_bad_1 } remove_trait = beauty_bad_1 add_trait = beauty_good_1 }
+                    1 = { trigger = { has_trait = beauty_bad_2 } change_trait_rank = { trait = beauty_bad rank = 1 } }
+                    1 = { trigger = { has_trait = beauty_bad_3 } change_trait_rank = { trait = beauty_bad rank = 2 } }
+
+                    1 = { trigger = { NOT = { has_trait = physique_bad has_trait = physique_good } } add_trait = physique_good_1 }
+                    1 = { trigger = { NOT = { has_trait = beauty_bad has_trait = beauty_good } } add_trait = beauty_good_1 }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    
+}
+ALT_ritual_of_perfect_body_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { NOT = { has_trait = pure_blooded } } add_trait = pure_blooded }
+                    1 = { trigger = { NOT = { has_trait = fecund } } add_trait = fecund }
+                    1 = { trigger = { NOT = { has_trait = strong } } add_trait = strong }
+                    1 = { trigger = { NOT = { has_trait = shrewd } } add_trait = shrewd }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    
+}
+ALT_ritual_of_bad_blood_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = pure_blooded } remove_trait = pure_blooded }
+                    1 = { trigger = { has_trait = fecund } remove_trait = fecund }
+                    1 = { trigger = { has_trait = strong } remove_trait = strong }
+                    1 = { trigger = { has_trait = shrewd } remove_trait = shrewd }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+}
+
+ALT_ritual_of_eternal_youth_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        25 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_trait = immortal
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    
+}
+
+### MENSOMANCY
+ALT_ritual_of_clear_mind_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_clear_mind_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 50
+    }
+}
+ALT_ritual_of_cluttery_mind_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_cluttery_mind_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 50
+    }
+}
+
+ALT_ritual_of_perfect_mind_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_perfect_mind_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 75
+    }
+}
+ALT_ritual_of_empty_mind_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_empty_mind_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 75
+    }
+}
+
+ALT_ritual_of_good_impressions_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_good_impressions_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 100
+    }
+}
+ALT_ritual_of_bad_impressions_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_bad_impressions_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 100
+    }
+}
+
+ALT_ritual_of_servitude_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            add_hook = {
+                type = ALT_sercitude_hook
+                target = $TARGET$
+                years = 10
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 150
+    }
+}
+ALT_ritual_of_mental_instability_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { NOT = { has_trait = depressed_1 } } add_trait = depressed_1 }
+                    1 = { trigger = { NOT = { has_trait = lunatic_1 } } add_trait = lunatic_1 }
+                    1 = { trigger = { NOT = { has_trait = possessed_1 } } add_trait = possessed_1 }
+
+                    1 = { trigger = { NOT = { has_trait = drunkard } } add_trait = drunkard }
+                    1 = { trigger = { NOT = { has_trait = hashishiyah } } add_trait = hashishiyah }
+                    1 = { trigger = { NOT = { has_trait = rakish } } add_trait = rakish }
+                    1 = { trigger = { NOT = { has_trait = reclusive } } add_trait = reclusive }
+                    1 = { trigger = { NOT = { has_trait = irritable } } add_trait = irritable }
+                    1 = { trigger = { NOT = { has_trait = flagellant } } add_trait = flagellant }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 150
+    }
+}
+
+ALT_ritual_of_personality_morph_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = { save_scope_as = target }
+            custom_tooltip = { text = "ALT_ritual_of_personality_morph_effect" trigger_event = ALT_pursuit_events.0002 }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 100
+    }
+}
+ALT_ritual_of_mental_health_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                random_list = {
+                    1 = { trigger = { has_trait = depressed_1 } remove_trait = depressed_1 }
+                    1 = { trigger = { has_trait = lunatic_1 } remove_trait = lunatic_1 }
+                    1 = { trigger = { has_trait = possessed_1 } remove_trait = possessed_1 }
+
+                    1 = { trigger = { has_trait = drunkard } remove_trait = drunkard }
+                    1 = { trigger = { has_trait = hashishiyah } remove_trait = hashishiyah }
+                    1 = { trigger = { has_trait = rakish } remove_trait = rakish }
+                    1 = { trigger = { has_trait = reclusive } remove_trait = reclusive }
+                    1 = { trigger = { has_trait = irritable } remove_trait = irritable }
+                    1 = { trigger = { has_trait = flagellant } remove_trait = flagellant }
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 200
+    }
+}
+
+ALT_ritual_of_eternal_servitude_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            add_hook = {
+                type = ALT_eternal_sercitude_hook
+                target = $TARGET$
+            }
+            $TARGET$ = {
+                add_character_modifier = ALT_ritual_of_eternal_servitude_modifier
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    $SACRIFICE$ = {
+        add_stress = 300
+    }
+}
+ALT_ritual_of_mind_transfer_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $SACRIFICE$ = { save_scope_as = sacrifice }
+            $TARGET$ = {
+                copy_inheritable_appearance_from = scope:sacrifice
+                remove_trait = physique_bad_1
+                remove_trait = physique_bad_2
+                remove_trait = physique_bad_3
+                remove_trait = physique_good_1
+                remove_trait = physique_good_2
+                remove_trait = physique_good_3
+                
+                remove_trait = beauty_bad_1
+                remove_trait = beauty_bad_2
+                remove_trait = beauty_bad_3
+                remove_trait = beauty_good_1
+                remove_trait = beauty_good_2
+                remove_trait = beauty_good_3
+                
+        
+                set_age = scope:sacrifice.age
+            }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_bad_1 } } $TARGET$ = { add_trait = physique_bad_1 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_bad_2 } } $TARGET$ = { add_trait = physique_bad_2 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_bad_3 } } $TARGET$ = { add_trait = physique_bad_3 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_good_1 } } $TARGET$ = { add_trait = physique_good_1 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_good_2 } } $TARGET$ = { add_trait = physique_good_2 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = physique_good_3 } } $TARGET$ = { add_trait = physique_good_3 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_bad_1 } } $TARGET$ = { add_trait = beauty_bad_1 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_bad_2 } } $TARGET$ = { add_trait = beauty_bad_2 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_bad_3 } } $TARGET$ = { add_trait = beauty_bad_3 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_good_1 } } $TARGET$ = { add_trait = beauty_good_1 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_good_2 } } $TARGET$ = { add_trait = beauty_good_2 } }
+            if = { limit = { $SACRIFICE$ = { has_trait = beauty_good_3 } } $TARGET$ = { add_trait = beauty_good_3 } }
+
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+}
+
+### MATEROMANCY
+ALT_ritual_of_iron_stone_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_durability = 50
+                add_artifact_modifier = ALT_ritual_of_iron_stone_modifier
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 100
+    }
+}
+ALT_ritual_of_weak_iron_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_durability = -50
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 100
+    }
+}
+
+ALT_ritual_of_dirt_stone_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_county_modifier = {
+                    modifier = ALT_ritual_of_dirt_stone_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 150
+    }
+}
+ALT_ritual_of_broken_stones_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_county_modifier = {
+                    modifier = ALT_ritual_of_broken_stones_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 150
+    }
+}
+
+ALT_ritual_of_beautiful_city_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_county_modifier = {
+                    modifier = ALT_ritual_of_beautiful_city_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 200
+    }
+}
+ALT_ritual_of_hideous_city_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_county_modifier = {
+                    modifier = ALT_ritual_of_hideous_city_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 200
+    }
+}
+
+ALT_ritual_of_golden_stone_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                add_gold = 400
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 200
+    }
+}
+ALT_ritual_of_stoneish_gold_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = {
+                remove_short_term_gold = 200
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = {
+        remove_short_term_gold = 200
+    }
+}
+
+ALT_ritual_of_golem_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            custom_tooltip = {
+                text = "ALT_ritual_of_golem_effect"
+                create_character = {
+                    age = 16
+                    gender_female_chance = 50
+                    random_traits = no
+                    trait = ALT_golem
+                    employer = ROOT
+                    faith = ROOT.faith
+                    culture = ROOT.culture
+                    diplomacy = 0
+                    martial = 2
+                    stewardship = 0
+                    intrigue = 0
+                    learning = 0
+                    prowess = 20
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    destroy_artifact = $SACRIFICE$
+}
+ALT_ritual_of_golemhood_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            add_trait = ALT_golem
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    destroy_artifact = $SACRIFICE$
+}
+
+ALT_ritual_of_golem_army_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            custom_tooltip = {
+                text = ALT_ritual_of_golem_army_effect
+                spawn_army = {
+                    men_at_arms = {
+                        type = ALT_golems
+                        stacks = 1
+                    }
+                    location = ROOT.location
+                    uses_supply = yes
+                    inheritable = no
+                    name = ALT_golem_army
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    destroy_artifact = $SACRIFICE$
+}
+ALT_ritual_of_medusa_sight_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ = { add_trait = incapable }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ROOT = { remove_short_term_gold = 200 }
+}
+
+#AETHRICMANCY
+ALT_ritual_of_good_luck_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_good_luck_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_bad_luck_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+ALT_ritual_of_bad_luck_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_bad_luck_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_good_luck_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+
+ALT_ritual_of_fast_movement_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_fast_movement_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_slow_movement_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+ALT_ritual_of_slow_movement_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_slow_movement_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_fast_movement_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+
+ALT_ritual_of_future_insight_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_future_insight_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_stress = 125
+            }
+            
+        }
+    }
+}
+ALT_ritual_of_fast_time_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_fast_time_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            add_stress = 125
+            
+        }
+    }
+}
+
+ALT_ritual_of_slow_time_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_slow_time_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_fast_time_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+ALT_ritual_of_teleportation_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_teleportation_modifier
+                    months = 6
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_space_blocked_modifier
+                    months = 6
+                }
+            }
+            
+        }
+    }
+}
+
+ALT_ritual_of_stopping_time_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_stopping_time_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            add_stress = 240
+            
+        }
+    }
+}
+ALT_ritual_of_delay_death_mark_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_delay_death_mark_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_death_mark_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+
+ALT_ritual_of_death_mark_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_death_mark_modifier
+                    years = 10
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            $TARGET$ = {
+                add_character_modifier = {
+                    modifier = ALT_ritual_of_delay_death_mark_modifier
+                    years = 10
+                }
+            }
+            
+        }
+    }
+}
+ALT_ritual_of_different_world_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                death = {
+                    death_reason = death_other_world
+                }
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+            add_stress = 300
+            
+        }
+    }
+}

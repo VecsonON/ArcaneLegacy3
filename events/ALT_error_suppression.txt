@@ -1,0 +1,61 @@
+﻿namespace = ALT_error_suppression
+
+ALT_error_suppression.0001 = {
+	hidden = yes
+	orphan = yes
+	
+	immediate = {
+		hidden_effect = {
+			#X flag (actually variable) is used but never set
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+			}
+		}
+		if = {         
+			limit = {  
+				#X flag (actually variable) is set but never used
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+
+                    target = flag:biomancy
+                    target = flag:mensomancy
+                    target = flag:aetherimancy
+                    target = flag:materomancy
+                    target = flag:ALT_archmaster
+                    target = flag:ALT_master
+                    target = flag:ALT_expert
+                    target = flag:ALT_adept
+                    target = flag:ALT_apprentice
+                    target = flag:ALT_novice
+                    target = flag:ALT_none
+				}
+				# Global Variables
+
+			}
+		}
+	}
+
+	option = {
+		name = OK_BUTTON
+		
+		if = { 
+			limit = {
+				# X variable (actually flag) is set but never used
+                has_character_flag = icon
+                has_character_flag = level
+                has_character_flag = sacrifice_type
+                has_character_flag = target_type
+                has_character_flag = school
+			} 
+			#X variable (actually char flags) is used but never set
+            
+            # Event target is used but is never set.
+
+			save_scope_as = exp_sacrifice_type
+			save_scope_as = exp_target_type
+			save_scope_as = monthly_progress			
+			save_scope_as = ritual			
+			save_scope_as = tooltip	
+		}
+	}
+}   

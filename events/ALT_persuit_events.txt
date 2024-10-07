@@ -1,0 +1,999 @@
+﻿namespace = ALT_pursuit_events
+ALT_pursuit_events.0001 = { # 
+    type = character_event
+	title = ALT_pursuit_events.0001.title
+	desc = ALT_pursuit_events.0001.desc
+	theme = secret
+    option = {
+        name = ALT_pursuit_events.0001.a
+        switch = {
+            trigger = var:current_pursuit.var:type
+            flag:ALT_school_biomancy = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 1 } }
+            flag:ALT_school_mensomancy = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 1 } }
+            flag:ALT_school_materomancy = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 1 } }
+            flag:ALT_school_aetherimancy = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 1 } }
+
+            ### BIOMANCY
+            flag:ALT_ritual_of_treatment = { ALT_ritual_of_treatment_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_decline = { ALT_ritual_of_decline_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            flag:ALT_ritual_of_health = { ALT_ritual_of_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_maiming = { ALT_ritual_of_maiming_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            flag:ALT_ritual_of_curing = { ALT_ritual_of_curing_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_bad_health = { ALT_ritual_of_bad_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            flag:ALT_ritual_of_long_life = { ALT_ritual_of_long_life_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_rotten_blood = { ALT_ritual_of_rotten_blood_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            flag:ALT_ritual_of_golden_blood = { ALT_ritual_of_golden_blood_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_perfect_body = { ALT_ritual_of_perfect_body_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_bad_blood = { ALT_ritual_of_bad_blood_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+           
+            flag:ALT_ritual_of_eternal_youth = { ALT_ritual_of_eternal_youth_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            ### MENSOMANCY
+            flag:ALT_ritual_of_clear_mind = { ALT_ritual_of_clear_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_cluttery_mind = { ALT_ritual_of_cluttery_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            
+            flag:ALT_ritual_of_perfect_mind = { ALT_ritual_of_perfect_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_empty_mind = { ALT_ritual_of_empty_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            
+            flag:ALT_ritual_of_good_impressions = { ALT_ritual_of_good_impressions_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_bad_impressions = { ALT_ritual_of_bad_impressions_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            
+            flag:ALT_ritual_of_servitude = { ALT_ritual_of_servitude_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_mental_instability = { ALT_ritual_of_mental_instability_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            
+            flag:ALT_ritual_of_personality_morph = { ALT_ritual_of_personality_morph_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_mental_health = { ALT_ritual_of_mental_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            
+            flag:ALT_ritual_of_eternal_servitude = { ALT_ritual_of_eternal_servitude_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_mind_transfer = { ALT_ritual_of_mind_transfer_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+                
+
+            ### MATEROMANCY
+            flag:ALT_ritual_of_iron_stone = { ALT_ritual_of_iron_stone_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_weak_iron = { ALT_ritual_of_weak_iron_effect = { TARGET = var:current_pursuit.var:target } }
+
+            flag:ALT_ritual_of_dirt_stone = { ALT_ritual_of_dirt_stone_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_broken_stones = { ALT_ritual_of_broken_stones_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_beautiful_city = { ALT_ritual_of_beautiful_city_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_hideous_city = { ALT_ritual_of_hideous_city_effect = { TARGET = var:current_pursuit.var:target } }
+
+            flag:ALT_ritual_of_golden_stone = { ALT_ritual_of_golden_stone_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_stoneish_gold = { ALT_ritual_of_stoneish_gold_effect = { TARGET = var:current_pursuit.var:target } }
+
+            flag:ALT_ritual_of_golem = { ALT_ritual_of_golem_effect = { SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_golemhood = { ALT_ritual_of_golemhood_effect = { SACRIFICE = var:current_pursuit.var:sacrifice } }
+
+            flag:ALT_ritual_of_golem_army = { ALT_ritual_of_golem_army_effect = { SACRIFICE = var:current_pursuit.var:sacrifice } }
+            flag:ALT_ritual_of_medusa_sight = { ALT_ritual_of_medusa_sight_effect = { TARGET = var:current_pursuit.var:target } }
+
+            
+            ### AETHERIMANCY
+            flag:ALT_ritual_of_good_luck = { ALT_ritual_of_good_luck_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_bad_luck = { ALT_ritual_of_bad_luck_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_fast_movement = { ALT_ritual_of_fast_movement_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_slow_movement = { ALT_ritual_of_slow_movement_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_future_insight = { ALT_ritual_of_future_insight_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_fast_time = { ALT_ritual_of_fast_time_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_slow_time = { ALT_ritual_of_slow_time_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_teleportation = { ALT_ritual_of_teleportation_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_stopping_time = { ALT_ritual_of_stopping_time_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_delay_death_mark = { ALT_ritual_of_delay_death_mark_effect = { TARGET = var:current_pursuit.var:target } }
+            
+            flag:ALT_ritual_of_death_mark = { ALT_ritual_of_death_mark_effect = { TARGET = var:current_pursuit.var:target } }
+            flag:ALT_ritual_of_different_world = { ALT_ritual_of_different_world_effect = { TARGET = var:current_pursuit.var:target } }
+        }
+        
+        ALT_delete_pursuit_effect = { pursuit = var:current_pursuit }
+    }
+    option = {
+        name = ALT_pursuit_events.0001.b
+        custom_tooltip = "ALT_pursuit_events.0001.b.tt"
+        ALT_pause_current_pursuit_effect = yes
+    }
+}
+
+
+ALT_pursuit_events.0002 = {
+    type = character_event
+	title = ALT_pursuit_events.0002.t
+	desc = ALT_pursuit_events.0002.desc
+	theme = secret
+	
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+	    name = ALT_pursuit_events.0002.a
+		
+		trigger = {
+			scope:target = { number_of_personality_traits < personality_trait_limit }
+		}
+
+		trigger_event = {
+			    id = ALT_pursuit_events.0003
+			}
+	}
+	
+	option = {
+	    name = ALT_pursuit_events.0002.b
+
+		trigger = {
+			scope:target = { number_of_personality_traits > personality_trait_minimum }
+		}
+
+		trigger_event = {
+				id = ALT_pursuit_events.0008
+			}
+	}
+
+	option = {
+	    name = ALT_pursuit_events.0002.c
+	}
+	
+}
+
+#Add personality trait
+
+ALT_pursuit_events.0003 = {
+    type = character_event
+	title = ALT_pursuit_events.0003.t
+	desc = ALT_pursuit_events.0003.desc
+	theme = secret
+
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+	    name = ALT_pursuit_events.0003.a
+
+		trigger_event = {
+            id = ALT_pursuit_events.0004
+        }
+	}
+	option = {
+	    name = ALT_pursuit_events.0003.b
+
+		trigger_event = {
+            id = ALT_pursuit_events.0004
+        }
+	}
+	option = {
+	    name = ALT_pursuit_events.0003.c
+
+		trigger_event = {
+            id = ALT_pursuit_events.0005
+        }
+	}
+	option = {
+	    name = ALT_pursuit_events.0003.d
+
+		trigger_event = {
+            id = ALT_pursuit_events.0006
+        }
+	}
+	option = {
+	    name = ALT_pursuit_events.0003.e
+
+		trigger_event = {
+            id = ALT_pursuit_events.0007
+        }
+	}
+
+
+	option = {
+	    name = ALT_pursuit_events.0003.back
+
+		trigger_event = {
+				id = ALT_pursuit_events.0002
+			}
+	}
+
+
+
+}
+
+ALT_pursuit_events.0004 = {
+    type = character_event
+	title = ALT_pursuit_events.0003.t
+	desc = ALT_pursuit_events.0003.desc
+	theme = secret
+	
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.generous
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = generous }
+				scope:target = { has_trait = greedy }
+			}
+		}
+		scope:target = { add_trait = generous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.lustful
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = lustful }
+				scope:target = { has_trait = chaste }
+			}
+		}
+		scope:target = { add_trait = lustful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.ambitious
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = ambitious }
+				scope:target = { has_trait = content }
+			}
+		}
+		scope:target = { add_trait = ambitious }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.arbitrary
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = arbitrary }
+				scope:target = { has_trait = just }
+			}
+		}
+
+		scope:target = { add_trait = arbitrary }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.deceitful
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = deceitful }
+				scope:target = { has_trait = honest }
+			}
+		}
+		scope:target = { add_trait = deceitful }
+
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.fickle
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = fickle }
+				scope:target = { has_trait = stubborn }
+				scope:target = { has_trait = eccentric }
+			}
+		}
+		scope:target = { add_trait = fickle }
+
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.forgiving
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = forgiving }
+				scope:target = { has_trait = vengeful }
+			}
+		}
+		scope:target = { add_trait = forgiving }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.gregarious
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = gregarious }
+				scope:target = { has_trait = shy }
+			}
+		}
+		scope:target = { add_trait = gregarious }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.eccentric
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = fickle }
+				scope:target = { has_trait = stubborn }
+				scope:target = { has_trait = eccentric }
+			}
+		}
+		scope:target = { add_trait = eccentric }
+	}
+	
+	option = {
+	    name = ALT_pursuit_events.0003.back
+
+		trigger_event = {
+				id = ALT_pursuit_events.0003
+			}
+	}
+}
+
+ALT_pursuit_events.0005 = {
+    type = character_event
+	title = ALT_pursuit_events.0003.t
+	desc = ALT_pursuit_events.0003.desc
+	theme = secret
+	
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.calm
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = calm }
+				scope:target = { has_trait = wrathful }
+			}
+		}
+		scope:target = { add_trait = calm }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.compassionate
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = compassionate }
+				scope:target = { has_trait = callous }
+				scope:target = { has_trait = sadistic }
+			}
+		}
+		scope:target = { add_trait = compassionate }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.content
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = content }
+				scope:target = { has_trait = ambitious }
+			}
+		}
+		scope:target = { add_trait = content }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.diligent
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = diligent }
+				scope:target = { has_trait = lazy }
+			}
+		}
+		scope:target = { add_trait = diligent }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.humble
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = humble }
+				scope:target = { has_trait = arrogant }
+			}
+		}
+		scope:target = { add_trait = humble }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.just
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = just }
+				scope:target = { has_trait = arbitrary }
+			}
+		}
+		scope:target = { add_trait = just }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.lazy
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = lazy }
+				scope:target = { has_trait = diligent }
+			}
+		}
+		scope:target = { add_trait = lazy }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.temperate
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = temperate }
+				scope:target = { has_trait = gluttonous }
+			}
+		}
+		scope:target = { add_trait = temperate }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.trusting
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = trusting }
+				scope:target = { has_trait = paranoid }
+			}
+		}
+		scope:target = { add_trait = trusting }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.zealous
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = zealous }
+				scope:target = { has_trait = cynical }
+			}
+		}
+		scope:target = { add_trait = zealous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.patient
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = patient }
+				scope:target = { has_trait = impatient }
+			}
+		}
+		scope:target = { add_trait = patient }
+	}
+	
+	option = {
+	    name = ALT_pursuit_events.0003.back
+
+		trigger_event = {
+				id = ALT_pursuit_events.0003
+			}
+	}
+}
+
+ALT_pursuit_events.0006 = {
+    type = character_event
+	title = ALT_pursuit_events.0003.t
+	desc = ALT_pursuit_events.0003.desc
+	theme = secret
+	
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.chaste
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = chaste }
+				scope:target = { has_trait = lustful }
+			}
+		}
+		scope:target = { add_trait = chaste }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.gluttonous
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = gluttonous }
+				scope:target = { has_trait = temperate }
+			}
+		}
+		scope:target = { add_trait = gluttonous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.craven
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = craven }
+				scope:target = { has_trait = brave }
+			}
+		}
+		scope:target = { add_trait = craven }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.cynical
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = cynical }
+				scope:target = { has_trait = zealous }
+			}
+		}
+		scope:target = { add_trait = cynical }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.honest
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = honest }
+				scope:target = { has_trait = deceitful }
+			}
+		}
+		scope:target = { add_trait = honest }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.paranoid
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = paranoid }
+				scope:target = { has_trait = trusting }
+			}
+		}
+		scope:target = { add_trait = paranoid }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.shy
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = shy }
+				scope:target = { has_trait = gregarious }
+			}
+		}
+		scope:target = { add_trait = shy }
+	}
+
+    option = {
+		name = ALT_pursuit_events.0003.arrogant
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = arrogant }
+				scope:target = { has_trait = humble }
+			}
+		}
+		scope:target = { add_trait = arrogant }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.brave
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = brave }
+				scope:target = { has_trait = craven }
+			}
+		}
+		scope:target = { add_trait = brave }
+	}
+	
+	option = {
+	    name = ALT_pursuit_events.0003.back
+
+		trigger_event = {
+				id = ALT_pursuit_events.0003
+			}
+	}
+}
+
+ALT_pursuit_events.0007 = {
+    type = character_event
+	title = ALT_pursuit_events.0003.t
+	desc = ALT_pursuit_events.0003.desc
+	theme = secret
+	
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.callous
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = callous }
+				scope:target = { has_trait = sadistic }
+				scope:target = { has_trait = compassionate }
+			}
+		}
+		scope:target = { add_trait = callous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.impatient
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = impatient }
+				scope:target = { has_trait = patient }
+			}
+		}
+		scope:target = { add_trait = impatient }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.sadistic
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = sadistic }
+				scope:target = { has_trait = callous }
+				scope:target = { has_trait = compassionate }
+			}
+		}
+		scope:target = { add_trait = sadistic }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.stubborn
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = stubborn }
+				scope:target = { has_trait = fickle }
+				scope:target = { has_trait = eccentric }
+			}
+		}
+		scope:target = { add_trait = stubborn }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.wrathful
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = wrathful }
+				scope:target = { has_trait = calm }
+			}
+		}
+		scope:target = { add_trait = wrathful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.greedy
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = greedy }
+				scope:target = { has_trait = generous }
+			}
+		}
+		scope:target = { add_trait = greedy }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.vengeful
+		trigger = {
+			NOR = {
+				scope:target = { has_trait = vengeful }
+				scope:target = { has_trait = forgiving }
+			}
+		}
+		scope:target = { add_trait = vengeful }
+	}
+	
+	option = {
+	    name = ALT_pursuit_events.0003.back
+
+		trigger_event = {
+            id = ALT_pursuit_events.0003
+        }
+	}
+}
+
+#Remove personality trait
+
+ALT_pursuit_events.0008 = {
+    type = character_event
+	title = ALT_pursuit_events.0008.t
+	desc = ALT_pursuit_events.0008.desc
+	theme = secret
+
+	left_portrait = {
+	    character = scope:target
+		animation = personality_zealous
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.ambitious
+		trigger = {
+			scope:target = { has_trait = ambitious }
+		}
+		scope:target = { remove_trait = ambitious }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.arbitrary
+		trigger = {
+			scope:target = { has_trait = arbitrary }
+		}
+		scope:target = { remove_trait = arbitrary }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.arrogant
+		trigger = {
+			scope:target = { has_trait = arrogant }
+		}
+		scope:target = { remove_trait = arrogant }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.brave
+		trigger = {
+			scope:target = { has_trait = brave }
+		}
+		scope:target = { remove_trait = brave }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.callous
+		trigger = {
+			scope:target = { has_trait = callous }
+		}
+		scope:target = { remove_trait = callous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.calm
+		trigger = {
+			scope:target = { has_trait = calm }
+		}
+		scope:target = { remove_trait = calm }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.chaste
+		trigger = {
+			scope:target = { has_trait = chaste }
+		}
+		scope:target = { remove_trait = chaste }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.compassionate
+		trigger = {
+			scope:target = { has_trait = compassionate }
+		}
+		scope:target = { remove_trait = compassionate }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.content
+		trigger = {
+			scope:target = { has_trait = content }
+		}
+		scope:target = { remove_trait = content }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.craven
+		trigger = {
+			scope:target = { has_trait = craven }
+		}
+		scope:target = { remove_trait = craven }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.cynical
+		trigger = {
+			scope:target = { has_trait = cynical }
+		}
+		scope:target = { remove_trait = cynical }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.deceitful
+		trigger = {
+			scope:target = { has_trait = deceitful }
+		}
+		scope:target = { remove_trait = deceitful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.diligent
+		trigger = {
+			scope:target = { has_trait = diligent }
+		}
+		scope:target = { remove_trait = diligent }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.fickle
+		trigger = {
+			scope:target = { has_trait = fickle }
+		}
+		scope:target = { remove_trait = fickle }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.forgiving
+		trigger = {
+			scope:target = { has_trait = forgiving }
+		}
+		scope:target = { remove_trait = forgiving }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.generous
+		trigger = {
+			scope:target = { has_trait = generous }
+		}
+		scope:target = { remove_trait = generous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.gluttonous
+		trigger = {
+			scope:target = { has_trait = gluttonous }
+		}
+		scope:target = { remove_trait = gluttonous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.greedy
+		trigger = {
+			scope:target = { has_trait = greedy }
+		}
+		scope:target = { remove_trait = greedy }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.gregarious
+		trigger = {
+			scope:target = { has_trait = gregarious }
+		}
+		scope:target = { remove_trait = gregarious }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.honest
+		trigger = {
+			scope:target = { has_trait = honest }
+		}
+		scope:target = { remove_trait = honest }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.humble
+		trigger = {
+			scope:target = { has_trait = humble }
+		}
+		scope:target = { remove_trait = humble }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.impatient
+		trigger = {
+			scope:target = { has_trait = impatient }
+		}
+		scope:target = { remove_trait = impatient }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.just
+		trigger = {
+			scope:target = { has_trait = just }
+		}
+		scope:target = { remove_trait = just }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.lazy
+		trigger = {
+			scope:target = { has_trait = lazy }
+		}
+		scope:target = { remove_trait = lazy }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.lustful
+		trigger = {
+			scope:target = { has_trait = lustful }
+		}
+		scope:target = { remove_trait = lustful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.paranoid
+		trigger = {
+			scope:target = { has_trait = paranoid }
+		}
+		scope:target = { remove_trait = paranoid }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.patient
+		trigger = {
+			scope:target = { has_trait = patient }
+		}
+		scope:target = { remove_trait = patient }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.sadistic
+		trigger = {
+			scope:target = { has_trait = sadistic }
+		}
+		scope:target = { remove_trait = sadistic }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.shy
+		trigger = {
+		scope:target = { has_trait = shy }
+		}
+		scope:target = { remove_trait = shy }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.stubborn
+		trigger = {
+			scope:target = { has_trait = stubborn }
+		}
+		scope:target = { remove_trait = stubborn }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.temperate
+		trigger = {
+			scope:target = { has_trait = temperate }
+		}
+		scope:target = { remove_trait = temperate }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.trusting
+		trigger = {
+			scope:target = { has_trait = trusting }
+		}
+		scope:target = { remove_trait = trusting }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.vengeful
+		trigger = {
+			scope:target = { has_trait = vengeful }
+		}
+		scope:target = { remove_trait = vengeful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.wrathful
+		trigger = {
+			scope:target = { has_trait = wrathful }
+		}
+		scope:target = { remove_trait = wrathful }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.zealous
+		trigger = {
+			scope:target = { has_trait = zealous }
+		}
+		scope:target = { remove_trait = zealous }
+	}
+
+	option = {
+		name = ALT_pursuit_events.0003.eccentric
+		trigger = {
+			scope:target = { has_trait = eccentric }
+		}
+		scope:target = { remove_trait = eccentric }
+	}
+	option = {
+		name = ALT_pursuit_events.0003.back	
+		trigger_event = {
+            id = ALT_pursuit_events.0002
+        }
+	}
+}

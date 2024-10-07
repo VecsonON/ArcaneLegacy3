@@ -1,4 +1,4 @@
-version="1.3.1"
+version="0.1"
 tags={
 	"Alternative History"
 	"Total Conversion"
@@ -8,6 +8,6 @@ tags={
 	"Events"
 	"Gameplay"
 }
-name="Arcane Legacy 2"
+name="Arcane Legacy 3"
 supported_version="1.13.*"
 remote_file_id="3132210253"

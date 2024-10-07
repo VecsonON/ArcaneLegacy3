@@ -1,0 +1,4 @@
+﻿death_other_world = {
+	icon = "death_ascension.dds"
+	public_knowledge = yes
+}
