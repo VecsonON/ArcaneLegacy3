@@ -651,7 +651,7 @@ container = {
 	parentanchor = bottom|left
 	position = { -5 -400 }
 	alwaystransparent = no
-	layer = top
+	layer = bottom
 	visible = "[And(And(Or(Not(IsObserver), GetPlayer.IsValid), GetScriptedGui('initiate_starting_arcane_gui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('player',GetPlayer.MakeScope).End)),And(Not(GetVariableSystem.Exists('ALT_arcane_tab')), Not(IsLeftWindowOpen))))]"
 	button_hud_character_bar = {
 		name = "arcane_button"
@@ -664,6 +664,7 @@ container = {
 
 		using = tooltip_es
 
+		tooltip = arcane_button_tooltip
 
 		highlight_icon = {
 			texture = "gfx/icons/alt/arcane.dds"

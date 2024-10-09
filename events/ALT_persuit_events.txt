@@ -8,10 +8,10 @@ ALT_pursuit_events.0001 = { #
         name = ALT_pursuit_events.0001.a
         switch = {
             trigger = var:current_pursuit.var:type
-            flag:ALT_school_biomancy = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 1 } }
-            flag:ALT_school_mensomancy = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 1 } }
-            flag:ALT_school_materomancy = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 1 } }
-            flag:ALT_school_aetherimancy = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 1 } }
+            flag:ALT_school_biomancy = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = ALT_xp_gain } }
+            flag:ALT_school_mensomancy = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = ALT_xp_gain } }
+            flag:ALT_school_materomancy = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = ALT_xp_gain } }
+            flag:ALT_school_aetherimancy = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = ALT_xp_gain } }
 
             ### BIOMANCY
             flag:ALT_ritual_of_treatment = { ALT_ritual_of_treatment_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
@@ -995,5 +995,204 @@ ALT_pursuit_events.0008 = {
 		trigger_event = {
             id = ALT_pursuit_events.0002
         }
+	}
+}
+
+
+# Studing Magic
+
+ALT_pursuit_events.0009 = {
+	type = character_event
+	title = ALT_pursuit_events.0009.t
+	desc = ALT_pursuit_events.0009.desc
+	theme = secret
+	option = {
+		name = ALT_pursuit_events.0009.a
+		trigger = {
+			NOT = { has_character_flag = ALT_know_biomancy }
+		}
+		duel = {
+			skill = learning
+			value = 30
+			5 = {
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+				modifier = {
+					has_variable = ALT_easier_biomancy_studing
+					add = var:ALT_easier_biomancy_studing
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.a
+					ALT_become_biomancer = yes
+					if = { limit = { has_variable = ALT_easier_biomancy_studing } remove_variable = ALT_easier_biomancy_studing }
+				}
+            }
+			10 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1
+                }
+				modifier = {
+					has_variable = ALT_easier_biomancy_studing
+					add = {
+						value = var:ALT_easier_biomancy_studing
+						multiply = -1
+					}
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.a
+					add_stress = 50
+					custom_tooltip = { text = "ALT_easier_biomancy_studing"  
+						if = { limit = { has_variable = ALT_easier_biomancy_studing } change_variable = { name = ALT_easier_biomancy_studing add = 5 } }
+						else = { set_variable = { name = ALT_easier_biomancy_studing value = 5 } }
+					}
+				}
+
+			}
+		}
+	}
+	option = {
+		name = ALT_pursuit_events.0009.b
+		trigger = {
+			NOT = { has_character_flag = ALT_know_mensomancy }
+		}
+		duel = {
+			skill = learning
+			value = 30
+			5 = {
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+				modifier = {
+					has_variable = ALT_easier_mensomancy_studing
+					add = var:ALT_easier_mensomancy_studing
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.b
+					ALT_become_mensomancer = yes
+					if = { limit = { has_variable = ALT_easier_mensomancy_studing } remove_variable = ALT_easier_mensomancy_studing }
+				}
+            }
+			10 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1
+                }
+				modifier = {
+					has_variable = ALT_easier_mensomancy_studing
+					add = {
+						value = var:ALT_easier_mensomancy_studing
+						multiply = -1
+					}
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.b
+					add_stress = 50
+					custom_tooltip = { text = "ALT_easier_mensomancy_studing"  
+						if = { limit = { has_variable = ALT_easier_mensomancy_studing } change_variable = { name = ALT_easier_mensomancy_studing add = 5 } }
+						else = { set_variable = { name = ALT_easier_mensomancy_studing value = 5 } }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ALT_pursuit_events.0009.c
+		trigger = {
+			NOT = { has_character_flag = ALT_know_materomancy }
+		}
+		duel = {
+			skill = learning
+			value = 30
+			5 = {
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+				modifier = {
+					has_variable = ALT_easier_materomancy_studing
+					add = var:ALT_easier_materomancy_studing
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.c
+					ALT_become_materomacer = yes
+					if = { limit = { has_variable = ALT_easier_materomancy_studing } remove_variable = ALT_easier_materomancy_studing }
+				}
+            }
+			10 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1
+                }
+				modifier = {
+					has_variable = ALT_easier_materomancy_studing
+					add = {
+						value = var:ALT_easier_materomancy_studing
+						multiply = -1
+					}
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.c
+					add_stress = 50
+					custom_tooltip = { text = "ALT_easier__materomancy_studing"  
+						if = { limit = { has_variable = ALT_easier_materomancy_studing } change_variable = { name = ALT_easier_materomancy_studing add = 5 } }
+						else = { set_variable = { name = ALT_easier_materomancy_studing value = 5 } }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ALT_pursuit_events.0009.d
+		trigger = {
+			NOT = { has_character_flag = ALT_know_aetherimancy }
+		}
+		duel = {
+			skill = learning
+			value = 30
+			5 = {
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+				modifier = {
+					has_variable = ALT_easier_aetherimancy_studing
+					add = var:ALT_easier_aetherimancy_studing
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.d
+					ALT_become_aetherimancer = yes
+					if = { limit = { has_variable = ALT_easier_aetherimancy_studing } remove_variable = ALT_easier_aetherimancy_studing }
+				}
+            }
+			10 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1
+                }
+				modifier = {
+					has_variable = ALT_easier_aetherimancy_studing
+					add = {
+						value = var:ALT_easier_aetherimancy_studing
+						multiply = -1
+					}
+				}
+				send_interface_toast = {
+					title = ALT_pursuit_events.0009.d
+					add_stress = 50
+					custom_tooltip = { text = "ALT_easier_aetherimancy_studing"  
+						if = { limit = { has_variable = ALT_easier_aetherimancy_studing } change_variable = { name = ALT_easier_aetherimancy_studing add = 5 } }
+						else = { set_variable = { name = ALT_easier_aetherimancy_studing value = 5 } }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ALT_pursuit_events.0009.e		
+		remove_decision_cooldown = ALT_mage_study_decision
 	}
 }

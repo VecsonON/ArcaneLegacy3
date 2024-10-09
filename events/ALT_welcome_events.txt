@@ -1,0 +1,47 @@
+﻿namespace = ALT_welcome_events
+
+ALT_welcome_events.0001 = {
+    type = character_event
+	title = ALT_welcome_events.0001.title
+	desc = ALT_welcome_events.0001.desc
+	theme = witchcraft
+    option = { # ALREADY MAGE
+        name = ALT_welcome_events.0001.a
+        custom_tooltip = ALT_welcome_events.0001.a.tt
+        trigger_event = ALT_welcome_events.0002
+    }
+    option = { # INCREASE CHANCE OF MAGE EVENTS
+        name = ALT_welcome_events.0001.b
+        add_character_flag = ALT_increase_chance_arance_events
+    }
+    option = { # NORMAL GAMEPLAY
+        name = ALT_welcome_events.0001.c
+    }
+}
+
+ALT_welcome_events.0002 = {
+    type = character_event
+	title = ALT_welcome_events.0002.title
+	desc = ALT_welcome_events.0002.desc
+	theme = witchcraft
+    option = { # BIOMANCER
+        name = ALT_welcome_events.0002.a
+        ALT_become_biomancer = yes
+    }
+    option = { # MENSOMANCER
+        name = ALT_welcome_events.0002.b
+        ALT_become_mensomancer = yes
+    }
+    option = { # MATEROMANCER
+        name = ALT_welcome_events.0002.c
+        ALT_become_materomacer = yes
+    }
+    option = { # AETHERMACER
+        name = ALT_welcome_events.0002.d
+        ALT_become_aetherimancer = yes
+    }
+    option = { # Back
+        name = ALT_welcome_events.0002.e
+        trigger_event = ALT_welcome_events.0001
+    }
+}

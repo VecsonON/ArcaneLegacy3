@@ -1,0 +1,16 @@
+﻿ALT_arcane_events = {
+	default = ALT_arcane_events_default
+    
+	ALT_arcane_events_rare = { # Rare
+	}
+	
+	ALT_arcane_events_default = { # Default
+	}
+	
+	ALT_arcane_events_frequent = { # Frequent
+	}	
+	
+	ALT_arcane_events_very_frequent = { # Very Frequent
+	}	
+
+}

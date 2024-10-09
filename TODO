@@ -1,9 +1,9 @@
 Arcane Legacy 3:
     + Borrow POD's Journeys for whole magic system
     + Remove Lifestyle alltoghether, and replace it with leveling traits and etc.
-    - Learning new spells should be very important and ground
-    - Becoming immortal should be very hard, but increasing lifespan should be easier
-    - Mage towers should be now a domicile
+    / Learning new spells should be very important and ground
+    + Becoming immortal should be very hard, but increasing lifespan should be easier
+    / Mage towers should be now a domicile
     + Magic will be divided to 4 schools.
         + Biomancy: Control over flesh
         + Mensomancy: Control over Mind
@@ -76,7 +76,11 @@ ADDING NEW SPELLS:
     7) Profit
 
 TODO:
-    - Mage towers
+    - Apotheosis
+    - Grand Rituals
+    - Mixed Rituals
+    - Exploring Abbandoned Arcane Labs
+    + Experiments
     Add at least 2 ritual per level per school:
         Biomancy:
             + Ritual of Health (Remove random negative health non-genetic traits including diseases)
@@ -109,42 +113,34 @@ TODO:
             + Ritual of Eternal Servitude(Hard ritual to get eternal strong hook)
             + Ritual of changing body(Copy yourself to another character[gameplay wise, copy appearance, and age])
         Materomancy:
-            - Ritual of Dirt Stone(Building cost -25% Building time -25%)
-            - Ritual of Broken Stones(Building cost +25% Building time +25%)
+            + Ritual of Dirt Stone(Building cost -25% Building time -25%)
+            + Ritual of Broken Stones(Building cost +25% Building time +25%)
 
-            - Ritual of Beautiful City(Popular Opinion +50)
-            - Ritual of Hidieous City(Popular Opinion -50)
+            + Ritual of Beautiful City(Popular Opinion +50)
+            + Ritual of Hidieous City(Popular Opinion -50)
 
-            - Ritual of Golden Stone(exchange 25 gold to 125 gold)
-            - Ritual of Stoneish Gold(-200 gold)
+            + Ritual of Golden Stone(exchange 25 gold to 125 gold)
+            + Ritual of Stoneish Gold(-200 gold)
         
-            - Ritual of Golem(Spawn Golem Character)
-            - Ritual of GolemHood(Become Lich, immortal with price of your body.)
+            + Ritual of Golem(Spawn Golem Character)
+            + Ritual of GolemHood(Become Lich, immortal with price of your body.)
             
-            - Ritual of Golem Army(Spawn MAA)
-            - Ritual of Medusa Sight(Hard ritual to make target incapable)
+            + Ritual of Golem Army(Spawn MAA)
+            + Ritual of Medusa Sight(Hard ritual to make target incapable)
         Aetherimancy:
-            - Ritual of Fast Movement(prowess+5, army speed +25%, travel +25%)
-            - Ritual of slow Movement(prowess-5, army speed -25%, travel -25%)
+            + Ritual of Fast Movement(prowess+5, army speed +25%, travel +25%)
+            + Ritual of slow Movement(prowess-5, army speed -25%, travel -25%)
 
-            - Ritual of Future Insight(Scheme bonuses)
-            - Ritual of Fast Time(all atributes -2 for 5 years)
+            + Ritual of Future Insight(Scheme bonuses)
+            + Ritual of Fast Time(all atributes -2 for 5 years)
 
-            - Ritual of Slow Time(all atributes +2 for 5 years)
-            - Ritual of Teleportation(teleport army to target)
+            + Ritual of Slow Time(all atributes +2 for 5 years)
+            + Ritual of Teleportation(teleport army to target)
 
-            - Ritual of Stopping Time(all atributes +6 for 5 years, +50 stress)
-            - Ritual of Delay Death Mark(1000+ lifespan for 5 years)
+            + Ritual of Stopping Time(all atributes +6 for 5 years, +50 stress)
+            + Ritual of Delay Death Mark(1000+ lifespan for 5 years)
             
-            - Ritual of Death mark(in 10 years, target will die. Don't work on Adept Aetherimancers)
-            - Ritual of Different World(cultural buffs and possibility to leave this world behind)
+            + Ritual of Death mark(in 10 years, target will die. Don't work on Adept Aetherimancers)
+            + Ritual of Different World(cultural buffs and possibility to leave this world behind)
 
 
-XXX_sgui = {
-    effect = { 
-        if = { limit = { NOT = { exists = scope:tooltip } } XXX_effect = { TARGET = var:sellected_target.var:target SACRIFICE = var:sellected_sacriface.var:target }  }
-    }
-    is_valid = { 
-        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:XXX } }
-    }
-}

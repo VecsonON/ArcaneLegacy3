@@ -1,0 +1,28 @@
+﻿ALT_arcane = {
+    texture = "gfx/icons/alt/arcane.dds"
+}
+ALT_ritual = {
+    parent = ALT_arcane
+    alias = { ALT_rituals }
+    texture = "gfx/icons/alt/icon_archmaster.dds"
+}
+ALT_biomancy = {
+    parent = ALT_arcane
+    texture = "gfx/icons/alt/biomancy.dds"
+    alias = { ALT_biomancer }
+}
+ALT_mensomancy = {
+    parent = ALT_arcane
+    texture = "gfx/icons/alt/mensomancy.dds"
+    alias = { ALT_mensomancer }
+}
+ALT_materomancy = {
+    parent = ALT_arcane
+    texture = "gfx/icons/alt/materomancy.dds"
+    alias = { ALT_materomancer }
+}
+ALT_aetherimancy = {
+    parent = ALT_arcane
+    texture = "gfx/icons/alt/aetherimancy.dds"
+    alias = { ALT_aetherimancer }
+}

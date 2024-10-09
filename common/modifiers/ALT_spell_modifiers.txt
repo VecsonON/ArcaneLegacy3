@@ -1,4 +1,10 @@
-﻿ALT_ritual_of_treatment_modifier = {
+﻿ALT_experimented_land_modifier = {
+    icon = county_modifier_development_negative
+    tax_mult = -0.25
+    development_growth_factor = -0.5
+}
+
+ALT_ritual_of_treatment_modifier = {
     icon = health_positive
     negate_health_penalty_add = 1.5
 }

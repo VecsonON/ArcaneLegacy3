@@ -25,7 +25,7 @@ ALT_start_learning_pursuit_sgui = {
         hidden_effect = {
             ALT_start_pursuit_effect = {
                 TYPE = scope:type
-                MONTHLY_PROGRESS = 8 #20 months to compelete this
+                MONTHLY_PROGRESS = 4.16 #2 years to compelete this
                 TARGET = THIS
                 SACRIFICE = THIS
                 ICON = scope:icon
@@ -110,6 +110,7 @@ ALT_deselect_ritual_gui = {
 
 ALT_ritual_time_calculate = {
     effect = {
+        custom_tooltip = "ALT_ritual_casting"
         save_scope_value_as = {
             name = temp_years_calc
             value = {

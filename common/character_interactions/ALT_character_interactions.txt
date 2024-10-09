@@ -81,3 +81,149 @@ ATL_select_title_interaction = {
 	}
 	auto_accept = yes
 }
+
+ALT_experiment_on_prisoner_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_prison
+
+	common_interaction = yes
+
+	is_shown = { 
+		scope:actor = { 
+			OR = { 
+				AND = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = biomancy COUNT = 100 } } }
+				AND = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = mensomancy COUNT = 100 } } }
+				AND = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = aetherimancy COUNT = 100 } } }
+			} 
+		} 
+		scope:recipient = { is_imprisoned_by = scope:actor } }
+
+	is_highlighted = {
+		OR = {
+			scope:actor = { has_trait = sadistic }
+			scope:actor = { has_trait = ambitious }
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			custom_description = {
+				text = "currently_being_tortured"
+				NOT = { has_character_flag = is_being_tortured }
+			}
+			
+		}
+		cannot_release_former_regent_whilst_old_regent_holds_power_trigger = {
+			PRISONER = scope:recipient
+			REGENT = scope:recipient.var:imprisoned_by_diarch
+		}
+	}
+
+
+	on_accept = {
+		scope:recipient = {
+			add_character_flag = {
+				flag = is_being_tortured
+				months = 6 # Players in MP can keep the event window open...
+			}
+			random = {
+				chance = 50
+				death = {
+					death_reason = death_torture
+				}
+			}
+		}
+		scope:actor = { save_scope_as = bg_override_char }
+		###EFFECT TOOLTIP###
+		torture_interaction_actor_effect = yes
+		show_as_tooltip = {
+			scope:recipient = {
+				add_character_modifier = {
+					modifier = recently_tortured
+					years = 5
+				}
+			}
+		}
+
+		scope:actor = {
+			random_list = {
+				1 = { trigger = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = biomancy COUNT = 100 } } } 
+					random_list = {
+						1 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 5 } }
+						2 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 4 } }
+						4 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 3 } }
+						6 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 2 } }
+						8 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 1 } }
+					}
+				}
+				1 = { trigger = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = mensomancy COUNT = 100 } } }
+					random_list = {
+						1 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 5 } }
+						2 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 4 } }
+						4 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 3 } }
+						6 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 2 } }
+						8 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 1 } }
+					}
+				}
+				1 = { trigger = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = aetherimancy COUNT = 100 } } } 
+					random_list = {
+						1 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 5 } }
+						2 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 4 } }
+						4 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 3 } }
+						6 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 2 } }
+						8 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 1 } }
+					}
+				}
+			}
+		}
+	}
+	auto_accept = yes
+}
+
+ALT_experiment_on_current_location_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_prison
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { has_character_flag = ALT_know_materomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = ateromancy COUNT = 100 } } } scope:recipient = scope:actor }
+
+	cooldown = { years = 1 }
+
+	is_valid_showing_failures_only = {
+		scope:actor.location.county = {
+			NOT = { has_county_modifier = ALT_experimented_land_modifier }
+			
+		}
+		cannot_release_former_regent_whilst_old_regent_holds_power_trigger = {
+			PRISONER = scope:recipient
+			REGENT = scope:recipient.var:imprisoned_by_diarch
+		}
+	}
+
+
+	on_accept = {
+		scope:actor = {
+			location.county = {
+				add_county_modifier = {
+					modifier = ALT_experimented_land_modifier
+					years = 10
+				}
+				if = { limit = { NOT = { scope:actor = holder } } holder = { add_opinion = { modifier = upset_opinion opinion = -25 target = scope:actor } } }
+
+			}
+			random_list = {
+				1 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 5 } }
+				2 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 4 } }
+				4 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 3 } }
+				6 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 2 } }
+				8 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 1 } }
+			}
+		}
+	}
+	auto_accept = yes
+}

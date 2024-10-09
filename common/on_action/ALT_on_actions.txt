@@ -1,8 +1,13 @@
 ﻿yearly_playable_pulse = {
 	on_actions = { ALT_yearly_playable_pulse }
 }
-random_yearly_playable_pulse = {
-    on_actions = { ALT_random_yearly_playable_pulse }
+random_yearly_everyone_pulse = {
+    on_actions = { ALT_random_yearly_everyone_pulse }
+}
+on_game_start_after_lobby = {
+    on_actions = { 
+		ALT_welcome_event
+	}
 }
 ALT_yearly_playable_pulse = {
 	effect = {
@@ -36,9 +41,15 @@ ALT_monthly_playable_pulse = {
     }
 }
 
-ALT_random_yearly_playable_pulse = {
+ALT_random_yearly_everyone_pulse = {
+    trigger = {
+        OR = { # MADE FOR LANDLESS CHARACTERS (RTG)
+            is_playable_character = yes
+            is_ai = no
+        }
+    }
     random_events = {
-        chance_to_happen = 2
+        chance_of_no_event = ALT_arcane_events_chance
         5 = ALT_yearly_events.0010
         5 = ALT_yearly_events.0020
         5 = ALT_yearly_events.0030
@@ -47,7 +58,7 @@ ALT_random_yearly_playable_pulse = {
         5 = ALT_yearly_events.0060
         5 = ALT_yearly_events.0070
         5 = ALT_yearly_events.0080
-        50 = 0
+        5 = 0
     }
 }
 
@@ -176,4 +187,12 @@ ALT_close_arcane_gui_action = {
 		remove_variable = sellected_ritual
 
     }
+}
+
+ALT_welcome_event = {
+    effect = {
+		every_player = {
+			trigger_event = ALT_welcome_events.0001
+		}
+	}
 }

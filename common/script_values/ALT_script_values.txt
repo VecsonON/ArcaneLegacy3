@@ -12,6 +12,14 @@ ritual_expert_duel_value = 50
 ritual_master_duel_value = 75
 ritual_archmaster_duel_value = 100
 
+ALT_arcane_events_chance = {
+    value = 95
+    if = { limit = { has_game_rule = ALT_arcane_events_rare } add = 4 }
+    if = { limit = { has_game_rule = ALT_arcane_events_frequent } subtract = 5 }
+    if = { limit = { has_game_rule = ALT_arcane_events_very_frequent } subtract = 10 }
+    if = { limit = { has_character_flag = ALT_increase_chance_arance_events } subtract = 10 }
+}
+
 xp_ALT_school_aetherimancy = {
     value = 0
     if = { limit = { has_variable = ALT_school_aetherimancy_xp } add = var:ALT_school_aetherimancy_xp }
@@ -30,6 +38,14 @@ xp_ALT_school_mensomancy = {
 xp_ALT_school_biomancy = {
     value = 0
     if = { limit = { has_variable = ALT_school_biomancy_xp } add = var:ALT_school_biomancy_xp }
+    max = 100
+}
+
+ALT_xp_gain = {
+    value = learning
+    divide = 10
+    floor = yes
+    min = 1
     max = 100
 }
 

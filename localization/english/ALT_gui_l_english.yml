@@ -1,7 +1,8 @@
 ﻿l_english:
+ arcane_button_tooltip: "You are [GetPlayer.Custom('ALT_overall_mastery_level')] Mage"
 
- ARCANE_VIEW_HEADING: "Arcane"
- ARCANE_RITUALS: "rituals"
+ ARCANE_VIEW_HEADING: "[ALT_arcane|E]"
+ ARCANE_RITUALS: "[ALT_rituals|E]"
  ARCANE_LEARNING: "Studies"
  ARCANE_PURSUITS: "Pursuits"
 
@@ -16,15 +17,16 @@
  ALT_delete_pursuit_tt: "Abandon Pursuit"
  ALT_pause_pursuit_tt: "Pause Pursuit"
 
+ ALT_ritual_casting: "Casting time is based on your [learning|E] and experience in [ALT_ritual|E]'s school"
  ALT_ritual_casting_time: "Casting will last roughly: ~#V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
  ALT_pursuit_casting_time: "Done in roughly: #V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
 
- ALT_archmaster_name: "Archmaster ritual"
- ALT_master_name: "Master ritual"
- ALT_expert_name: "Expert ritual"
- ALT_adept_name: "Adept ritual"
- ALT_apprentice_name: "Apprentice ritual"
- ALT_novice_name: "Novice ritual"
+ ALT_archmaster_name: "Archmaster [ALT_ritual|E]"
+ ALT_master_name: "Master [ALT_ritual|E]"
+ ALT_expert_name: "Expert [ALT_ritual|E]"
+ ALT_adept_name: "Adept [ALT_ritual|E]"
+ ALT_apprentice_name: "Apprentice [ALT_ritual|E]"
+ ALT_novice_name: "Novice [ALT_ritual|E]"
 
  ALT_school_level_archmaster: "Archmaster"
  ALT_school_level_master: "Master"
@@ -35,10 +37,52 @@
  ALT_school_level_none: "Zero"
 
  ALT_pursuit_events.0001.title: "Pursuit is Finished!"
- ALT_pursuit_events.0001.desc: "Pursuit is finished."
- ALT_pursuit_events.0001.a: "..."
- ALT_pursuit_events.0001.b: "Leave it for later"
+ ALT_pursuit_events.0001.desc: "Pursuit is finished. And now is time to collect fruits of your work!"
+ ALT_pursuit_events.0001.a: "Finally"
+ ALT_pursuit_events.0001.b: "You know what? I will wait a bit more"
  ALT_pursuit_events.0001.b.tt: "Pause current pursuit."
  
  ALT_sacrifice_is_not_available: "Sacrifice is not longer available!"
  ALT_target_is_not_available: "Target is not longer available!"
+
+ game_concept_ALT_arcane: "Arcane"
+ game_concept_ALT_arcane_desc: "#bold Arcane#!, another term referring to magic-like manipulation of reality. Arcane is divided on 4 schools each manipulating different part of reality\n\n$BULLET_WITH_TAB$[ALT_biomancy|E] - Magic of living\n$BULLET_WITH_TAB$[ALT_mensomancy|E] - Magic of mid\n$BULLET_WITH_TAB$[ALT_materomancy|E] - Magic of non-living\n$BULLET_WITH_TAB$[ALT_aetherimancy|E] - Magic of space, time and fate\n\nTo affect reality in anyway there is for [ALT_ritual|E]."
+
+ game_concept_ALT_ritual: "Ritual"
+ game_concept_ALT_rituals: "Rituals"
+ game_concept_ALT_ritual_desc: "#bold Ritual#!, Complex process in which mage can manipulate world.\n\nRituals are mostly written or engraved circles with variety of symbols and patterns depending on school from which ritual come. In addition of arcane circle there is also a need for sacrifice, it can be blood, life-force, gold, material or even something vague as luck. In most cases sacrifice is based again on school of ritual mage want to cast."
+
+ game_concept_ALT_biomancy: "Biomancy"
+ game_concept_ALT_biomancer: "Biomancer"
+ game_concept_ALT_biomancy_desc: "#bold Biomancy#!, magic of flesh, living. School of [ALT_arcane|E] focusing on controlling bodies, healing and wounding as well genetic manipulations. Theoretically with Biomancy one can create new species, but no one ever successful made such [ALT_ritual|E]"
+
+ game_concept_ALT_mensomancy: "Mensomancy"
+ game_concept_ALT_mensomancer: "Mensomancer"
+ game_concept_ALT_mensomancy_desc: "#bold Mensomancy#!, magic of mind. School of [ALT_arcane|E] focusing on controlling minds of other, improving or destroying capability to think. With this school theoretically possible is creating new minds out of air, but no one did it in a long time."
+
+ game_concept_ALT_materomancy: "Materomancy"
+ game_concept_ALT_materomancer: "Materomancer"
+ game_concept_ALT_materomancy_desc: "#bold Materomancy#!, magic of non-living. School of [ALT_arcane|E] focusing on manipulating rocks, bricks as well improving or worsening them. At highest levels of this school one can transform themselves into, or create golem/s, half-living half-dead creature immune to old age."
+
+
+ game_concept_ALT_aetherimancy: "Aetherimancy"
+ game_concept_ALT_aetherimancer: "Aetherimancer"
+ game_concept_ALT_aetherimancy_desc: "#bold Aetherimancy#!, magic of space, time and fate. School of [ALT_arcane|E] focusing on controlling more abstract part of reality, as fate, space and time. At highest levels one can open gates to another world."
+
+ ALT_mage_study_decision: "Arcane Studies"
+ ALT_mage_study_decision_desc: "In your life you have heard legends and myths about magic and mages, Although you dismissed them as only rumors and fiction, With your current understanding of world thought that there can be magic in world isn't so unbelievable.\n\nMaybe I should take my time and study esoteric in search of [ALT_arcane|E]?"
+ ALT_mage_study_decision_tooltip: "Arcane Studies"
+ ALT_mage_study_decision_confirm: "Time to hit the books"
+ ALT_mage_study_decision_effect: "You will get an event in which you will decide what school of magic you will study, and maybe even understand and become mage!"
+
+ ALT_pursuit_events.0009.t: "Arcane Studies"
+ ALT_pursuit_events.0009.desc: "In your life you have heard legends and myths about magic and mages, Although you dismissed them as only rumors and fiction, With your current understanding of world thought that there can be magic in world isn't so unbelievable.\n\nSo you decided to hit the esoteric books and learn, study, and maybe even understand. Your journey into [ALT_arcane|E] begins now."
+ ALT_pursuit_events.0009.a: "I will study Body"
+ ALT_easier_biomancy_studing: "Future attempts to understand [ALT_biomancy|E] will be easier!"
+ ALT_pursuit_events.0009.b: "I will study Mind"
+ ALT_easier_mensomancy_studing: "Future attempts to understand [ALT_mensomancy|E] will be easier!"
+ ALT_pursuit_events.0009.c: "I will study Rock"
+ ALT_easier__materomancy_studing: "Future attempts to understand [ALT_materomancy|E] will be easier!"
+ ALT_pursuit_events.0009.d: "I will study Fate"
+ ALT_easier_aetherimancy_studing: "Future attempts to understand [ALT_aetherimancy|E] will be easier!"
+ ALT_pursuit_events.0009.e: "Nevermind."
