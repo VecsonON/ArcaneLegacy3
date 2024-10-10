@@ -7,6 +7,7 @@ random_yearly_everyone_pulse = {
 on_game_start_after_lobby = {
     on_actions = { 
 		ALT_welcome_event
+        ALT_forgotten_lab_generation
 	}
 }
 ALT_yearly_playable_pulse = {
@@ -194,5 +195,43 @@ ALT_welcome_event = {
 		every_player = {
 			trigger_event = ALT_welcome_events.0001
 		}
+	}
+}
+
+ALT_forgotten_lab_generation = {
+    effect = {
+        set_local_variable = {
+			name = forgotten_lab_amount
+			value = 0
+		}
+		every_empire = {
+			random_de_jure_county = {
+				random_county_province = {
+					limit = { has_special_building = no has_holding = yes }
+					add_special_building = forgotten_lab
+					change_local_variable = {
+						name = forgotten_lab_amount
+						add = 1
+					}
+				}
+			}
+		}
+		if = { limit = { local_var:forgotten_lab_amount < 5 }
+			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
+			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
+			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
+			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
+		}
+    }
+}
+
+ALT_forgotten_lab_exploration_on_action = {
+	random_events = {
+		100 = ALT_forgotten_lab_exploration_events.0001
+		100 = ALT_forgotten_lab_exploration_events.0002
+		100 = ALT_forgotten_lab_exploration_events.0003
+		# 100 = ALT_forgotten_lab_exploration_events.0004
+		# 100 = ALT_forgotten_lab_exploration_events.0005
+		# 100 = ALT_forgotten_lab_exploration_events.0006 # 0002 Alt
 	}
 }

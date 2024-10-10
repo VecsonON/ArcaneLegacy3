@@ -1,0 +1,51 @@
+﻿l_english:
+ ALT_forgotten_lab_exploration_events.0001.title: "Mundane Ruins"
+ ALT_forgotten_lab_exploration_events.0001.desc: "And there I am, at completely normal ruins, There is nothing arcane nor supernatural here. This expedition was complete failure"
+ ALT_forgotten_lab_exploration_events.0001.a: "...Or is it?"
+ ALT_forgotten_lab_exploration_events.0001.a.tt: "There is chance to found something."
+ ALT_forgotten_lab_exploration_events.0001.b: "Unfortunate"
+
+ ALT_forgotten_lab_exploration_events.0002.title: "Heavily Pillaged Arcane Lab"
+ ALT_forgotten_lab_exploration_events.0002.desc: "And there I am, at something non mage would call mundane ruins, But with help of few [ALT_rituals|E] I was able to detect hidden from normal eyes arcane lab. Unfortunately I wasn't first to discover it, as I also can trace signs of pillage"
+ ALT_forgotten_lab_exploration_events.0002.a: "If nothing, still worth searching"
+ ALT_forgotten_lab_exploration_events.0002.b: "Let's go home."
+
+ ALT_forgotten_lab_exploration_events.0012.title: "Heavily Pillaged Arcane Lab"
+ ALT_forgotten_lab_exploration_events.0012.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found nearly completely destroyed and pillaged lab. There is probably still some useful materials but nothing ground breaking."
+ ALT_forgotten_lab_exploration_events.0012.a: "I should collect everything that can be sold"
+ ALT_forgotten_lab_exploration_events.0012.b: "There can still be some untouched or just readable papers"
+
+ ALT_forgotten_lab_exploration_events.0022.title: "Heavily Pillaged Arcane Library"
+ ALT_forgotten_lab_exploration_events.0022.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found nearly completely destroyed and pillaged library. There is probably still some useful books but nothing ground breaking."
+ ALT_forgotten_lab_exploration_events.0022.a: "I should collect everything that can be sold"
+ ALT_forgotten_lab_exploration_events.0022.b: "There can still be some untouched or just readable papers"
+
+ ALT_forgotten_lab_exploration_events.0032.title: "Nothing but trash"
+ ALT_forgotten_lab_exploration_events.0032.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found completely destroyed and pillage corridors or maybe they were rooms? Anyway there is nothing useful nor even possible to sell..."
+ ALT_forgotten_lab_exploration_events.0032.a: "Unfortunate"
+
+ ALT_forgotten_lab_exploration_events.0042.title: "Hidden passage!"
+ ALT_forgotten_lab_exploration_events.0042.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found completely destroyed and pillage corridors or maybe they were rooms? But when I was about to return to surface, I found another layer of [ALT_rituals|E] hiding another hidden passage! And now I am at nearly untouched personal office!"
+ ALT_forgotten_lab_exploration_events.0042.a: "Read their's personal diary"
+ ALT_forgotten_lab_exploration_events.0042.b: "Read their's research journal"
+
+ ALT_forgotten_lab_exploration_events.0003.title: "Somewhat pillaged arcane lab"
+ ALT_forgotten_lab_exploration_events.0003.desc: "And there I am, at something non mage would call mundane ruins, But with help of few [ALT_rituals|E] I was able to detect hidden from normal eyes arcane lab. Unfortunately I wasn't first to discover it, as I also can trace signs of pillage, but at least I wasn't the last."
+ ALT_forgotten_lab_exploration_events.0003.a: "If nothing, still worth searching"
+ ALT_forgotten_lab_exploration_events.0003.b: "Let's go home."
+
+ ALT_forgotten_lab_exploration_events.0013.title: "Weird Arcane Machine"
+ ALT_forgotten_lab_exploration_events.0013.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found massive room with weird machine covered with ritualistic circles. And my presence definitely triggered it."
+ ALT_forgotten_lab_exploration_events.0013.a: "Let's see what it will do!"
+ ALT_forgotten_lab_exploration_events.0013.b: "RUN!"
+
+ ALT_forgotten_lab_exploration_events.0023.title: "Pillaged lab"
+ ALT_forgotten_lab_exploration_events.0023.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found laboratory with nearly untouched materials! there definitely is still something useful!"
+ ALT_forgotten_lab_exploration_events.0023.a: "I should collect everything that can be sold"
+ ALT_forgotten_lab_exploration_events.0023.b: "There can still be some untouched or just readable papers"
+
+ ALT_forgotten_lab_exploration_events.0033.title: "Pillaged library"
+ ALT_forgotten_lab_exploration_events.0033.desc: "I have entered passage hidden behind few still active [ALT_rituals|E], and found library with nearly untouched books! there definitely is still something useful!"
+ ALT_forgotten_lab_exploration_events.0033.a: "I should collect everything that can be sold"
+ ALT_forgotten_lab_exploration_events.0033.b: "There can still be some untouched or just readable papers"
+

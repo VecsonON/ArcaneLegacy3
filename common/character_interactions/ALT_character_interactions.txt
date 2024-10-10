@@ -93,9 +93,9 @@ ALT_experiment_on_prisoner_interaction = {
 	is_shown = { 
 		scope:actor = { 
 			OR = { 
-				AND = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = biomancy COUNT = 100 } } }
-				AND = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = mensomancy COUNT = 100 } } }
-				AND = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = aetherimancy COUNT = 100 } } }
+				AND = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 100 } } }
+				AND = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 100 } } }
+				AND = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_aetherimancy COUNT = 100 } } }
 			} 
 		} 
 		scope:recipient = { is_imprisoned_by = scope:actor } }
@@ -149,7 +149,7 @@ ALT_experiment_on_prisoner_interaction = {
 
 		scope:actor = {
 			random_list = {
-				1 = { trigger = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = biomancy COUNT = 100 } } } 
+				1 = { trigger = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 100 } } } 
 					random_list = {
 						1 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 5 } }
 						2 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 4 } }
@@ -158,7 +158,7 @@ ALT_experiment_on_prisoner_interaction = {
 						8 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 1 } }
 					}
 				}
-				1 = { trigger = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = mensomancy COUNT = 100 } } }
+				1 = { trigger = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 100 } } }
 					random_list = {
 						1 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 5 } }
 						2 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 4 } }
@@ -167,7 +167,7 @@ ALT_experiment_on_prisoner_interaction = {
 						8 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 1 } }
 					}
 				}
-				1 = { trigger = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = aetherimancy COUNT = 100 } } } 
+				1 = { trigger = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_aetherimancy COUNT = 100 } } } 
 					random_list = {
 						1 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 5 } }
 						2 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 4 } }
@@ -190,7 +190,7 @@ ALT_experiment_on_current_location_interaction = {
 
 	common_interaction = yes
 
-	is_shown = { scope:actor = { has_character_flag = ALT_know_materomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = ateromancy COUNT = 100 } } } scope:recipient = scope:actor }
+	is_shown = { scope:actor = { has_character_flag = ALT_know_materomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_materomancy COUNT = 100 } } } scope:recipient = scope:actor }
 
 	cooldown = { years = 1 }
 

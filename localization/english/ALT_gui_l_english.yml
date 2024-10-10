@@ -86,3 +86,15 @@
  ALT_pursuit_events.0009.d: "I will study Fate"
  ALT_easier_aetherimancy_studing: "Future attempts to understand [ALT_aetherimancy|E] will be easier!"
  ALT_pursuit_events.0009.e: "Nevermind."
+
+ ALT_forgotten_lab_exploration: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_selection_tooltip: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_desc: "Every mage will in their lifespan create an arcane lab, place where they can study arcane in peace, so what if I myself will go and loot forgotten ones?"
+ ALT_forgotten_lab_exploration_province_desc: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_host_desc: "$BULLET_WITH_TAB$[gold_i|E][gold|E]\n$BULLET_WITH_TAB$[lifestyle_experience|E]\n$BULLET_WITH_TAB$#low W(ork) I(n) P(rogress)#![artifacts|E]"
+ ALT_forgotten_lab_exploration_guest_desc: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_conclusion_desc: "My looting of forgotten lab is complete"
+
+ building_type_forgotten_lab: "Forgotten Ruins"
+ building_forgotten_lab: "Forgotten Ruins"
+ building_forgotten_lab_desc: "There are some forgotten ruins, but no one every did discover here something important"
