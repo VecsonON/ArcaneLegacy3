@@ -62,7 +62,7 @@
 
  game_concept_ALT_secrecy: "Secrecy"
  game_concept_ALT_secrecy_i: "@ALT_secrecy_icon!"
- game_concept_ALT_secrecy_desc: "#bold Secrecy#!, A measure of how much your magical practice is hidden from public. As [ALT_arcane|E] is consider the worst crime against world by many, mages has withdraw from showing their's knowledge publicly in most of the world. Even in places where [ALT_arcane|E] is tolerated or even venerated mages still hide their's power for peace of mind.\n\nIn game this is represented by #italic secrecy#!, number from #N 0#!,#weak  you are discovered and knowledge of your hobby is easily known#!, to #P 100#!,#weak  your practice is unknown to even most vivid observers#!\n\nEvery month if your secrecy is above #N 0#! it will increase by your [intrigue|E] divided by 50.\n\n\nTo see your secrecy, hover over [ALT_arcane|E] GUI button"
+ game_concept_ALT_secrecy_desc: "#bold Secrecy#!, A measure of how much your magical practice is hidden from the public. As the [ALT_arcane|E] is considered the worst crime against the world by many, mages have to refrain from showing their knowledge publicly in most of the world. Even in places where the [ALT_arcane|E] is tolerated or even venerated mages still hide their power for peace of mind.\n\nIn game this is represented by #italic secrecy#!, number from #N 0#!,#weak  you are discovered and knowledge of your hobby is easily known#!, to #P 100#!,#weak  your practice is unknown to even most vivid observers#!\n\nEvery month if your secrecy is above #N 0#! it will increase by your [intrigue|E] divided by 50.\n\n\nTo see your secrecy, hover over [ALT_arcane|E] GUI button"
 
  game_concept_ALT_ritual: "Ritual"
  game_concept_ALT_rituals: "Rituals"
