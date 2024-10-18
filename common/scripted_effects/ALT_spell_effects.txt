@@ -1,4 +1,78 @@
-﻿### BIOMANCY
+﻿ALT_study_effect = {
+    duel = {
+        skill = learning
+        value = 40
+        5 = {
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 1
+            }
+            modifier = {
+                var:current_pursuit = { has_variable = se_success_chance }
+                add = {
+                    value = var:current_pursuit.var:se_success_chance
+                    multiply = 15
+                }
+            }
+            if = { limit = { var:current_pursuit = { has_variable = se_success_chance } } custom_tooltip = ALT_study_effect_tt }
+            send_interface_toast = {
+                title = board_games.0001.tt.success
+                ALT_school_xp_gain = { SCHOOL = $SCHOOL$ COUNT = ALT_xp_gain }
+            }
+        }
+        5 = {
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = -1
+            }
+            send_interface_toast = {
+                title = board_games.0001.tt.failure
+            }
+        }
+    }
+}
+
+ALT_seek_new_school_effect = {
+    duel = {
+        skill = learning
+        value = 60
+        5 = {
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = 1
+            }
+            modifier = {
+                trigger_if = { limit = { has_variable = current_pursuit } var:current_pursuit = { has_variable = se_success_chance } }
+                trigger_else = { always = no }
+                add = {
+                    value = var:current_pursuit.var:se_success_chance
+                    multiply = 15
+                }
+            }
+            if = { limit = { has_variable = current_pursuit var:current_pursuit = { has_variable = se_success_chance } } custom_tooltip = ALT_study_effect_tt }
+            send_interface_toast = {
+                title = board_games.0001.tt.success
+                random_list = {
+                    1 = { trigger = { NOT = { has_character_flag = ALT_know_biomancy } } ALT_become_biomancer = yes }
+                    1 = { trigger = { NOT = { has_character_flag = ALT_know_mensomancy } } ALT_become_mensomancer = yes }
+                    1 = { trigger = { NOT = { has_character_flag = ALT_know_materomancy } } ALT_become_materomancer = yes }
+                    1 = { trigger = { NOT = { has_character_flag = ALT_know_aetherimancy } } ALT_become_aetherimancer = yes }
+                }
+            }
+        }
+        5 = {
+            compare_modifier = {
+                value = scope:duel_value
+                multiplier = -1
+            }
+            send_interface_toast = {
+                title = board_games.0001.tt.failure
+            }
+        }
+    }
+}
+
+### BIOMANCY
 ALT_ritual_of_treatment_effect = {
     duel = {
         skill = learning
@@ -22,6 +96,7 @@ ALT_ritual_of_treatment_effect = {
     $SACRIFICE$ = {
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 ALT_ritual_of_decline_effect = {
     duel = {
@@ -46,6 +121,7 @@ ALT_ritual_of_decline_effect = {
     $SACRIFICE$ = {
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 
 ALT_ritual_of_health_effect = {
@@ -75,6 +151,7 @@ ALT_ritual_of_health_effect = {
         increase_wounds_effect = { REASON = torture }
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 ALT_ritual_of_maiming_effect = {
     duel = {
@@ -103,6 +180,27 @@ ALT_ritual_of_maiming_effect = {
         increase_wounds_effect = { REASON = torture }
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -10 }
+}
+ALT_inscription_of_harm_effect = {
+    duel = {
+        skill = learning
+        value = ritual_apprentice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_harm_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 
 ALT_ritual_of_curing_effect = {
@@ -137,6 +235,7 @@ ALT_ritual_of_curing_effect = {
         increase_wounds_effect = { REASON = torture }
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 ALT_ritual_of_bad_health_effect = {
     duel = {
@@ -170,6 +269,7 @@ ALT_ritual_of_bad_health_effect = {
         increase_wounds_effect = { REASON = torture }
         increase_wounds_effect = { REASON = torture }
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 
 ALT_ritual_of_long_life_effect = {
@@ -190,6 +290,7 @@ ALT_ritual_of_long_life_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -25 }
 }
 ALT_ritual_of_rotten_blood_effect = {
     duel = {
@@ -224,6 +325,7 @@ ALT_ritual_of_rotten_blood_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -25 }
     
 }
 
@@ -261,6 +363,7 @@ ALT_ritual_of_golden_blood_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -30 }
     
 }
 ALT_ritual_of_perfect_body_effect = {
@@ -286,6 +389,7 @@ ALT_ritual_of_perfect_body_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -30 }
     
 }
 ALT_ritual_of_bad_blood_effect = {
@@ -311,6 +415,7 @@ ALT_ritual_of_bad_blood_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -40 }
 }
 
 ALT_ritual_of_eternal_youth_effect = {
@@ -331,7 +436,28 @@ ALT_ritual_of_eternal_youth_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -50 }
     
+}
+ALT_inscription_of_organ_failure_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        25 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_biomancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_organ_failure_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_biomancy multiply = -1 } }
+            
+        }
+    }    
+    ALT_change_secrecy = { VALUE = -15 }
 }
 
 ### MENSOMANCY
@@ -358,6 +484,7 @@ ALT_ritual_of_clear_mind_effect = {
     $SACRIFICE$ = {
         add_stress = 50
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 ALT_ritual_of_cluttery_mind_effect = {
     duel = {
@@ -382,6 +509,7 @@ ALT_ritual_of_cluttery_mind_effect = {
     $SACRIFICE$ = {
         add_stress = 50
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 
 ALT_ritual_of_perfect_mind_effect = {
@@ -407,6 +535,7 @@ ALT_ritual_of_perfect_mind_effect = {
     $SACRIFICE$ = {
         add_stress = 75
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 ALT_ritual_of_empty_mind_effect = {
     duel = {
@@ -431,6 +560,7 @@ ALT_ritual_of_empty_mind_effect = {
     $SACRIFICE$ = {
         add_stress = 75
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 
 ALT_ritual_of_good_impressions_effect = {
@@ -456,6 +586,7 @@ ALT_ritual_of_good_impressions_effect = {
     $SACRIFICE$ = {
         add_stress = 100
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 ALT_ritual_of_bad_impressions_effect = {
     duel = {
@@ -480,6 +611,27 @@ ALT_ritual_of_bad_impressions_effect = {
     $SACRIFICE$ = {
         add_stress = 100
     }
+    ALT_change_secrecy = { VALUE = -15 }
+}
+ALT_inscription_of_peace_effect = {
+    duel = {
+        skill = learning
+        value = ritual_adept_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_peace_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 
 ALT_ritual_of_servitude_effect = {
@@ -504,6 +656,7 @@ ALT_ritual_of_servitude_effect = {
     $SACRIFICE$ = {
         add_stress = 150
     }
+    ALT_change_secrecy = { VALUE = -20 }
 }
 ALT_ritual_of_mental_instability_effect = {
     duel = {
@@ -536,6 +689,7 @@ ALT_ritual_of_mental_instability_effect = {
     $SACRIFICE$ = {
         add_stress = 150
     }
+    ALT_change_secrecy = { VALUE = -20 }
 }
 
 ALT_ritual_of_personality_morph_effect = {
@@ -557,6 +711,7 @@ ALT_ritual_of_personality_morph_effect = {
     $SACRIFICE$ = {
         add_stress = 100
     }
+    ALT_change_secrecy = { VALUE = -30 }
 }
 ALT_ritual_of_mental_health_effect = {
     duel = {
@@ -589,6 +744,7 @@ ALT_ritual_of_mental_health_effect = {
     $SACRIFICE$ = {
         add_stress = 200
     }
+    ALT_change_secrecy = { VALUE = -30 }
 }
 
 ALT_ritual_of_eternal_servitude_effect = {
@@ -615,6 +771,7 @@ ALT_ritual_of_eternal_servitude_effect = {
     $SACRIFICE$ = {
         add_stress = 300
     }
+    ALT_change_secrecy = { VALUE = -40 }
 }
 ALT_ritual_of_mind_transfer_effect = {
     duel = {
@@ -664,6 +821,27 @@ ALT_ritual_of_mind_transfer_effect = {
         }
     }
     execute_prisoner_effect = { VICTIM = $SACRIFICE$ EXECUTIONER = ROOT }
+    ALT_change_secrecy = { VALUE = -40 }
+}
+ALT_inscription_of_self_harm_effect = {
+    duel = {
+        skill = learning
+        value = ritual_archmaster_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_mensomancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_self_harm_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_mensomancy multiply = -1 } }
+            
+        }
+    }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 
 ### MATEROMANCY
@@ -688,6 +866,7 @@ ALT_ritual_of_iron_stone_effect = {
     ROOT = {
         remove_short_term_gold = 100
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 ALT_ritual_of_weak_iron_effect = {
     duel = {
@@ -709,6 +888,29 @@ ALT_ritual_of_weak_iron_effect = {
     ROOT = {
         remove_short_term_gold = 100
     }
+    ALT_change_secrecy = { VALUE = -5 }
+}
+ALT_inscription_of_elements_effect = {
+    duel = {
+        skill = learning
+        value = ritual_novice_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_expert } $TARGET$ = { add_artifact_modifier = ALT_inscription_of_elements_expert_modifier } }
+            else_if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_adept } $TARGET$ = { add_artifact_modifier = ALT_inscription_of_elements_adept_modifier } }
+            else_if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_apprentice } $TARGET$ = { add_artifact_modifier = ALT_inscription_of_elements_apprentice_modifier } }
+            else = { add_artifact_modifier = ALT_inscription_of_elements_novice_modifier }
+            set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+           
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 
 ALT_ritual_of_dirt_stone_effect = {
@@ -734,6 +936,7 @@ ALT_ritual_of_dirt_stone_effect = {
     ROOT = {
         remove_short_term_gold = 150
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 ALT_ritual_of_broken_stones_effect = {
     duel = {
@@ -758,6 +961,7 @@ ALT_ritual_of_broken_stones_effect = {
     ROOT = {
         remove_short_term_gold = 150
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 
 ALT_ritual_of_beautiful_city_effect = {
@@ -783,6 +987,7 @@ ALT_ritual_of_beautiful_city_effect = {
     ROOT = {
         remove_short_term_gold = 200
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 ALT_ritual_of_hideous_city_effect = {
     duel = {
@@ -807,6 +1012,7 @@ ALT_ritual_of_hideous_city_effect = {
     ROOT = {
         remove_short_term_gold = 200
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 
 ALT_ritual_of_golden_stone_effect = {
@@ -829,6 +1035,7 @@ ALT_ritual_of_golden_stone_effect = {
     ROOT = {
         remove_short_term_gold = 200
     }
+    ALT_change_secrecy = { VALUE = -25 }
 }
 ALT_ritual_of_stoneish_gold_effect = {
     duel = {
@@ -850,6 +1057,7 @@ ALT_ritual_of_stoneish_gold_effect = {
     ROOT = {
         remove_short_term_gold = 200
     }
+    ALT_change_secrecy = { VALUE = -25 }
 }
 
 ALT_ritual_of_golem_effect = {
@@ -885,6 +1093,7 @@ ALT_ritual_of_golem_effect = {
         }
     }
     destroy_artifact = $SACRIFICE$
+    ALT_change_secrecy = { VALUE = -80 }
 }
 ALT_ritual_of_golemhood_effect = {
     duel = {
@@ -902,6 +1111,27 @@ ALT_ritual_of_golemhood_effect = {
         }
     }
     destroy_artifact = $SACRIFICE$
+    ALT_change_secrecy = { VALUE = -99 }
+}
+ALT_inscription_of_natural_disasters_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_materomancy }
+            $TARGET$ ={
+                add_artifact_modifier = ALT_inscription_of_natural_disasters_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_materomancy multiply = -1 } }
+            
+        }
+    }
+    ALT_change_secrecy = { VALUE = -50 }
 }
 
 ALT_ritual_of_golem_army_effect = {
@@ -932,6 +1162,7 @@ ALT_ritual_of_golem_army_effect = {
         }
     }
     destroy_artifact = $SACRIFICE$
+    ALT_change_secrecy = { VALUE = -100 }
 }
 ALT_ritual_of_medusa_sight_effect = {
     duel = {
@@ -949,6 +1180,7 @@ ALT_ritual_of_medusa_sight_effect = {
         }
     }
     ROOT = { remove_short_term_gold = 200 }
+    ALT_change_secrecy = { VALUE = -99 }
 }
 
 #AETHRICMANCY
@@ -978,6 +1210,7 @@ ALT_ritual_of_good_luck_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -1 }
 }
 ALT_ritual_of_bad_luck_effect = {
     duel = {
@@ -1005,6 +1238,7 @@ ALT_ritual_of_bad_luck_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -1 }
 }
 
 ALT_ritual_of_fast_movement_effect = {
@@ -1033,6 +1267,7 @@ ALT_ritual_of_fast_movement_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 ALT_ritual_of_slow_movement_effect = {
     duel = {
@@ -1060,6 +1295,7 @@ ALT_ritual_of_slow_movement_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -5 }
 }
 
 ALT_ritual_of_future_insight_effect = {
@@ -1085,6 +1321,7 @@ ALT_ritual_of_future_insight_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 ALT_ritual_of_fast_time_effect = {
     duel = {
@@ -1107,6 +1344,7 @@ ALT_ritual_of_fast_time_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 
 ALT_ritual_of_slow_time_effect = {
@@ -1135,6 +1373,7 @@ ALT_ritual_of_slow_time_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -15 }
 }
 ALT_ritual_of_teleportation_effect = {
     duel = {
@@ -1162,6 +1401,26 @@ ALT_ritual_of_teleportation_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -25 }
+}
+ALT_inscription_of_space_distortion_effect = {
+    duel = {
+        skill = learning
+        value = ritual_expert_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_space_distortion_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+        }
+    }
+    ALT_change_secrecy = { VALUE = -10 }
 }
 
 ALT_ritual_of_stopping_time_effect = {
@@ -1185,6 +1444,7 @@ ALT_ritual_of_stopping_time_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -40 }
 }
 ALT_ritual_of_delay_death_mark_effect = {
     duel = {
@@ -1212,6 +1472,26 @@ ALT_ritual_of_delay_death_mark_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -35 }
+}
+ALT_inscription_of_time_distortion_effect = {
+    duel = {
+        skill = learning
+        value = ritual_master_duel_value
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = 1 }
+            modifier = { add = xp_ALT_school_aetherimancy }
+            $TARGET$ = {
+                add_artifact_modifier = ALT_inscription_of_time_distortion_modifier
+                set_variable = { name = ALT_number_of_inscriptions value = 1 } # TODO: More inscriptions in single artifact!
+            }
+        }
+        50 = {
+            compare_modifier = { value = scope:duel_value multiplier = -1 }
+            modifier = { add = { value = xp_ALT_school_aetherimancy multiply = -1 } }
+        }
+    }
+    ALT_change_secrecy = { VALUE = -20 }
 }
 
 ALT_ritual_of_death_mark_effect = {
@@ -1240,6 +1520,7 @@ ALT_ritual_of_death_mark_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -20 }
 }
 ALT_ritual_of_different_world_effect = {
     duel = {
@@ -1261,4 +1542,5 @@ ALT_ritual_of_different_world_effect = {
             
         }
     }
+    ALT_change_secrecy = { VALUE = -60 }
 }

@@ -37,3 +37,10 @@ ALT_is_mage = {
         }
     }
 }
+ALT_is_discovered_mage = {
+    OR = {
+        has_trait = ALT_discovered_mage
+        ALT_secrecy <= 0
+        var:ALT_secrecy ?= 0
+    }
+}

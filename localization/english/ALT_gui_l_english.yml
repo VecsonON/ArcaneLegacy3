@@ -1,12 +1,16 @@
 ﻿l_english:
- arcane_button_tooltip: "You are [GetPlayer.Custom('ALT_overall_mastery_level')] Mage"
+ arcane_button_tooltip: "You are [GetPlayer.Custom('ALT_overall_mastery_level')] Mage [GetPlayer.Custom('ALT_secrecy_loca')]"
+
+ ALT_secrecy_loca_yes: "\n\nYour [ALT_secrecy|E] is: [ALT_secrecy_i][GetPlayer.MakeScope.ScriptValue('ALT_secrecy')|V1]\nMonthly [ALT_secrecy|E] change [ALT_secrecy_i][GetPlayer.MakeScope.ScriptValue('ALT_secrecy_monthly')|+=V2]"
 
  ARCANE_VIEW_HEADING: "[ALT_arcane|E]"
- ARCANE_RITUALS: "[ALT_rituals|E]"
+ ARCANE_RITUALS: "Casting"
  ARCANE_LEARNING: "Studies"
  ARCANE_PURSUITS: "Pursuits"
 
  arcane_start_learning: "Study"
+ arcane_seek_new_school: "Study [ALT_arcane|E]"
+ ALT_seek_new_schools_tt: "#weak Via random events during pursuit, success chance can be increased!#!"
 
  choose_ritual: "Chose"
  ALT_target: "Target:"
@@ -28,6 +32,13 @@
  ALT_apprentice_name: "Apprentice [ALT_ritual|E]"
  ALT_novice_name: "Novice [ALT_ritual|E]"
 
+ ALT_inscription_archmaster_name: "Archmaster [ALT_inscription|E]"
+ ALT_inscription_master_name: "Master [ALT_inscription|E]"
+ ALT_inscription_expert_name: "Expert [ALT_inscription|E]"
+ ALT_inscription_adept_name: "Adept [ALT_inscription|E]"
+ ALT_inscription_apprentice_name: "Apprentice [ALT_inscription|E]"
+ ALT_inscription_novice_name: "Novice [ALT_inscription|E]"
+
  ALT_school_level_archmaster: "Archmaster"
  ALT_school_level_master: "Master"
  ALT_school_level_expert: "Expert"
@@ -39,6 +50,7 @@
  ALT_pursuit_events.0001.title: "Pursuit is Finished!"
  ALT_pursuit_events.0001.desc: "Pursuit is finished. And now is time to collect fruits of your work!"
  ALT_pursuit_events.0001.a: "Finally"
+ ALT_pursuit_events.0001.a.tt: "Pursuit Complete!"
  ALT_pursuit_events.0001.b: "You know what? I will wait a bit more"
  ALT_pursuit_events.0001.b.tt: "Pause current pursuit."
  
@@ -48,9 +60,17 @@
  game_concept_ALT_arcane: "Arcane"
  game_concept_ALT_arcane_desc: "#bold Arcane#!, another term referring to magic-like manipulation of reality. Arcane is divided on 4 schools each manipulating different part of reality\n\n$BULLET_WITH_TAB$[ALT_biomancy|E] - Magic of living\n$BULLET_WITH_TAB$[ALT_mensomancy|E] - Magic of mid\n$BULLET_WITH_TAB$[ALT_materomancy|E] - Magic of non-living\n$BULLET_WITH_TAB$[ALT_aetherimancy|E] - Magic of space, time and fate\n\nTo affect reality in anyway there is for [ALT_ritual|E]."
 
+ game_concept_ALT_secrecy: "Secrecy"
+ game_concept_ALT_secrecy_i: "@ALT_secrecy_icon!"
+ game_concept_ALT_secrecy_desc: "#bold Secrecy#!, A measure of how much your magical practice is hidden from public. As [ALT_arcane|E] is consider the worst crime against world by many, mages has withdraw from showing their's knowledge publicly in most of the world. Even in places where [ALT_arcane|E] is tolerated or even venerated mages still hide their's power for peace of mind.\n\nIn game this is represented by #italic secrecy#!, number from #N 0#!,#weak  you are discovered and knowledge of your hobby is easily known#!, to #P 100#!,#weak  your practice is unknown to even most vivid observers#!\n\nEvery month if your secrecy is above #N 0#! it will increase by your [intrigue|E] divided by 50.\n\n\nTo see your secrecy, hover over [ALT_arcane|E] GUI button"
+
  game_concept_ALT_ritual: "Ritual"
  game_concept_ALT_rituals: "Rituals"
- game_concept_ALT_ritual_desc: "#bold Ritual#!, Complex process in which mage can manipulate world.\n\nRituals are mostly written or engraved circles with variety of symbols and patterns depending on school from which ritual come. In addition of arcane circle there is also a need for sacrifice, it can be blood, life-force, gold, material or even something vague as luck. In most cases sacrifice is based again on school of ritual mage want to cast."
+ game_concept_ALT_ritual_desc: "#bold Ritual#!, Complex process in which mage can manipulate world.\n\nRituals are mostly written or engraved circles with variety of symbols and patterns depending on school from which ritual come. In addition of arcane circle there is also a need for sacrifice, it can be blood, life-force, gold, material or even something vague as luck. In most cases sacrifice is based again on school of ritual mage want to cast.\n\nIn game they are represented as 'triggerable' effects in [ALT_arcane|E] GUI"
+
+ game_concept_ALT_inscription: "Inscription"
+ game_concept_ALT_inscriptions: "Inscriptions"
+ game_concept_ALT_inscription_desc: "#bold Inscription#!, a specific usage of [ALT_ritual|E], where instead of using ritual as single effect, ritual is inscribed onto [artifact|E] in incomplete form, so during fight or emergency ritual can be quickly completed and triggered. Inscriptions don't require sacrifice, but are much smaller in scope and in effect.\nImportant to say is that each [artifact|E] can contain only 1 Inscription in themselves, but there are exceptions if stated otherwise\n\nIn game they are represented as [modifiers|E] in [artifact|E] giving [prowess|E], [advantage|E] or other combat [modifier|E] while also increasing [stress|E] gain proportional to level."
 
  game_concept_ALT_biomancy: "Biomancy"
  game_concept_ALT_biomancer: "Biomancer"
@@ -68,6 +88,23 @@
  game_concept_ALT_aetherimancy: "Aetherimancy"
  game_concept_ALT_aetherimancer: "Aetherimancer"
  game_concept_ALT_aetherimancy_desc: "#bold Aetherimancy#!, magic of space, time and fate. School of [ALT_arcane|E] focusing on controlling more abstract part of reality, as fate, space and time. At highest levels one can open gates to another world."
+
+ game_concept_ALT_transformancy: "Transformancy"
+ game_concept_ALT_transformancer: "Transformancer"
+ game_concept_ALT_transformancy_desc: "#bold Transformancy#!, Advance use of [ALT_biomancy|E], to the point where it can be called it's own school. If [ALT_biomancy|E] is like sculpting clay, Transformancy is manipulating each gene and atom."
+
+ game_concept_ALT_astralmancy: "Astralmancy"
+ game_concept_ALT_astralmancer: "Astralmancer"
+ game_concept_ALT_astralmancy_desc: "#bold Astralmancy#!, Advance use of [ALT_mensomancy|E], to the point where it can be called it's own school. [ALT_mensomancy|E] is School of controlling mind, Astralmancy is about controlling astral, 'Space' uniting all minds."
+
+ game_concept_ALT_morsmancy: "Morsmancy"
+ game_concept_ALT_morsmancer: "Morsmancer"
+ game_concept_ALT_morsmancy_desc: "#bold Morsmancy#!, Advance use of [ALT_materomancy|E], to the point where it can be called it's own school. While [ALT_materomancy|E] is School of manipulating non-living, Morsmancy is about controlling dead."
+
+ game_concept_ALT_superimancy: "Superimancy"
+ game_concept_ALT_superimancer: "Superimancer"
+ game_concept_ALT_superimancy_desc: "#bold Superimancy#!, Advance use of [ALT_aetherimancy|E], to the point where it can be called it's own school. If [ALT_aetherimancy|E] is School of manipulating abstract concepts like fate, space and time, Superimancy is about communicating and controlling higher beings like gods and demons"
+
 
  ALT_mage_study_decision: "Arcane Studies"
  ALT_mage_study_decision_desc: "In your life you have heard legends and myths about magic and mages, Although you dismissed them as only rumors and fiction, With your current understanding of world thought that there can be magic in world isn't so unbelievable.\n\nMaybe I should take my time and study esoteric in search of [ALT_arcane|E]?"
@@ -94,7 +131,29 @@
  ALT_forgotten_lab_exploration_host_desc: "$BULLET_WITH_TAB$[gold_i|E][gold|E]\n$BULLET_WITH_TAB$[lifestyle_experience|E]\n$BULLET_WITH_TAB$#low W(ork) I(n) P(rogress)#![artifacts|E]"
  ALT_forgotten_lab_exploration_guest_desc: "Forgotten Lab Exploration"
  ALT_forgotten_lab_exploration_conclusion_desc: "My looting of forgotten lab is complete"
+ ALT_forgotten_lab_exploration_searching: "Exploring"
+ ALT_forgotten_lab_exploration_searching_desc: "I shall explore these ruins!"
 
  building_type_forgotten_lab: "Forgotten Ruins"
  building_forgotten_lab: "Forgotten Ruins"
  building_forgotten_lab_desc: "There are some forgotten ruins, but no one every did discover here something important"
+
+
+ trait_ALT_discovered_mage: "Discovered Mage"
+ trait_ALT_discovered_mage_desc: "This character's [ALT_arcane|E] hobby has been exposed"
+
+ rule_ALT_arcane_events: "#v (AL3)#!: [ALT_arcane|E] Events Frequency"
+ setting_ALT_arcane_events_rare: "Rare"
+ setting_ALT_arcane_events_rare_desc: "[ALT_arcane|E] Events will be Rare"
+ setting_ALT_arcane_events_default: "Default"
+ setting_ALT_arcane_events_default_desc: "[ALT_arcane|E] Events will be normal"
+ setting_ALT_arcane_events_frequent: "Frequent"
+ setting_ALT_arcane_events_frequent_desc: "[ALT_arcane|E] Events will be Frequent"
+ setting_ALT_arcane_events_very_frequent: "Very Frequent"
+ setting_ALT_arcane_events_very_frequent_desc: "[ALT_arcane|E] Events will be Very Frequent"
+
+ rule_ALT_secrecy_status: "#v (AL3)#!: [ALT_secrecy|E] Status"
+ setting_ALT_secrecy_enabled: "Enabled"
+ setting_ALT_secrecy_enabled_desc: "[ALT_secrecy|E] will be enabled, with all that comes with it."
+ setting_ALT_secrecy_disabled: "Disabled"
+ setting_ALT_secrecy_disabled_desc: "[ALT_secrecy|E] will be disabled, with all that comes with it."

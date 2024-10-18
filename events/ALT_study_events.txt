@@ -1,0 +1,318 @@
+﻿namespace = ALT_study_events
+
+scripted_effect ALT_se_increase_success_chance_by_1 = {
+	custom_tooltip = {
+		text = ALT_se_increase_success_chance_by_1
+		if = { limit = { NOT = { var:current_pursuit = { has_variable = se_success_chance } } } var:current_pursuit = { set_variable = { name = se_success_chance value = 0 } } }
+		var:current_pursuit = {
+			change_variable = {
+				name = se_success_chance
+				add = 1
+			}
+		}
+	}
+}
+scripted_effect ALT_se_increase_success_chance_by_2 = {
+	custom_tooltip = {
+		text = ALT_se_increase_success_chance_by_2
+		if = { limit = { NOT = { var:current_pursuit = { has_variable = se_success_chance } } } var:current_pursuit = { set_variable = { name = se_success_chance value = 0 } } }
+		var:current_pursuit = {
+			change_variable = {
+				name = se_success_chance
+				add = 2
+			}
+		}
+	}
+}
+scripted_effect ALT_se_increase_success_chance_by_3 = {
+	custom_tooltip = {
+		text = ALT_se_increase_success_chance_by_3
+		if = { limit = { NOT = { var:current_pursuit = { has_variable = se_success_chance } } } var:current_pursuit = { set_variable = { name = se_success_chance value = 0 } } }
+		var:current_pursuit = {
+			change_variable = {
+				name = se_success_chance
+				add = 3
+			}
+		}
+	}
+}
+
+ALT_study_events.0001 = { # Something isn't adding up
+    title = ALT_study_events.0001.title
+	type = character_event
+	desc = ALT_study_events.0001.desc
+	theme = witchcraft
+	left_portrait = root
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+		has_variable = current_pursuit
+	}
+
+	option = { #It is obvious!
+		name = ALT_study_events.0001.a
+        trigger = {
+            OR = {
+                has_trait = intellect_good
+                has_trait = shrewd 
+            }
+		}
+		trait = intellect_good_1
+		trait = intellect_good_2
+		trait = intellect_good_3
+		trait = shrewd
+		ALT_se_increase_success_chance_by_1 = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #Hmmm, Let's backtrack my steps...
+		name = ALT_study_events.0001.b
+        duel = {
+            skill = learning
+            value = 25
+            5 = {
+                compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+                    min = 0
+				}
+		        ALT_se_increase_success_chance_by_1 = yes
+            }
+            5 = {
+                compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+                    min = 0
+				}
+                add_stress = 25
+            }
+        }
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { #Meh, It will work out fine
+		name = ALT_study_events.0001.c
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+ALT_study_events.0002 = { # Work has slowned down, I need some inspiration.
+    title = ALT_study_events.0002.title
+	type = character_event
+	desc = ALT_study_events.0002.desc
+	theme = witchcraft
+	left_portrait = root
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+		has_variable = current_pursuit
+	}
+
+	option = { #Brute force never betrayed me!
+		name = ALT_study_events.0002.a
+        add_stress = 75
+        ALT_se_increase_success_chance_by_1 = yes
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { #Let's take a small break.
+		name = ALT_study_events.0002.b
+       
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { #Let's go for a walk!
+		name = ALT_study_events.0002.c
+        trigger = {
+            has_trait = athletic
+        }
+        trait = athletic
+        random = {
+            chance = 50
+            ALT_se_increase_success_chance_by_1 = yes
+        }
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = { #My Journal!
+		name = ALT_study_events.0002.d
+        trigger = {
+            has_trait = journaller
+        }
+        trait = journaller
+        random = {
+            chance = 50
+            ALT_se_increase_success_chance_by_1 = yes
+        }
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+ALT_study_events.0003 = { # Experiment TIME!
+    title = ALT_study_events.0003.title
+	type = character_event
+	desc = ALT_study_events.0003.desc
+	theme = witchcraft
+	left_portrait = root
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+		has_variable = current_pursuit
+	}
+
+	option = { #Use ME as subject!
+		name = ALT_study_events.0003.a
+        trigger = {
+            has_trait = eccentric
+		}
+		trait = eccentric
+		ALT_se_increase_success_chance_by_2 = yes
+        random_list = {
+            25 = {
+                increase_wounds_effect = { REASON = fight }
+            }
+            50 = {
+                add_stress = 50
+            }
+            25 = {
+
+            }
+        }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #Hmmm, Rat should suffice
+		name = ALT_study_events.0003.b
+        random = {
+            chance = 50
+            ALT_se_increase_success_chance_by_1 = yes
+        }
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { #Humans are best type of subjects
+		name = ALT_study_events.0003.c
+        location = {
+            county = {
+                change_development_level = -5
+            }
+        }
+        ALT_se_increase_success_chance_by_1 = yes
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+ALT_study_events.0004 = { # Work is working
+    title = ALT_study_events.0004.title
+	type = character_event
+	desc = ALT_study_events.0004.desc
+	theme = witchcraft
+	left_portrait = root
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+		has_variable = current_pursuit
+	}
+    immediate = {
+        ALT_se_increase_success_chance_by_1 = yes
+    }
+	option = { #I can do more!
+		name = ALT_study_events.0004.a
+        trigger = {
+            OR = {
+                has_trait = intellect_good
+                has_trait = shrewd 
+            }
+		}
+		trait = intellect_good_1
+		trait = intellect_good_2
+		trait = intellect_good_3
+		trait = shrewd
+		ALT_se_increase_success_chance_by_1 = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #I am not finished yet!
+		name = ALT_study_events.0004.b
+        duel = {
+            skill = learning
+            value = 25
+            5 = {
+                compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+                    min = 0
+				}
+		        ALT_se_increase_success_chance_by_1 = yes
+            }
+            5 = {
+                compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+                    min = 0
+				}
+                add_stress = 25
+            }
+        }
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { #Great!
+		name = ALT_study_events.0004.c
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}
+ALT_study_events.0005 = { # I need some materials.
+    title = ALT_study_events.0005.title
+	type = character_event
+	desc = ALT_study_events.0005.desc
+	theme = witchcraft
+	left_portrait = root
+	trigger = {
+		is_alive = yes
+		is_imprisoned = no
+		has_variable = current_pursuit
+	}
+
+	option = { #The more the better
+		name = ALT_study_events.0005.a
+        remove_short_term_gold = 250
+        ALT_se_increase_success_chance_by_2 = yes
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #That should sufice
+		name = ALT_study_events.0005.b
+        remove_short_term_gold = 50
+        ALT_se_increase_success_chance_by_1 = yes
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { #What I have currently should be enough.
+		name = ALT_study_events.0005.c
+		ai_chance = {
+			base = 10
+		}
+	}
+
+}

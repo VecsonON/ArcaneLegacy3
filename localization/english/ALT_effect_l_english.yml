@@ -4,7 +4,7 @@
 
   ALT_become_biomancer: "Become [ALT_biomancer|E]"
   ALT_become_mensomancer: "Become [ALT_mensomancer|E]"
-  ALT_become_materomacer: "Become [ALT_materomancer|E]"
+  ALT_become_materomancer: "Become [ALT_materomancer|E]"
   ALT_become_aetherimancer: "Become [ALT_aetherimancer|E]"
 
   ALT_is_mage: "Is a mage"
@@ -15,3 +15,11 @@
   ALT_sacrifice_character: "Sacrifice must be an Character"
   ALT_sacrifice_artifact: "Sacrifice must be an Artifact"
   ALT_sacrifice_title: "Sacrifice must be an Title"
+
+  ALT_artifact_is_already_inscribed: "[artifact|E] already has been inscribed!"
+
+  ALT_study_effect_tt: "#weak;P Thanks to your decisions during studying, success chance has been increased#!"
+
+  ALT_change_secrecy_subtract: "#N You [ALT_secrecy|E] will decrease by [ALT_secrecy_i][SCOPE.GetValue('temp_value')|+0]#!"
+  ALT_change_secrecy_add: "#P You [ALT_secrecy|E] will increase by [ALT_secrecy_i][SCOPE.GetValue('temp_value')|+0]#!"
+  ALT_change_secrecy_discovered: "#X You will be discovered!#!"

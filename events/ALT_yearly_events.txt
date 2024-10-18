@@ -249,7 +249,7 @@ ALT_yearly_events.0051 = { # The Art of Materomancy
         name = ALT_yearly_events.0051.a
         custom_tooltip = ALT_yearly_events.0051.a.tt
         add_stress = 75
-        ALT_become_materomacer = yes
+        ALT_become_materomancer = yes
         hidden_effect = {
             scope:materomancer = { death = { death_reason = death_disappearance } }
         }
@@ -285,7 +285,7 @@ ALT_yearly_events.0060 = { #The Stony Tome
     }
     option = { # I will study this book and master Materomancy!
         name = ALT_yearly_events.0060.a
-        ALT_become_materomacer = yes
+        ALT_become_materomancer = yes
         add_stress = 100
     }
     option = { # This book is too dangerous; I will destroy it!

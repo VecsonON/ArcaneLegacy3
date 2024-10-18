@@ -20,6 +20,23 @@ ALT_arcane_events_chance = {
     if = { limit = { has_character_flag = ALT_increase_chance_arance_events } subtract = 10 }
 }
 
+ALT_secrecy = {
+    value = 100
+    if = { limit = { has_variable = ALT_secrecy } value = var:ALT_secrecy }
+    if = { limit = { has_trait = ALT_discovered_mage } value = 0 }
+}
+
+ALT_secrecy_monthly = {
+    value = intrigue
+    divide = 50
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_novice } add = 0.05 }
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_apprentice } add = 0.05 }
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_adept } add = 0.05 }
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_expert } add = 0.05 }
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_master } add = 0.05 }
+    if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_archmaster } add = 0.05 }
+}
+
 xp_ALT_school_aetherimancy = {
     value = 0
     if = { limit = { has_variable = ALT_school_aetherimancy_xp } add = var:ALT_school_aetherimancy_xp }
@@ -43,7 +60,7 @@ xp_ALT_school_biomancy = {
 
 ALT_xp_gain = {
     value = learning
-    divide = 10
+    divide = 5
     floor = yes
     min = 1
     max = 100
@@ -77,6 +94,15 @@ ALT_ritual_of_health_gain = {
     min = 1
 }
 ALT_ritual_of_maiming_gain = {
+    value = {
+        value = school_xp_threshold_apprentice
+        multiply = -1
+    }
+    add = xp_ALT_school_biomancy
+    max = 100
+    min = 1
+}
+ALT_inscription_of_harm_gain = {
     value = {
         value = school_xp_threshold_apprentice
         multiply = -1
@@ -157,6 +183,15 @@ ALT_ritual_of_eternal_youth_gain = {
     max = 100
     min = 1
 }
+ALT_inscription_of_organ_failure_gain = {
+    value = {
+        value = school_xp_threshold_archmaster
+        multiply = -1
+    }
+    add = xp_ALT_school_biomancy
+    max = 100
+    min = 1
+}
 
 ALT_ritual_of_clear_mind_gain = {
     value = {
@@ -199,6 +234,14 @@ ALT_ritual_of_good_impressions_gain = {
     max = 100
 }
 ALT_ritual_of_bad_impressions_gain = {
+    value = {
+        value = school_xp_threshold_adept
+        multiply = -1
+    }
+    add = xp_ALT_school_mensomancy
+    max = 100
+}
+ALT_inscription_of_peace_gain = {
     value = {
         value = school_xp_threshold_adept
         multiply = -1
@@ -254,6 +297,14 @@ ALT_ritual_of_mind_transfer_gain = {
     add = xp_ALT_school_mensomancy
     max = 100
 }
+ALT_inscription_of_self_harm_gain = {
+    value = {
+        value = school_xp_threshold_archmaster
+        multiply = -1
+    }
+    add = xp_ALT_school_mensomancy
+    max = 100
+}
 
 ALT_ritual_of_iron_stone_gain = {
     value = {
@@ -265,6 +316,15 @@ ALT_ritual_of_iron_stone_gain = {
     min = 1
 }
 ALT_ritual_of_weak_iron_gain = {
+    value = {
+        value = school_xp_threshold_novice
+        multiply = -1
+    }
+    add = xp_ALT_school_materomancy
+    max = 100
+    min = 1
+}
+ALT_inscription_of_elements_gain = {
     value = {
         value = school_xp_threshold_novice
         multiply = -1
@@ -345,6 +405,15 @@ ALT_ritual_of_golemhood_gain = {
     max = 100
     min = 1
 }
+ALT_inscription_of_natural_disasters_gain = {
+    value = {
+        value = school_xp_threshold_master
+        multiply = -1
+    }
+    add = xp_ALT_school_materomancy
+    max = 100
+    min = 1
+}
 ALT_ritual_of_golem_army_gain = {
     value = {
         value = school_xp_threshold_archmaster
@@ -365,12 +434,119 @@ ALT_ritual_of_medusa_sight_gain = {
 }
 
 ALT_ritual_of_good_luck_gain = {
-    value = 5
-    add = xp_ALT_school_mensomancy
+    value = {
+        value = school_xp_threshold_novice
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
     max = 100
+    min = 1
 }
 ALT_ritual_of_bad_luck_gain = {
-    value = 5
-    add = xp_ALT_school_mensomancy
+    value = {
+        value = school_xp_threshold_novice
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_fast_movement_gain = {
+    value = {
+        value = school_xp_threshold_apprentice
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+    min = 1
+}
+ALT_ritual_of_slow_movement_gain = {
+    value = {
+        value = school_xp_threshold_apprentice
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_future_insight_gain = {
+    value = {
+        value = school_xp_threshold_adept
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+    min = 1
+}
+ALT_ritual_of_fast_time_gain = {
+    value = {
+        value = school_xp_threshold_adept
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_slow_time_gain = {
+    value = {
+        value = school_xp_threshold_expert
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+    min = 1
+}
+ALT_ritual_of_teleportation_gain = {
+    value = {
+        value = school_xp_threshold_expert
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_inscription_of_space_distortion_gain = {
+    value = {
+        value = school_xp_threshold_expert
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+    min = 1
+}
+ALT_ritual_of_stopping_time_gain = {
+    value = {
+        value = school_xp_threshold_master
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_delay_death_mark_gain = {
+    value = {
+        value = school_xp_threshold_master
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_inscription_of_time_distortion_gain = {
+    value = {
+        value = school_xp_threshold_master
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_death_mark_gain = {
+    value = {
+        value = school_xp_threshold_archmaster
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
+    max = 100
+}
+ALT_ritual_of_different_world_gain = {
+    value = {
+        value = school_xp_threshold_archmaster
+        multiply = -1
+    }
+    add = xp_ALT_school_aetherimancy
     max = 100
 }

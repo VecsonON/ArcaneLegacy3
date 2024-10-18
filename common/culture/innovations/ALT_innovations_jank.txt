@@ -22,3 +22,9 @@ pursuit_ALT_school_aetherimancy_icon = {
 	group = culture_group_regional
 	culture_era = culture_era_late_medieval
 }
+pursuit_ALT_seek_new_schools_icon = {
+	icon = "gfx/icons/alt/icon_archmaster.dds"
+	potential = { always = no }
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+}

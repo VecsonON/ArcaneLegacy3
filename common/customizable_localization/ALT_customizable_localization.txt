@@ -195,3 +195,12 @@ ALT_overall_mastery_level = {
 		localization_key = ALT_school_level_none
 	}
 }
+
+ALT_secrecy_loca = {
+	type = character
+	log_loc_errors = no
+	text = {
+		localization_key = ALT_secrecy_loca_yes
+		trigger = { ALT_secrecy >= 1 has_game_rule = ALT_secrecy_enabled }
+	} 
+}

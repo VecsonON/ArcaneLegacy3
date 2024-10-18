@@ -10,6 +10,10 @@
         hidden_effect_new_object = {
             scope:temp_pursuit = {
                 set_variable = {
+                    name = main_type
+                    value = $MAIN_TYPE$
+                }
+                set_variable = {
                     name = type
                     value = $TYPE$
                 }
@@ -130,9 +134,9 @@ ALT_become_mensomancer = {
         add_character_flag = ALT_know_mensomancy
     }
 }
-ALT_become_materomacer = {
+ALT_become_materomancer = {
     custom_tooltip = {
-        text = ALT_become_materomacer
+        text = ALT_become_materomancer
         add_character_flag = ALT_know_materomancy
     }
 }
@@ -140,5 +144,24 @@ ALT_become_aetherimancer = {
     custom_tooltip = {
         text = ALT_become_aetherimancer
         add_character_flag = ALT_know_aetherimancy
+    }
+}
+
+ALT_change_secrecy = {
+    if = { limit = { NOT = { has_variable = ALT_secrecy } } set_variable = { name = ALT_secrecy value = 100 } }
+    if = { limit = { ALT_is_discovered_mage = no has_game_rule = ALT_secrecy_enabled }
+        save_scope_value_as = { name = temp_value value = $VALUE$ }
+        if = { limit = { $VALUE$ <= 0 } custom_tooltip = ALT_change_secrecy_subtract }
+        else_if = { custom_tooltip = ALT_change_secrecy_add }
+        save_scope_value_as = { name = temp_calc value = { value = $VALUE$ add = ALT_secrecy } }
+        if = { limit = { OR = { $VALUE$ <= -100 scope:temp_calc <= 0 } } 
+            custom_tooltip = ALT_change_secrecy_discovered 
+            add_trait = ALT_discovered_mage
+        }
+        change_variable = { name = ALT_secrecy add = $VALUE$ }
+    }
+    if = { limit = { has_variable = ALT_secrecy } 
+        if = { limit = { var:ALT_secrecy < 0 } set_variable = { name = ALT_secrecy value = 0 } }
+        if = { limit = { var:ALT_secrecy > 100 } set_variable = { name = ALT_secrecy value = 100 } }
     }
 }

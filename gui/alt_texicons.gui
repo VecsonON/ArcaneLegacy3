@@ -1,0 +1,9 @@
+texticon = {
+	icon = ALT_secrecy_icon
+	iconsize = {
+		texture = "gfx/icons/alt/secrecy.dds"	
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}

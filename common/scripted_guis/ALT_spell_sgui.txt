@@ -40,6 +40,19 @@ ALT_ritual_of_maiming_sgui = {
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
+ALT_inscription_of_harm_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_harm_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_harm } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
+
 
 ALT_ritual_of_curing_sgui = {
     effect = { 
@@ -124,6 +137,18 @@ ALT_ritual_of_eternal_youth_sgui = {
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
+ALT_inscription_of_organ_failure_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_organ_failure_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_organ_failure } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
 
 
 ### MENSOMANCY
@@ -189,6 +214,18 @@ ALT_ritual_of_bad_impressions_sgui = {
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
+ALT_inscription_of_peace_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_peace_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_peace } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
 
 ALT_ritual_of_servitude_sgui = {
     effect = { 
@@ -252,6 +289,18 @@ ALT_ritual_of_mind_transfer_sgui = {
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
+ALT_inscription_of_self_harm_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_self_harm_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_self_harm } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
 ### MATEROMANCY
 ALT_ritual_of_iron_stone_sgui = {
     effect = { 
@@ -271,6 +320,18 @@ ALT_ritual_of_weak_iron_sgui = {
         NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_weak_iron } }
         var:sellected_sacriface.var:target = { custom_tooltip = { text = "ALT_sacrifice_is_not_available" is_alive = yes } }
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
+    }
+}
+ALT_inscription_of_elements_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_elements_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_elements } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
     }
 }
 
@@ -350,6 +411,18 @@ ALT_ritual_of_golemhood_sgui = {
         custom_tooltip = { text = "ALT_sacrifice_is_not_available"  exists = var:sellected_sacriface.var:target }
     }
 }
+ALT_inscription_of_natural_disasters_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_natural_disasters_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_natural_disasters } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
 
 ALT_ritual_of_golem_army_sgui = {
     effect = { 
@@ -377,7 +450,6 @@ ALT_ritual_of_good_luck_sgui = {
     }
     is_valid = { 
         NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_good_luck } }
-        var:sellected_sacriface.var:target = { custom_tooltip = { text = "ALT_sacrifice_is_not_available" is_alive = yes } }
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
@@ -387,7 +459,6 @@ ALT_ritual_of_bad_luck_sgui = {
     }
     is_valid = { 
         NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_bad_luck } }
-        var:sellected_sacriface.var:target = { custom_tooltip = { text = "ALT_sacrifice_is_not_available" is_alive = yes } }
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
@@ -448,6 +519,18 @@ ALT_ritual_of_teleportation_sgui = {
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
     }
 }
+ALT_inscription_of_space_distortion_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_space_distortion_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_space_distortion } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
+    }
+}
 
 ALT_ritual_of_stopping_time_sgui = {
     effect = { 
@@ -465,6 +548,18 @@ ALT_ritual_of_delay_death_mark_sgui = {
     is_valid = { 
         NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_delay_death_mark } }
         var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
+    }
+}
+ALT_inscription_of_time_distortion_sgui = {
+    effect = { 
+        if = { limit = { NOT = { exists = scope:tooltip } } ALT_inscription_of_time_distortion_effect = { TARGET = var:sellected_target.var:target }  }
+    }
+    is_valid = { 
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_inscription_of_time_distortion } }
+        custom_tooltip = { text = "ALT_target_is_not_available" exists = var:sellected_target.var:target }
+        var:sellected_target.var:target ?= {
+            custom_tooltip = { text = ALT_artifact_is_already_inscribed NOT = { has_variable = ALT_number_of_inscriptions } }
+        }
     }
 }
 

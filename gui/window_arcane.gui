@@ -210,7 +210,20 @@
 			visible = "[GetVariableSystem.HasValue( 'arcane_gui_tab', 'learning' )]"
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
-
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				button_standard_clean = {
+					layoutpolicy_horizontal = expanding
+					enabled = "[GetScriptedGui('ALT_seek_new_schools').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					text = "arcane_seek_new_school"
+					onclick = "[GetScriptedGui('ALT_seek_new_schools').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					tooltip = "[GetScriptedGui('ALT_seek_new_schools').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					using = tooltip_below
+				}
+				margin_bottom = 15
+				margin_right = 25
+				margin_left = 25
+			}
 			scrollbox = {
 				layoutpolicy_vertical = expanding
 				layoutpolicy_horizontal = expanding
@@ -275,6 +288,7 @@
 													tooltip = "[GetScriptedGui('ALT_start_learning_pursuit_sgui').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('type',MakeScopeFlag(Scope.GetFlagName)).AddScope('icon',MakeScopeFlag(Concatenate(Concatenate('pursuit_',Scope.GetFlagName),'_icon'))).End)]"
 													using = tooltip_below
 												}
+												margin_right = 15
 											}
 										}
 										widget = {

@@ -2,3 +2,30 @@
 	can_have_children = no
     prowess = 10
 }
+
+ALT_discovered_mage = {
+    category = fame
+
+	shown_in_ruler_designer = no
+	
+    faith_modifier = {
+        parameter = witchcraft_illegal
+        monthly_piety = -3
+    }
+    faith_modifier = {
+        parameter = witchcraft_shunned
+        monthly_piety = -1
+    }
+
+	triggered_opinion = {
+		parameter = witchcraft_illegal
+		opinion_modifier = witchcraft_crime
+		ignore_opinion_value_if_same_trait = yes
+	}
+	triggered_opinion = {
+		parameter = witchcraft_shunned
+		opinion_modifier = witchcraft_intolerant
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+}

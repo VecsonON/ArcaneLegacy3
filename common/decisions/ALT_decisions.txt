@@ -1,49 +1,49 @@
-﻿ALT_mage_study_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
-	}	
-	decision_group_type = major
+﻿# ALT_mage_study_decision = {
+# 	picture = {
+# 		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+# 	}	
+# 	decision_group_type = major
 	
-	ai_check_interval = 0
+# 	ai_check_interval = 0
 	
-	is_shown = {
-		OR = {
-            has_trait = witch
-            AND = {
-                has_trait = ambitious
-                learning >= 20
-            }
-            AND = {
-                has_trait = cynical
-                learning >= 15
-            }
-            has_trait = scholar
-            ALT_is_mage = yes
-        }
-        NOT = {
-            AND = {
-                has_character_flag = ALT_know_biomancy
-                has_character_flag = ALT_know_mensomancy
-                has_character_flag = ALT_know_materomancy
-                has_character_flag = ALT_know_aetherimancy
-            }
-        }
-	}
+# 	is_shown = {
+# 		OR = {
+#             has_trait = witch
+#             AND = {
+#                 has_trait = ambitious
+#                 learning >= 20
+#             }
+#             AND = {
+#                 has_trait = cynical
+#                 learning >= 15
+#             }
+#             has_trait = scholar
+#             ALT_is_mage = yes
+#         }
+#         NOT = {
+#             AND = {
+#                 has_character_flag = ALT_know_biomancy
+#                 has_character_flag = ALT_know_mensomancy
+#                 has_character_flag = ALT_know_materomancy
+#                 has_character_flag = ALT_know_aetherimancy
+#             }
+#         }
+# 	}
 	
-	desc = ALT_mage_study_decision_desc
+# 	desc = ALT_mage_study_decision_desc
 	
-	effect = {
-		trigger_event = ALT_pursuit_events.0009
-        custom_tooltip = ALT_mage_study_decision_effect
-	}	
+# 	effect = {
+# 		trigger_event = ALT_pursuit_events.0009
+#         custom_tooltip = ALT_mage_study_decision_effect
+# 	}	
 
-	ai_potential = {
-		always = no
-	}
+# 	ai_potential = {
+# 		always = no
+# 	}
 	
-	ai_will_do = {
-		base = 0
-	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
 
-    cooldown = { years = 1 }
-}
+#     cooldown = { years = 1 }
+# }

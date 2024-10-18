@@ -34,7 +34,7 @@ ALT_welcome_events.0002 = {
     }
     option = { # MATEROMANCER
         name = ALT_welcome_events.0002.c
-        ALT_become_materomacer = yes
+        ALT_become_materomancer = yes
     }
     option = { # AETHERMACER
         name = ALT_welcome_events.0002.d

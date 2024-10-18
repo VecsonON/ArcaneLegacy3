@@ -28,6 +28,14 @@ ALT_error_suppression.0001 = {
                     target = flag:ALT_apprentice
                     target = flag:ALT_novice
                     target = flag:ALT_none
+                    target = flag:ALT_inscription_archmaster
+                    target = flag:ALT_inscription_master
+                    target = flag:ALT_inscription_expert
+                    # target = flag:ALT_inscription_adept
+                    target = flag:ALT_inscription_apprentice
+                    target = flag:ALT_inscription_novice
+                    target = flag:alt_casting
+                    target = flag:pursuit_ALT_seek_new_schools_icon
 				}
 				# Global Variables
 

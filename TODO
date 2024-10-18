@@ -81,10 +81,13 @@ TODO:
     / Mixed Rituals
     + / - Exploring Abbandoned Arcane Labs
     + Experiments
+    + Inscribings
+    + Secretness
     Add at least 2 ritual per level per school:
         Biomancy:
             + Ritual of Health (Remove random negative health non-genetic traits including diseases)
             + Ritual of Maiming (Add random negative health trait, like wounds, one eye etc.)
+            + Inscribing of Harm
             
             + Ritual of Curing (Can remove random negative genetic trait, not including leveled like intelegence.)
             + Ritual of Bad Health (Can give random negative genetic trait, like spindly)
@@ -95,12 +98,16 @@ TODO:
             + Ritual of Golden Blood(Increase level of random genetic trait excluding intelegence etc.)
             + Ritual of Perfect Body(Give randon non-genetic positive trait like shrewd and strong.)
             + Ritual of Bad Blood(Give target cancer and blindness)
-
+            
+            + Inscribing of Organ Failure
             + Ritual of Eternal Youth(Increase life span by 30 years, by using sacrifice in most evil way.)
+
+
         Mensomancy:
             + Ritual of Perfect Mind(lifestyle gain +60%)
             + Ritual of Empty Mind(lifestyle gain -80%)
             
+            + Inscribing of Peace
             + Ritual of Good Impression(+25 general opinion)
             + Ritual of Bad Impression(-25 general opinion)
 
@@ -109,12 +116,15 @@ TODO:
 
             + Ritual of Personality Morph(Replace/add/remove sellected personality trait )
             + Ritual of Mental Health(Remove random negative mental trait, genetic or not)
-        
+            
+            + Inscribing of Self Harm
             + Ritual of Eternal Servitude(Hard ritual to get eternal strong hook)
             + Ritual of changing body(Copy yourself to another character[gameplay wise, copy appearance, and age])
+
         Materomancy:
             + Ritual of Dirt Stone(Building cost -25% Building time -25%)
             + Ritual of Broken Stones(Building cost +25% Building time +25%)
+            + Inscribing of Elements
 
             + Ritual of Beautiful City(Popular Opinion +50)
             + Ritual of Hidieous City(Popular Opinion -50)
@@ -124,9 +134,11 @@ TODO:
         
             + Ritual of Golem(Spawn Golem Character)
             + Ritual of GolemHood(Become Lich, immortal with price of your body.)
+            + Inscribing of Natural Disasters
             
             + Ritual of Golem Army(Spawn MAA)
             + Ritual of Medusa Sight(Hard ritual to make target incapable)
+
         Aetherimancy:
             + Ritual of Fast Movement(prowess+5, army speed +25%, travel +25%)
             + Ritual of slow Movement(prowess-5, army speed -25%, travel -25%)
@@ -134,13 +146,14 @@ TODO:
             + Ritual of Future Insight(Scheme bonuses)
             + Ritual of Fast Time(all atributes -2 for 5 years)
 
+            + Inscribing of Space Distortion
             + Ritual of Slow Time(all atributes +2 for 5 years)
             + Ritual of Teleportation(teleport army to target)
 
             + Ritual of Stopping Time(all atributes +6 for 5 years, +50 stress)
             + Ritual of Delay Death Mark(1000+ lifespan for 5 years)
+            + Inscribing of Time Distortion
             
             + Ritual of Death mark(in 10 years, target will die. Don't work on Adept Aetherimancers)
             + Ritual of Different World(cultural buffs and possibility to leave this world behind)
-
 

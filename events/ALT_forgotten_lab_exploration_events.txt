@@ -182,7 +182,7 @@ ALT_forgotten_lab_exploration_events.0042 = { #  have found untouched hidden pas
             }
             3 = { 
                 if = { limit = { has_character_flag = ALT_know_materomancy } ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 10 } } 
-                else = { ALT_become_materomacer = yes }
+                else = { ALT_become_materomancer = yes }
             }
             3 = { 
                 if = { limit = { has_character_flag = ALT_know_aetherimancy } ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 10 } } 

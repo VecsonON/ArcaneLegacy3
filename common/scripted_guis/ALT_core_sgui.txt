@@ -29,6 +29,7 @@ ALT_start_learning_pursuit_sgui = {
                 TARGET = THIS
                 SACRIFICE = THIS
                 ICON = scope:icon
+                MAIN_TYPE = flag:alt_study
             }
         }
     }
@@ -48,6 +49,7 @@ ALT_start_casting_pursuit_sgui = {
                 TARGET = ROOT.var:sellected_target.var:target
                 SACRIFICE = ROOT.var:sellected_sacriface.var:target
                 ICON = scope:icon
+                MAIN_TYPE = flag:alt_casting
             }
         }
     }
@@ -155,5 +157,37 @@ ALT_pursuit_time_calculate = {
             }
         }
         custom_tooltip = "ALT_pursuit_casting_time"
+    }
+}
+
+ALT_seek_new_schools = {
+    scope = character 
+
+    effect = {
+        show_as_tooltip = {
+            custom_tooltip = ALT_seek_new_schools_tt
+            ALT_seek_new_school_effect = yes
+        }
+        hidden_effect = {
+            ALT_start_pursuit_effect = {
+                TYPE = flag:ALT_seek_new_schools
+                MONTHLY_PROGRESS = 3 #4 years to compelete this
+                TARGET = THIS
+                SACRIFICE = THIS
+                ICON = flag:pursuit_ALT_seek_new_schools_icon
+                MAIN_TYPE = flag:alt_study
+            }
+        }
+    }
+    is_valid = {
+        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_seek_new_schools } }
+        NOT = { 
+            AND = {
+                has_character_flag = ALT_know_biomancy
+                has_character_flag = ALT_know_mensomancy
+                has_character_flag = ALT_know_materomancy
+                has_character_flag = ALT_know_aetherimancy
+            }
+        }
     }
 }

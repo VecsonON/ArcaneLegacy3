@@ -6,3 +6,9 @@
   ATL_select_target: "Target"
   ATL_select_sacrifice: "Sacrifice"
   ATL_select_sacrifice_artifact: "[target.GetName] is #bold not#! held by #V you#!"
+
+  ALT_experiment_on_prisoner_interaction: "Experiment on prisoner"
+  ALT_experiment_on_prisoner_interaction_desc: "Experiment on prisoner"
+
+  ALT_experiment_on_current_location_interaction: "Experiment on Land"
+  ALT_experiment_on_current_location_interaction_desc: "Experiment on Land"

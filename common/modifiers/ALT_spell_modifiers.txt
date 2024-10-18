@@ -173,3 +173,85 @@ ALT_ritual_of_death_mark_modifier = {
     icon = magic_negative
     health = -150
 }
+
+
+###INSCRIPTIONS
+ALT_inscription_of_harm_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 5
+    stress_gain_mult = 0.2
+}
+ALT_inscription_of_organ_failure_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 15
+    stress_gain_mult = 0.5
+}
+ALT_inscription_of_peace_modifier = {
+    icon = prowess_positive
+    general_opinion = 2
+    prowess_no_portrait = 2
+    owned_personal_scheme_success_chance_max_add = 15
+    personal_scheme_phase_duration_add = 15
+    stress_gain_mult = 0.2
+}
+ALT_inscription_of_self_harm_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 10
+    owned_hostile_scheme_success_chance_max_add = 15
+    hostile_scheme_phase_duration_add = 15
+    stress_gain_mult = 0.5
+}
+ALT_inscription_of_elements_novice_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 1
+    advantage = 1
+    siege_phase_time = -0.1
+    stress_gain_mult = 0.1
+}
+ALT_inscription_of_elements_apprentice_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 2
+    advantage = 2
+    siege_phase_time = -0.2
+    stress_gain_mult = 0.2
+}
+ALT_inscription_of_elements_adept_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 4
+    advantage = 4
+    siege_phase_time = -0.3
+    stress_gain_mult = 0.3
+}
+ALT_inscription_of_elements_expert_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 8
+    advantage = 8
+    siege_phase_time = -0.4
+    stress_gain_mult = 0.4
+}
+ALT_inscription_of_natural_disasters_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 15
+    advantage = 15
+    siege_phase_time = -0.5
+    stress_gain_mult = 0.6
+}
+ALT_inscription_of_organ_failure_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 15
+    stress_gain_mult = 0.5
+}
+ALT_inscription_of_space_distortion_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 7
+    movement_speed = 0.5
+    character_travel_speed_mult = 0.5
+    stress_gain_mult = 0.2
+}
+ALT_inscription_of_time_distortion_modifier = {
+    icon = prowess_positive
+    prowess_no_portrait = 15
+    movement_speed = 1
+    character_travel_speed_mult = 1
+    stress_gain_mult = 0.5
+}
