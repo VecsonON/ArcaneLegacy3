@@ -95,7 +95,7 @@ ALT_chosing_ritual_sgui = {
         trigger_if = { limit = { scope:exp_target_type = flag:ALT_title } custom_tooltip = { text = ALT_target_title var:sellected_target ?= { var:type = flag:ALT_title } } }
 
         trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_character } custom_tooltip = { text = ALT_sacrifice_character var:sellected_sacriface ?= { var:type = flag:ALT_character } } }
-        trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_artifact } custom_tooltip = { text = ALT_sacrifice_title var:sellected_sacriface ?= { var:type = flag:ALT_artifact } } }
+        trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_artifact } custom_tooltip = { text = ALT_sacrifice_artifact var:sellected_sacriface ?= { var:type = flag:ALT_artifact } } }
         trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_title } custom_tooltip = { text = ALT_sacrifice_title var:sellected_sacriface ?= { var:type = flag:ALT_title } } }
     }
     effect = {
