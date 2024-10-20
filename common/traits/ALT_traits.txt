@@ -7,6 +7,8 @@ ALT_discovered_mage = {
     category = fame
 
 	shown_in_ruler_designer = no
+
+	dread_baseline_add = 15
 	
     faith_modifier = {
         parameter = witchcraft_illegal
