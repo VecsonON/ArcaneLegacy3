@@ -9,5 +9,5 @@ tags={
 	"Gameplay"
 }
 name="Arcane Legacy 3 ALPHA"
-supported_version="1.13.*"
+supported_version="1.14.*"
 remote_file_id="3346471960"
