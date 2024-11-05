@@ -21,7 +21,7 @@
  ALT_forgotten_lab_exploration_events.0022.b: "There could still be some valuable books here."
 
  ALT_forgotten_lab_exploration_events.0032.title: "Nothing but trash"
- ALT_forgotten_lab_exploration_events.0032.desc: "I have entered a passage hidden behind a few still active [ALT_rituals|E], and found a destroyed corridors, or perhaps what used to be rooms. There is nothing worth taking here..."
+ ALT_forgotten_lab_exploration_events.0032.desc: "I have entered a passage hidden behind a few still active [ALT_rituals|E], and found destroyed corridors, or perhaps what used to be rooms. There is nothing worth taking here..."
  ALT_forgotten_lab_exploration_events.0032.a: "Unfortunate"
 
  ALT_forgotten_lab_exploration_events.0042.title: "Hidden passage!"
