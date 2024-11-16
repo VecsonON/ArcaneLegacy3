@@ -2,12 +2,12 @@
 	on_actions = { ALT_yearly_playable_pulse }
 }
 random_yearly_everyone_pulse = {
-    on_actions = { ALT_random_yearly_everyone_pulse }
+	on_actions = { ALT_random_yearly_everyone_pulse }
 }
 on_game_start_after_lobby = {
-    on_actions = { 
+	on_actions = { 
 		ALT_welcome_event
-        ALT_forgotten_lab_generation
+		ALT_forgotten_lab_generation
 	}
 }
 ALT_yearly_playable_pulse = {
@@ -19,201 +19,201 @@ ALT_yearly_playable_pulse = {
 	}
 }
 ALT_quaterly_playable_pulse = {
-    effect = {
-        trigger_event = { on_action = ALT_monthly_playable_pulse }
+	effect = {
+		trigger_event = { on_action = ALT_monthly_playable_pulse }
 		trigger_event = { on_action = ALT_monthly_playable_pulse months = 1 }
 		trigger_event = { on_action = ALT_monthly_playable_pulse months = 2 }
-    }
+	}
 }
 ALT_monthly_playable_pulse = {
-    on_actions = {
-        ALT_study_monthly_pulse
-    }
-    effect = {
-        if = { limit = { has_variable = current_pursuit } 
-            var:current_pursuit = {
-                change_variable = {
-                    name = total_progress
-                    add = var:monthly_progress
-                }
-                if = { limit = { var:total_progress >= 100 } 
-                    PREV = { trigger_event = ALT_pursuit_events.0001 }
-                }
-            }
+	on_actions = {
+		ALT_study_monthly_pulse
+	}
+	effect = {
+		if = { limit = { has_variable = current_pursuit } 
+			var:current_pursuit = {
+				change_variable = {
+					name = total_progress
+					add = var:monthly_progress
+				}
+				if = { limit = { var:total_progress >= 100 } 
+					PREV = { trigger_event = ALT_pursuit_events.0001 }
+				}
+			}
 
-        }
-        if = { limit = { ALT_is_mage = yes ALT_is_discovered_mage = no has_variable = ALT_secrecy } 
-            change_variable = {
-                name = ALT_secrecy
-                add = ALT_secrecy_monthly
-            }
-            if = { limit = { var:ALT_secrecy >= 100 } set_variable = { name = ALT_secrecy value = 100 } }
-        }
-        if = { limit = { ALT_is_discovered_mage = yes NOT = { has_trait = ALT_discovered_mage } } add_trait = ALT_discovered_mage }
-    }
+		}
+		if = { limit = { ALT_is_mage = yes ALT_is_discovered_mage = no has_variable = ALT_secrecy } 
+			change_variable = {
+				name = ALT_secrecy
+				add = ALT_secrecy_monthly
+			}
+			if = { limit = { var:ALT_secrecy >= 100 } set_variable = { name = ALT_secrecy value = 100 } }
+		}
+		if = { limit = { ALT_is_discovered_mage = yes NOT = { has_trait = ALT_discovered_mage } } add_trait = ALT_discovered_mage }
+	}
 }
 
 ALT_random_yearly_everyone_pulse = {
-    trigger = {
-        OR = { # MADE FOR LANDLESS CHARACTERS (RTG)
-            is_playable_character = yes
-            is_ai = no
-        }
-    }
-    random_events = {
-        chance_of_no_event = ALT_arcane_events_chance
-        5 = ALT_yearly_events.0010
-        5 = ALT_yearly_events.0020
-        5 = ALT_yearly_events.0030
-        5 = ALT_yearly_events.0040
-        5 = ALT_yearly_events.0050
-        5 = ALT_yearly_events.0060
-        5 = ALT_yearly_events.0070
-        5 = ALT_yearly_events.0080
-        5 = 0
-    }
+	trigger = {
+		OR = { # MADE FOR LANDLESS CHARACTERS (RTG)
+			is_playable_character = yes
+			is_ai = no
+		}
+	}
+	random_events = {
+		chance_of_no_event = ALT_arcane_events_chance
+		5 = ALT_yearly_events.0010
+		5 = ALT_yearly_events.0020
+		5 = ALT_yearly_events.0030
+		5 = ALT_yearly_events.0040
+		5 = ALT_yearly_events.0050
+		5 = ALT_yearly_events.0060
+		5 = ALT_yearly_events.0070
+		5 = ALT_yearly_events.0080
+		5 = 0
+	}
 }
 
 ALT_open_arcane_gui_action = {
-    effect = {
+	effect = {
 		clear_variable_list = arcane_schools
 		clear_variable_list = ALT_school_biomancy_ritual_list
 		clear_variable_list = ALT_school_mensomancy_ritual_list
 		clear_variable_list = ALT_school_materomancy_ritual_list
 		clear_variable_list = ALT_school_aetherimancy_ritual_list
-        if = { limit = { has_character_flag = ALT_know_biomancy } 
-            add_to_variable_list = { name = arcane_schools target = flag:ALT_school_biomancy }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_novice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_treatment LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_decline LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-            }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_apprentice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_health LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_maiming LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_harm LEVEL = flag:ALT_inscription_apprentice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_biomancy }
-            }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_adept } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_curing LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_health LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-            }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_expert } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_long_life LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_rotten_blood LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-            }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_master } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golden_blood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_perfect_body LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_blood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-            }
-            if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_archmaster } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_eternal_youth LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_organ_failure LEVEL = flag:ALT_inscription_archmaster TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_biomancy }
-            }
-        }
-        if = { limit = { has_character_flag = ALT_know_mensomancy } 
-            add_to_variable_list = { name = arcane_schools target = flag:ALT_school_mensomancy }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_novice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_clear_mind LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_cluttery_mind LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-            }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_apprentice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_perfect_mind LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_empty_mind LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_peace LEVEL = flag:ALT_inscription_apprentice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_mensomancy }
+		if = { limit = { has_character_flag = ALT_know_biomancy } 
+			add_to_variable_list = { name = arcane_schools target = flag:ALT_school_biomancy }
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_novice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_treatment LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_decline LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+			}
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_apprentice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_health LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_maiming LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_harm LEVEL = flag:ALT_inscription_apprentice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_biomancy }
+			}
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_adept } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_curing LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_health LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+			}
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_expert } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_long_life LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_rotten_blood LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+			}
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_master } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golden_blood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_perfect_body LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_blood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+			}
+			if = { limit = { xp_ALT_school_biomancy >= school_xp_threshold_archmaster } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_eternal_youth LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_biomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_organ_failure LEVEL = flag:ALT_inscription_archmaster TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_biomancy }
+			}
+		}
+		if = { limit = { has_character_flag = ALT_know_mensomancy } 
+			add_to_variable_list = { name = arcane_schools target = flag:ALT_school_mensomancy }
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_novice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_clear_mind LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_cluttery_mind LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+			}
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_apprentice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_perfect_mind LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_empty_mind LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_peace LEVEL = flag:ALT_inscription_apprentice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_mensomancy }
 
-            }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_adept } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_good_impressions LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_impressions LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-            }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_expert } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_servitude LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mental_instability LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-            }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_master } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_personality_morph LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mental_health LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-            }
-            if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_archmaster } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_eternal_servitude LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mind_transfer LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_self_harm LEVEL = flag:ALT_inscription_archmaster TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_mensomancy }
-            }
-        }
-        if = { limit = { has_character_flag = ALT_know_materomancy } 
-            add_to_variable_list = { name = arcane_schools target = flag:ALT_school_materomancy }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_novice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_iron_stone LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_weak_iron LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_elements LEVEL = flag:ALT_inscription_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_adept } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_good_impressions LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_impressions LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+			}
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_expert } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_servitude LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mental_instability LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+			}
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_master } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_personality_morph LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mental_health LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+			}
+			if = { limit = { xp_ALT_school_mensomancy >= school_xp_threshold_archmaster } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_eternal_servitude LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_mind_transfer LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_character SCHOOL = ALT_school_mensomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_self_harm LEVEL = flag:ALT_inscription_archmaster TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_mensomancy }
+			}
+		}
+		if = { limit = { has_character_flag = ALT_know_materomancy } 
+			add_to_variable_list = { name = arcane_schools target = flag:ALT_school_materomancy }
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_novice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_iron_stone LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_weak_iron LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_elements LEVEL = flag:ALT_inscription_novice TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
 
-            }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_apprentice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_dirt_stone LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_broken_stones LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-            }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_adept } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_beautiful_city LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_hideous_city LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-            }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_expert } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golden_stone LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_stoneish_gold LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-            }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_master } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golem LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golemhood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_natural_disasters LEVEL = flag:ALT_inscription_master TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_apprentice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_dirt_stone LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_broken_stones LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_adept } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_beautiful_city LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_hideous_city LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_title SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_expert } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golden_stone LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_stoneish_gold LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_master } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golem LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golemhood LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_natural_disasters LEVEL = flag:ALT_inscription_master TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
 
-            }
-            if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_archmaster } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golem_army LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_medusa_sight LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
-            }
-        }
-        if = { limit = { has_character_flag = ALT_know_aetherimancy } 
-            add_to_variable_list = { name = arcane_schools target = flag:ALT_school_aetherimancy }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_novice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_good_luck LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_luck LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_apprentice } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_fast_movement LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_slow_movement LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_adept } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_future_insight LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_fast_time LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_expert } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_slow_time LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_teleportation LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_space_distortion LEVEL = flag:ALT_inscription_expert TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_master } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_stopping_time LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_delay_death_mark LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_inscription_of_time_distortion LEVEL = flag:ALT_inscription_master TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-            if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_archmaster } 
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_death_mark LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-                ALT_create_ritual = { TYPE = flag:ALT_ritual_of_different_world LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
-            }
-        }
-    }
+			}
+			if = { limit = { xp_ALT_school_materomancy >= school_xp_threshold_archmaster } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_golem_army LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_none SACRIFICE_TYPE = flag:ALT_artifact SCHOOL = ALT_school_materomancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_medusa_sight LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_materomancy }
+			}
+		}
+		if = { limit = { has_character_flag = ALT_know_aetherimancy } 
+			add_to_variable_list = { name = arcane_schools target = flag:ALT_school_aetherimancy }
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_novice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_good_luck LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_bad_luck LEVEL = flag:ALT_novice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_apprentice } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_fast_movement LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_slow_movement LEVEL = flag:ALT_apprentice TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_adept } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_future_insight LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_fast_time LEVEL = flag:ALT_adept TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_expert } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_slow_time LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_teleportation LEVEL = flag:ALT_expert TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_space_distortion LEVEL = flag:ALT_inscription_expert TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_master } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_stopping_time LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_delay_death_mark LEVEL = flag:ALT_master TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_inscription_of_time_distortion LEVEL = flag:ALT_inscription_master TARGET_TYPE = flag:ALT_artifact SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+			if = { limit = { xp_ALT_school_aetherimancy >= school_xp_threshold_archmaster } 
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_death_mark LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+				ALT_create_ritual = { TYPE = flag:ALT_ritual_of_different_world LEVEL = flag:ALT_archmaster TARGET_TYPE = flag:ALT_character SACRIFICE_TYPE = flag:ALT_none SCHOOL = ALT_school_aetherimancy }
+			}
+		}
+	}
 }
 
 ALT_close_arcane_gui_action = {
-    effect = {
+	effect = {
 		clear_variable_list = arcane_schools
 		clear_variable_list = ALT_school_biomancy_ritual_list
 		remove_variable = sellected_ritual
 
-    }
+	}
 }
 
 ALT_welcome_event = {
-    effect = {
+	effect = {
 		every_player = {
 			trigger_event = ALT_welcome_events.0001
 		}
@@ -221,8 +221,8 @@ ALT_welcome_event = {
 }
 
 ALT_forgotten_lab_generation = {
-    effect = {
-        set_local_variable = {
+	effect = {
+		set_local_variable = {
 			name = forgotten_lab_amount
 			value = 0
 		}
@@ -244,7 +244,7 @@ ALT_forgotten_lab_generation = {
 			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
 			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
 		}
-    }
+	}
 }
 
 ALT_forgotten_lab_exploration_on_action = {
@@ -260,13 +260,13 @@ ALT_forgotten_lab_exploration_on_action = {
 
 
 ALT_study_monthly_pulse = {
-    trigger = { var:current_pursuit ?= { var:main_type ?= flag:alt_study } }
-    random_events = {
-        chance_of_no_event = 90
-        10 = ALT_study_events.0001
-        10 = ALT_study_events.0002
-        10 = ALT_study_events.0003
-        10 = ALT_study_events.0004
-        10 = ALT_study_events.0005
-    }
+	trigger = { var:current_pursuit ?= { var:main_type ?= flag:alt_study } }
+	random_events = {
+		chance_of_no_event = 90
+		10 = ALT_study_events.0001
+		10 = ALT_study_events.0002
+		10 = ALT_study_events.0003
+		10 = ALT_study_events.0004
+		10 = ALT_study_events.0005
+	}
 }

@@ -10,343 +10,343 @@
 
 # Event Chain - Miracle worker
 ALT_yearly_events.0010 = { # A Healer in the Hills
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0010.title
 	desc = ALT_yearly_events.0010.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_biomancy }
-    }
-    option = { # I will visit this healer myself.
-        name = ALT_yearly_events.0010.a
-        trigger_event = ALT_yearly_events.0011
-    }
-    option = { # Ignore these rumors.
-        name = ALT_yearly_events.0010.b
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_biomancy }
+	}
+	option = { # I will visit this healer myself.
+		name = ALT_yearly_events.0010.a
+		trigger_event = ALT_yearly_events.0011
+	}
+	option = { # Ignore these rumors.
+		name = ALT_yearly_events.0010.b
+	}
 }
 ALT_yearly_events.0011 = { # A Strange Encounter
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0011.title
 	desc = ALT_yearly_events.0011.desc
 	theme = realm
-    immediate = {
-        create_character = {
-            template = biomancer
-            location = ROOT.capital_province
+	immediate = {
+		create_character = {
+			template = biomancer
+			location = ROOT.capital_province
 			faith = ROOT.faith
 			culture = ROOT.culture
-            save_scope_as = biomancer
-        }
-    }
-    left_portrait = {
-        character = ROOT
-        animation = disbelief 
-    }
-    right_portrait  = {
-        character = scope:biomancer
-        animation = chaplain 
-    }
+			save_scope_as = biomancer
+		}
+	}
+	left_portrait = {
+		character = ROOT
+		animation = disbelief 
+	}
+	right_portrait  = {
+		character = scope:biomancer
+		animation = chaplain 
+	}
 
-    option = { # How do you perform these miracles?
-        name = ALT_yearly_events.0011.a
-        trigger_event = ALT_yearly_events.0012
-    }
+	option = { # How do you perform these miracles?
+		name = ALT_yearly_events.0011.a
+		trigger_event = ALT_yearly_events.0012
+	}
 }
 ALT_yearly_events.0012 = { # A Strange Encounter 2
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0012.title
 	desc = ALT_yearly_events.0012.desc
 	theme = realm
-    left_portrait = {
-        character = ROOT
-        animation = disbelief 
-    }
-    right_portrait  = {
-        character = scope:biomancer
-        animation = chaplain 
-    }
-    option = { # Teach me your ways
-        name = ALT_yearly_events.0012.a
-        ALT_become_biomancer = yes
-        add_stress = 50
-        remove_short_term_gold = 100
-        hidden_effect = {
-            scope:biomancer = { death = { death_reason = death_disappearance } }
-        }
-    }
-    option = { # This is unnatural sorcery!
-        name = ALT_yearly_events.0012.b
-        
-        scope:biomancer = { 
-            death = {
-                death_reason = death_burned_witch
-                killer = root
-            }
-        }
-        
-        add_piety = 250
-    }
-    option = { # I do not meddle with such dark powers
-        name = ALT_yearly_events.0012.c
-        hidden_effect = {
-            scope:biomancer = { death = { death_reason = death_disappearance } }
-        }
-    }
+	left_portrait = {
+		character = ROOT
+		animation = disbelief 
+	}
+	right_portrait  = {
+		character = scope:biomancer
+		animation = chaplain 
+	}
+	option = { # Teach me your ways
+		name = ALT_yearly_events.0012.a
+		ALT_become_biomancer = yes
+		add_stress = 50
+		remove_short_term_gold = 100
+		hidden_effect = {
+			scope:biomancer = { death = { death_reason = death_disappearance } }
+		}
+	}
+	option = { # This is unnatural sorcery!
+		name = ALT_yearly_events.0012.b
+		
+		scope:biomancer = { 
+			death = {
+				death_reason = death_burned_witch
+				killer = root
+			}
+		}
+		
+		add_piety = 250
+	}
+	option = { # I do not meddle with such dark powers
+		name = ALT_yearly_events.0012.c
+		hidden_effect = {
+			scope:biomancer = { death = { death_reason = death_disappearance } }
+		}
+	}
 }
 #Fleshy Book
 ALT_yearly_events.0020 = { #A Tome of Living Flesh
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0020.title
 	desc = ALT_yearly_events.0020.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_biomancy }
-    }
-    option = { # I will study its secrets
-        name = ALT_yearly_events.0020.a
-        ALT_become_biomancer = yes
-        add_stress = 100
-        random = {
-            chance = 10
-            add_trait = lunatic_1
-        }
-    }
-    option = { # This is an abomination! Burn the book immediately.
-        name = ALT_yearly_events.0020.b
-        add_piety = 500
-        add_stress = -25
-    }
-    option = { # Sell it to the highest bidder.
-        name = ALT_yearly_events.0020.c
-        add_gold = 125
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_biomancy }
+	}
+	option = { # I will study its secrets
+		name = ALT_yearly_events.0020.a
+		ALT_become_biomancer = yes
+		add_stress = 100
+		random = {
+			chance = 10
+			add_trait = lunatic_1
+		}
+	}
+	option = { # This is an abomination! Burn the book immediately.
+		name = ALT_yearly_events.0020.b
+		add_piety = 500
+		add_stress = -25
+	}
+	option = { # Sell it to the highest bidder.
+		name = ALT_yearly_events.0020.c
+		add_gold = 125
+	}
 }
 
 
 # Caputured Trickster
 ALT_yearly_events.0030 = { # A Cunning Offer
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0030.title
 	desc = ALT_yearly_events.0030.desc
 	theme = prison
-    trigger = {
-        NOT = { has_character_flag = ALT_know_mensomancy }
-    }
-    option = { # Teach me the magic of Mensomancy, and I will release you.
-        name = ALT_yearly_events.0030.a
-        ALT_become_mensomancer = yes
-        add_stress = 50
-        random = {
-            chance = 25
-            increase_wounds_effect = { REASON = fight }
-            increase_wounds_effect = { REASON = fight }
-        }
-    }
-    option = { # You think I'm foolish enough to trust you?
-        name = ALT_yearly_events.0030.b
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_mensomancy }
+	}
+	option = { # Teach me the magic of Mensomancy, and I will release you.
+		name = ALT_yearly_events.0030.a
+		ALT_become_mensomancer = yes
+		add_stress = 50
+		random = {
+			chance = 25
+			increase_wounds_effect = { REASON = fight }
+			increase_wounds_effect = { REASON = fight }
+		}
+	}
+	option = { # You think I'm foolish enough to trust you?
+		name = ALT_yearly_events.0030.b
+	}
 }
 # Unpleasant Rock
 ALT_yearly_events.0040 = { # A Cunning Offer
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0040.title
 	desc = ALT_yearly_events.0040.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_mensomancy }
-    }
-    option = { # Teach me the magic of Mensomancy, and I will release you.
-        name = ALT_yearly_events.0040.a
-        ALT_become_mensomancer = yes
-        add_stress = 50
-        duel = {
-            skill = learning
-            value = 20
-            50 = {
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = 1
-                }
-            }
-            50 = {
-                compare_modifier = {
-                    value = scope:duel_value
-                    multiplier = -1
-                }
-                add_stress = 100
-                random = {
-                    chance = 20
-                    add_trait = lunatic_1
-                }
-                random = {
-                    chance = 20
-                    add_trait = depressed_1
-                }
-            }
-        }
-       
-    }
-    option = { # Ignore it
-        name = ALT_yearly_events.0040.b
-        add_stress = 25
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_mensomancy }
+	}
+	option = { # Teach me the magic of Mensomancy, and I will release you.
+		name = ALT_yearly_events.0040.a
+		ALT_become_mensomancer = yes
+		add_stress = 50
+		duel = {
+			skill = learning
+			value = 20
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				add_stress = 100
+				random = {
+					chance = 20
+					add_trait = lunatic_1
+				}
+				random = {
+					chance = 20
+					add_trait = depressed_1
+				}
+			}
+		}
+	   
+	}
+	option = { # Ignore it
+		name = ALT_yearly_events.0040.b
+		add_stress = 25
+	}
 }
 
 
 # Event Chain - Wierdly good mason
 ALT_yearly_events.0050 = { # The Mysterious Constructor
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0050.title
 	desc = ALT_yearly_events.0050.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_materomancy }
-    }
-    immediate = {
-        create_character = {
-            template = materomancer
-            location = ROOT.capital_province
+	trigger = {
+		NOT = { has_character_flag = ALT_know_materomancy }
+	}
+	immediate = {
+		create_character = {
+			template = materomancer
+			location = ROOT.capital_province
 			faith = ROOT.faith
 			culture = ROOT.culture
-            save_scope_as = materomancer
-        }
-    }
-    left_portrait = {
-        character = ROOT
-        animation = disbelief 
-    }
-    right_portrait  = {
-        character = scope:materomancer
-        animation = chaplain 
-    }
-    option = { # I must know their secret
-        name = ALT_yearly_events.0050.a
-        trigger_event = ALT_yearly_events.0051
-    }
-    option = { # I must know their secret
-        name = ALT_yearly_events.0050.b
-        hidden_effect = {
-            scope:materomancer = { death = { death_reason = death_disappearance } }
-        }
-    }
+			save_scope_as = materomancer
+		}
+	}
+	left_portrait = {
+		character = ROOT
+		animation = disbelief 
+	}
+	right_portrait  = {
+		character = scope:materomancer
+		animation = chaplain 
+	}
+	option = { # I must know their secret
+		name = ALT_yearly_events.0050.a
+		trigger_event = ALT_yearly_events.0051
+	}
+	option = { # I must know their secret
+		name = ALT_yearly_events.0050.b
+		hidden_effect = {
+			scope:materomancer = { death = { death_reason = death_disappearance } }
+		}
+	}
 }
 # Event Chain - Wierdly good mason
 ALT_yearly_events.0051 = { # The Art of Materomancy
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0051.title
 	desc = ALT_yearly_events.0051.desc
 	theme = realm
-    left_portrait = {
-        character = ROOT
-        animation = disbelief 
-    }
-    right_portrait  = {
-        character = scope:materomancer
-        animation = chaplain 
-    }
-    option = { # Teach me the ways of Materomancy!
-        name = ALT_yearly_events.0051.a
-        custom_tooltip = ALT_yearly_events.0051.a.tt
-        add_stress = 75
-        ALT_become_materomancer = yes
-        hidden_effect = {
-            scope:materomancer = { death = { death_reason = death_disappearance } }
-        }
-    }
-    option = { # I will not dabble in such unnatural arts.
-        name = ALT_yearly_events.0051.b
-        custom_tooltip = ALT_yearly_events.0051.b.tt
-        add_piety = 250
-        hidden_effect = {
-            scope:materomancer = { death = { death_reason = death_disappearance } }
-        }
-    }
-    option = { # This is unnatural sorcery!
-        name = ALT_yearly_events.0051.c
-        
-        scope:materomancer = { 
-            death = {
-                death_reason = death_burned_witch
-                killer = root
-            }
-        }
-        add_piety = 250
-    }
+	left_portrait = {
+		character = ROOT
+		animation = disbelief 
+	}
+	right_portrait  = {
+		character = scope:materomancer
+		animation = chaplain 
+	}
+	option = { # Teach me the ways of Materomancy!
+		name = ALT_yearly_events.0051.a
+		custom_tooltip = ALT_yearly_events.0051.a.tt
+		add_stress = 75
+		ALT_become_materomancer = yes
+		hidden_effect = {
+			scope:materomancer = { death = { death_reason = death_disappearance } }
+		}
+	}
+	option = { # I will not dabble in such unnatural arts.
+		name = ALT_yearly_events.0051.b
+		custom_tooltip = ALT_yearly_events.0051.b.tt
+		add_piety = 250
+		hidden_effect = {
+			scope:materomancer = { death = { death_reason = death_disappearance } }
+		}
+	}
+	option = { # This is unnatural sorcery!
+		name = ALT_yearly_events.0051.c
+		
+		scope:materomancer = { 
+			death = {
+				death_reason = death_burned_witch
+				killer = root
+			}
+		}
+		add_piety = 250
+	}
 }
 #Roocky Book
 ALT_yearly_events.0060 = { #The Stony Tome
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0060.title
 	desc = ALT_yearly_events.0060.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_materomancy }
-    }
-    option = { # I will study this book and master Materomancy!
-        name = ALT_yearly_events.0060.a
-        ALT_become_materomancer = yes
-        add_stress = 100
-    }
-    option = { # This book is too dangerous; I will destroy it!
-        name = ALT_yearly_events.0060.b
-        add_piety = 500
-        add_stress = -25
-    }
-    option = { # I will sell this book to the highest bidder.
-        name = ALT_yearly_events.0060.c
-        add_gold = 125
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_materomancy }
+	}
+	option = { # I will study this book and master Materomancy!
+		name = ALT_yearly_events.0060.a
+		ALT_become_materomancer = yes
+		add_stress = 100
+	}
+	option = { # This book is too dangerous; I will destroy it!
+		name = ALT_yearly_events.0060.b
+		add_piety = 500
+		add_stress = -25
+	}
+	option = { # I will sell this book to the highest bidder.
+		name = ALT_yearly_events.0060.c
+		add_gold = 125
+	}
 }
 
 
 #Seer 
 ALT_yearly_events.0070 = { #The Prophetic Seer
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0070.title
 	desc = ALT_yearly_events.0070.desc
 	theme = realm
-    trigger = {
-        NOT = { has_character_flag = ALT_know_aetherimancy }
-    }
-    option = { # Teach me your ways, O wise seer!
-        name = ALT_yearly_events.0070.a
-        custom_tooltip = ALT_yearly_events.0070.tt
-        ALT_become_aetherimancer = yes
-        add_stress = 100
-    }
-    option = { # Witch! Burn them!
-        name = ALT_yearly_events.0070.b
-        custom_tooltip = ALT_yearly_events.0070.tt
-        add_piety = 500
-        add_stress = -25
-    }
-    option = { # I have no need for your services.
-        name = ALT_yearly_events.0070.c
-        custom_tooltip = ALT_yearly_events.0070.tt
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_aetherimancy }
+	}
+	option = { # Teach me your ways, O wise seer!
+		name = ALT_yearly_events.0070.a
+		custom_tooltip = ALT_yearly_events.0070.tt
+		ALT_become_aetherimancer = yes
+		add_stress = 100
+	}
+	option = { # Witch! Burn them!
+		name = ALT_yearly_events.0070.b
+		custom_tooltip = ALT_yearly_events.0070.tt
+		add_piety = 500
+		add_stress = -25
+	}
+	option = { # I have no need for your services.
+		name = ALT_yearly_events.0070.c
+		custom_tooltip = ALT_yearly_events.0070.tt
+	}
 }
 #Moment of Enlighment
 ALT_yearly_events.0080 = { #Visions of the Aetherimancy
-    type = character_event
+	type = character_event
 	title = ALT_yearly_events.0080.title
 	desc = ALT_yearly_events.0080.desc
 	theme = mental_health
 	override_background = { reference = corridor_night }
-    trigger = {
-        NOT = { has_character_flag = ALT_know_aetherimancy }
-    }
-    option = { # I will embrace these teachings
-        name = ALT_yearly_events.0080.a
-        ALT_become_aetherimancer = yes
-        add_stress = 100
-    }
-    option = { # I fear this knowledge may be too great for me.
-        name = ALT_yearly_events.0080.b
-        add_stress = -25
-    }
-    option = { # Fight against this dream
-        name = ALT_yearly_events.0080.c
-        add_piety = 500
-    }
+	trigger = {
+		NOT = { has_character_flag = ALT_know_aetherimancy }
+	}
+	option = { # I will embrace these teachings
+		name = ALT_yearly_events.0080.a
+		ALT_become_aetherimancer = yes
+		add_stress = 100
+	}
+	option = { # I fear this knowledge may be too great for me.
+		name = ALT_yearly_events.0080.b
+		add_stress = -25
+	}
+	option = { # Fight against this dream
+		name = ALT_yearly_events.0080.c
+		add_piety = 500
+	}
 }

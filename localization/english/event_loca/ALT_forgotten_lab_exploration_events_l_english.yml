@@ -31,7 +31,7 @@
 
  ALT_forgotten_lab_exploration_events.0003.title: "Somewhat pillaged arcane lab"
  ALT_forgotten_lab_exploration_events.0003.desc: "And there I am, at something any normal mortal would describe as mundane ruins. But with help of few [ALT_rituals|E] I was able to detect a hidden arcane lab. Unfortunately, I wasn't the first to discover it, as it has been thoroughly looted."
- ALT_forgotten_lab_exploration_events.0003.a: Even if I find nothing, it's still worth taking the time to search."
+ ALT_forgotten_lab_exploration_events.0003.a: "Even if I find nothing, it's still worth taking the time to search."
  ALT_forgotten_lab_exploration_events.0003.b: "Let's go home."
 
  ALT_forgotten_lab_exploration_events.0013.title: "Weird Arcane Machine"

@@ -8,33 +8,33 @@
 	
 # 	is_shown = {
 # 		OR = {
-#             has_trait = witch
-#             AND = {
-#                 has_trait = ambitious
-#                 learning >= 20
-#             }
-#             AND = {
-#                 has_trait = cynical
-#                 learning >= 15
-#             }
-#             has_trait = scholar
-#             ALT_is_mage = yes
-#         }
-#         NOT = {
-#             AND = {
-#                 has_character_flag = ALT_know_biomancy
-#                 has_character_flag = ALT_know_mensomancy
-#                 has_character_flag = ALT_know_materomancy
-#                 has_character_flag = ALT_know_aetherimancy
-#             }
-#         }
+#			 has_trait = witch
+#			 AND = {
+#				 has_trait = ambitious
+#				 learning >= 20
+#			 }
+#			 AND = {
+#				 has_trait = cynical
+#				 learning >= 15
+#			 }
+#			 has_trait = scholar
+#			 ALT_is_mage = yes
+#		 }
+#		 NOT = {
+#			 AND = {
+#				 has_character_flag = ALT_know_biomancy
+#				 has_character_flag = ALT_know_mensomancy
+#				 has_character_flag = ALT_know_materomancy
+#				 has_character_flag = ALT_know_aetherimancy
+#			 }
+#		 }
 # 	}
 	
 # 	desc = ALT_mage_study_decision_desc
 	
 # 	effect = {
 # 		trigger_event = ALT_pursuit_events.0009
-#         custom_tooltip = ALT_mage_study_decision_effect
+#		 custom_tooltip = ALT_mage_study_decision_effect
 # 	}	
 
 # 	ai_potential = {
@@ -45,5 +45,148 @@
 # 		base = 0
 # 	}
 
-#     cooldown = { years = 1 }
+#	 cooldown = { years = 1 }
 # }
+# ALT_become_magical_adventurer_decision = {
+# 	picture = {
+# 		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+# 	}	
+# 	decision_group_type = major
+
+# 	ai_check_interval = 0
+
+# 	is_shown = {
+# 		has_ep3_dlc_trigger = yes
+# 		ALT_is_mage = yes
+# 		#is_landed = yes
+# 	}
+
+# 	desc = ALT_become_magical_adventurer_decision_desc
+
+# 	effect = {
+# 		ALT_make_magical_adventurer = yes
+# 	}	
+
+# 	ai_potential = {
+# 		always = no
+# 	}
+
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+
+# }
+ALT_AI_seek_arcane_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = major
+
+	ai_check_interval = 60
+
+	is_shown = {
+		is_ai = yes
+	}
+
+	effect = {
+		random_list = {
+			1 = { ALT_become_biomancer = yes }
+			1 = { ALT_become_mensomancer = yes }
+			1 = { ALT_become_materomancer = yes }
+			1 = { ALT_become_aetherimancer = yes }
+		}
+	}	
+
+	ai_potential = {
+		has_trait = ambitious
+		ALT_is_mage = no
+	}
+
+	ai_will_do = {
+		base = 10
+
+		modifier = {
+			add = 10
+			has_trait = scholar
+		}
+		modifier = {
+			add = 20
+			has_trait = witch
+		}
+		modifier = {
+			add = age
+		}
+
+		modifier = {
+			add = -20
+			faith = { has_doctrine_parameter = witchcraft_illegal }
+			NOT = { has_trait = cynical }
+		}
+		modifier = {
+			add = -10
+			faith = { has_doctrine_parameter = witchcraft_shunned }
+			NOT = { has_trait = cynical }
+		}
+	}
+}
+ALT_AI_study_arcane_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = major
+
+	ai_check_interval = 12
+
+	is_shown = {
+		is_ai = yes
+	}
+
+	effect = {
+		random_list = {
+			1 = { trigger = { has_character_flag = ALT_know_biomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 100 } } } 
+				random_list = {
+					1 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 5 } }
+					2 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 4 } }
+					4 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 3 } }
+					6 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 2 } }
+					8 = { ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 1 } }
+				}
+			}
+			1 = { trigger = { has_character_flag = ALT_know_mensomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 100 } } }
+				random_list = {
+					1 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 5 } }
+					2 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 4 } }
+					4 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 3 } }
+					6 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 2 } }
+					8 = { ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 1 } }
+				}
+			}
+			1 = { trigger = { has_character_flag = ALT_know_materomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_materomancy COUNT = 100 } } } 
+				random_list = {
+					1 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 5 } }
+					2 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 4 } }
+					4 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 3 } }
+					6 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 2 } }
+					8 = { ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 1 } }
+				}
+			}
+			1 = { trigger = { has_character_flag = ALT_know_aetherimancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_aetherimancy COUNT = 100 } } } 
+				random_list = {
+					1 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 5 } }
+					2 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 4 } }
+					4 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 3 } }
+					6 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 2 } }
+					8 = { ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 1 } }
+				}
+			}
+		}
+	}	
+
+	ai_potential = {
+		ALT_is_mage = yes
+	}
+
+	ai_will_do = {
+		base = 25
+	}
+}

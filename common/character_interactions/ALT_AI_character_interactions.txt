@@ -1,0 +1,438 @@
+﻿ALT_AI_biopossitive = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes is_ai = yes } }
+
+        on_accept = {
+                scope:actor = {
+                        random_list = {
+                                5 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 30 } 
+                                                OR = {
+                                                        has_trait = clubfooted
+                                                        has_trait = hunchbacked
+                                                        has_trait = lisping
+                                                        has_trait = stuttering
+                                                        has_trait = inbred
+                                                        has_trait = spindly
+                                                        has_trait = scaly
+                                                        has_trait = wheezing
+                                                        has_trait = bleeder
+                                                }
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_curing
+                                                TYPE_VALUE = ALT_ritual_of_curing_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 20 } 
+                                                OR = {
+                                                        has_trait = maimed
+                                                        has_trait = one_eyed
+                                                        has_trait = one_legged
+                                                        has_trait = disfigured
+                                                        has_trait = infirm
+                                                }
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_health
+                                                TYPE_VALUE = ALT_ritual_of_health_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 10 } 
+                                                OR = {
+                                                        has_trait = wounded
+                                                        has_trait = one_eyed
+                                                        has_trait = one_legged
+                                                        has_trait = disfigured
+                                                        has_trait = infirm
+                                                }
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_treatment
+                                                TYPE_VALUE = ALT_ritual_of_treatment_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 50 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_long_life
+                                                TYPE_VALUE = ALT_ritual_of_long_life_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 60 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_golden_blood
+                                                TYPE_VALUE = ALT_ritual_of_golden_blood_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 50 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_perfect_body
+                                                TYPE_VALUE = ALT_ritual_of_perfect_body_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 90 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_eternal_youth
+                                                TYPE_VALUE = ALT_ritual_of_eternal_youth_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                        }
+                }
+        }
+
+	auto_accept = yes
+	
+	ai_potential = {
+		# The basic requirements
+		is_imprisoned = no 
+		
+                ALT_is_mage = yes
+                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 5 }
+                NOT = { has_variable = current_pursuit } # AI cannot have many pursuit at once
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+                max = 5
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 50
+
+                modifier = { # AI will more likely to heal themselves than others
+                        scope:recipient = scope:actor
+                        add = 25
+                }
+
+                modifier = { # AI won't heal rivals or nemesis.
+			scope:recipient = {
+                                OR = {
+                                        has_relation_rival = scope:actor
+                                        has_relation_nemesis = scope:actor 
+                                }
+			}
+			add = -1000
+		}
+
+                opinion_modifier = { # AI will more likely heal characters with better opinion
+                        trigger = {
+                                NOT = { scope:recipient = scope:actor }
+                        }
+                        who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+                }
+	}
+
+}
+ALT_AI_bionegative = {
+        icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes is_ai = yes } }
+
+        on_accept = {
+                scope:actor = {
+                        random_list = {
+                                5 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 30 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_bad_health
+                                                TYPE_VALUE = ALT_ritual_of_bad_health_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 20 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_maiming
+                                                TYPE_VALUE = ALT_ritual_of_maiming_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 10 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_decline
+                                                TYPE_VALUE = ALT_ritual_of_decline_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                        }
+                }
+        }
+
+	auto_accept = yes
+	
+	ai_potential = {
+		# The basic requirements
+		is_imprisoned = no 
+		
+                ALT_is_mage = yes
+                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = 10 }
+                NOT = { has_variable = current_pursuit } # AI cannot have many pursuit at once
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+                max = 10
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 25
+
+                modifier = {
+			scope:recipient = {
+                                OR = {
+                                        has_relation_rival = scope:actor
+                                        has_relation_nemesis = scope:actor 
+                                }
+			}
+			add = 50
+		}
+
+                opinion_modifier = { # AI will more likely wound characters with worse opinion
+                        trigger = {
+                                NOT = { scope:recipient = scope:actor }
+                        }
+                        who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = -0.5
+			min = 0
+                }
+	}
+}
+
+ALT_ai_mensopositive = {
+        icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes is_ai = yes } }
+
+        on_accept = {
+                scope:actor = {
+                        random_list = {
+                                5 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 30 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_good_impressions
+                                                TYPE_VALUE = ALT_ritual_of_good_impressions_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 20 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_perfect_mind
+                                                TYPE_VALUE = ALT_ritual_of_perfect_mind_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 10 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_clear_mind
+                                                TYPE_VALUE = ALT_ritual_of_clear_mind_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 50 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_mental_health
+                                                TYPE_VALUE = ALT_ritual_of_mental_health_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                        }
+                }
+        }
+
+	auto_accept = yes
+	
+	ai_potential = {
+		# The basic requirements
+		is_imprisoned = no 
+		
+                ALT_is_mage = yes
+                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 5 }
+                NOT = { has_variable = current_pursuit } # AI cannot have many pursuit at once
+	}
+	ai_targets = {
+		ai_recipients = self
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+                max = 5
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 50
+
+                modifier = { # AI will more likely to help themselves than others
+                        scope:recipient = scope:actor
+                        add = 25
+                }
+
+                modifier = { # AI won't help rivals or nemesis.
+			scope:recipient = {
+                                OR = {
+                                        has_relation_rival = scope:actor
+                                        has_relation_nemesis = scope:actor 
+                                }
+			}
+			add = -1000
+		}
+
+                opinion_modifier = { # AI will more likely help characters with better opinion
+                        trigger = {
+                                NOT = { scope:recipient = scope:actor }
+                        }
+                        who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+			min = 0
+                }
+	}
+}
+
+ALT_AI_mensonegative = {
+        icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	is_shown = { scope:actor = { ALT_is_mage = yes is_ai = yes } }
+
+        on_accept = {
+                scope:actor = {
+                        random_list = {
+                                5 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 30 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_bad_impressions
+                                                TYPE_VALUE = ALT_ritual_of_bad_impressions_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                2 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 20 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_empty_mind
+                                                TYPE_VALUE = ALT_ritual_of_empty_mind_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                                1 = {
+                                        trigger = { 
+                                                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 10 } 
+                                        }
+                                        ALT_start_ai_pursuit_effect = {
+                                                TYPE = flag:ALT_ritual_of_cluttery_mind
+                                                TYPE_VALUE = ALT_ritual_of_cluttery_mind_gain
+                                                TARGET = scope:recipient
+                                        }
+                                }
+                        }
+                }
+        }
+
+	auto_accept = yes
+	
+	ai_potential = {
+		# The basic requirements
+		is_imprisoned = no 
+		
+                ALT_is_mage = yes
+                ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = 10 }
+                NOT = { has_variable = current_pursuit } # AI cannot have many pursuit at once
+	}
+	ai_targets = {
+		ai_recipients = scripted_relations
+                max = 10
+	}
+	ai_frequency = 24
+	ai_will_do = {
+		base = 25
+
+                modifier = {
+			scope:recipient = {
+                                OR = {
+                                        has_relation_rival = scope:actor
+                                        has_relation_nemesis = scope:actor 
+                                }
+			}
+			add = 50
+		}
+
+                opinion_modifier = { # AI will more likely wound characters with worse opinion
+                        trigger = {
+                                NOT = { scope:recipient = scope:actor }
+                        }
+                        who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = -0.5
+			min = 0
+                }
+	}
+}

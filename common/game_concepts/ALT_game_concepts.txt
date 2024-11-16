@@ -1,64 +1,64 @@
 ﻿ALT_arcane = {
-    texture = "gfx/icons/alt/arcane.dds"
+	texture = "gfx/icons/alt/arcane.dds"
 }
 ALT_secrecy = {
-    parent = ALT_arcane
-    alias = { ALT_secrecy_i }
-    texture = "gfx/icons/alt/secrecy.dds"
+	parent = ALT_arcane
+	alias = { ALT_secrecy_i }
+	texture = "gfx/icons/alt/secrecy.dds"
 }
 
 ALT_ritual = {
-    parent = ALT_arcane
-    alias = { ALT_rituals }
-    texture = "gfx/icons/alt/icon_archmaster.dds"
+	parent = ALT_arcane
+	alias = { ALT_rituals }
+	texture = "gfx/icons/alt/icon_archmaster.dds"
 }
 ALT_inscription = {
-    parent = ALT_arcane
-    alias = { ALT_inscriptions }
-    texture = "gfx/icons/alt/icon_archmaster.dds"
+	parent = ALT_arcane
+	alias = { ALT_inscriptions }
+	texture = "gfx/icons/alt/icon_archmaster.dds"
 }
 
 ALT_biomancy = {
-    parent = ALT_arcane
-    texture = "gfx/icons/alt/biomancy.dds"
-    alias = { ALT_biomancer }
+	parent = ALT_arcane
+	texture = "gfx/icons/alt/biomancy.dds"
+	alias = { ALT_biomancer }
 }
 ALT_mensomancy = {
-    parent = ALT_arcane
-    texture = "gfx/icons/alt/mensomancy.dds"
-    alias = { ALT_mensomancer }
+	parent = ALT_arcane
+	texture = "gfx/icons/alt/mensomancy.dds"
+	alias = { ALT_mensomancer }
 }
 ALT_materomancy = {
-    parent = ALT_arcane
-    texture = "gfx/icons/alt/materomancy.dds"
-    alias = { ALT_materomancer }
+	parent = ALT_arcane
+	texture = "gfx/icons/alt/materomancy.dds"
+	alias = { ALT_materomancer }
 }
 ALT_aetherimancy = {
-    parent = ALT_arcane
-    texture = "gfx/icons/alt/aetherimancy.dds"
-    alias = { ALT_aetherimancer }
+	parent = ALT_arcane
+	texture = "gfx/icons/alt/aetherimancy.dds"
+	alias = { ALT_aetherimancer }
 }
 
 ALT_transformancy = {
-    parent = ALT_biomancy
-    texture = "gfx/icons/alt/transformancy.dds"
-    alias = { ALT_transformancer }
+	parent = ALT_biomancy
+	texture = "gfx/icons/alt/transformancy.dds"
+	alias = { ALT_transformancer }
 }
 
 ALT_astralmancy = {
-    parent = ALT_mensomancy
-    texture = "gfx/icons/alt/astralmancy.dds"
-    alias = { ALT_astralmancer }
+	parent = ALT_mensomancy
+	texture = "gfx/icons/alt/astralmancy.dds"
+	alias = { ALT_astralmancer }
 }
 
 ALT_morsmancy = {
-    parent = ALT_materomancy
-    texture = "gfx/icons/alt/morsmancy.dds"
-    alias = { ALT_morsmancer }
+	parent = ALT_materomancy
+	texture = "gfx/icons/alt/morsmancy.dds"
+	alias = { ALT_morsmancer }
 }
 
 ALT_superimancy = {
-    parent = ALT_aetherimancy
-    texture = "gfx/icons/alt/superimancy.dds"
-    alias = { ALT_superimancer }
+	parent = ALT_aetherimancy
+	texture = "gfx/icons/alt/superimancy.dds"
+	alias = { ALT_superimancer }
 }

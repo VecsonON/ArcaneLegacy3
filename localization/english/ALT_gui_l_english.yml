@@ -131,8 +131,8 @@
  building_forgotten_lab_desc: "There are some forgotten ruins, but no one has ever discovered anything of note here."
  
 
- trait_ALT_discovered_mage: "Discovered Mage"
- trait_ALT_discovered_mage_desc: "This character's [ALT_arcane|E] practices have been exposed"
+ trait_ALT_discovered_mage: "Rumored Mage"
+ trait_ALT_discovered_mage_desc: "Everyone thinks that this character messed with [ALT_arcane|E], and this fame won't come off easily"
 
  rule_ALT_arcane_events: "#v (AL3)#!: [ALT_arcane|E] Events Frequency"
  setting_ALT_arcane_events_rare: "Rare"

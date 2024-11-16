@@ -38,7 +38,7 @@ scripted_effect ALT_se_increase_success_chance_by_3 = {
 }
 
 ALT_study_events.0001 = { # Something isn't adding up
-    title = ALT_study_events.0001.title
+	title = ALT_study_events.0001.title
 	type = character_event
 	desc = ALT_study_events.0001.desc
 	theme = witchcraft
@@ -51,11 +51,11 @@ ALT_study_events.0001 = { # Something isn't adding up
 
 	option = { #It is obvious!
 		name = ALT_study_events.0001.a
-        trigger = {
-            OR = {
-                has_trait = intellect_good
-                has_trait = shrewd 
-            }
+		trigger = {
+			OR = {
+				has_trait = intellect_good
+				has_trait = shrewd 
+			}
 		}
 		trait = intellect_good_1
 		trait = intellect_good_2
@@ -68,26 +68,26 @@ ALT_study_events.0001 = { # Something isn't adding up
 	}
 	option = { #Hmmm, Let's backtrack my steps...
 		name = ALT_study_events.0001.b
-        duel = {
-            skill = learning
-            value = 25
-            5 = {
-                compare_modifier = {
+		duel = {
+			skill = learning
+			value = 25
+			5 = {
+				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 1
-                    min = 0
+					min = 0
 				}
-		        ALT_se_increase_success_chance_by_1 = yes
-            }
-            5 = {
-                compare_modifier = {
+				ALT_se_increase_success_chance_by_1 = yes
+			}
+			5 = {
+				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -1
-                    min = 0
+					min = 0
 				}
-                add_stress = 25
-            }
-        }
+				add_stress = 25
+			}
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -101,7 +101,7 @@ ALT_study_events.0001 = { # Something isn't adding up
 
 }
 ALT_study_events.0002 = { # Work has slowned down, I need some inspiration.
-    title = ALT_study_events.0002.title
+	title = ALT_study_events.0002.title
 	type = character_event
 	desc = ALT_study_events.0002.desc
 	theme = witchcraft
@@ -114,43 +114,43 @@ ALT_study_events.0002 = { # Work has slowned down, I need some inspiration.
 
 	option = { #Brute force never betrayed me!
 		name = ALT_study_events.0002.a
-        add_stress = 75
-        ALT_se_increase_success_chance_by_1 = yes
+		add_stress = 75
+		ALT_se_increase_success_chance_by_1 = yes
 		ai_chance = {
 			base = 25
 		}
 	}
 	option = { #Let's take a small break.
 		name = ALT_study_events.0002.b
-       
+	   
 		ai_chance = {
 			base = 50
 		}
 	}
 	option = { #Let's go for a walk!
 		name = ALT_study_events.0002.c
-        trigger = {
-            has_trait = athletic
-        }
-        trait = athletic
-        random = {
-            chance = 50
-            ALT_se_increase_success_chance_by_1 = yes
-        }
+		trigger = {
+			has_trait = athletic
+		}
+		trait = athletic
+		random = {
+			chance = 50
+			ALT_se_increase_success_chance_by_1 = yes
+		}
 		ai_chance = {
 			base = 10
 		}
 	}
 	option = { #My Journal!
 		name = ALT_study_events.0002.d
-        trigger = {
-            has_trait = journaller
-        }
-        trait = journaller
-        random = {
-            chance = 50
-            ALT_se_increase_success_chance_by_1 = yes
-        }
+		trigger = {
+			has_trait = journaller
+		}
+		trait = journaller
+		random = {
+			chance = 50
+			ALT_se_increase_success_chance_by_1 = yes
+		}
 		ai_chance = {
 			base = 10
 		}
@@ -158,7 +158,7 @@ ALT_study_events.0002 = { # Work has slowned down, I need some inspiration.
 
 }
 ALT_study_events.0003 = { # Experiment TIME!
-    title = ALT_study_events.0003.title
+	title = ALT_study_events.0003.title
 	type = character_event
 	desc = ALT_study_events.0003.desc
 	theme = witchcraft
@@ -171,44 +171,44 @@ ALT_study_events.0003 = { # Experiment TIME!
 
 	option = { #Use ME as subject!
 		name = ALT_study_events.0003.a
-        trigger = {
-            has_trait = eccentric
+		trigger = {
+			has_trait = eccentric
 		}
 		trait = eccentric
 		ALT_se_increase_success_chance_by_2 = yes
-        random_list = {
-            25 = {
-                increase_wounds_effect = { REASON = fight }
-            }
-            50 = {
-                add_stress = 50
-            }
-            25 = {
+		random_list = {
+			25 = {
+				increase_wounds_effect = { REASON = fight }
+			}
+			50 = {
+				add_stress = 50
+			}
+			25 = {
 
-            }
-        }
+			}
+		}
 		ai_chance = {
 			base = 100
 		}
 	}
 	option = { #Hmmm, Rat should suffice
 		name = ALT_study_events.0003.b
-        random = {
-            chance = 50
-            ALT_se_increase_success_chance_by_1 = yes
-        }
+		random = {
+			chance = 50
+			ALT_se_increase_success_chance_by_1 = yes
+		}
 		ai_chance = {
 			base = 50
 		}
 	}
 	option = { #Humans are best type of subjects
 		name = ALT_study_events.0003.c
-        location = {
-            county = {
-                change_development_level = -5
-            }
-        }
-        ALT_se_increase_success_chance_by_1 = yes
+		location = {
+			county = {
+				change_development_level = -5
+			}
+		}
+		ALT_se_increase_success_chance_by_1 = yes
 		ai_chance = {
 			base = 10
 		}
@@ -216,7 +216,7 @@ ALT_study_events.0003 = { # Experiment TIME!
 
 }
 ALT_study_events.0004 = { # Work is working
-    title = ALT_study_events.0004.title
+	title = ALT_study_events.0004.title
 	type = character_event
 	desc = ALT_study_events.0004.desc
 	theme = witchcraft
@@ -226,16 +226,16 @@ ALT_study_events.0004 = { # Work is working
 		is_imprisoned = no
 		has_variable = current_pursuit
 	}
-    immediate = {
-        ALT_se_increase_success_chance_by_1 = yes
-    }
+	immediate = {
+		ALT_se_increase_success_chance_by_1 = yes
+	}
 	option = { #I can do more!
 		name = ALT_study_events.0004.a
-        trigger = {
-            OR = {
-                has_trait = intellect_good
-                has_trait = shrewd 
-            }
+		trigger = {
+			OR = {
+				has_trait = intellect_good
+				has_trait = shrewd 
+			}
 		}
 		trait = intellect_good_1
 		trait = intellect_good_2
@@ -248,26 +248,26 @@ ALT_study_events.0004 = { # Work is working
 	}
 	option = { #I am not finished yet!
 		name = ALT_study_events.0004.b
-        duel = {
-            skill = learning
-            value = 25
-            5 = {
-                compare_modifier = {
+		duel = {
+			skill = learning
+			value = 25
+			5 = {
+				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 1
-                    min = 0
+					min = 0
 				}
-		        ALT_se_increase_success_chance_by_1 = yes
-            }
-            5 = {
-                compare_modifier = {
+				ALT_se_increase_success_chance_by_1 = yes
+			}
+			5 = {
+				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -1
-                    min = 0
+					min = 0
 				}
-                add_stress = 25
-            }
-        }
+				add_stress = 25
+			}
+		}
 		ai_chance = {
 			base = 50
 		}
@@ -281,7 +281,7 @@ ALT_study_events.0004 = { # Work is working
 
 }
 ALT_study_events.0005 = { # I need some materials.
-    title = ALT_study_events.0005.title
+	title = ALT_study_events.0005.title
 	type = character_event
 	desc = ALT_study_events.0005.desc
 	theme = witchcraft
@@ -294,16 +294,16 @@ ALT_study_events.0005 = { # I need some materials.
 
 	option = { #The more the better
 		name = ALT_study_events.0005.a
-        remove_short_term_gold = 250
-        ALT_se_increase_success_chance_by_2 = yes
+		remove_short_term_gold = 250
+		ALT_se_increase_success_chance_by_2 = yes
 		ai_chance = {
 			base = 100
 		}
 	}
 	option = { #That should sufice
 		name = ALT_study_events.0005.b
-        remove_short_term_gold = 50
-        ALT_se_increase_success_chance_by_1 = yes
+		remove_short_term_gold = 50
+		ALT_se_increase_success_chance_by_1 = yes
 		ai_chance = {
 			base = 50
 		}

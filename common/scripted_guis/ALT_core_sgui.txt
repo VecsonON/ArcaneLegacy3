@@ -1,193 +1,193 @@
 ﻿initiate_starting_arcane_gui = {		
-    saved_scopes = { player }
+	saved_scopes = { player }
 	effect = {
-        trigger_event = { on_action = ALT_open_arcane_gui_action }
+		trigger_event = { on_action = ALT_open_arcane_gui_action }
 	}
-    is_shown = { 
-        scope:player ?= { 			
-            is_alive = yes
-            ALT_is_mage = yes 
-        } 
-    }
+	is_shown = { 
+		scope:player ?= { 			
+			is_alive = yes
+			ALT_is_mage = yes 
+		} 
+	}
 }
 initiate_clearning_arcane_gui = {
-    scope = character
+	scope = character
 	
 	effect = {
-        trigger_event = { on_action = ALT_close_arcane_gui_action }
+		trigger_event = { on_action = ALT_close_arcane_gui_action }
 	}
 }
 
 ALT_start_learning_pursuit_sgui = {
-    scope = character 
+	scope = character 
 
-    effect = {
-        hidden_effect = {
-            ALT_start_pursuit_effect = {
-                TYPE = scope:type
-                MONTHLY_PROGRESS = 4.16 #2 years to compelete this
-                TARGET = THIS
-                SACRIFICE = THIS
-                ICON = scope:icon
-                MAIN_TYPE = flag:alt_study
-            }
-        }
-    }
-    is_valid = {
-        NOT = { ALT_has_pursuit_of_type = { TYPE = scope:type } }
-        NOT = { ALT_has_X_xp_of_school = { SCHOOL = scope:type COUNT = 100 }  }
-    }
+	effect = {
+		hidden_effect = {
+			ALT_start_pursuit_effect = {
+				TYPE = scope:type
+				MONTHLY_PROGRESS = 4.16 #2 years to compelete this
+				TARGET = THIS
+				SACRIFICE = THIS
+				ICON = scope:icon
+				MAIN_TYPE = flag:alt_study
+			}
+		}
+	}
+	is_valid = {
+		NOT = { ALT_has_pursuit_of_type = { TYPE = scope:type } }
+		NOT = { ALT_has_X_xp_of_school = { SCHOOL = scope:type COUNT = 100 }  }
+	}
 }
 ALT_start_casting_pursuit_sgui = {
-    scope = character 
+	scope = character 
 
-    effect = {
-        hidden_effect = {
-            ALT_start_pursuit_effect = {
-                TYPE = scope:type
-                MONTHLY_PROGRESS = scope:monthly_progress
-                TARGET = ROOT.var:sellected_target.var:target
-                SACRIFICE = ROOT.var:sellected_sacriface.var:target
-                ICON = scope:icon
-                MAIN_TYPE = flag:alt_casting
-            }
-        }
-    }
-    is_valid = {
-        NOT = { ALT_has_pursuit_of_type = { TYPE = scope:type } }
-    }
+	effect = {
+		hidden_effect = {
+			ALT_start_pursuit_effect = {
+				TYPE = scope:type
+				MONTHLY_PROGRESS = scope:monthly_progress
+				TARGET = ROOT.var:sellected_target.var:target
+				SACRIFICE = ROOT.var:sellected_sacriface.var:target
+				ICON = scope:icon
+				MAIN_TYPE = flag:alt_casting
+			}
+		}
+	}
+	is_valid = {
+		NOT = { ALT_has_pursuit_of_type = { TYPE = scope:type } }
+	}
 }
 ALT_pause_pursuit_sgui = {
-    scope = character 
+	scope = character 
 
-    effect = {
-        ALT_pause_current_pursuit_effect = yes
-    }
+	effect = {
+		ALT_pause_current_pursuit_effect = yes
+	}
 }
 ALT_resume_pursuit_sgui = {
-    scope = character 
+	scope = character 
 	saved_scopes = { pursuit }
 
-    effect = {
-        ALT_resume_paused_pursuit_effect = { pursuit = scope:pursuit }
-    }
+	effect = {
+		ALT_resume_paused_pursuit_effect = { pursuit = scope:pursuit }
+	}
 }
 ALT_delete_pursuit_sgui = {
-    scope = character 
+	scope = character 
 	saved_scopes = { pursuit }
 
-    effect = {
-        ALT_delete_pursuit_effect = { pursuit = scope:pursuit }
-    }
+	effect = {
+		ALT_delete_pursuit_effect = { pursuit = scope:pursuit }
+	}
 }
 ALT_has_X_xp_of_school_sgui = {
-    scope = character 
+	scope = character 
 	saved_scopes = { school }
-    is_valid = {
-        ALT_has_X_xp_of_school = { SCHOOL = scope:school COUNT = scope:count } 
-    }
+	is_valid = {
+		ALT_has_X_xp_of_school = { SCHOOL = scope:school COUNT = scope:count } 
+	}
 }
 ALT_chosing_ritual_sgui = {
-    scope = character
-    is_valid = {
-        trigger_if = { limit = { scope:exp_target_type = flag:ALT_character } custom_tooltip = { text = ALT_target_character var:sellected_target ?= { var:type = flag:ALT_character } } }
-        trigger_if = { limit = { scope:exp_target_type = flag:ALT_artifact } custom_tooltip = { text = ALT_target_artifact var:sellected_target ?= { var:type = flag:ALT_artifact } } }
-        trigger_if = { limit = { scope:exp_target_type = flag:ALT_title } custom_tooltip = { text = ALT_target_title var:sellected_target ?= { var:type = flag:ALT_title } } }
+	scope = character
+	is_valid = {
+		trigger_if = { limit = { scope:exp_target_type = flag:ALT_character } custom_tooltip = { text = ALT_target_character var:sellected_target ?= { var:type = flag:ALT_character } } }
+		trigger_if = { limit = { scope:exp_target_type = flag:ALT_artifact } custom_tooltip = { text = ALT_target_artifact var:sellected_target ?= { var:type = flag:ALT_artifact } } }
+		trigger_if = { limit = { scope:exp_target_type = flag:ALT_title } custom_tooltip = { text = ALT_target_title var:sellected_target ?= { var:type = flag:ALT_title } } }
 
-        trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_character } custom_tooltip = { text = ALT_sacrifice_character var:sellected_sacriface ?= { var:type = flag:ALT_character } } }
-        trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_artifact } custom_tooltip = { text = ALT_sacrifice_artifact var:sellected_sacriface ?= { var:type = flag:ALT_artifact } } }
-        trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_title } custom_tooltip = { text = ALT_sacrifice_title var:sellected_sacriface ?= { var:type = flag:ALT_title } } }
-    }
-    effect = {
-        hidden_effect = {
-            set_variable = { name = sellected_ritual value = scope:ritual }
-        }
-    }
+		trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_character } custom_tooltip = { text = ALT_sacrifice_character var:sellected_sacriface ?= { var:type = flag:ALT_character } } }
+		trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_artifact } custom_tooltip = { text = ALT_sacrifice_artifact var:sellected_sacriface ?= { var:type = flag:ALT_artifact } } }
+		trigger_if = { limit = { scope:exp_sacrifice_type = flag:ALT_title } custom_tooltip = { text = ALT_sacrifice_title var:sellected_sacriface ?= { var:type = flag:ALT_title } } }
+	}
+	effect = {
+		hidden_effect = {
+			set_variable = { name = sellected_ritual value = scope:ritual }
+		}
+	}
 }
 ALT_deselect_ritual_gui = {
-    effect = {
-        remove_variable = sellected_ritual
-    }
+	effect = {
+		remove_variable = sellected_ritual
+	}
 }
 
 ALT_ritual_time_calculate = {
-    effect = {
-        custom_tooltip = "ALT_ritual_casting"
-        save_scope_value_as = {
-            name = temp_years_calc
-            value = {
-                value = 100
-                divide = scope:monthly_progress
-                divide = 12
-                min = 0
-            }
-        }
-        save_scope_value_as = {
-            name = temp_months_calc
-            value = {
-                value = 100
-                divide = scope:monthly_progress
-                modulo = 12
-                min = 0
-            }
-        }
-        custom_tooltip = "ALT_ritual_casting_time"
-    }
+	effect = {
+		custom_tooltip = "ALT_ritual_casting"
+		save_scope_value_as = {
+			name = temp_years_calc
+			value = {
+				value = 100
+				divide = scope:monthly_progress
+				divide = 12
+				min = 0
+			}
+		}
+		save_scope_value_as = {
+			name = temp_months_calc
+			value = {
+				value = 100
+				divide = scope:monthly_progress
+				modulo = 12
+				min = 0
+			}
+		}
+		custom_tooltip = "ALT_ritual_casting_time"
+	}
 }
 ALT_pursuit_time_calculate = {
-    effect = {
-        save_scope_value_as = {
-            name = temp_years_calc
-            value = {
-                value = 100
-	            subtract = var:current_pursuit.var:total_progress
-                divide = var:current_pursuit.var:monthly_progress
-                divide = 12
-                min = 0
-            }
-        }
-        save_scope_value_as = {
-            name = temp_months_calc
-            value = {
-                value = 100
-	            subtract = var:current_pursuit.var:total_progress
-                divide = var:current_pursuit.var:monthly_progress
-                modulo = 12
-                min = 0
-            }
-        }
-        custom_tooltip = "ALT_pursuit_casting_time"
-    }
+	effect = {
+		save_scope_value_as = {
+			name = temp_years_calc
+			value = {
+				value = 100
+				subtract = var:current_pursuit.var:total_progress
+				divide = var:current_pursuit.var:monthly_progress
+				divide = 12
+				min = 0
+			}
+		}
+		save_scope_value_as = {
+			name = temp_months_calc
+			value = {
+				value = 100
+				subtract = var:current_pursuit.var:total_progress
+				divide = var:current_pursuit.var:monthly_progress
+				modulo = 12
+				min = 0
+			}
+		}
+		custom_tooltip = "ALT_pursuit_casting_time"
+	}
 }
 
 ALT_seek_new_schools = {
-    scope = character 
+	scope = character 
 
-    effect = {
-        show_as_tooltip = {
-            custom_tooltip = ALT_seek_new_schools_tt
-            ALT_seek_new_school_effect = yes
-        }
-        hidden_effect = {
-            ALT_start_pursuit_effect = {
-                TYPE = flag:ALT_seek_new_schools
-                MONTHLY_PROGRESS = 3 #4 years to compelete this
-                TARGET = THIS
-                SACRIFICE = THIS
-                ICON = flag:pursuit_ALT_seek_new_schools_icon
-                MAIN_TYPE = flag:alt_study
-            }
-        }
-    }
-    is_valid = {
-        NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_seek_new_schools } }
-        NOT = { 
-            AND = {
-                has_character_flag = ALT_know_biomancy
-                has_character_flag = ALT_know_mensomancy
-                has_character_flag = ALT_know_materomancy
-                has_character_flag = ALT_know_aetherimancy
-            }
-        }
-    }
+	effect = {
+		show_as_tooltip = {
+			custom_tooltip = ALT_seek_new_schools_tt
+			ALT_seek_new_school_effect = yes
+		}
+		hidden_effect = {
+			ALT_start_pursuit_effect = {
+				TYPE = flag:ALT_seek_new_schools
+				MONTHLY_PROGRESS = 3 #4 years to compelete this
+				TARGET = THIS
+				SACRIFICE = THIS
+				ICON = flag:pursuit_ALT_seek_new_schools_icon
+				MAIN_TYPE = flag:alt_study
+			}
+		}
+	}
+	is_valid = {
+		NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_seek_new_schools } }
+		NOT = { 
+			AND = {
+				has_character_flag = ALT_know_biomancy
+				has_character_flag = ALT_know_mensomancy
+				has_character_flag = ALT_know_materomancy
+				has_character_flag = ALT_know_aetherimancy
+			}
+		}
+	}
 }

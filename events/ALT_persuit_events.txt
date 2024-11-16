@@ -1,11 +1,11 @@
 ﻿namespace = ALT_pursuit_events
 ALT_pursuit_events.0001 = { # 
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0001.title
 	desc = ALT_pursuit_events.0001.desc
 	theme = secret
-    option = {
-        name = ALT_pursuit_events.0001.a
+	option = {
+		name = ALT_pursuit_events.0001.a
 		send_interface_toast = {
 			title = ALT_pursuit_events.0001.a.tt
 			switch = {
@@ -102,42 +102,46 @@ ALT_pursuit_events.0001 = { #
 				flag:ALT_ritual_of_different_world = { ALT_ritual_of_different_world_effect = { TARGET = var:current_pursuit.var:target } }
 			}
 		}
-        
-        ALT_delete_pursuit_effect = { pursuit = var:current_pursuit }
-    }
-    option = {
-        name = ALT_pursuit_events.0001.b
-        custom_tooltip = "ALT_pursuit_events.0001.b.tt"
-        ALT_pause_current_pursuit_effect = yes
-    }
+		
+		if = { limit = { is_ai = yes } var:current_pursuit.var:sacrifice = { death = { death_reason = death_torture } } }
+		ALT_delete_pursuit_effect = { pursuit = var:current_pursuit }
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ALT_pursuit_events.0001.b
+		custom_tooltip = "ALT_pursuit_events.0001.b.tt"
+		ALT_pause_current_pursuit_effect = yes
+	}
 }
 
 
 ALT_pursuit_events.0002 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0002.t
 	desc = ALT_pursuit_events.0002.desc
 	theme = secret
 	
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
 	option = {
-	    name = ALT_pursuit_events.0002.a
+		name = ALT_pursuit_events.0002.a
 		
 		trigger = {
 			scope:target = { number_of_personality_traits < personality_trait_limit }
 		}
 
 		trigger_event = {
-			    id = ALT_pursuit_events.0003
+				id = ALT_pursuit_events.0003
 			}
 	}
 	
 	option = {
-	    name = ALT_pursuit_events.0002.b
+		name = ALT_pursuit_events.0002.b
 
 		trigger = {
 			scope:target = { number_of_personality_traits > personality_trait_minimum }
@@ -149,7 +153,7 @@ ALT_pursuit_events.0002 = {
 	}
 
 	option = {
-	    name = ALT_pursuit_events.0002.c
+		name = ALT_pursuit_events.0002.c
 	}
 	
 }
@@ -157,55 +161,55 @@ ALT_pursuit_events.0002 = {
 #Add personality trait
 
 ALT_pursuit_events.0003 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0003.t
 	desc = ALT_pursuit_events.0003.desc
 	theme = secret
 
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
 	option = {
-	    name = ALT_pursuit_events.0003.a
+		name = ALT_pursuit_events.0003.a
 
 		trigger_event = {
-            id = ALT_pursuit_events.0004
-        }
+			id = ALT_pursuit_events.0004
+		}
 	}
 	option = {
-	    name = ALT_pursuit_events.0003.b
+		name = ALT_pursuit_events.0003.b
 
 		trigger_event = {
-            id = ALT_pursuit_events.0004
-        }
+			id = ALT_pursuit_events.0004
+		}
 	}
 	option = {
-	    name = ALT_pursuit_events.0003.c
+		name = ALT_pursuit_events.0003.c
 
 		trigger_event = {
-            id = ALT_pursuit_events.0005
-        }
+			id = ALT_pursuit_events.0005
+		}
 	}
 	option = {
-	    name = ALT_pursuit_events.0003.d
+		name = ALT_pursuit_events.0003.d
 
 		trigger_event = {
-            id = ALT_pursuit_events.0006
-        }
+			id = ALT_pursuit_events.0006
+		}
 	}
 	option = {
-	    name = ALT_pursuit_events.0003.e
+		name = ALT_pursuit_events.0003.e
 
 		trigger_event = {
-            id = ALT_pursuit_events.0007
-        }
+			id = ALT_pursuit_events.0007
+		}
 	}
 
 
 	option = {
-	    name = ALT_pursuit_events.0003.back
+		name = ALT_pursuit_events.0003.back
 
 		trigger_event = {
 				id = ALT_pursuit_events.0002
@@ -217,13 +221,13 @@ ALT_pursuit_events.0003 = {
 }
 
 ALT_pursuit_events.0004 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0003.t
 	desc = ALT_pursuit_events.0003.desc
 	theme = secret
 	
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
@@ -332,7 +336,7 @@ ALT_pursuit_events.0004 = {
 	}
 	
 	option = {
-	    name = ALT_pursuit_events.0003.back
+		name = ALT_pursuit_events.0003.back
 
 		trigger_event = {
 				id = ALT_pursuit_events.0003
@@ -341,13 +345,13 @@ ALT_pursuit_events.0004 = {
 }
 
 ALT_pursuit_events.0005 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0003.t
 	desc = ALT_pursuit_events.0003.desc
 	theme = secret
 	
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
@@ -474,7 +478,7 @@ ALT_pursuit_events.0005 = {
 	}
 	
 	option = {
-	    name = ALT_pursuit_events.0003.back
+		name = ALT_pursuit_events.0003.back
 
 		trigger_event = {
 				id = ALT_pursuit_events.0003
@@ -483,13 +487,13 @@ ALT_pursuit_events.0005 = {
 }
 
 ALT_pursuit_events.0006 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0003.t
 	desc = ALT_pursuit_events.0003.desc
 	theme = secret
 	
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
@@ -570,7 +574,7 @@ ALT_pursuit_events.0006 = {
 		scope:target = { add_trait = shy }
 	}
 
-    option = {
+	option = {
 		name = ALT_pursuit_events.0003.arrogant
 		trigger = {
 			NOR = {
@@ -593,7 +597,7 @@ ALT_pursuit_events.0006 = {
 	}
 	
 	option = {
-	    name = ALT_pursuit_events.0003.back
+		name = ALT_pursuit_events.0003.back
 
 		trigger_event = {
 				id = ALT_pursuit_events.0003
@@ -602,13 +606,13 @@ ALT_pursuit_events.0006 = {
 }
 
 ALT_pursuit_events.0007 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0003.t
 	desc = ALT_pursuit_events.0003.desc
 	theme = secret
 	
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
@@ -693,24 +697,24 @@ ALT_pursuit_events.0007 = {
 	}
 	
 	option = {
-	    name = ALT_pursuit_events.0003.back
+		name = ALT_pursuit_events.0003.back
 
 		trigger_event = {
-            id = ALT_pursuit_events.0003
-        }
+			id = ALT_pursuit_events.0003
+		}
 	}
 }
 
 #Remove personality trait
 
 ALT_pursuit_events.0008 = {
-    type = character_event
+	type = character_event
 	title = ALT_pursuit_events.0008.t
 	desc = ALT_pursuit_events.0008.desc
 	theme = secret
 
 	left_portrait = {
-	    character = scope:target
+		character = scope:target
 		animation = personality_zealous
 	}
 
@@ -1004,8 +1008,8 @@ ALT_pursuit_events.0008 = {
 	option = {
 		name = ALT_pursuit_events.0003.back	
 		trigger_event = {
-            id = ALT_pursuit_events.0002
-        }
+			id = ALT_pursuit_events.0002
+		}
 	}
 }
 
@@ -1026,10 +1030,10 @@ ALT_pursuit_events.0008 = {
 # 			skill = learning
 # 			value = 30
 # 			5 = {
-#                 compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = 1
-#                 }
+#				 compare_modifier = {
+#					 value = scope:duel_value
+#					 multiplier = 1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_biomancy_studing
 # 					add = var:ALT_easier_biomancy_studing
@@ -1039,12 +1043,12 @@ ALT_pursuit_events.0008 = {
 # 					ALT_become_biomancer = yes
 # 					if = { limit = { has_variable = ALT_easier_biomancy_studing } remove_variable = ALT_easier_biomancy_studing }
 # 				}
-#             }
+#			 }
 # 			10 = {
 # 				compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = -1
-#                 }
+#					 value = scope:duel_value
+#					 multiplier = -1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_biomancy_studing
 # 					add = {
@@ -1073,10 +1077,10 @@ ALT_pursuit_events.0008 = {
 # 			skill = learning
 # 			value = 30
 # 			5 = {
-#                 compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = 1
-#                 }
+#				 compare_modifier = {
+#					 value = scope:duel_value
+#					 multiplier = 1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_mensomancy_studing
 # 					add = var:ALT_easier_mensomancy_studing
@@ -1086,12 +1090,12 @@ ALT_pursuit_events.0008 = {
 # 					ALT_become_mensomancer = yes
 # 					if = { limit = { has_variable = ALT_easier_mensomancy_studing } remove_variable = ALT_easier_mensomancy_studing }
 # 				}
-#             }
+#			 }
 # 			10 = {
 # 				compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = -1
-#                 }
+#					 value = scope:duel_value
+#					 multiplier = -1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_mensomancy_studing
 # 					add = {
@@ -1119,10 +1123,10 @@ ALT_pursuit_events.0008 = {
 # 			skill = learning
 # 			value = 30
 # 			5 = {
-#                 compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = 1
-#                 }
+#				 compare_modifier = {
+#					 value = scope:duel_value
+#					 multiplier = 1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_materomancy_studing
 # 					add = var:ALT_easier_materomancy_studing
@@ -1132,12 +1136,12 @@ ALT_pursuit_events.0008 = {
 # 					ALT_become_materomancer = yes
 # 					if = { limit = { has_variable = ALT_easier_materomancy_studing } remove_variable = ALT_easier_materomancy_studing }
 # 				}
-#             }
+#			 }
 # 			10 = {
 # 				compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = -1
-#                 }
+#					 value = scope:duel_value
+#					 multiplier = -1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_materomancy_studing
 # 					add = {
@@ -1165,10 +1169,10 @@ ALT_pursuit_events.0008 = {
 # 			skill = learning
 # 			value = 30
 # 			5 = {
-#                 compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = 1
-#                 }
+#				 compare_modifier = {
+#					 value = scope:duel_value
+#					 multiplier = 1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_aetherimancy_studing
 # 					add = var:ALT_easier_aetherimancy_studing
@@ -1178,12 +1182,12 @@ ALT_pursuit_events.0008 = {
 # 					ALT_become_aetherimancer = yes
 # 					if = { limit = { has_variable = ALT_easier_aetherimancy_studing } remove_variable = ALT_easier_aetherimancy_studing }
 # 				}
-#             }
+#			 }
 # 			10 = {
 # 				compare_modifier = {
-#                     value = scope:duel_value
-#                     multiplier = -1
-#                 }
+#					 value = scope:duel_value
+#					 multiplier = -1
+#				 }
 # 				modifier = {
 # 					has_variable = ALT_easier_aetherimancy_studing
 # 					add = {

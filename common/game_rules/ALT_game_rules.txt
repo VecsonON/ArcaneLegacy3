@@ -1,6 +1,6 @@
 ﻿ALT_arcane_events = {
 	default = ALT_arcane_events_default
-    
+	
 	ALT_arcane_events_rare = { # Rare
 	}
 	
@@ -16,7 +16,7 @@
 
 ALT_secrecy_status = {
 	default = ALT_secrecy_enabled
-    
+	
 	ALT_secrecy_enabled = {
 	}
 	

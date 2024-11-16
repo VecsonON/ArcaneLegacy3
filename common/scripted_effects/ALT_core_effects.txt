@@ -1,167 +1,294 @@
 ﻿ALT_start_pursuit_effect = {
-    if = { limit = { NOT = { ALT_has_pursuit_of_type = { TYPE = $TYPE$ } } } 
-        create_story = {
-            type = ALT_story_cycle_pursuit
-            save_scope_as = temp_pursuit
-        }
-        if = { limit = { has_variable = current_pursuit } 
-            add_to_variable_list = { name = pursuits target = var:current_pursuit }
-        }
-        hidden_effect_new_object = {
-            scope:temp_pursuit = {
-                set_variable = {
-                    name = main_type
-                    value = $MAIN_TYPE$
-                }
-                set_variable = {
-                    name = type
-                    value = $TYPE$
-                }
-                set_variable = {
-                    name = monthly_progress
-                    value = $MONTHLY_PROGRESS$
-                }
-                set_variable = {
-                    name = target
-                    value = $TARGET$
-                }
-                set_variable = {
-                    name = sacrifice
-                    value = $SACRIFICE$
-                }
-                set_variable = {
-                    name = icon
-                    value = $ICON$
-                }
-            }
-        }
-        set_variable = {
-            name = current_pursuit
-            value = scope:temp_pursuit
-        }
-    }
+	if = { limit = { NOT = { ALT_has_pursuit_of_type = { TYPE = $TYPE$ } } } 
+		create_story = {
+			type = ALT_story_cycle_pursuit
+			save_scope_as = temp_pursuit
+		}
+		if = { limit = { has_variable = current_pursuit } 
+			add_to_variable_list = { name = pursuits target = var:current_pursuit }
+		}
+		hidden_effect_new_object = {
+			scope:temp_pursuit = {
+				set_variable = {
+					name = main_type
+					value = $MAIN_TYPE$
+				}
+				set_variable = {
+					name = type
+					value = $TYPE$
+				}
+				set_variable = {
+					name = monthly_progress
+					value = $MONTHLY_PROGRESS$
+				}
+				set_variable = {
+					name = target
+					value = $TARGET$
+				}
+				set_variable = {
+					name = sacrifice
+					value = $SACRIFICE$
+				}
+				set_variable = {
+					name = icon
+					value = $ICON$
+				}
+			}
+		}
+		set_variable = {
+			name = current_pursuit
+			value = scope:temp_pursuit
+		}
+	}
 }
 
 ALT_pause_current_pursuit_effect = {
-    if = { limit = { has_variable = current_pursuit } 
-        add_to_variable_list = { name = pursuits target = var:current_pursuit }
-        remove_variable = current_pursuit
-    }
+	if = { limit = { has_variable = current_pursuit } 
+		add_to_variable_list = { name = pursuits target = var:current_pursuit }
+		remove_variable = current_pursuit
+	}
 }
 ALT_resume_paused_pursuit_effect = {
-    if = { limit = { has_variable = current_pursuit } 
-        add_to_variable_list = { name = pursuits target = var:current_pursuit }
-        remove_variable = current_pursuit
-    }
-    remove_list_variable = {
-        name = pursuits
-        target = $pursuit$
-    }
-    set_variable = {
-        name = current_pursuit
-        value = $pursuit$
-    }
-    if = { limit = { var:current_pursuit.var:total_progress >= 100 } 
-        trigger_event = ALT_pursuit_events.0001
-    }
+	if = { limit = { has_variable = current_pursuit } 
+		add_to_variable_list = { name = pursuits target = var:current_pursuit }
+		remove_variable = current_pursuit
+	}
+	remove_list_variable = {
+		name = pursuits
+		target = $pursuit$
+	}
+	set_variable = {
+		name = current_pursuit
+		value = $pursuit$
+	}
+	if = { limit = { var:current_pursuit.var:total_progress >= 100 } 
+		trigger_event = ALT_pursuit_events.0001
+	}
 }
 ALT_delete_pursuit_effect = {
-    if = { limit = { var:current_pursuit ?= $pursuit$ } 
-        remove_variable = current_pursuit
-    }
-    else = {
-        remove_list_variable = {
-            name = pursuits
-            target = $pursuit$
-        }
-    }
+	if = { limit = { var:current_pursuit ?= $pursuit$ } 
+		remove_variable = current_pursuit
+		$pursuit$ = { end_story = yes }
+	}
+	else = {
+		remove_list_variable = {
+			name = pursuits
+			target = $pursuit$
+		}
+	}
 }
 
 
 ALT_school_xp_gain = {
-    save_scope_value_as = { name = xp_loca value = $COUNT$ }
-    save_scope_value_as = { name = school_loca value = flag:$SCHOOL$ }
-    custom_tooltip = {
-        text = "ALT_SCHOOL_XP_GAIN"
-        if = { limit = { NOT = { has_variable = ALT_school_$SCHOOL$_xp } } 
-            set_variable = { name = ALT_school_$SCHOOL$_xp value = 0 }
-        }
-        change_variable = {
-            name = ALT_school_$SCHOOL$_xp
-            add = $COUNT$
-        }
-    }
+	save_scope_value_as = { name = xp_loca value = $COUNT$ }
+	save_scope_value_as = { name = school_loca value = flag:$SCHOOL$ }
+	custom_tooltip = {
+		text = "ALT_SCHOOL_XP_GAIN"
+		if = { limit = { NOT = { has_variable = ALT_school_$SCHOOL$_xp } } 
+			set_variable = { name = ALT_school_$SCHOOL$_xp value = 0 }
+		}
+		change_variable = {
+			name = ALT_school_$SCHOOL$_xp
+			add = $COUNT$
+		}
+	}
 }
 
 ALT_make_complex_marker = {
-    create_story = {
-        type = ALT_story_cycle_complex_marker
-        save_scope_as = temp_complex_marker
-    }
-    hidden_effect_new_object = {
-        scope:temp_complex_marker = {
-            set_variable = { name = type value = $TYPE$ }
-            set_variable = { name = target value = $TARGET$ }
-        }
-        set_variable = { name = $SAVE_AS$ value = scope:temp_complex_marker }
-    }
+	create_story = {
+		type = ALT_story_cycle_complex_marker
+		save_scope_as = temp_complex_marker
+	}
+	hidden_effect_new_object = {
+		scope:temp_complex_marker = {
+			set_variable = { name = type value = $TYPE$ }
+			set_variable = { name = target value = $TARGET$ }
+		}
+		set_variable = { name = $SAVE_AS$ value = scope:temp_complex_marker }
+	}
 }
 
 ALT_create_ritual = {
-    create_story = {
-        type = ALT_story_cycle_ritual
-        save_scope_as = temp_ritual
-    }
-    scope:temp_ritual = {
-        set_variable = { name = type value = $TYPE$ }
-        set_variable = { name = level value = $LEVEL$ }
-        set_variable = { name = target_type value = $TARGET_TYPE$ }
-        set_variable = { name = sacrifice_type value = $SACRIFICE_TYPE$ }
-        set_variable = { name = school value = flag:$SCHOOL$ }
-    }
-    add_to_variable_list = { name = $SCHOOL$_ritual_list target = scope:temp_ritual }
+	create_story = {
+		type = ALT_story_cycle_ritual
+		save_scope_as = temp_ritual
+	}
+	scope:temp_ritual = {
+		set_variable = { name = type value = $TYPE$ }
+		set_variable = { name = level value = $LEVEL$ }
+		set_variable = { name = target_type value = $TARGET_TYPE$ }
+		set_variable = { name = sacrifice_type value = $SACRIFICE_TYPE$ }
+		set_variable = { name = school value = flag:$SCHOOL$ }
+	}
+	add_to_variable_list = { name = $SCHOOL$_ritual_list target = scope:temp_ritual }
 }
 
 ALT_become_biomancer = {
-    custom_tooltip = {
-        text = ALT_become_biomancer
-        add_character_flag = ALT_know_biomancy
-    }
+	custom_tooltip = {
+		text = ALT_become_biomancer
+		add_character_flag = ALT_know_biomancy
+	}
 }
 ALT_become_mensomancer = {
-    custom_tooltip = {
-        text = ALT_become_mensomancer
-        add_character_flag = ALT_know_mensomancy
-    }
+	custom_tooltip = {
+		text = ALT_become_mensomancer
+		add_character_flag = ALT_know_mensomancy
+	}
 }
 ALT_become_materomancer = {
-    custom_tooltip = {
-        text = ALT_become_materomancer
-        add_character_flag = ALT_know_materomancy
-    }
+	custom_tooltip = {
+		text = ALT_become_materomancer
+		add_character_flag = ALT_know_materomancy
+	}
 }
 ALT_become_aetherimancer = {
-    custom_tooltip = {
-        text = ALT_become_aetherimancer
-        add_character_flag = ALT_know_aetherimancy
-    }
+	custom_tooltip = {
+		text = ALT_become_aetherimancer
+		add_character_flag = ALT_know_aetherimancy
+	}
 }
 
 ALT_change_secrecy = {
-    if = { limit = { NOT = { has_variable = ALT_secrecy } } set_variable = { name = ALT_secrecy value = 100 } }
-    if = { limit = { ALT_is_discovered_mage = no has_game_rule = ALT_secrecy_enabled }
-        save_scope_value_as = { name = temp_value value = $VALUE$ }
-        if = { limit = { $VALUE$ <= 0 } custom_tooltip = ALT_change_secrecy_subtract }
-        else_if = { custom_tooltip = ALT_change_secrecy_add }
-        save_scope_value_as = { name = temp_calc value = { value = $VALUE$ add = ALT_secrecy } }
-        if = { limit = { OR = { $VALUE$ <= -100 scope:temp_calc <= 0 } } 
-            custom_tooltip = ALT_change_secrecy_discovered 
-            add_trait = ALT_discovered_mage
-        }
-        change_variable = { name = ALT_secrecy add = $VALUE$ }
-    }
-    if = { limit = { has_variable = ALT_secrecy } 
-        if = { limit = { var:ALT_secrecy < 0 } set_variable = { name = ALT_secrecy value = 0 } }
-        if = { limit = { var:ALT_secrecy > 100 } set_variable = { name = ALT_secrecy value = 100 } }
-    }
+	if = { limit = { NOT = { has_variable = ALT_secrecy } } set_variable = { name = ALT_secrecy value = 100 } }
+	if = { limit = { ALT_is_discovered_mage = no has_game_rule = ALT_secrecy_enabled }
+		save_scope_value_as = { name = temp_value value = $VALUE$ }
+		if = { limit = { $VALUE$ <= 0 } custom_tooltip = ALT_change_secrecy_subtract }
+		else_if = { custom_tooltip = ALT_change_secrecy_add }
+		save_scope_value_as = { name = temp_calc value = { value = $VALUE$ add = ALT_secrecy } }
+		if = { limit = { OR = { $VALUE$ <= -100 scope:temp_calc <= 0 } } 
+			custom_tooltip = ALT_change_secrecy_discovered 
+			add_trait = ALT_discovered_mage
+		}
+		change_variable = { name = ALT_secrecy add = $VALUE$ }
+	}
+	if = { limit = { has_variable = ALT_secrecy } 
+		if = { limit = { var:ALT_secrecy < 0 } set_variable = { name = ALT_secrecy value = 0 } }
+		if = { limit = { var:ALT_secrecy > 100 } set_variable = { name = ALT_secrecy value = 100 } }
+	}
+}
+
+# ALT_make_magical_adventurer = {
+# 	if = {
+# 		limit = {
+# 			player_heir ?= {
+# 				NOT = { this = root }
+# 				is_adult = yes
+# 			}
+# 		}
+# 		player_heir = {
+# 			save_scope_as = laamp_heir
+# 			save_scope_as = laamp_inheritor
+# 			custom_tooltip = become_landless_adventurer_decision_title_scope_tt
+# 		}
+# 	}
+# 	else_if = {
+# 		limit = { is_independent_ruler = no }
+# 		liege = {
+# 			save_scope_as = laamp_liege
+# 			save_scope_as = laamp_inheritor
+# 			custom_tooltip = become_landless_adventurer_decision_title_scope_tt
+# 		}
+# 	}
+# 	else = {
+# 		custom_tooltip = become_landless_adventurer_decision_title_created_tt
+# 		if = {
+# 			limit = {
+# 				NOT = { exists = scope:laamp_inheritor }
+# 			}
+# 			hidden_effect_new_object = {
+# 				create_character = {
+# 					template = laamp_inheritor_template
+# 					culture = root.capital_county.culture
+# 					faith = root.capital_county.faith
+# 					dynasty = generate
+# 					location = root.capital_province
+# 					after_creation = {
+# 						save_scope_as = laamp_inheritor
+# 						add_character_flag = new_laamp_inheritor
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	hidden_effect = {
+# 		primary_title = { save_scope_as = old_primary_title }
+# 		capital_province = { save_scope_as = old_capital_province }
+# 		if = {
+# 			limit = { is_independent_ruler = no }
+# 			liege = { save_scope_as = old_liege }
+# 		}
+# 		# Transfer landed titles
+# 		every_held_title = {
+# 			limit = {
+# 				is_landless_type_title = no
+# 				tier > tier_barony
+# 			}
+# 			add_to_list = target_titles
+# 		}
+# 		create_title_and_vassal_change = {
+# 			type = conquest
+# 			save_scope_as = change
+# 			add_claim_on_loss = no
+# 		}
+# 		hidden_effect = {
+# 			every_in_list = {
+# 				list = target_titles
+# 				if = { limit = { exists = scope:laamp_inheritor } 
+# 					change_title_holder_include_vassals = {
+# 						holder = scope:laamp_inheritor
+# 						change = scope:change
+# 					}
+# 				}
+# 			}
+# 			resolve_title_and_vassal_change = scope:change
+# 		}
+# 	}
+# 	create_dynamic_title = {
+# 		tier = duchy
+# 		name = VI_NEW_CREATED_HIGH_PRINCEDOM_NAME
+# 	}
+
+# 	create_title_and_vassal_change = {
+# 		type = created
+# 		save_scope_as = change2
+# 		add_claim_on_loss = no
+# 	}
+
+# 	hidden_effect = {
+# 		scope:new_title = {
+# 			change_title_holder = {
+# 				holder = PREV
+# 				change = scope:change2
+# 			}
+# 			set_capital_county = PREV.location.county
+# 			set_landless_title = yes
+# 			set_definitive_form = yes
+# 		}
+# 	}
+	
+# 	resolve_title_and_vassal_change = scope:change2
+
+# 	change_government = ALT_mage_camp
+# }
+
+ALT_start_ai_pursuit_effect = {
+	create_character = {
+		age = 16
+		gender_female_chance = 50
+		random_traits = no
+		employer = THIS
+		faith = faith
+		culture = culture
+		save_scope_as = sacrifice
+	}
+	ALT_start_pursuit_effect = {
+		TYPE = $TYPE$
+		MONTHLY_PROGRESS = 1
+		TARGET = $TARGET$
+		SACRIFICE = scope:sacrifice
+		ICON = flag:pursuit_ALT_seek_new_schools_icon # AI won't get fancy Icons
+		MAIN_TYPE = flag:alt_casting
+	}
+	save_scope_value_as = { name = type_value value = $TYPE_VALUE$ }
+	var:current_pursuit ?= { set_variable = { name = monthly_progress value = scope:type_value } }
 }

@@ -3,5 +3,5 @@
 }
 ALT_eternal_sercitude_hook = {
 	strong = yes
-    perpetual = yes
+	perpetual = yes
 }
