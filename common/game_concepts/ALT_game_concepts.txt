@@ -62,3 +62,17 @@ ALT_superimancy = {
 	texture = "gfx/icons/alt/superimancy.dds"
 	alias = { ALT_superimancer }
 }
+
+ALT_arcane_lab = {
+	parent = ALT_arcane
+}
+ALT_arcane_lab_buildings = {
+	alias = { ALT_arcane_lab_building }
+	parent = ALT_arcane_lab
+}
+ALT_arcane_lab_location = {
+	parent = ALT_arcane_lab
+}
+ALT_arcane_lab_creation_tutorial = {
+	parent = ALT_arcane_lab_location
+}

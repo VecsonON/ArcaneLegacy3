@@ -1,82 +1,4 @@
-﻿# ALT_mage_study_decision = {
-# 	picture = {
-# 		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
-# 	}	
-# 	decision_group_type = major
-	
-# 	ai_check_interval = 0
-	
-# 	is_shown = {
-# 		OR = {
-#			 has_trait = witch
-#			 AND = {
-#				 has_trait = ambitious
-#				 learning >= 20
-#			 }
-#			 AND = {
-#				 has_trait = cynical
-#				 learning >= 15
-#			 }
-#			 has_trait = scholar
-#			 ALT_is_mage = yes
-#		 }
-#		 NOT = {
-#			 AND = {
-#				 has_character_flag = ALT_know_biomancy
-#				 has_character_flag = ALT_know_mensomancy
-#				 has_character_flag = ALT_know_materomancy
-#				 has_character_flag = ALT_know_aetherimancy
-#			 }
-#		 }
-# 	}
-	
-# 	desc = ALT_mage_study_decision_desc
-	
-# 	effect = {
-# 		trigger_event = ALT_pursuit_events.0009
-#		 custom_tooltip = ALT_mage_study_decision_effect
-# 	}	
-
-# 	ai_potential = {
-# 		always = no
-# 	}
-	
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-
-#	 cooldown = { years = 1 }
-# }
-# ALT_become_magical_adventurer_decision = {
-# 	picture = {
-# 		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
-# 	}	
-# 	decision_group_type = major
-
-# 	ai_check_interval = 0
-
-# 	is_shown = {
-# 		has_ep3_dlc_trigger = yes
-# 		ALT_is_mage = yes
-# 		#is_landed = yes
-# 	}
-
-# 	desc = ALT_become_magical_adventurer_decision_desc
-
-# 	effect = {
-# 		ALT_make_magical_adventurer = yes
-# 	}	
-
-# 	ai_potential = {
-# 		always = no
-# 	}
-
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-
-# }
-ALT_AI_seek_arcane_decision = {
+﻿ALT_AI_seek_arcane_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
 	}	
@@ -103,7 +25,7 @@ ALT_AI_seek_arcane_decision = {
 	}
 
 	ai_will_do = {
-		base = 10
+		base = 1
 
 		modifier = {
 			add = 10
@@ -189,4 +111,23 @@ ALT_AI_study_arcane_decision = {
 	ai_will_do = {
 		base = 25
 	}
+}
+
+ALT_create_arcane_lab_debug = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = major
+
+	ai_check_interval = 0
+
+	is_shown = {
+		ALT_is_mage = yes
+	}
+
+	effect = {
+		save_scope_as = char
+		capital_province = { ALT_create_arcane_lab = yes }
+		capital_province.var:arcane_lab ?= { ALT_arcane_lab_change_ownership = { NEW_OWNER = scope:char } }
+	}	
 }

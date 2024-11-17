@@ -1,4 +1,39 @@
-﻿window = {
+﻿container = {
+	name = "window_arcane_tab_button"
+	parentanchor = bottom|left
+	position = { -5 -400 }
+	alwaystransparent = no
+	layer = bottom
+	visible = "[And(And(Or(Not(IsObserver), GetPlayer.IsValid), GetScriptedGui('initiate_starting_arcane_gui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('player',GetPlayer.MakeScope).End)),And(Not(GetVariableSystem.Exists('ALT_arcane_tab')), Not(IsLeftWindowOpen))))]"
+	button_hud_character_bar = {
+		name = "arcane_button"
+		datacontext = "[GetPlayer.GetFaith]"
+		parentanchor = left
+
+		onclick = "[OpenGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[ToggleGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[GetVariableSystem.Toggle('ALT_arcane_tab')]"
+
+		using = tooltip_es
+
+		tooltip = arcane_button_tooltip
+
+		highlight_icon = {
+			texture = "gfx/icons/alt/arcane.dds"
+			size = { 40 40 }
+			position = { 0 1 }
+			parentanchor = center
+
+			glow = {
+				color = { 0 0 0 0.8 }
+				glow_radius = 3
+				using = Glow_Standard
+			}
+		}
+	}
+}
+
+window = {
 	name = "window_arcane_view"
 	parentanchor = top|left
 	layer = middle
@@ -660,43 +695,6 @@
 	}
 }
 
-container = {
-	name = "window_arcane_tab_button"
-	parentanchor = bottom|left
-	position = { -5 -400 }
-	alwaystransparent = no
-	layer = bottom
-	visible = "[And(And(Or(Not(IsObserver), GetPlayer.IsValid), GetScriptedGui('initiate_starting_arcane_gui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('player',GetPlayer.MakeScope).End)),And(Not(GetVariableSystem.Exists('ALT_arcane_tab')), Not(IsLeftWindowOpen))))]"
-	button_hud_character_bar = {
-		name = "arcane_button"
-		datacontext = "[GetPlayer.GetFaith]"
-		parentanchor = left
-
-		onclick = "[OpenGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
-		onclick = "[ToggleGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
-		onclick = "[GetVariableSystem.Toggle('ALT_arcane_tab')]"
-
-		using = tooltip_es
-
-		tooltip = arcane_button_tooltip
-
-		highlight_icon = {
-			texture = "gfx/icons/alt/arcane.dds"
-			size = { 40 40 }
-			position = { 0 1 }
-			parentanchor = center
-
-			glow = {
-				color = { 0 0 0 0.8 }
-				glow_radius = 3
-				using = Glow_Standard
-			}
-		}
-	}
-	
-
-}
-
 types ArcaneTypes
 {
 	type button_activity_entry = button_standard {
@@ -772,6 +770,575 @@ types ArcaneTypes
 			alwaystransparent = yes
 			
 			block "button2" { size = { 25 25 } }
+		}
+	}
+	type arcane_lab_building_highlight = icon {
+		name = "highlight_current_level"
+
+		block "visible_active" {}
+
+		parentanchor = center
+		size = { 65 65 }
+
+		texture = "gfx/interface/window_roco_grandeur/pin_highlight.dds"
+
+		state = {
+			name = _show
+			using = Animation_Curve_Default
+			alpha = 0.6
+		}
+
+		state = {
+			name = _hide
+			using = Animation_Curve_Default
+			alpha = 0
+		}
+
+		state = {
+			name = "a"
+			next = "b"
+			trigger_on_create = yes
+			alpha = 0.6
+
+			modify_texture = {
+				name = "glow_1"
+				rotate_uv = 0
+			}
+
+			modify_texture = {
+				name = "glow_2"
+				rotate_uv = 0
+			}
+		}
+
+		state = {
+			name = "b"
+			next = "a"
+			duration = 7
+
+			modify_texture = {
+				name = "glow_1"
+				rotate_uv = 360
+			}
+
+			modify_texture = {
+				name = "glow_2"
+				rotate_uv = 360
+			}
+		}
+
+		modify_texture = {
+			name = "glow_1"
+			texture = "gfx/interface/component_masks/mask_glow.dds"
+			blend_mode = alphamultiply
+		}
+
+		modify_texture = {
+			name = "glow_2"
+			texture = "gfx/interface/component_masks/mask_glow.dds"
+			blend_mode = alphamultiply
+			mirror = horizontal
+		}
+	}
+	
+}
+
+container = {
+	name = "window_arcane_lab_tab_button"
+	parentanchor = bottom|left
+	position = { -5 -450 }
+	alwaystransparent = no
+	layer = bottom
+	visible = "[And(And(Or(Not(IsObserver), GetPlayer.IsValid), GetScriptedGui('initiate_starting_arcane_gui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('player',GetPlayer.MakeScope).End)),And(Not(GetVariableSystem.Exists('ALT_arcane_tab')), Not(IsLeftWindowOpen))))]"
+	button_hud_character_bar = {
+		name = "arcane_lab_button"
+		datacontext = "[GetPlayer.GetFaith]"
+		parentanchor = left
+
+		onclick = "[OpenGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[ToggleGameViewData( 'faith', GetPlayer.GetFaith.GetID )]"
+		onclick = "[GetVariableSystem.Toggle('ALT_arcane_lab_tab')]"
+
+		using = tooltip_es
+
+		tooltip = arcane_lab_button_tooltip
+
+		highlight_icon = {
+			texture = "gfx/icons/alt/arcane_lab.dds"
+			size = { 40 40 }
+			position = { 0 1 }
+			parentanchor = center
+
+			glow = {
+				color = { 0 0 0 0.8 }
+				glow_radius = 3
+				using = Glow_Standard
+			}
+		}
+	}
+}
+
+window = {
+	name = "window_arcane_lab_view"
+	parentanchor = top|left
+	layer = middle
+
+	movable = no
+	
+
+	using = Window_Size_Sidebar
+	using = Window_Background_Sidebar
+	
+	visible = "[And(GetVariableSystem.Exists('ALT_arcane_lab_tab'), Not(IsLeftWindowOpen)))]"
+	
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+
+		on_start = "[GetVariableSystem.Set( 'hide_bottom_left_HUD', 'true' )]"
+
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+
+		on_start = "[GetVariableSystem.Clear('ALT_arcane_lab_tab')]"
+		on_start = "[GetVariableSystem.Clear( 'hide_bottom_left_HUD')]"
+	}
+	
+	vbox = {
+		using = Window_Margins_Sidebar
+		widget_header_with_picture = {
+			name = "header"
+			size = { 0 180 }
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = fixed
+
+			blockoverride "size" {
+				size = { 100% 200 }
+			}
+
+			blockoverride "header_text"
+			{
+				text = "ARCANE_LAB_VIEW_HEADING"
+				using = tooltip_es
+
+				state = {
+					name = "faith_view_refresh"
+					using = Animation_Refresh_FadeOut
+				}
+
+				state = {
+					using = Animation_Refresh_FadeIn
+				}
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Clear('ALT_arcane_lab_tab')]"
+			}
+
+			blockoverride "button_back"
+			{
+				visible = "[HasViewHistory]"
+				onclick = "[OpenFromViewHistory]"
+				tooltip = "[GetViewHistoryTooltip]"
+			}
+
+			blockoverride "button_me"
+			{
+				onclick = "[DefaultOnCharacterClick(GetPlayer.GetID)]"
+			}
+
+			blockoverride "illustration_texture"
+			{
+				texture = "gfx/interface/illustrations/event_scenes/bp2_study_indian.dds"
+				spriteType = stretched
+				fittype = centercrop
+				alpha = 0.35
+			}
+			hbox = {
+				visible = "[GetPlayer.MakeScope.Var('owned_arcane_lab').IsSet]"
+				hbox = {
+					margin_top = 50
+					layoutpolicy_vertical = expanding
+					spacing = 20
+					vbox = {
+						text_single = {
+							text = "ARCANE_LAB_LOCATION"
+							default_format = "#T"
+						}
+						text_single = {
+							text = "ARCANE_LAB_STATS"
+						}
+					}
+				}
+			}
+			hbox = {
+				visible = "[Not(GetPlayer.MakeScope.Var('owned_arcane_lab').IsSet)]"
+				hbox = {
+					margin_top = 40
+					layoutpolicy_vertical = expanding
+					vbox = {
+						text_single = {
+							text = "ARCANE_LAB_NOT_CREATED"
+							default_format = "#T"
+						}
+						text_single = {
+							text = "ARCANE_LAB_CREATION_TUTORIAL"
+						}
+					}
+				}
+			}
+		}
+		hbox = {
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			scrollbox = {
+				layoutpolicy_vertical = expanding
+				layoutpolicy_horizontal = expanding
+				blockoverride "scrollbox_content" {
+					vbox = {
+						datamodel = "[GetPlayer.MakeScope.Var('owned_arcane_lab').GetList('buildings')]"
+						layoutpolicy_horizontal = expanding
+						spacing = 10
+
+						item = {
+							widget = {									
+								size = { 650 150 }
+								vbox = {
+									max_width = 560
+									layoutpolicy_horizontal = expanding
+
+									background = {
+										using = Background_Area
+									}
+
+									background = {
+										using = Background_Frame
+									}
+									hbox = {
+										margin = { 10 10 }
+										background = {
+											using = Background_Area
+										}
+										layoutpolicy_horizontal = expanding
+										text_single = {
+											text = "[Localize(Concatenate('ALT_', Scope.Var('type').GetFlagName))]"
+											default_format = "#T"
+										}
+									}
+
+									hbox = {
+										layoutpolicy_horizontal = expanding
+										margin = { 5 5 }
+										spacing = 15
+										background = {
+											using = Background_Area_Dark
+											margin = { -4 -2 }
+										}
+										expand = {}
+										icon = {
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_1'))]"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_01.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+												}
+											}
+										}
+										icon = {
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('max_level').GetValue,'(CFixedPoint)2')]"
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_02.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											line = {
+												visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+												using = Line_Domicile_Constructed
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+												using = Line_Domicile_CanConstruct
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[LessThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+												using = Line_Domicile_Unavailable
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+												}
+											}
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_2'))]"
+										}
+										icon = {
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('max_level').GetValue,'(CFixedPoint)3')]"
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_03.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											line = {
+												visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+												using = Line_Domicile_Constructed
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+												using = Line_Domicile_CanConstruct
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[LessThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+												using = Line_Domicile_Unavailable
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+												}
+											}
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_3'))]"
+										}
+										icon = {
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('max_level').GetValue,'(CFixedPoint)4')]"
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_04.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											line = {
+												visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+												using = Line_Domicile_Constructed
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+												using = Line_Domicile_CanConstruct
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[LessThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+												using = Line_Domicile_Unavailable
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+												}
+											}
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_4'))]"
+										}
+										icon = {
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('max_level').GetValue,'(CFixedPoint)5')]"
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_05.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											line = {
+												visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)5')]"
+												using = Line_Domicile_Constructed
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+												using = Line_Domicile_CanConstruct
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[LessThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+												using = Line_Domicile_Unavailable
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)5')]"
+												}
+											}
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_5'))]"
+										}
+										icon = {
+											visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('max_level').GetValue,'(CFixedPoint)6')]"
+											alwaystransparent = yes
+											size = { 50 50 }
+											texture = "gfx/interface/window_domiciles/domicile_icon_bg_level_01.dds"
+											icon = {
+												position = { 12 19 }
+												size = { 25 13 }
+												texture = "gfx/interface/icons/building_types/building_level_06.dds"
+												modify_texture = {
+													texture = "gfx/interface/colors/colors_textured.dds"
+													blend_mode = add
+													framesize = { 96 96 }
+
+													block "master_color_frame" {
+														frame = 2
+													}
+												}
+											}
+											line = {
+												visible = "[GreaterThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)6')]"
+												using = Line_Domicile_Constructed
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)5')]"
+												using = Line_Domicile_CanConstruct
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											line = {
+												visible = "[LessThanOrEqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+												using = Line_Domicile_Unavailable
+												from = { -20 25 }
+												to = { 7 25 }
+											}
+											arcane_lab_building_highlight = {
+												blockoverride "visible_active"
+												{
+													visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)6')]"
+												}
+											}
+											tooltip = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_6'))]"
+										}
+										expand = {}
+									}
+
+									### Building Costs ###
+									hbox = {
+										layoutpolicy_horizontal = expanding
+										margin = { 15 10 }
+										spacing = 15
+
+										background = {
+											using = Background_Area
+										}
+
+										text_single = {
+											text = "BUILDING_MASTERY_REQUIREMENT"
+											max_width = 150
+										}
+										expand = {}
+										
+										text_single = {
+											text = "BUILDING_COST"
+											max_width = 150
+										}
+
+										expand = {}
+
+										allow_outside = yes
+
+										button_standard = {
+											name = "construct_button"
+											size = { 155 33 }
+
+											text = "UPGRADE"
+											
+											onclick = "[GetScriptedGui('ALT_upgrade_arcane_lab_building').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('building_type', MakeScopeFlag(Scope.Var('type').GetFlagName)).End)]"
+											enabled = "[GetScriptedGui('ALT_upgrade_arcane_lab_building').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('building_type', MakeScopeFlag(Scope.Var('type').GetFlagName)).End)]"
+
+											tooltip = "[GetScriptedGui('ALT_upgrade_arcane_lab_building').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('building_type', MakeScopeFlag(Scope.Var('type').GetFlagName)).End)]"
+											using = tooltip_ne
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }

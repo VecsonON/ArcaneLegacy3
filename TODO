@@ -16,7 +16,7 @@ TODO:
     ☐ Add objective for landless mages @low
     ☐ Add Supreme spell to each school, unlockable after long and hard pursuit
     ☐ Player can teach AI magic
-    ✔ / ✘ | Debuff immortality / Improve Immortality to be more realistic
+    ✘ Debuff immortality / Improve Immortality to be more realistic [Added Suspicion, TODO more]
     ✔ Give AI magic:
         ✔ Ambitious character should have low chance to seek magic
         ✔ Mage AI should slowely gain xp in owned schools
@@ -27,3 +27,5 @@ TODO:
             / Aetherimancy
     ☐ Create Witch hunting @high
     ☐ Add more mechanic depth to suspision @high @low
+    ☐ Domicile Arcane Lab
+    ☐ Changed Forgotten Labs from special buildings to modifiers

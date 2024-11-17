@@ -38,6 +38,35 @@ ALT_story_cycle_complex_marker = {
 	}
 
 	on_owner_death = {
-		end_story = yes
+		if = { limit = { NOT = { has_variable = remain_after_death } } end_story = yes }
+	}
+}
+
+ALT_eternal_story_cycle = {
+	on_setup = {
+		
+	}
+
+	on_end = {
+	}
+
+	on_owner_death = {
+		create_character = {
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			trait = immortal
+			location = story_owner.location
+			faith = story_owner.faith
+			culture = story_owner.culture
+			save_scope_as = ALT_eternal_character
+		}
+		set_global_variable = { name = ALT_eternal_character value = scope:ALT_eternal_character }
+		story_owner = {
+			every_owned_story = {
+				make_story_owner = global_var:ALT_eternal_character
+			}
+		}
+		make_story_owner = global_var:ALT_eternal_character
 	}
 }

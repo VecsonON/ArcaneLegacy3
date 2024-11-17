@@ -1,5 +1,5 @@
-﻿forgotten_lab = {
-	type_icon = "icon_structure_ruins_of_ctesiphon.dds"
-	type = special
-	flag = arcane_lab
-}
+﻿# forgotten_lab = {
+# 	type_icon = "icon_structure_ruins_of_ctesiphon.dds"
+# 	type = special
+# 	flag = arcane_lab
+# }

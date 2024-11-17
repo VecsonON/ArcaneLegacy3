@@ -44,3 +44,13 @@ ALT_is_discovered_mage = {
 		var:ALT_secrecy ?= 0
 	}
 }
+
+ALT_arcane_lab_has_building = {
+	var:owned_arcane_lab ?= {
+		any_in_list = {
+			variable = buildings
+			var:type = $TYPE$
+			count $OPERANDI$ $VALUE$
+		}
+	}
+}

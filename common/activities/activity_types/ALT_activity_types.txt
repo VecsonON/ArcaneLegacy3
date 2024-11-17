@@ -216,7 +216,7 @@
 	}
 	
 	is_location_valid = {
-		has_building = forgotten_lab
+		has_province_modifier = ALT_secluded_lab_modifier
 	}
 
     province_filter = all

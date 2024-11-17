@@ -229,8 +229,8 @@ ALT_forgotten_lab_generation = {
 		every_empire = {
 			random_de_jure_county = {
 				random_county_province = {
-					limit = { has_special_building = no has_holding = yes }
-					add_special_building = forgotten_lab
+					limit = { has_holding = yes }
+					ALT_create_arcane_lab = yes
 					change_local_variable = {
 						name = forgotten_lab_amount
 						add = 1
@@ -239,10 +239,10 @@ ALT_forgotten_lab_generation = {
 			}
 		}
 		if = { limit = { local_var:forgotten_lab_amount < 5 }
-			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
-			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
-			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
-			random_province = { limit = { exists = province_owner has_special_building = no has_holding = yes } add_special_building = forgotten_lab }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
 		}
 	}
 }

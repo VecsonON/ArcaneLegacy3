@@ -191,3 +191,34 @@ ALT_seek_new_schools = {
 		}
 	}
 }
+
+ALT_upgrade_arcane_lab_building = {
+	effect = {
+		var:owned_arcane_lab ?= {
+			every_in_list = {
+				variable = buildings
+				limit = { var:type = scope:building_type }
+				change_variable = { name = level add = 1 }
+			}
+		}
+		add_character_flag = { flag = ALT_arcane_lab_cooldown years = 5 }
+		set_variable = { name = ALT_debug_building_type value = scope:building_type }
+	}
+	is_valid = {
+		custom_tooltip = {
+			text = ALT_upgrade_arcane_lab_building_cooldown
+			NOT = { has_character_flag = ALT_arcane_lab_cooldown }
+		}
+		custom_tooltip = {
+			text = ALT_upgrade_arcane_lab_building_limit
+			var:owned_arcane_lab ?= {
+				any_in_list = {
+					variable = buildings
+					var:type = scope:building_type
+					var:level = var:max_level
+					count = 0
+				}
+			}
+		}
+	}
+}

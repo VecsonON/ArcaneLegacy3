@@ -1,4 +1,21 @@
-﻿ALT_start_pursuit_effect = {
+﻿ALT_setup_eternal_character = {
+	if = { limit = { NOT = { has_global_variable = ALT_eternal_character } } 
+		create_character = {
+			age = 16
+			gender_female_chance = 50
+			random_traits = no
+			trait = immortal
+			location = $LOCATION$
+			faith = faith
+			culture = culture
+			save_scope_as = ALT_eternal_character
+		}
+		set_global_variable = { name = ALT_eternal_character value = scope:ALT_eternal_character }
+		global_var:ALT_eternal_character = { create_story = ALT_eternal_story_cycle }
+	}
+}
+
+ALT_start_pursuit_effect = {
 	if = { limit = { NOT = { ALT_has_pursuit_of_type = { TYPE = $TYPE$ } } } 
 		create_story = {
 			type = ALT_story_cycle_pursuit
@@ -167,110 +184,6 @@ ALT_change_secrecy = {
 	}
 }
 
-# ALT_make_magical_adventurer = {
-# 	if = {
-# 		limit = {
-# 			player_heir ?= {
-# 				NOT = { this = root }
-# 				is_adult = yes
-# 			}
-# 		}
-# 		player_heir = {
-# 			save_scope_as = laamp_heir
-# 			save_scope_as = laamp_inheritor
-# 			custom_tooltip = become_landless_adventurer_decision_title_scope_tt
-# 		}
-# 	}
-# 	else_if = {
-# 		limit = { is_independent_ruler = no }
-# 		liege = {
-# 			save_scope_as = laamp_liege
-# 			save_scope_as = laamp_inheritor
-# 			custom_tooltip = become_landless_adventurer_decision_title_scope_tt
-# 		}
-# 	}
-# 	else = {
-# 		custom_tooltip = become_landless_adventurer_decision_title_created_tt
-# 		if = {
-# 			limit = {
-# 				NOT = { exists = scope:laamp_inheritor }
-# 			}
-# 			hidden_effect_new_object = {
-# 				create_character = {
-# 					template = laamp_inheritor_template
-# 					culture = root.capital_county.culture
-# 					faith = root.capital_county.faith
-# 					dynasty = generate
-# 					location = root.capital_province
-# 					after_creation = {
-# 						save_scope_as = laamp_inheritor
-# 						add_character_flag = new_laamp_inheritor
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# 	hidden_effect = {
-# 		primary_title = { save_scope_as = old_primary_title }
-# 		capital_province = { save_scope_as = old_capital_province }
-# 		if = {
-# 			limit = { is_independent_ruler = no }
-# 			liege = { save_scope_as = old_liege }
-# 		}
-# 		# Transfer landed titles
-# 		every_held_title = {
-# 			limit = {
-# 				is_landless_type_title = no
-# 				tier > tier_barony
-# 			}
-# 			add_to_list = target_titles
-# 		}
-# 		create_title_and_vassal_change = {
-# 			type = conquest
-# 			save_scope_as = change
-# 			add_claim_on_loss = no
-# 		}
-# 		hidden_effect = {
-# 			every_in_list = {
-# 				list = target_titles
-# 				if = { limit = { exists = scope:laamp_inheritor } 
-# 					change_title_holder_include_vassals = {
-# 						holder = scope:laamp_inheritor
-# 						change = scope:change
-# 					}
-# 				}
-# 			}
-# 			resolve_title_and_vassal_change = scope:change
-# 		}
-# 	}
-# 	create_dynamic_title = {
-# 		tier = duchy
-# 		name = VI_NEW_CREATED_HIGH_PRINCEDOM_NAME
-# 	}
-
-# 	create_title_and_vassal_change = {
-# 		type = created
-# 		save_scope_as = change2
-# 		add_claim_on_loss = no
-# 	}
-
-# 	hidden_effect = {
-# 		scope:new_title = {
-# 			change_title_holder = {
-# 				holder = PREV
-# 				change = scope:change2
-# 			}
-# 			set_capital_county = PREV.location.county
-# 			set_landless_title = yes
-# 			set_definitive_form = yes
-# 		}
-# 	}
-	
-# 	resolve_title_and_vassal_change = scope:change2
-
-# 	change_government = ALT_mage_camp
-# }
-
 ALT_start_ai_pursuit_effect = {
 	create_character = {
 		age = 16
@@ -291,4 +204,77 @@ ALT_start_ai_pursuit_effect = {
 	}
 	save_scope_value_as = { name = type_value value = $TYPE_VALUE$ }
 	var:current_pursuit ?= { set_variable = { name = monthly_progress value = scope:type_value } }
+}
+
+### ARCANE LAB
+# SCOPE = PROVINCE
+ALT_create_arcane_lab = {
+	ALT_setup_eternal_character = { LOCATION = THIS }
+	global_var:ALT_eternal_character = { 
+		create_story = {
+			type = ALT_story_cycle_complex_marker
+			save_scope_as = temp_lab
+		}
+	}
+	set_variable = { name = arcane_lab value = scope:temp_lab }
+	var:arcane_lab ?= {
+		set_variable = remain_after_death
+		set_variable = { name = location value = PREV }
+		ALT_make_building_marker = {
+			TYPE = flag:protective_inscriptions
+			LEVEL = 0
+			MAX_LEVEL = 6
+		}
+		ALT_make_building_marker = {
+			TYPE = flag:ritual_circle
+			LEVEL = 0
+			MAX_LEVEL = 6
+		}
+		ALT_make_building_marker = {
+			TYPE = flag:arcane_library
+			LEVEL = 0
+			MAX_LEVEL = 5
+		}
+		ALT_make_building_marker = {
+			TYPE = flag:arcane_living_room
+			LEVEL = 0
+			MAX_LEVEL = 4
+		}
+	}
+	add_province_modifier = ALT_secluded_lab_modifier
+}
+ALT_make_building_marker = {
+	global_var:ALT_eternal_character = { 
+		create_story = {
+			type = ALT_story_cycle_complex_marker
+			save_scope_as = temp_building
+		}
+	}
+	scope:temp_building ?= {
+		set_variable = remain_after_death
+		set_variable = { name = type value = $TYPE$ }
+		set_variable = { name = level value = $LEVEL$ }
+		set_variable = { name = max_level value = $MAX_LEVEL$ }
+	}
+	add_to_variable_list = { name = buildings target = scope:temp_building }
+}
+# SCOPE = LAB
+# NEW_OWNER = CHARACTER
+ALT_arcane_lab_change_ownership = {
+	var:current_owner ?= { remove_variable = owned_arcane_lab }
+	set_variable = { name = current_owner value = $NEW_OWNER$ }
+	$NEW_OWNER$ = { set_variable = { name = owned_arcane_lab value = PREV } }
+}
+# SCOPE = LAB
+# NEW_LOCATION = PROVINCE
+ALT_arcane_lab_move = {
+	var:location ?= {
+		remove_variable = arcane_lab
+		remove_province_modifier = ALT_secluded_lab_modifier
+	}
+	$NEW_LOCATION$ ?= {
+		set_variable = { name = arcane_lab value = PREV }
+		var:arcane_lab ?= { set_variable = { name = location value = PREV } }
+		add_province_modifier = ALT_secluded_lab_modifier
+	}
 }

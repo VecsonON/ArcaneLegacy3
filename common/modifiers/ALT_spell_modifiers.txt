@@ -3,6 +3,12 @@
 	tax_mult = -0.25
 	development_growth_factor = -0.5
 }
+ALT_secluded_lab_modifier = {
+	icon = county_modifier_development_mixed
+}
+
+
+
 
 ALT_ritual_of_treatment_modifier = {
 	icon = health_positive

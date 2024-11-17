@@ -1,4 +1,14 @@
 ﻿l_english:
+ ALT_forgotten_lab_exploration: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_selection_tooltip: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_desc: "Every mage will in their lifespan create an arcane lab, a place where they can study the arcane in peace. So what discoveries await if I myself seek out forgotten ones?"
+ ALT_forgotten_lab_exploration_province_desc: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_host_desc: "$BULLET_WITH_TAB$[gold_i|E][gold|E]\n$BULLET_WITH_TAB$[lifestyle_experience|E]\n$BULLET_WITH_TAB$#low W(ork) I(n) P(rogress)#![artifacts|E]"
+ ALT_forgotten_lab_exploration_guest_desc: "Forgotten Lab Exploration"
+ ALT_forgotten_lab_exploration_conclusion_desc: "My looting of this forgotten lab is complete."
+ ALT_forgotten_lab_exploration_searching: "Exploring"
+ ALT_forgotten_lab_exploration_searching_desc: "I shall explore these ruins!"
+
  ALT_forgotten_lab_exploration_events.0001.title: "Mundane Ruins"
  ALT_forgotten_lab_exploration_events.0001.desc: "And there I am, at a completely normal ruin. There is nothing arcane or supernatural here. This expedition was a complete failure"
  ALT_forgotten_lab_exploration_events.0001.a: "...Or is it?"

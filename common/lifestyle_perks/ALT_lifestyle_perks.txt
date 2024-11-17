@@ -1,0 +1,213 @@
+﻿ALT_protective_inscriptions_1_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.1
+        }
+	effect = {
+		
+	}
+}
+ALT_protective_inscriptions_2_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.2
+        }
+	effect = {
+		
+	}
+}
+ALT_protective_inscriptions_3_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.3
+        }
+	effect = {
+		
+	}
+}
+ALT_protective_inscriptions_4_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.4
+        }
+	effect = {
+		
+	}
+}
+ALT_protective_inscriptions_5_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.5
+        }
+	effect = {
+		
+	}
+}
+ALT_protective_inscriptions_6_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.6
+        }
+	effect = {
+		
+	}
+}
+
+ALT_ritual_circle_1_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.1
+        }
+	effect = {
+		
+	}
+}
+ALT_ritual_circle_2_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.2
+        }
+	effect = {
+		
+	}
+}
+ALT_ritual_circle_3_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.3
+        }
+	effect = {
+		
+	}
+}
+ALT_ritual_circle_4_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.4
+        }
+	effect = {
+		
+	}
+}
+ALT_ritual_circle_5_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.5
+        }
+	effect = {
+		
+	}
+}
+ALT_ritual_circle_6_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.6
+        }
+	effect = {
+		
+	}
+}
+
+ALT_arcane_library_1_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.1
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_library_2_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.2
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_library_3_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.3
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_library_4_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.4
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_library_5_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.5
+        }
+	effect = {
+		
+	}
+}
+
+ALT_arcane_living_room_1_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.1
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_living_room_2_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.2
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_living_room_3_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.3
+        }
+	effect = {
+		
+	}
+}
+ALT_arcane_living_room_4_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.4
+        }
+	effect = {
+		
+	}
+}

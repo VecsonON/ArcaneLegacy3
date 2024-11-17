@@ -1,0 +1,26 @@
+﻿l_english:
+ ALT_mage_study_decision: "Arcane Studies"
+ ALT_mage_study_decision_desc: "In your life you have heard legends and myths about magic and mages. Although you once dismissed them as mere rumor and fiction, with your current understanding of the world the idea of magic has suddenly become a reality.\n\nPerhaps I should take my time and study the esoteric in search of [ALT_arcane|E]?"
+ ALT_mage_study_decision_tooltip: "Arcane Studies"
+ ALT_mage_study_decision_confirm: "Time to hit the books"
+ ALT_mage_study_decision_effect: "You will get an event in which you will decide what school of magic you will study. With diligence and luck, you may understand it and become a mage!"
+
+ ALT_error: "@warning_icon!If you see it, something went wrong."
+
+ ALT_AI_seek_arcane_decision: "$ALT_error$"
+ ALT_AI_seek_arcane_decision_desc: "$ALT_error$"
+ ALT_AI_seek_arcane_decision_tooltip: "$ALT_error$"
+ ALT_AI_seek_arcane_decision_confirm: "$ALT_error$"
+ ALT_AI_seek_arcane_decision_effect: "$ALT_error$"
+
+ ALT_AI_study_arcane: "$ALT_error$"
+ ALT_AI_study_arcane_desc: "$ALT_error$"
+ ALT_AI_study_arcane_tooltip: "$ALT_error$"
+ ALT_AI_study_arcane_confirm: "$ALT_error$"
+ ALT_AI_study_arcane_effect: "$ALT_error$"
+
+ ALT_create_arcane_lab_debug: "$ALT_error$"
+ ALT_create_arcane_lab_debug_desc: "$ALT_error$"
+ ALT_create_arcane_lab_debug_tooltip: "$ALT_error$"
+ ALT_create_arcane_lab_debug_confirm: "$ALT_error$"
+ ALT_create_arcane_lab_debug_effect: "$ALT_error$"
