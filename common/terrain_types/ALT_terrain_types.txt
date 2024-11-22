@@ -1,0 +1,31 @@
+﻿#_advantage = Study pursuit speed %
+#_tax_mult = Ritual pursuit speed %
+#_levy_size = General pursuit speed %
+ALT_pursuits_modifiers = {
+	color = { 220 45 120 }
+	travel_danger_color = hsv { 0.16 0.7 0.8 }
+	travel_danger_score = drylands_danger_value
+	
+	province_modifier = {
+		supply_limit_mult = 0
+		development_growth_factor = -0.05
+		travel_danger = drylands_danger_value
+	}
+	
+	audio_parameter = 1.0
+}
+#_advantage = Secrecy
+#_tax_mult = Security
+ALT_arcane_lab_modifiers = {
+        color = { 220 45 120 }
+	travel_danger_color = hsv { 0.16 0.7 0.8 }
+	travel_danger_score = drylands_danger_value
+	
+	province_modifier = {
+		supply_limit_mult = 0
+		development_growth_factor = -0.05
+		travel_danger = drylands_danger_value
+	}
+	
+	audio_parameter = 1.0
+}

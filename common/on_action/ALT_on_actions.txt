@@ -230,7 +230,7 @@ ALT_forgotten_lab_generation = {
 			random_de_jure_county = {
 				random_county_province = {
 					limit = { has_holding = yes }
-					ALT_create_arcane_lab = yes
+					ALT_generate_random_arcane_lab = yes
 					change_local_variable = {
 						name = forgotten_lab_amount
 						add = 1
@@ -239,25 +239,13 @@ ALT_forgotten_lab_generation = {
 			}
 		}
 		if = { limit = { local_var:forgotten_lab_amount < 5 }
-			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
-			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
-			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
-			random_province = { limit = { exists = province_owner has_holding = yes } ALT_create_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_generate_random_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_generate_random_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_generate_random_arcane_lab = yes }
+			random_province = { limit = { exists = province_owner has_holding = yes } ALT_generate_random_arcane_lab = yes }
 		}
 	}
 }
-
-ALT_forgotten_lab_exploration_on_action = {
-	random_events = {
-		100 = ALT_forgotten_lab_exploration_events.0001
-		100 = ALT_forgotten_lab_exploration_events.0002
-		100 = ALT_forgotten_lab_exploration_events.0003
-		# 100 = ALT_forgotten_lab_exploration_events.0004
-		# 100 = ALT_forgotten_lab_exploration_events.0005
-		# 100 = ALT_forgotten_lab_exploration_events.0006 # 0002 Alt
-	}
-}
-
 
 ALT_study_monthly_pulse = {
 	trigger = { var:current_pursuit ?= { var:main_type ?= flag:alt_study } }
@@ -268,5 +256,63 @@ ALT_study_monthly_pulse = {
 		10 = ALT_study_events.0003
 		10 = ALT_study_events.0004
 		10 = ALT_study_events.0005
+	}
+}
+
+ALT_arcane_lab_building_check = {
+	effect = {
+		refund_perks = ALT_dummy_lifestyle
+		add_ALT_dummy_lifestyle_perk_points = -1000
+
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 1 } } add_perk = ALT_forgetful_inscriptions_1_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 2 } } add_perk = ALT_forgetful_inscriptions_2_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 3 } } add_perk = ALT_forgetful_inscriptions_3_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 4 } } add_perk = ALT_forgetful_inscriptions_4_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 5 } } add_perk = ALT_forgetful_inscriptions_5_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 6 } } add_perk = ALT_forgetful_inscriptions_6_perk }
+
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 1 } } add_perk = ALT_ritual_circle_1_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 2 } } add_perk = ALT_ritual_circle_2_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 3 } } add_perk = ALT_ritual_circle_3_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 4 } } add_perk = ALT_ritual_circle_4_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 5 } } add_perk = ALT_ritual_circle_5_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 6 } } add_perk = ALT_ritual_circle_6_perk }
+
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 1 } } add_perk = ALT_arcane_library_1_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 2 } } add_perk = ALT_arcane_library_2_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 3 } } add_perk = ALT_arcane_library_3_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 4 } } add_perk = ALT_arcane_library_4_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 5 } } add_perk = ALT_arcane_library_5_perk }
+
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 1 } } add_perk = ALT_inscription_traps_1_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 2 } } add_perk = ALT_inscription_traps_2_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 3 } } add_perk = ALT_inscription_traps_3_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 4 } } add_perk = ALT_inscription_traps_4_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 5 } } add_perk = ALT_inscription_traps_5_perk }
+		if = { limit = { ALT_arcane_lab_has_building_char = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 6 } } add_perk = ALT_inscription_traps_6_perk }
+	}
+}
+
+on_siege_completion = {
+	on_actions = {
+		ALT_lab_raid_check
+	}
+}
+on_raid_action_completion = {
+	on_actions = {
+		ALT_lab_raid_check
+	}
+}
+
+ALT_lab_raid_check = {
+	effect = {
+		scope:barony = { 
+			if = { limit = { has_variable = arcane_lab }  
+				random = {
+					chance = scope:barony.ALT_arcane_lab_discovery_chance
+					var:arcane_lab = { ALT_raid_arcane_lab = yes }
+				}
+			}
+		}
 	}
 }

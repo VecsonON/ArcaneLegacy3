@@ -336,7 +336,6 @@ window = {
 												max = 100
 												value = "[GetPlayer.MakeScope.ScriptValue(Concatenate('xp_',Scope.GetFlagName))]"
 												tooltip = "[Localize(Concatenate(Scope.GetFlagName,'_tooltip'))]"
-												
 												widget_level_marker = {
 													position = { -215 0 }
 													scale = 1
@@ -353,7 +352,7 @@ window = {
 													}
 												}
 												widget_level_marker = {
-													position = { -150 0 }
+													position = { -135 0 }
 													scale = 1
 													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_apprentice'))).End)]" }
 
@@ -368,7 +367,7 @@ window = {
 													}
 												}
 												widget_level_marker = {
-													position = { -70 0 }
+													position = { -68 0 }
 													scale = 1
 													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count', MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_adept'))).End)]" }
 
@@ -383,7 +382,7 @@ window = {
 													}
 												}
 												widget_level_marker = {
-													position = { 20 0 }
+													position = { 22 0 }
 													scale = 1
 													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_expert'))).End)]" }
 
@@ -398,7 +397,7 @@ window = {
 													}
 												}
 												widget_level_marker = {
-													position = { 110 0 }
+													position = { 112 0 }
 													scale = 1
 													blockoverride "visible_active" { visible = "[GetScriptedGui('ALT_has_X_xp_of_school_sgui').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('school',MakeScopeFlag(Scope.GetFlagName)).AddScope('count',MakeScopeValue(GetPlayer.MakeScope.ScriptValue('school_xp_threshold_master'))).End)]" }
 
@@ -1008,9 +1007,8 @@ window = {
 
 						item = {
 							widget = {									
-								size = { 650 150 }
+								size = { 560 150 }
 								vbox = {
-									max_width = 560
 									layoutpolicy_horizontal = expanding
 
 									background = {
@@ -1297,8 +1295,9 @@ window = {
 
 									### Building Costs ###
 									hbox = {
+										visible = "[Not(EqualTo_CFixedPoint(Scope.Var('level').GetValue,Scope.Var('max_level').GetValue))]"
 										layoutpolicy_horizontal = expanding
-										margin = { 15 10 }
+										margin = { 10 10 }
 										spacing = 15
 
 										background = {
@@ -1306,23 +1305,73 @@ window = {
 										}
 
 										text_single = {
-											text = "BUILDING_MASTERY_REQUIREMENT"
-											max_width = 150
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)0')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_1'))]"
+											max_width = 200
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_2'))]"
+											max_width = 200
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_3'))]"
+											max_width = 200
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_4'))]"
+											max_width = 200
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_5'))]"
+											max_width = 200
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)5')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_requirement_6'))]"
+											max_width = 200
 										}
 										expand = {}
 										
 										text_single = {
-											text = "BUILDING_COST"
-											max_width = 150
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)0')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_1'))]"
+											max_width = 170
 										}
-
-										expand = {}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)1')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_2'))]"
+											max_width = 170
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)2')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_3'))]"
+											max_width = 170
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)3')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_4'))]"
+											max_width = 170
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)4')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_5'))]"
+											max_width = 170
+										}
+										text_single = {
+											visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,'(CFixedPoint)5')]"
+											text = "[Localize(Concatenate(Concatenate('ALT_', Scope.Var('type').GetFlagName), '_cost_6'))]"
+											max_width = 170
+										}
 
 										allow_outside = yes
 
 										button_standard = {
 											name = "construct_button"
-											size = { 155 33 }
+											size = { 125 33 }
 
 											text = "UPGRADE"
 											
@@ -1331,6 +1380,20 @@ window = {
 
 											tooltip = "[GetScriptedGui('ALT_upgrade_arcane_lab_building').BuildTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('building_type', MakeScopeFlag(Scope.Var('type').GetFlagName)).End)]"
 											using = tooltip_ne
+										}
+									}
+									hbox = {
+										visible = "[EqualTo_CFixedPoint(Scope.Var('level').GetValue,Scope.Var('max_level').GetValue)]"
+										layoutpolicy_horizontal = expanding
+										margin = { 15 15 }
+										spacing = 15
+
+										background = {
+											using = Background_Area
+										}
+										
+										text_single = {
+											text = "ALT_maxed_out_building"
 										}
 									}
 								}

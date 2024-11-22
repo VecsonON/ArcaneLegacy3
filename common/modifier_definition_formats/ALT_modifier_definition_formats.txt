@@ -1,0 +1,25 @@
+﻿ALT_arcane_lab_modifiers_advantage = {
+        decimals = 0
+        percent = yes
+        color = bad
+}
+ALT_arcane_lab_modifiers_tax_mult = {
+        decimals = 0
+        percent = yes
+        color = good
+}
+ALT_pursuits_modifiers_advantage = {
+        decimals = 0
+        percent = yes
+        color = good
+}
+ALT_pursuits_modifiers_tax_mult = {
+        decimals = 0
+        percent = yes
+        color = good
+}
+ALT_pursuits_modifiers_levy_size = {
+        decimals = 0
+        percent = yes
+        color = good
+}

@@ -58,3 +58,9 @@
 
  game_concept_ALT_arcane_lab_creation_tutorial: "Arcane Lab Creation Tutorial"
  game_concept_ALT_arcane_lab_creation_tutorial_desc: "There are two ways to obtain an [ALT_arcane_lab|E], neither of which is easy.\n$BULLET_WITH_TAB$The first method is to take an already existing [ALT_arcane_lab|E] as your own, it will have to be repaired but it will be much cheaper and easier than creating one.\n$BULLET_WITH_TAB$The second method is to create a new [ALT_arcane_lab|E] in your current location, this option is much more difficult and expensive, requiring more insight into the Arcane."
+
+ game_concept_ALT_arcane_lab_statistics_discovery_chance: "Lab's Discovery Chance"
+ game_concept_ALT_arcane_lab_statistics_discovery_chance_desc: "Chance for [ALT_arcane_lab|E] to be discovered upon beeing occupided or raided by army, as well random events.\n\nBeing discovered decreases your [ALT_secrecy|E] by #N 50#! as well makes [ALT_arcane_lab|E] vanruable to raids from witch hunters as long lab isn't moved somewhere else"
+
+ game_concept_ALT_arcane_lab_statistics_defence_success: "Lab's Defence Success Chance"
+ game_concept_ALT_arcane_lab_statistics_defence_success_desc: "Chance for [ALT_arcane_lab|E] to defend itself from witch hunter raid\n\nFailing to defend [ALT_arcane_lab|E] will decrease every [ALT_arcane_lab_building|E] level by 1, as well chance of getting negative event"

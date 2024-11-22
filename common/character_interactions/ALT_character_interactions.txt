@@ -227,3 +227,215 @@ ALT_experiment_on_current_location_interaction = {
 	}
 	auto_accept = yes
 }
+
+ALT_teach_magic_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	common_interaction = yes
+
+	#cooldown = { years = 5 }
+	is_shown = {
+		scope:actor = { ALT_is_mage = yes }
+		scope:recipient = { age >= 13 }
+		NOT = { scope:actor = scope:recipient }
+	}
+	is_valid = { 
+		OR = { 
+			scope:actor = { 
+				ALT_is_biomancer = yes
+				custom_tooltip = { text = ALT_biomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = scope:recipient.xp_ALT_school_biomancy } } 
+			} 
+			scope:actor = { 
+				ALT_is_mensomancer = yes
+				custom_tooltip = { text = ALT_mensomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = scope:recipient.xp_ALT_school_mensomancy } } 
+			} 
+			scope:actor = { 
+				ALT_is_materomancer = yes
+				custom_tooltip = { text = ALT_materomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_materomancy COUNT = scope:recipient.xp_ALT_school_materomancy } } 
+			} 
+			scope:actor = { 
+				ALT_is_aetherimancer = yes
+				custom_tooltip = { text = ALT_aetherimancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_aetherimancy COUNT = scope:recipient.xp_ALT_school_aetherimancy } } 
+			} 
+		}
+	
+	}
+
+	send_option = {
+		flag = ALT_biomancy
+		is_valid = { 
+			scope:actor = { 
+				ALT_is_biomancer = yes
+				custom_tooltip = { text = ALT_biomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_biomancy COUNT = scope:recipient.xp_ALT_school_biomancy } } 
+			} 
+		}
+		localization = game_concept_ALT_biomancy
+	}
+	send_option = {
+		flag = ALT_mensomancy
+		is_valid = { 
+			scope:actor = { 
+				ALT_is_mensomancer = yes
+				custom_tooltip = { text = ALT_mensomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_mensomancy COUNT = scope:recipient.xp_ALT_school_mensomancy } } 
+			} 
+		}
+		localization = game_concept_ALT_mensomancy
+	}
+	send_option = {
+		flag = ALT_materomancy
+		is_valid = { 
+			scope:actor = { 
+				ALT_is_materomancer = yes
+				custom_tooltip = { text = ALT_materomancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_materomancy COUNT = scope:recipient.xp_ALT_school_materomancy } } 
+			} 
+		}
+		localization = game_concept_ALT_materomancy
+	}
+	send_option = {
+		flag = ALT_aetherimancy
+		is_valid = { 
+			scope:actor = { 
+				ALT_is_aetherimancer = yes
+				custom_tooltip = { text = ALT_aetherimancy_higher_than_recipient ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_aetherimancy COUNT = scope:recipient.xp_ALT_school_aetherimancy } } 
+			} 
+		}
+		localization = game_concept_ALT_aetherimancy
+	}
+	on_accept = {
+		scope:recipient = {
+			duel = {
+				skill = learning
+				value = 20
+				25 = {
+					compare_modifier = { value = scope:duel_value multiplier = 1 }
+					if = { limit = { scope:ALT_biomancy = yes } 
+						if = { limit = { has_character_flag = ALT_know_biomancy } 
+							ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 5 }
+						}
+						else = { ALT_become_biomancer = yes }
+					}
+					if = { limit = { scope:ALT_mensomancy = yes } 
+						if = { limit = { has_character_flag = ALT_know_mensomancy } 
+							ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 5 }
+						}
+						else = { ALT_become_mensomancer = yes }
+					}
+					if = { limit = { scope:ALT_materomancy = yes } 
+						if = { limit = { has_character_flag = ALT_know_materomancy } 
+							ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 5 }
+						}
+						else = { ALT_become_materomancer = yes }
+					}
+					if = { limit = { scope:ALT_aetherimancy = yes } 
+						if = { limit = { has_character_flag = ALT_know_aetherimancy } 
+							ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 5 }
+						}
+						else = { ALT_become_aetherimancer = yes }
+					}
+				}
+				25 = {
+					compare_modifier = { value = scope:duel_value multiplier = -1 }
+				}
+			}
+			add_stress = 75
+		}
+		scope:actor = {
+			add_stress = 50
+			if = { limit = { scope:ALT_biomancy = yes } 
+				ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 2 }
+			}
+			if = { limit = { scope:ALT_mensomancy = yes } 
+				ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 2 }
+			}
+			if = { limit = { scope:ALT_materomancy = yes } 
+				ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 2 }
+			}
+			if = { limit = { scope:ALT_aetherimancy = yes } 
+				ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 2 }
+			}
+			ALT_change_secrecy = { VALUE = -20 }
+		}
+	}
+	ai_accept = {
+		base = 0
+
+		modifier = { # Greedy for power
+			add = 50
+			scope:recipient = {
+				has_trait = ambitious
+				NOT = { has_trait = zealous }
+			}
+			desc = "ALT_ambitious"
+		}
+		opinion_modifier = { # Compare Opinion modifier.
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.5
+		}
+		modifier = { # Say no to rivals
+			add = -25
+			scope:recipient = {
+				has_relation_rival = scope:actor
+			}
+			desc = "ACTOR_RIVAL_TO_ME_REASON"
+		}
+		modifier = { # Say no to nemesis
+			add = -50
+			scope:recipient = {
+				has_relation_nemesis = scope:actor
+			}
+			desc = "ACTOR_NEMESIS_TO_ME_REASON"
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = zealous
+				faith = {
+					has_doctrine_parameter = witchcraft_illegal
+				}
+			}
+			add = -1000
+			desc = "ALT_WITCHCRAFT_IS_CRIMINAL_ZEALOUS_REASON"
+		}
+		modifier = {
+			scope:recipient = {
+				has_trait = zealous
+				faith = {
+					has_doctrine_parameter = witchcraft_shunned
+				}
+			}
+			add = -100
+			desc = "ALT_WITCHCRAFT_IS_SHUNNED_ZEALOUS_REASON"
+		}
+		modifier = {
+			scope:recipient = {
+				NOT = { has_trait = cynical }
+				faith = {
+					has_doctrine_parameter = witchcraft_illegal
+				}
+			}
+			add = -50
+			desc = "ALT_WITCHCRAFT_IS_CRIMINAL_REASON"
+		}
+		modifier = {
+			scope:recipient = {
+				NOT = { has_trait = cynical }
+				faith = {
+					has_doctrine_parameter = witchcraft_shunned
+				}
+			}
+			add = -25
+			desc = "ALT_WITCHCRAFT_IS_SHUNNED_REASON"
+		}
+		modifier = {
+			add = 1000
+			scope:recipient = {
+				is_heir_of = scope:actor
+			}
+			desc = "ALT_I_AM_HEIR_OF_ACTOR_REASON"
+		}
+
+	}
+}

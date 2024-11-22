@@ -6,8 +6,16 @@
   ALT_become_mensomancer: "Become [ALT_mensomancer|E]"
   ALT_become_materomancer: "Become [ALT_materomancer|E]"
   ALT_become_aetherimancer: "Become [ALT_aetherimancer|E]"
+  
+  ALT_has_X_xp_of_school_global: "Must have atleast $VALUE|0V$ experience point in  [SCOPE.GetFlagName('ALT_school')]#!"
+  ALT_has_X_xp_of_school_first: "Must have atleast $VALUE|0V$ experience point in [SCOPE.GetFlagName('ALT_school')]#!"
+  ALT_has_X_xp_of_school_third: "Must have atleast $VALUE|0V$ experience point in [SCOPE.GetFlagName('ALT_school')]#!"
 
   ALT_is_mage: "Is a mage"
+  ALT_is_biomancer: "Must be [ALT_biomancer|E]"
+  ALT_is_mensomancer: "Must be [ALT_mensomancer|E]"
+  ALT_is_materomancer: "Must be [ALT_materomancer|E]"
+  ALT_is_aetherimancer: "Must be [ALT_aetherimancer|E]"
 
   ALT_target_character: "Target must be an Character"
   ALT_target_artifact: "Target must be an Artifact"

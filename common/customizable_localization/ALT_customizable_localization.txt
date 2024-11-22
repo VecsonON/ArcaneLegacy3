@@ -128,67 +128,37 @@ ALT_overall_mastery_level = {
 	text = {
 		localization_key = ALT_school_level_archmaster
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_archmaster 
-				xp_ALT_school_mensomancy >= school_xp_threshold_archmaster 
-				xp_ALT_school_materomancy >= school_xp_threshold_archmaster 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_archmaster 
-			}
+			xp_ALT_school_any >= school_xp_threshold_archmaster 
 		}
 	}
 	text = {
 		localization_key = ALT_school_level_master
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_master 
-				xp_ALT_school_mensomancy >= school_xp_threshold_master 
-				xp_ALT_school_materomancy >= school_xp_threshold_master 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_master
-			}
+			xp_ALT_school_any >= school_xp_threshold_master 
 		}
 	}
 	text = {
 		localization_key = ALT_school_level_expert
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_expert 
-				xp_ALT_school_mensomancy >= school_xp_threshold_expert 
-				xp_ALT_school_materomancy >= school_xp_threshold_expert 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_expert
-			}
+			xp_ALT_school_any >= school_xp_threshold_expert 
 		}
 	}
 	text = {
 		localization_key = ALT_school_level_adept
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_adept 
-				xp_ALT_school_mensomancy >= school_xp_threshold_adept 
-				xp_ALT_school_materomancy >= school_xp_threshold_adept 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_adept 
-			}
+			xp_ALT_school_any >= school_xp_threshold_adept 
 		}
 	}
 	text = {
 		localization_key = ALT_school_level_apprentice
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_apprentice 
-				xp_ALT_school_mensomancy >= school_xp_threshold_apprentice 
-				xp_ALT_school_materomancy >= school_xp_threshold_apprentice 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_apprentice
-			}
+			xp_ALT_school_any >= school_xp_threshold_apprentice 
 		}
 	}
 	text = {
 		localization_key = ALT_school_level_novice
 		trigger = { 
-			OR = {
-				xp_ALT_school_biomancy >= school_xp_threshold_novice 
-				xp_ALT_school_mensomancy >= school_xp_threshold_novice 
-				xp_ALT_school_materomancy >= school_xp_threshold_novice 
-				xp_ALT_school_aetherimancy >= school_xp_threshold_novice
-			}
+			xp_ALT_school_any >= school_xp_threshold_novice 
 		}
 	}
 	text = {

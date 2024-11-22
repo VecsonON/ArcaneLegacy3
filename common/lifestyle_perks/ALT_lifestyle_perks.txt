@@ -1,62 +1,111 @@
-﻿ALT_protective_inscriptions_1_perk = {
+﻿ALT_forgetful_inscriptions_1_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.1
+		ALT_arcane_lab_modifiers_advantage = -0.3
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
-ALT_protective_inscriptions_2_perk = {
+ALT_forgetful_inscriptions_2_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.2
+		ALT_arcane_lab_modifiers_advantage = -0.4
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
-ALT_protective_inscriptions_3_perk = {
+ALT_forgetful_inscriptions_3_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.3
+		ALT_arcane_lab_modifiers_advantage = -0.5
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
-ALT_protective_inscriptions_4_perk = {
+ALT_forgetful_inscriptions_4_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.4
+		ALT_arcane_lab_modifiers_advantage = -0.6
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
-ALT_protective_inscriptions_5_perk = {
+ALT_forgetful_inscriptions_5_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.5
+		ALT_arcane_lab_modifiers_advantage = -0.7
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
-ALT_protective_inscriptions_6_perk = {
+ALT_forgetful_inscriptions_6_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.6
+		ALT_arcane_lab_modifiers_advantage = -0.8
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
+}
+
+ALT_inscription_traps_1_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.1
+		ALT_arcane_lab_modifiers_tax_mult = 0.10
+        }
+	can_be_auto_selected = { always = no } 
+}
+ALT_inscription_traps_2_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.2
+		ALT_arcane_lab_modifiers_tax_mult = 0.20
+        }
+	can_be_auto_selected = { always = no } 
+}
+ALT_inscription_traps_3_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.3
+		ALT_arcane_lab_modifiers_tax_mult = 0.40
+        }
+	can_be_auto_selected = { always = no } 
+}
+ALT_inscription_traps_4_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.4
+		ALT_arcane_lab_modifiers_tax_mult = 0.60
+        }
+	can_be_auto_selected = { always = no } 
+}
+ALT_inscription_traps_5_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.5
+		ALT_arcane_lab_modifiers_tax_mult = 0.70
+        }
+	can_be_auto_selected = { always = no } 
+}
+ALT_inscription_traps_6_perk = {
+	lifestyle = ALT_dummy_lifestyle
+	tree = ALT_dummy_lifestyle
+        character_modifier = {
+                monthly_income = -0.6		
+		ALT_arcane_lab_modifiers_tax_mult = 0.80
+        }
+	can_be_auto_selected = { always = no } 
 }
 
 ALT_ritual_circle_1_perk = {
@@ -64,60 +113,54 @@ ALT_ritual_circle_1_perk = {
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.1
+		ALT_pursuits_modifiers_tax_mult = 0.2
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_ritual_circle_2_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.2
+		ALT_pursuits_modifiers_tax_mult = 0.4
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_ritual_circle_3_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.3
+		ALT_pursuits_modifiers_tax_mult = 0.6
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_ritual_circle_4_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.4
+		ALT_pursuits_modifiers_tax_mult = 0.8
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_ritual_circle_5_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.5
+		ALT_pursuits_modifiers_tax_mult = 1
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_ritual_circle_6_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.6
+		ALT_pursuits_modifiers_tax_mult = 1.2
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 
 ALT_arcane_library_1_perk = {
@@ -125,89 +168,43 @@ ALT_arcane_library_1_perk = {
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.1
+		ALT_pursuits_modifiers_advantage = 0.2
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_arcane_library_2_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.2
+		ALT_pursuits_modifiers_advantage = 0.4
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_arcane_library_3_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.3
+		ALT_pursuits_modifiers_advantage = 0.6
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_arcane_library_4_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.4
+		ALT_pursuits_modifiers_advantage = 0.8
         }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }
 ALT_arcane_library_5_perk = {
 	lifestyle = ALT_dummy_lifestyle
 	tree = ALT_dummy_lifestyle
         character_modifier = {
                 monthly_income = -0.5
+		ALT_pursuits_modifiers_advantage = 1
         }
-	effect = {
-		
-	}
-}
-
-ALT_arcane_living_room_1_perk = {
-	lifestyle = ALT_dummy_lifestyle
-	tree = ALT_dummy_lifestyle
-        character_modifier = {
-                monthly_income = -0.1
-        }
-	effect = {
-		
-	}
-}
-ALT_arcane_living_room_2_perk = {
-	lifestyle = ALT_dummy_lifestyle
-	tree = ALT_dummy_lifestyle
-        character_modifier = {
-                monthly_income = -0.2
-        }
-	effect = {
-		
-	}
-}
-ALT_arcane_living_room_3_perk = {
-	lifestyle = ALT_dummy_lifestyle
-	tree = ALT_dummy_lifestyle
-        character_modifier = {
-                monthly_income = -0.3
-        }
-	effect = {
-		
-	}
-}
-ALT_arcane_living_room_4_perk = {
-	lifestyle = ALT_dummy_lifestyle
-	tree = ALT_dummy_lifestyle
-        character_modifier = {
-                monthly_income = -0.4
-        }
-	effect = {
-		
-	}
+	can_be_auto_selected = { always = no } 
 }

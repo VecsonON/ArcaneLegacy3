@@ -13,6 +13,12 @@
  ALT_AI_seek_arcane_decision_confirm: "$ALT_error$"
  ALT_AI_seek_arcane_decision_effect: "$ALT_error$"
 
+ ALT_AI_study_arcane_decision: "$ALT_error$"
+ ALT_AI_study_arcane_decision_desc: "$ALT_error$"
+ ALT_AI_study_arcane_decision_tooltip: "$ALT_error$"
+ ALT_AI_study_arcane_decision_confirm: "$ALT_error$"
+ ALT_AI_study_arcane_decision_effect: "$ALT_error$"
+
  ALT_AI_study_arcane: "$ALT_error$"
  ALT_AI_study_arcane_desc: "$ALT_error$"
  ALT_AI_study_arcane_tooltip: "$ALT_error$"

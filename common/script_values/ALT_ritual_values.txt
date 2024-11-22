@@ -1,0 +1,860 @@
+﻿ALT_ritual_novice_speed = 0.6
+ALT_ritual_apprentice_speed = 0.5
+ALT_ritual_adept_speed = 0.4
+ALT_ritual_expert_speed = 0.3
+ALT_ritual_master_speed = 0.2
+ALT_ritual_archmaster_speed = 0.1
+
+ALT_ritual_speed_mult = {
+	value = 1
+	if = { limit = { has_perk = ALT_ritual_circle_1_perk } value = 1.2 }
+	if = { limit = { has_perk = ALT_ritual_circle_2_perk } value = 1.4 }
+	if = { limit = { has_perk = ALT_ritual_circle_3_perk } value = 1.6 }
+	if = { limit = { has_perk = ALT_ritual_circle_4_perk } value = 1.8 }
+	if = { limit = { has_perk = ALT_ritual_circle_5_perk } value = 2 }
+	if = { limit = { has_perk = ALT_ritual_circle_6_perk } value = 2.2 }
+}
+
+ALT_ritual_of_treatment_gain = {
+	value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_decline_gain = {
+	value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_health_gain = {
+	value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_maiming_gain = {
+	value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_harm_gain = {
+	value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_curing_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_bad_health_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_long_life_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_rotten_blood_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_golden_blood_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_perfect_body_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_bad_blood_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_eternal_youth_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_organ_failure_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_biomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+
+ALT_ritual_of_clear_mind_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_cluttery_mind_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_perfect_mind_gain = {
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_empty_mind_gain = {
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_good_impressions_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_bad_impressions_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_peace_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_servitude_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_mental_instability_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_personality_morph_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_mental_health_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_eternal_servitude_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_mind_transfer_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_self_harm_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+
+ALT_ritual_of_iron_stone_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_weak_iron_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_elements_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_dirt_stone_gain = { #A
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_broken_stones_gain = {
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_beautiful_city_gain = { #P
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_hideous_city_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_golden_stone_gain = { #E
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_stoneish_gold_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_golem_gain = { #M
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_golemhood_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_natural_disasters_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_golem_army_gain = { #AR
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_medusa_sight_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_materomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+
+ALT_ritual_of_good_luck_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_bad_luck_gain = {
+        value = ALT_ritual_novice_speed
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_novice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_fast_movement_gain = { #A
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_slow_movement_gain = {
+        value = ALT_ritual_apprentice_speed
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_apprentice_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_future_insight_gain = { #P
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_fast_time_gain = {
+        value = ALT_ritual_adept_speed
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_adept_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_slow_time_gain = { #E
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_teleportation_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_space_distortion_gain = {
+        value = ALT_ritual_expert_speed
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_expert_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_stopping_time_gain = { #E
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_delay_death_mark_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_inscription_of_time_distortion_gain = {
+        value = ALT_ritual_master_speed
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_master_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_death_mark_gain = { #AR
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
+ALT_ritual_of_different_world_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_aetherimancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}

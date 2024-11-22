@@ -24,6 +24,7 @@ ALT_has_X_xp_of_school = {
 		flag:ALT_school_mensomancy =  { xp_ALT_school_mensomancy >= $COUNT$ }
 		flag:ALT_school_materomancy =  { xp_ALT_school_materomancy >= $COUNT$ }
 		flag:ALT_school_aetherimancy =  { xp_ALT_school_aetherimancy >= $COUNT$ }
+		flag:any =  { xp_ALT_school_any >= $COUNT$ }
 	}
 }
 ALT_is_mage = {
@@ -37,6 +38,30 @@ ALT_is_mage = {
 		}
 	}
 }
+ALT_is_biomancer = {
+	custom_tooltip = {
+		text =  ALT_is_biomancer
+		has_character_flag = ALT_know_biomancy
+	}
+}
+ALT_is_mensomancer = {
+	custom_tooltip = {
+		text =  ALT_is_mensomancer
+		has_character_flag = ALT_know_mensomancy
+	}
+}
+ALT_is_materomancer = {
+	custom_tooltip = {
+		text =  ALT_is_materomancer
+		has_character_flag = ALT_know_materomancy
+	}
+}
+ALT_is_aetherimancer = {
+	custom_tooltip = {
+		text =  ALT_is_aetherimancer
+		has_character_flag = ALT_know_aetherimancy
+	}
+}
 ALT_is_discovered_mage = {
 	OR = {
 		has_trait = ALT_discovered_mage
@@ -45,12 +70,20 @@ ALT_is_discovered_mage = {
 	}
 }
 
-ALT_arcane_lab_has_building = {
+ALT_arcane_lab_has_building_char = {
 	var:owned_arcane_lab ?= {
-		any_in_list = {
-			variable = buildings
-			var:type = $TYPE$
-			count $OPERANDI$ $VALUE$
+		ALT_arcane_lab_has_building = {
+			TYPE = $TYPE$
+			OPERANDI = $OPERANDI$
+			LEVEL = $LEVEL$
 		}
+	}
+}
+ALT_arcane_lab_has_building = {
+	any_in_list = {
+		variable = buildings
+		var:type = $TYPE$
+		var:level $OPERANDI$ $LEVEL$
+		count > 0
 	}
 }

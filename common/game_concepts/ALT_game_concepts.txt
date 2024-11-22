@@ -76,3 +76,9 @@ ALT_arcane_lab_location = {
 ALT_arcane_lab_creation_tutorial = {
 	parent = ALT_arcane_lab_location
 }
+ALT_arcane_lab_statistics_discovery_chance = {
+	parent = ALT_arcane_lab
+}
+ALT_arcane_lab_statistics_defence_success = {
+	parent = ALT_arcane_lab
+}

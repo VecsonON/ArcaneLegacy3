@@ -1,0 +1,396 @@
+﻿namespace = ALT_arcane_lab_events
+ALT_arcane_lab_events.1 = { # Opening
+	type = activity_event
+
+	title = ALT_arcane_lab_events.1.title
+	desc = ALT_arcane_lab_events.1.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Let's start
+		name = ALT_arcane_lab_events.1.a
+		random_list = {
+                        0 = { 
+                                desc = ALT_arcane_lab_events.1.a.a
+                                show_chance = no
+                                trigger = { exists = scope:province.var:arcane_lab } 
+                                modifier = { add = scope:province.var:arcane_lab.ALT_arcane_lab_discovery_chance } 
+                                if = { limit = { exists = scope:province.var:arcane_lab.var:current_owner } 
+                                        trigger_event = ALT_arcane_lab_events.35
+                                }
+                                else = {
+                                        trigger_event = ALT_arcane_lab_events.3
+                                }
+                        }
+                        1 = { 
+                                desc = ALT_arcane_lab_events.1.a.b
+                                show_chance = no
+                                trigger_event = ALT_arcane_lab_events.2 
+                                show_as_tooltip = { add_stress = 75 }
+                        }
+                }
+	}
+	option = { # This is stupid idea...
+		name = ALT_arcane_lab_events.1.b
+                #complete_activity = yes
+	}
+}
+ALT_arcane_lab_events.2 = { # I couldn't find lab here.
+	type = activity_event
+
+	title = ALT_arcane_lab_events.2.title
+	desc = ALT_arcane_lab_events.2.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Oh
+		name = ALT_arcane_lab_events.1.a
+                #complete_activity = yes
+                add_stress = 75
+	}
+	option = { # By power of Mensomancy!
+		name = ALT_arcane_lab_events.1.b
+                trigger = {
+                        has_character_flag = ALT_know_mensomancy
+                }
+                add_internal_flag = special
+                random_list = {
+                        0 = {
+                                desc = ALT_arcane_lab_events.1.b.a
+                                trigger = { exists = scope:province.var:arcane_lab }
+                                modifier = { add = xp_ALT_school_mensomancy }
+                                if = { limit = { exists = scope:province.var:arcane_lab.var:current_owner } 
+                                        trigger_event = ALT_arcane_lab_events.35
+                                }
+                                else = {
+                                        trigger_event = ALT_arcane_lab_events.3
+                                }
+                        }
+                        1 = {
+                                add_stress = 50
+                        }
+                }
+                add_stress = 100
+	}
+}
+scripted_effect ALT_arcane_lab_events.3.a = {
+         duel = {
+		skill = $SKILL$
+		value = scope:province.var:arcane_lab.ALT_arcane_lab_traps
+                25 = { # Traps were easy to pass thourgh.
+                        desc = ALT_arcane_lab_events.3.a.winS
+                        trigger_event = ALT_arcane_lab_events.4 
+                        compare_modifier = {
+                                value = scope:duel_value
+                                multiplier = 1
+                        }
+                }
+                25 = { # Traps were somewhat hard to pass through, but you managed to pass them
+                        desc = ALT_arcane_lab_events.3.a.winA
+                        trigger_event = ALT_arcane_lab_events.4 
+                        compare_modifier = {
+                                value = scope:duel_value
+                                multiplier = 0.75
+                        }
+                        increase_wounds_effect = { REASON = fight }
+                        add_stress = 25
+                }
+                25 = { # Traps were hard to pass through, but with some wounds you managed to go further
+                        desc = ALT_arcane_lab_events.3.a.winB
+                        trigger_event = ALT_arcane_lab_events.4 
+                        compare_modifier = {
+                                value = scope:duel_value
+                                multiplier = -0.5
+                        }
+                        increase_wounds_effect = { REASON = fight }
+                        increase_wounds_effect = { REASON = fight }
+                        add_stress = 50
+                }
+                25 = { # Traps were overwhelming, but you managed to escape alive
+                        desc = ALT_arcane_lab_events.3.a.lossC
+                        compare_modifier = {
+                                value = scope:duel_value
+                                multiplier = -0.75
+                        }
+                        #complete_activity = yes
+                        add_trait = maimed
+                        increase_wounds_effect = { REASON = fight }
+                        increase_wounds_effect = { REASON = fight }
+                        add_stress = 100
+                }
+                25 = { # Traps were overwhelming, and you die.
+                        desc = ALT_arcane_lab_events.3.a.lossD
+                        compare_modifier = {
+                                value = scope:duel_value
+                                multiplier = -1
+                        }
+                        #complete_activity = yes
+                        death = { death_reason = death_disappearance }
+                }
+        }
+}
+ALT_arcane_lab_events.3 = { # TRAPS!
+        type = activity_event 
+
+	title = ALT_arcane_lab_events.3.title
+	desc = ALT_arcane_lab_events.3.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Let's start
+		name = ALT_arcane_lab_events.3.a
+                custom_tooltip = ALT_arcane_lab_events.3.a.duel
+		if = { limit = { highest_skill_including_prowess = diplomacy } ALT_arcane_lab_events.3.a = { SKILL = diplomacy } }
+		else_if = { limit = { highest_skill_including_prowess = martial } ALT_arcane_lab_events.3.a = { SKILL = martial } }
+		else_if = { limit = { highest_skill_including_prowess = stewardship } ALT_arcane_lab_events.3.a = { SKILL = stewardship } }
+		else_if = { limit = { highest_skill_including_prowess = intrigue } ALT_arcane_lab_events.3.a = { SKILL = intrigue } }
+		else_if = { limit = { highest_skill_including_prowess = learning } ALT_arcane_lab_events.3.a = { SKILL = learning } }
+		else_if = { limit = { highest_skill_including_prowess = prowess } ALT_arcane_lab_events.3.a = { SKILL = prowess } }
+	}
+	option = { # Escape
+		name = ALT_arcane_lab_events.3.b
+                #complete_activity = yes
+	}
+}
+ALT_arcane_lab_events.35 = { # Owner is Here!
+        type = activity_event 
+
+	title = ALT_arcane_lab_events.35.title
+	desc = ALT_arcane_lab_events.35.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	right_portrait = {
+		character = scope:province.var:arcane_lab.var:current_owner
+		animation = thinking
+	}
+
+	option = { # Let's start
+		name = ALT_arcane_lab_events.3.a
+		configure_start_single_combat_effect = {
+                        SC_INITIATOR = scope:province.var:arcane_lab.var:current_owner
+                        SC_ATTACKER = scope:host
+                        SC_DEFENDER = scope:host
+                        FATALITY = always
+                        FIXED = no
+                        LOCALE = corridor_night
+                        OUTPUT_EVENT = ALT_arcane_lab_events.3
+                        INVALIDATION_EVENT = ALT_arcane_lab_events.3	#In a real event, this would obviously be a different even to the output.
+                }
+	}
+	option = { # Let's talk
+		name = ALT_arcane_lab_events.3.b
+                random_list = {
+                        1 = { desc = ALT_arcane_lab_events.3.b.a }
+                        1 = {
+                                desc = ALT_arcane_lab_events.3.b.b
+                                configure_start_single_combat_effect = {
+                                        SC_INITIATOR = scope:province.var:arcane_lab.var:current_owner
+                                        SC_ATTACKER = scope:province.var:arcane_lab.var:current_owner
+                                        SC_DEFENDER = scope:host
+                                        FATALITY = always
+                                        FIXED = no
+                                        LOCALE = corridor_night
+                                        OUTPUT_EVENT = ALT_arcane_lab_events.3
+                                        INVALIDATION_EVENT = ALT_arcane_lab_events.3	#In a real event, this would obviously be a different even to the output.
+                                }
+                        }
+                }
+                #complete_activity = yes
+	}
+}
+ALT_arcane_lab_events.4 = { # Looting Begings | Looting Libary
+        type = activity_event 
+
+	title = ALT_arcane_lab_events.4.title
+	desc = ALT_arcane_lab_events.4.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Take.
+		name = ALT_arcane_lab_events.4.a
+                trigger = {
+                        custom_tooltip = {
+                                text = ALT_arcane_lab_events.4.a.req
+                                NOT = { scope:province.var:arcane_lab = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 0 } } }
+                        }
+                }
+                show_as_unavailable = {
+                        custom_tooltip = {
+                                text = ALT_arcane_lab_events.4.a.req
+                                scope:province.var:arcane_lab = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 0 } }
+                        }
+                }
+                random_list = {
+                        1 = {
+                                random_list = {
+                                        1 = { add_diplomacy_lifestyle_perk_points = 2 }
+                                        1 = { add_martial_lifestyle_perk_points = 2 }
+                                        1 = { add_stewardship_lifestyle_perk_points = 2 }
+                                        1 = { add_intrigue_lifestyle_perk_points = 2 }
+                                        1 = { add_learning_lifestyle_perk_points = 2 }
+                                }
+                        }
+                        1 = {
+                                random_list = {
+                                        1 = { add_diplomacy_skill = 1 }
+                                        1 = { add_martial_skill = 1 }
+                                        1 = { add_stewardship_skill = 1 }
+                                        1 = { add_intrigue_skill = 1 }
+                                        1 = { add_learning_skill = 1}
+                                }
+                        }
+                        1 = {
+                                random_list = {
+                                        1 = { 
+                                                if = { limit = { has_character_flag = ALT_know_biomancy } ALT_school_xp_gain = { SCHOOL = biomancy COUNT = 10 } } 
+                                                else = { ALT_become_biomancer = yes }
+                                        }
+                                        1 = { 
+                                                if = { limit = { has_character_flag = ALT_know_mensomancy } ALT_school_xp_gain = { SCHOOL = mensomancy COUNT = 10 } } 
+                                                else = { ALT_become_mensomancer = yes }
+                                        }
+                                        1 = { 
+                                                if = { limit = { has_character_flag = ALT_know_materomancy } ALT_school_xp_gain = { SCHOOL = materomancy COUNT = 10 } } 
+                                                else = { ALT_become_materomancer = yes }
+                                        }
+                                        1 = { 
+                                                if = { limit = { has_character_flag = ALT_know_aetherimancy } ALT_school_xp_gain = { SCHOOL = aetherimancy COUNT = 10 } } 
+                                                else = { ALT_become_aetherimancer = yes }
+                                        }
+                                }
+                        }
+                }
+                scope:province.var:arcane_lab ?= { ALT_arcane_lab_building_change = { TYPE = flag:arcane_library OPERANDI = "subtract" CHANGE = 1 } }
+                random_list = {
+                        5 = {
+                                desc = ALT_arcane_lab_events.4.a.a
+                                trigger_event = ALT_arcane_lab_events.4
+                        }
+                        1 = {
+                                desc = ALT_arcane_lab_events.4.a.b
+                                trigger_event = ALT_arcane_lab_events.3
+                        }
+                }
+
+	}
+	option = { # Leave it be
+		name = ALT_arcane_lab_events.4.b
+                trigger_event = ALT_arcane_lab_events.5
+                
+	}
+}
+ALT_arcane_lab_events.5 = { # Looting Begings | Looting Ritual Room
+        type = activity_event 
+
+	title = ALT_arcane_lab_events.5.title
+	desc = ALT_arcane_lab_events.5.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Take.
+		name = ALT_arcane_lab_events.5.a
+                trigger = {
+                        custom_tooltip = {
+                                text = ALT_arcane_lab_events.5.a.req
+                                NOT = { scope:province.var:arcane_lab = { ALT_arcane_lab_has_building = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 0 } } }
+                        }
+                }
+                show_as_unavailable = {
+                        custom_tooltip = {
+                                text = ALT_arcane_lab_events.5.a.req
+                                scope:province.var:arcane_lab = { ALT_arcane_lab_has_building = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 0 } }
+                        }
+                }
+                random_list = {
+                        1 = {
+                                add_gold = 500
+                        }
+                        1 = {
+                                add_prestige = 1000
+                        }
+                        1 = {
+                                add_piety = 1000
+                        }
+                }
+                scope:province.var:arcane_lab ?= {  ALT_arcane_lab_building_change = { TYPE = flag:ritual_circle OPERANDI = "subtract" CHANGE = 1 } }
+                random_list = {
+                        5 = {
+                                desc = ALT_arcane_lab_events.4.a.a
+                                trigger_event = ALT_arcane_lab_events.5
+                        }
+                        1 = {
+                                desc = ALT_arcane_lab_events.4.a.b
+                                trigger_event = ALT_arcane_lab_events.3
+                        }
+                }
+
+	}
+	option = { # Leave it be
+		name = ALT_arcane_lab_events.5.b
+                trigger_event = ALT_arcane_lab_events.6
+                
+	}
+}
+ALT_arcane_lab_events.6 = { # Should I take this place as my own?
+        type = activity_event 
+
+	title = ALT_arcane_lab_events.6.title
+	desc = ALT_arcane_lab_events.6.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Take.
+		name = ALT_arcane_lab_events.6.a
+                trigger = {
+                        ALT_is_mage = yes
+                }
+                scope:province.var:arcane_lab ?= { ALT_arcane_lab_change_ownership = { NEW_OWNER = scope:host } }
+	}
+	option = { # Nah
+		name = ALT_arcane_lab_events.6.b
+                add_stress = -50
+	}
+}

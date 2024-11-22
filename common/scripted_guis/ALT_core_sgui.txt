@@ -23,9 +23,10 @@ ALT_start_learning_pursuit_sgui = {
 
 	effect = {
 		hidden_effect = {
+			save_scope_value_as = { name = speed value = ALT_study_pursuit_speed }
 			ALT_start_pursuit_effect = {
 				TYPE = scope:type
-				MONTHLY_PROGRESS = 4.16 #2 years to compelete this
+				MONTHLY_PROGRESS = scope:speed #2 years to compelete this
 				TARGET = THIS
 				SACRIFICE = THIS
 				ICON = scope:icon
@@ -169,9 +170,10 @@ ALT_seek_new_schools = {
 			ALT_seek_new_school_effect = yes
 		}
 		hidden_effect = {
+			save_scope_value_as = { name = speed value = ALT_study_pursuit_speed }
 			ALT_start_pursuit_effect = {
 				TYPE = flag:ALT_seek_new_schools
-				MONTHLY_PROGRESS = 3 #4 years to compelete this
+				MONTHLY_PROGRESS = scope:speed
 				TARGET = THIS
 				SACRIFICE = THIS
 				ICON = flag:pursuit_ALT_seek_new_schools_icon
@@ -198,17 +200,63 @@ ALT_upgrade_arcane_lab_building = {
 			every_in_list = {
 				variable = buildings
 				limit = { var:type = scope:building_type }
-				change_variable = { name = level add = 1 }
+				save_scope_value_as = { 
+					name = gold_cost 
+					value = {
+						value = var:level
+						add = 1
+						multiply = 150
+					}
+				}
+				save_scope_value_as = { 
+					name = stress_cost 
+					value = {
+						value = var:level
+						add = 1
+						multiply = 25
+					}
+				}
 			}
+			ALT_arcane_lab_building_change = { TYPE = scope:building_type OPERANDI = "add" CHANGE = 1 }
 		}
 		add_character_flag = { flag = ALT_arcane_lab_cooldown years = 5 }
-		set_variable = { name = ALT_debug_building_type value = scope:building_type }
+		remove_short_term_gold = scope:gold_cost
+		add_stress = scope:stress_cost
 	}
 	is_valid = {
 		custom_tooltip = {
 			text = ALT_upgrade_arcane_lab_building_cooldown
 			NOT = { has_character_flag = ALT_arcane_lab_cooldown }
 		}
+		var:owned_arcane_lab ?= {
+			any_in_list = {
+				variable = buildings
+				var:type = scope:building_type
+				save_temporary_scope_value_as = { 
+					name = gold_cost 
+					value = {
+						value = var:level
+						add = 1
+						multiply = 150
+					}
+				}
+				switch = {
+					trigger = var:level
+					0 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_novice } }
+					1 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_apprentice } }
+					2 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_adept } }
+					3 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_expert } }
+					4 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_master } }
+					5 = { save_temporary_scope_value_as = { name = required_xp value = school_xp_threshold_archmaster } }
+				}
+				save_temporary_scope_as = building
+			}
+		}
+		custom_tooltip = {
+			text = ALT_upgrade_arcane_lab_building_requirement
+			ALT_has_X_xp_of_school = { SCHOOL = scope:building.var:school_requirement COUNT = scope:required_xp }
+		}
+		gold >= scope:gold_cost
 		custom_tooltip = {
 			text = ALT_upgrade_arcane_lab_building_limit
 			var:owned_arcane_lab ?= {

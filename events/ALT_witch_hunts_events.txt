@@ -1,0 +1,2 @@
+﻿#0XXX - Normal/Non lab witch hunting
+#1XXX - lab raid

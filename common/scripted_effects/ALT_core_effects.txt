@@ -221,24 +221,28 @@ ALT_create_arcane_lab = {
 		set_variable = remain_after_death
 		set_variable = { name = location value = PREV }
 		ALT_make_building_marker = {
-			TYPE = flag:protective_inscriptions
+			TYPE = flag:forgetful_inscriptions
 			LEVEL = 0
 			MAX_LEVEL = 6
+			SCHOOL_REQUIREMENT = flag:ALT_school_mensomancy
+		}
+		ALT_make_building_marker = {
+			TYPE = flag:inscription_traps
+			LEVEL = 0
+			MAX_LEVEL = 6
+			SCHOOL_REQUIREMENT = flag:ALT_school_materomancy
 		}
 		ALT_make_building_marker = {
 			TYPE = flag:ritual_circle
 			LEVEL = 0
 			MAX_LEVEL = 6
+			SCHOOL_REQUIREMENT = flag:any
 		}
 		ALT_make_building_marker = {
 			TYPE = flag:arcane_library
 			LEVEL = 0
 			MAX_LEVEL = 5
-		}
-		ALT_make_building_marker = {
-			TYPE = flag:arcane_living_room
-			LEVEL = 0
-			MAX_LEVEL = 4
+			SCHOOL_REQUIREMENT = flag:any
 		}
 	}
 	add_province_modifier = ALT_secluded_lab_modifier
@@ -255,6 +259,7 @@ ALT_make_building_marker = {
 		set_variable = { name = type value = $TYPE$ }
 		set_variable = { name = level value = $LEVEL$ }
 		set_variable = { name = max_level value = $MAX_LEVEL$ }
+		set_variable = { name = school_requirement value = $SCHOOL_REQUIREMENT$ }
 	}
 	add_to_variable_list = { name = buildings target = scope:temp_building }
 }
@@ -276,5 +281,51 @@ ALT_arcane_lab_move = {
 		set_variable = { name = arcane_lab value = PREV }
 		var:arcane_lab ?= { set_variable = { name = location value = PREV } }
 		add_province_modifier = ALT_secluded_lab_modifier
+	}
+}
+#SCOPE = LAB
+#TYPE = FLAG
+#OPERANDI = add/subtract
+#CHANGE = INT
+ALT_arcane_lab_building_change = {
+	every_in_list = {
+		variable = buildings
+		limit = { var:type = $TYPE$ }
+		change_variable = { name = level $OPERANDI$ = $CHANGE$ }
+	}
+	
+	var:current_owner ?= { trigger_event = { on_action = ALT_arcane_lab_building_check } }
+}
+# SCOPE = PROVINCE
+ALT_generate_random_arcane_lab = {
+	ALT_create_arcane_lab = yes
+	var:arcane_lab ?= {
+		random_list = {
+			1 = { save_scope_value_as = { name = random_int value = 4 } }
+			2 = { save_scope_value_as = { name = random_int value = 5 } }
+			3 = { save_scope_value_as = { name = random_int value = 6 } }
+			2 = { save_scope_value_as = { name = random_int value = 7 } }
+			1 = { save_scope_value_as = { name = random_int value = 8 } }
+		}
+		while = {
+			limit = { NOT = { scope:random_int = 0 } }
+			save_scope_value_as = { name = random_int value = { value = scope:random_int add = -1 } }
+			random_list = {
+				1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = var:max_level } } } ALT_arcane_lab_building_change = { TYPE = flag:forgetful_inscriptions OPERANDI = "add" CHANGE = "1" } }
+				1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = var:max_level } } } ALT_arcane_lab_building_change = { TYPE = flag:inscription_traps OPERANDI = "add" CHANGE = "1" } }
+				1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = var:max_level } } } ALT_arcane_lab_building_change = { TYPE = flag:ritual_circle OPERANDI = "add" CHANGE = "1" } }
+				1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = var:max_level } } } ALT_arcane_lab_building_change = { TYPE = flag:arcane_library OPERANDI = "add" CHANGE = "1" } }
+			}
+		}
+	}
+}
+# SCOPE = LAB
+ALT_raid_arcane_lab = {
+	var:current_owner ?= { ALT_change_secrecy = { VALUE = -50 } }
+	random_list = {
+		1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:forgetful_inscriptions OPERANDI = "=" LEVEL = 0 } } } ALT_arcane_lab_building_change = { TYPE = flag:forgetful_inscriptions OPERANDI = "subtract" CHANGE = 1 } }
+		1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:inscription_traps OPERANDI = "=" LEVEL = 0 } } } ALT_arcane_lab_building_change = { TYPE = flag:inscription_traps OPERANDI = "subtract" CHANGE = 1 } }
+		1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:ritual_circle OPERANDI = "=" LEVEL = 0 } } } ALT_arcane_lab_building_change = { TYPE = flag:ritual_circle OPERANDI = "subtract" CHANGE = 1 } }
+		1 = { trigger = { NOT = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 0 } } } ALT_arcane_lab_building_change = { TYPE = flag:arcane_library OPERANDI = "subtract" CHANGE = 1 } }
 	}
 }

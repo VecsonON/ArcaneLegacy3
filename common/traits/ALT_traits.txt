@@ -30,5 +30,7 @@ ALT_discovered_mage = {
 		opinion_modifier = witchcraft_intolerant
 		ignore_opinion_value_if_same_trait = yes
 	}
+	
+	ALT_arcane_lab_modifiers_advantage = 0.5
 
 }

@@ -1,6 +1,12 @@
 ﻿ALT_forgotten_lab_exploration = {
 	is_shown = {
-		ALT_is_mage = yes
+		is_adult = yes
+		OR = {
+			ALT_is_mage = yes
+			has_trait = scholar
+			learning >= 25
+			has_trait = witch
+		}
 	}
 
 	can_start_showing_failures_only = {
@@ -51,162 +57,105 @@
 	###################
 
 	options = {
-    }
+	}
 
 	###################
 	# PHASES
 	###################
 
 	phases = {
-        ALT_forgotten_lab_exploration_searching = {
-            is_predefined = yes
-            ai_will_do = { value = 30 }
+		ALT_forgotten_lab_exploration_searching = {
+			is_predefined = yes
+			ai_will_do = { value = 100 }
 			on_phase_active = {
 				if = {
 					limit = { this = scope:host }
-					scope:activity = { progress_activity_phase_after = { days = 30 } }
+					scope:activity = { progress_activity_phase_after = { days = 2 } }
 
-					# Weekly Events
-					trigger_event = {
-						on_action = ALT_forgotten_lab_exploration_on_action
-						days = 2
-					}
+					trigger_event = ALT_arcane_lab_events.1
+					add_to_variable_list = { name = visited_forgotten_labs target = scope:province }
 				}
 			}
-			on_end = {
-			}
-        }
-    }
+		}
+	}
 
 
-	max_guest_arrival_delay_time = { months = 8 } # Fellow witches might be far?
+	max_guest_arrival_delay_time = { months = 1 }
 
 	# desc is only shown in debug AI watch window
 	ai_will_do = {
-		value = 50
+		value = 5
 		
-		# How much do you care about your faith not liking this?
-		if = {
-			limit = {
-				faith = { has_doctrine_parameter = witchcraft_illegal }
-				NOT = { has_trait = cynical }
-			}
-			add = -25
-		}
-		if = {
-			limit = {
-				faith = {	
-					OR = {
-						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
-					}
-				}
-				NOT = { has_trait = cynical }
-			}
-			add = 100
-		}
-		if = {
-			limit = {
-				faith = {	
-					OR = {
-						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
-					}
-				}
-				has_trait = zealous
-			}
-			add = 150
-		}
-		if = {
-			limit = {
-				faith = {	
-					NOR = {
-						has_doctrine_parameter = witchcraft_accepted
-						has_doctrine = doctrine_witchcraft_virtuous
-					}
-				}
-				has_trait = zealous
-			}
-			add = -100
-		}
-		
-		#Can you actually afford this?
-		if = {
-			limit = {
-				NOT = { can_make_expensive_purchase_trigger = { PRICE = activity_minor_gold_value } }
-			}
-			add = -50
-		}
 		# Plague
 		if = {
-        	limit = {
-        	    any_held_title = {
+			limit = {
+				any_held_title = {
 					tier = tier_county
-        	        any_county_province = {
-        	            any_province_epidemic = {
-        	                count >= 1
-        	                outbreak_intensity < apocalyptic
-        	            }
-        	        }
-        	    }
-        	    would_follow_social_distancing_value >= -1
-        	}
-        	add = {
-        	    value = -60
-        	    desc = "Plague in Domain"
-        	}
-    	}
-    	else_if = {
-    	    limit = {
-    	        any_realm_county = {
-    	            any_county_province = {
-    	                any_province_epidemic = {
-    	                    count >= 1
-    	                    outbreak_intensity < apocalyptic
-    	                }
-    	            }
-    	        }
-    	        would_follow_social_distancing_value >= -1
-    	    }
-    	    add = {
-    	        value = -20
-    	        desc = "Plague in Top Realm"
-    	    }
-    	}
-    	if = {
-    	    limit = {
-    	        any_held_title = {
+					any_county_province = {
+						any_province_epidemic = {
+							count >= 1
+							outbreak_intensity < apocalyptic
+						}
+					}
+				}
+				would_follow_social_distancing_value >= -1
+			}
+			add = {
+				value = -60
+				desc = "Plague in Domain"
+			}
+		}
+		else_if = {
+			limit = {
+				any_realm_county = {
+					any_county_province = {
+						any_province_epidemic = {
+							count >= 1
+							outbreak_intensity < apocalyptic
+						}
+					}
+				}
+				would_follow_social_distancing_value >= -1
+			}
+			add = {
+				value = -20
+				desc = "Plague in Top Realm"
+			}
+		}
+		if = {
+			limit = {
+				any_held_title = {
 					tier = tier_county
-    	            any_county_province = {
-    	                any_province_epidemic = {
-    	                    count >= 1
-    	                    outbreak_intensity = apocalyptic
-    	                }
-    	            }
-    	        }
-    	    }
-    	    add = {
-    	        value = -200
-    	        desc = "Apocalyptic Plague in Domain"
-    	    }
-    	}
-    	else_if = {
-    	    limit = {
-    	        any_held_title = {
+					any_county_province = {
+						any_province_epidemic = {
+							count >= 1
+							outbreak_intensity = apocalyptic
+						}
+					}
+				}
+			}
+			add = {
+				value = -200
+				desc = "Apocalyptic Plague in Domain"
+			}
+		}
+		else_if = {
+			limit = {
+				any_held_title = {
 					tier = tier_county
-    	            any_county_province = {
-    	                any_province_epidemic = {
-    	                    count >= 1
-    	                    outbreak_intensity = apocalyptic
-    	                }
-    	            }
-    	        }
-    	    }
-    	    add = {
-    	        value = -40
-    	        desc = "Apocalyptic Plague in Top Realm"
-    	    }
-    	}
+					any_county_province = {
+						any_province_epidemic = {
+							count >= 1
+							outbreak_intensity = apocalyptic
+						}
+					}
+				}
+			}
+			add = {
+				value = -40
+				desc = "Apocalyptic Plague in Top Realm"
+			}
+		}
 	}
 
 	ai_check_interval = 60
@@ -216,24 +165,59 @@
 	}
 	
 	is_location_valid = {
-		has_province_modifier = ALT_secluded_lab_modifier
+		custom_tooltip = {
+			text = ALT_forgotten_lab_exploration_modifier
+			has_province_modifier = ALT_secluded_lab_modifier
+		}
+	}
+	province_description = { 
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					any_in_list = {
+						variable = visited_forgotten_labs
+						this = root 
+					}
+				}
+			}
+			desc = ALT_forgotten_lab_exploration_visited
+		}
+		triggered_desc = {
+			trigger = {
+				scope:host = {
+					NOT = {
+						any_in_list = {
+							variable = visited_forgotten_labs
+							this = root 
+						}
+					}
+				}
+			}
+			desc = ALT_forgotten_lab_exploration_unvisited
+		}
+	}
+	province_score = {
+		value = 50
+		if = { limit = { any_in_list = { variable = visited_forgotten_labs this = root  } } 
+			value = 25
+		}
 	}
 
-    province_filter = all
+	province_filter = all
 	ai_province_filter = domain
 
 	max_province_icons = 5
 	
-	cost = {
-		gold = { add = 250 }
-	}
+	# cost = {
+	# 	gold = { add = 250 }
+	# }
 
-	ui_predicted_cost = {
-		gold = { value = 250 }
-	}
+	# ui_predicted_cost = {
+	# 	gold = { value = 250 }
+	# }
 
 	cooldown = {
-		years = 10
+		years = 1
 	}
 	
 	###################

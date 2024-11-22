@@ -64,6 +64,7 @@ ALT_error_suppression.0001 = {
 			save_scope_as = monthly_progress			
 			save_scope_as = ritual			
 			save_scope_as = tooltip	
+			save_scope_as = building_type	
 		}
 	}
 }   
