@@ -40,11 +40,13 @@ ALT_study_pursuit_speed = {
 }
 
 ALT_arcane_events_chance = {
-	value = 95
-	if = { limit = { has_game_rule = ALT_arcane_events_rare } add = 4 }
+	value = 97
+	if = { limit = { has_game_rule = ALT_arcane_events_rare } add = 2 }
 	if = { limit = { has_game_rule = ALT_arcane_events_frequent } subtract = 5 }
 	if = { limit = { has_game_rule = ALT_arcane_events_very_frequent } subtract = 10 }
 	if = { limit = { has_character_flag = ALT_increase_chance_arance_events } subtract = 10 }
+	if = { limit = { ALT_is_mage = yes } add = 2 }
+	max = 100
 }
 
 ALT_secrecy = {
@@ -96,10 +98,15 @@ xp_ALT_school_any = {
 
 ALT_xp_gain = {
 	value = learning
-	divide = 7
+	divide = 10
+	if = { limit = { is_landed = yes } divide = 2 }
 	floor = yes
 	min = 0.01
 	max = 100
+}
+ALT_witch_hunt_chance = {
+	value = 5
+	if = { limit = { is_landed = yes } add = 5 }
 }
 
 ALT_arcane_lab_discovery_chance = {
@@ -128,3 +135,5 @@ ALT_arcane_lab_libary_loot = {
 	if = { limit = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 4 } } value = 5 }
 	if = { limit = { ALT_arcane_lab_has_building = { TYPE = flag:arcane_library OPERANDI = "=" LEVEL = 5 } } value = 6 }
 }
+
+ALT_modifier_test = 1

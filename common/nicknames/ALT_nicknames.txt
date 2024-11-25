@@ -1,0 +1,3 @@
+﻿ALT_new_merlin = { }
+ALT_new_erebus = { }
+ALT_arcane_emperor = { }

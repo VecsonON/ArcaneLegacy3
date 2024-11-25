@@ -6,17 +6,49 @@ ADDING NEW SPELLS:
     5) Go to common/script_values/ALT_script_values.txt(or any value) and add new spell
     6) Create loca
     7) Profit
-TODO:
-    ✘ Create Landless government, for mages:
-    ✘ Create Camp/Domicile for mages
-    ✘ Create camp purpose for mages
-    ✘ Add debuffs for landed mages, as they cannot study arcane 100% of the time
-    ☐ Add objective for landed mages @low
-    ☐ Start working on sub-schools @low
-    ☐ Add objective for landless mages @low
-    ☐ Add Supreme spell to each school, unlockable after long and hard pursuit
-    ✔ Player can teach AI magic
+1.0:
+    ✘ Create Landless government, for mages => Arcane Lab
+    ✘ Create Camp/Domicile for mages => Arcane Lab
+    ✘ Create camp purpose for mages => Arcane Lab
     ✘ Debuff immortality / Improve Immortality to be more realistic [Added Suspicion, TODO more]
+    ✘ Domicile Arcane Lab => Arcane Lab
+    ✘ Witch hunting: DELAYED
+        ✘ Trait
+        ✘ Character Hunting
+        ✘ Lab Hunting
+        ✘ Playable Witch hunters
+    ✘ Start working on sub-schools: DELAYED
+        ✘ Transformancy:
+            ✘ Ritual of Metamorphosis - Make human into animal, animal into human
+            ✘ Ritual of Arcane Flesh - Make human more capable in arcane, due to birth. Genetic arcane trait
+            ✘ Ritual of Evolution - Make human into other species of living humanoid
+        ✘ Astralmancy:
+            ✘ Ritual of Amnesia - undiscover mage, hide all secret traits(murderer into secret etc.)
+            ✘ Ritual of Erasure - Erase all relations, prestige, piety, fame traits, and claims of target
+            ✘ Ritual of Astal Being - Give target interaction to change bodies, keeping personality
+        ✘ Morsmancy
+        ✘ Superimancy:
+            ✘ Ritual of Connection - Communicate with random higher being(god or demon, who knows)
+            ✘ Ritual of Gate - Create army of lesser higher beings(angles, lesser demons)
+            ✘ Ritual of Assendence - Slowly assend to become higher being(game over)
+    ✔ More Inscriptions: @started @done
+        ✔ Inscription of Fertility(AP) = +25 fertility @started @done
+        ✔ Inscription of Health(A) = +1 Health @started @done
+
+        ✔ Inscription of Stress Loss(AP) = +10% stress loss @started @done
+        ✔ Inscription of Knowledge(E) = +2 random skill @started @done
+
+        ✔ Inscription of Repair(A) = make not possible to break due to durability @started @done
+    ✔ More Rituals: @started @done
+        ✔ Ritual of Open Mind(A) - Learn secret of target
+
+        ✔ Ritual of Earth Mold(AP) - Create random artifact @started @done
+        ✔ Ritual of Arcane Rock(A) - Create artifact that can hold 2 inscriptions @started @done
+        ✔ Ritual of Mold Arcane(E) - Make target artifact hold 2 inscriptions @started @done
+
+        ✔ Ritual of Good fortune(A) - Monthly gold,prestige,piety,renown +10%
+        ✔ Ritual of Bad fortune(A) - Monthly gold,prestige,piety,renown -10%
+    ✔ Player can teach AI magic
     ✔ Give AI magic:
         ✔ Ambitious character should have low chance to seek magic
         ✔ Mage AI should slowely gain xp in owned schools
@@ -25,19 +57,18 @@ TODO:
             ✔ Mensomancy
             / Materomancy
             / Aetherimancy
-    ☐ Create Witch hunting @high
-    ☐ Add more mechanic depth to suspision @high @low
-    ✘ Domicile Arcane Lab
     ✔ Changed Forgotten Labs from special buildings to modifiers
-    ☐ Arcane Labs
+    ✔ Arcane Labs:
         ✔ GUI
         ✔ Script
         ✔ Random Labs
         ✔ Update Forgotten Lab Exploration to fit new system
-        ☐ Witch Hunts
         ✔ Occupy Mechanic
-    ☐ Witch hunting:
-        ☐ Trait
-        ☐ Hunting
-        ☐ Lab Hunting
-        ☐ 
+        ✔ Gameplay test => Good, nerfed other things to make balance good
+        ✔ Succession
+    ✔ Add debuffs for landed mages, as they cannot study arcane 100% of the time
+    ✔ Add objective for landless mages @low
+    ✔ Add objective for landed mages @low
+    ✔ Improve immortality from biomancy @started @done
+    ☐ Add more mechanic depth to suspision @high @low
+    ☐ Add Supreme spell to each school, unlockable after long and hard pursuit

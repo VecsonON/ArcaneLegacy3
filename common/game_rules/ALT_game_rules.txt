@@ -13,13 +13,13 @@
 	ALT_arcane_events_very_frequent = { # Very Frequent
 	}	
 }
-
-ALT_secrecy_status = {
-	default = ALT_secrecy_enabled
+# SECRECY IMPLEMENTED
+# ALT_secrecy_status = {
+# 	default = ALT_secrecy_enabled
 	
-	ALT_secrecy_enabled = {
-	}
+# 	ALT_secrecy_enabled = {
+# 	}
 	
-	ALT_secrecy_disabled = { # Default
-	}
-}
+# 	ALT_secrecy_disabled = { # Default
+# 	}
+# }

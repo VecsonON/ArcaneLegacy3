@@ -9,7 +9,7 @@ ALT_discovered_mage = {
 
 	shown_in_ruler_designer = no
 
-	dread_baseline_add = 15
+	dread_baseline_add = 30
 
 	faith_modifier = {
 		parameter = witchcraft_illegal
@@ -33,4 +33,22 @@ ALT_discovered_mage = {
 	
 	ALT_arcane_lab_modifiers_advantage = 0.5
 
+}
+ALT_biological_imperfect_immortality = {
+	category = health
+
+	shown_in_ruler_designer = no
+
+	immortal = yes
+	opposites = { incapable immortal }
+	flag = is_immortal
+	flag = immortal_visuals
+	flag = immortal_fertility
+	flag = immortal_incapability
+	long_reign_bonus_mult = -1000
+	no_prowess_loss_from_age = yes
+
+	flag = imperfect_immortality
+	stress_gain_mult = 1
+	stress_loss_mult = -0.5
 }

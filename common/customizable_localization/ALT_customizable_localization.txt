@@ -171,6 +171,6 @@ ALT_secrecy_loca = {
 	log_loc_errors = no
 	text = {
 		localization_key = ALT_secrecy_loca_yes
-		trigger = { ALT_secrecy >= 1 has_game_rule = ALT_secrecy_enabled }
+		trigger = { ALT_secrecy >= 1}
 	} 
 }

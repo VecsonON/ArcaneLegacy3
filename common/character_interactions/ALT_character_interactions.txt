@@ -14,14 +14,14 @@
 	}
 	send_option = {
 		is_valid = { 
-			 trigger_if = { limit = { NOT = { scope:actor = scope:recipient } } scope:recipient = {is_imprisoned_by = scope:actor  }} 
+			trigger_if = { limit = { NOT = { scope:actor = scope:recipient } } scope:recipient = {is_imprisoned_by = scope:actor  }} 
 		}
 		flag = ALT_sacrifice	
 		localization = ATL_select_sacrifice
 	}
 	on_accept = {
-		if = { limit = { scope:ALT_target = yes } scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_target } } }
-		else = { scope:actor = { ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_sacriface } } }
+		if = { limit = { scope:ALT_target = yes } scope:actor = { hidden_effect = { var:sellected_target ?= { end_story = yes } } ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_target } } }
+		else = { scope:actor = { hidden_effect = { var:sellected_sacriface ?= { end_story = yes } } ALT_make_complex_marker = { TYPE = flag:ALT_character TARGET = scope:recipient SAVE_AS = sellected_sacriface } } }
 	}
 	auto_accept = yes
 }
@@ -181,14 +181,11 @@ ALT_experiment_on_prisoner_interaction = {
 	}
 	auto_accept = yes
 }
-
 ALT_experiment_on_current_location_interaction = {
 	icon = arcane
 	interface_priority = 1
 	
 	category = interaction_category_prison
-
-	common_interaction = yes
 
 	is_shown = { scope:actor = { has_character_flag = ALT_know_materomancy NOT = { ALT_has_X_xp_of_school = { SCHOOL = flag:ALT_school_materomancy COUNT = 100 } } } scope:recipient = scope:actor }
 
@@ -438,4 +435,22 @@ ALT_teach_magic_interaction = {
 		}
 
 	}
+}
+ALT_make_arcane_lab_successor_interaction = {
+	icon = arcane
+	interface_priority = 1
+	
+	category = interaction_category_friendly
+
+	is_shown = { scope:actor = { has_variable = owned_arcane_lab ALT_is_mage = yes } scope:recipient = { ALT_is_mage = yes } }
+
+	on_accept = {
+		scope:actor = {
+			custom_tooltip = {
+				text = ALT_make_arcane_lab_successor_interaction_effect
+				set_variable = { name = ALT_arcane_lab_successor value = scope:recipient }
+			}
+		}
+	}
+	auto_accept = yes
 }

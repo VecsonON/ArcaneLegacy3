@@ -23,9 +23,11 @@ ALT_pursuit_events.0001 = { #
 				flag:ALT_ritual_of_health = { ALT_ritual_of_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_maiming = { ALT_ritual_of_maiming_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_inscription_of_harm = { ALT_inscription_of_harm_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_inscription_of_fertility = { ALT_inscription_of_fertility_effect = { TARGET = var:current_pursuit.var:target } }
 
 				flag:ALT_ritual_of_curing = { ALT_ritual_of_curing_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_bad_health = { ALT_ritual_of_bad_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+				flag:ALT_inscription_of_health = { ALT_inscription_of_health_effect = { TARGET = var:current_pursuit.var:target } }
 
 				flag:ALT_ritual_of_long_life = { ALT_ritual_of_long_life_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_rotten_blood = { ALT_ritual_of_rotten_blood_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
@@ -43,13 +45,16 @@ ALT_pursuit_events.0001 = { #
 				
 				flag:ALT_ritual_of_perfect_mind = { ALT_ritual_of_perfect_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_empty_mind = { ALT_ritual_of_empty_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+				flag:ALT_inscription_of_stress_loss = { ALT_inscription_of_stress_loss_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_inscription_of_peace = { ALT_inscription_of_peace_effect = { TARGET = var:current_pursuit.var:target } }
 				
 				flag:ALT_ritual_of_good_impressions = { ALT_ritual_of_good_impressions_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_bad_impressions = { ALT_ritual_of_bad_impressions_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
-				flag:ALT_inscription_of_peace = { ALT_inscription_of_peace_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_open_mind = { ALT_ritual_of_open_mind_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 
 				flag:ALT_ritual_of_servitude = { ALT_ritual_of_servitude_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_mental_instability = { ALT_ritual_of_mental_instability_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
+				flag:ALT_inscription_of_knowledge = { ALT_inscription_of_knowledge_effect = { TARGET = var:current_pursuit.var:target } }
 				
 				flag:ALT_ritual_of_personality_morph = { ALT_ritual_of_personality_morph_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_mental_health = { ALT_ritual_of_mental_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
@@ -65,12 +70,16 @@ ALT_pursuit_events.0001 = { #
 
 				flag:ALT_ritual_of_dirt_stone = { ALT_ritual_of_dirt_stone_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_broken_stones = { ALT_ritual_of_broken_stones_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_mold_earth = { ALT_ritual_of_mold_earth_effect = { TARGET = var:current_pursuit.var:target } }
 				
 				flag:ALT_ritual_of_beautiful_city = { ALT_ritual_of_beautiful_city_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_hideous_city = { ALT_ritual_of_hideous_city_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_arcane_rock = { ALT_ritual_of_arcane_rock_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_inscription_of_repair = { ALT_inscription_of_repair_effect = { TARGET = var:current_pursuit.var:target } }
 
 				flag:ALT_ritual_of_golden_stone = { ALT_ritual_of_golden_stone_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_stoneish_gold = { ALT_ritual_of_stoneish_gold_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_mold_arcane = { ALT_ritual_of_mold_arcane_effect = { TARGET = var:current_pursuit.var:target } }
 
 				flag:ALT_ritual_of_golem = { ALT_ritual_of_golem_effect = { SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_golemhood = { ALT_ritual_of_golemhood_effect = { SACRIFICE = var:current_pursuit.var:sacrifice } }
@@ -89,6 +98,8 @@ ALT_pursuit_events.0001 = { #
 				
 				flag:ALT_ritual_of_future_insight = { ALT_ritual_of_future_insight_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_fast_time = { ALT_ritual_of_fast_time_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_good_fortune = { ALT_ritual_of_good_fortune_effect = { TARGET = var:current_pursuit.var:target } }
+				flag:ALT_ritual_of_bad_fortune = { ALT_ritual_of_bad_fortune_effect = { TARGET = var:current_pursuit.var:target } }
 				
 				flag:ALT_ritual_of_slow_time = { ALT_ritual_of_slow_time_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_teleportation = { ALT_ritual_of_teleportation_effect = { TARGET = var:current_pursuit.var:target } }
@@ -103,8 +114,6 @@ ALT_pursuit_events.0001 = { #
 			}
 		}
 		
-		if = { limit = { is_ai = yes } var:current_pursuit.var:sacrifice = { death = { death_reason = death_torture } } }
-		ALT_delete_pursuit_effect = { pursuit = var:current_pursuit }
 		ai_chance = {
 			base = 100
 		}
@@ -113,6 +122,14 @@ ALT_pursuit_events.0001 = { #
 		name = ALT_pursuit_events.0001.b
 		custom_tooltip = "ALT_pursuit_events.0001.b.tt"
 		ALT_pause_current_pursuit_effect = yes
+		add_character_flag = pause
+	}
+	after = {
+		if = { limit = { NOT = { has_character_flag = pause } } 
+			if = { limit = { is_ai = yes } var:current_pursuit.var:sacrifice = { death = { death_reason = death_torture } } }
+			ALT_delete_pursuit_effect = { pursuit = var:current_pursuit }
+		}
+		else = { remove_character_flag = pause }
 	}
 }
 

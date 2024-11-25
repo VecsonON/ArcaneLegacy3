@@ -6,37 +6,48 @@
 ALT_secluded_lab_modifier = {
 	icon = county_modifier_development_mixed
 }
-
-
+ALT_merlin_modifier = {
+	icon = magic_positive
+	general_opinion = 25
+	monthly_prestige = 2.5
+	monthly_piety_gain_mult = 1
+}
+ALT_erebus_modifier = {
+	icon = magic_negative
+	dread_baseline_add = 100
+	general_opinion = -25
+	monthly_prestige = 5
+	monthly_piety_gain_mult = 2
+}
+ALT_arcane_emperor_modifier = {
+	icon = magic_positive
+	dread_baseline_add = 50
+	monthly_prestige = 2.5
+	monthly_piety_gain_mult = 21
+}
 
 
 ALT_ritual_of_treatment_modifier = {
 	icon = health_positive
 	negate_health_penalty_add = 1.5
 }
-
 ALT_ritual_of_decline_modifier = {
 	icon = health_negative
 	health = -0.5
 }
-
 ALT_ritual_of_long_life_modifier = {
 	icon = health_positive
 	health = 3
 }
 
-
-
 ALT_ritual_of_clear_mind_modifier = {
 	icon = learning_positive
 	monthly_lifestyle_xp_gain_mult = 0.25
 }
-
 ALT_ritual_of_cluttery_mind_modifier = {
 	icon = learning_negative
 	monthly_lifestyle_xp_gain_mult = -0.5
 }
-
 ALT_ritual_of_perfect_mind_modifier = {
 	icon = learning_positive
 	monthly_lifestyle_xp_gain_mult = 0.6
@@ -45,7 +56,6 @@ ALT_ritual_of_empty_mind_modifier = {
 	icon = learning_negative
 	monthly_lifestyle_xp_gain_mult = -0.8
 }
-
 ALT_ritual_of_good_impressions_modifier = {
 	icon = county_modifier_opinion_positive
 	general_opinion = 25
@@ -54,7 +64,6 @@ ALT_ritual_of_bad_impressions_modifier = {
 	icon = county_modifier_opinion_negative
 	general_opinion = -25
 }
-
 ALT_ritual_of_eternal_servitude_modifier = {
 	icon = stress_negative
 	diplomacy = -5
@@ -64,37 +73,28 @@ ALT_ritual_of_eternal_servitude_modifier = {
 	learning = -5
 }
 
-
-
 ALT_ritual_of_iron_stone_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 1
 }
-
 ALT_ritual_of_dirt_stone_modifier = {
 	icon = county_modifier_development_positive
 	build_gold_cost = -0.25
 	build_speed = -0.25
 }
-
 ALT_ritual_of_broken_stones_modifier = {
 	icon = county_modifier_development_negative
 	build_gold_cost = 0.25
 	build_speed = 0.25
 }
-
 ALT_ritual_of_beautiful_city_modifier = {
 	icon = county_modifier_development_positive
 	county_opinion_add = 50
 }
-
 ALT_ritual_of_hideous_city_modifier = {
 	icon = county_modifier_development_negative
 	county_opinion_add = -50
 }
-
-
-
 
 ALT_ritual_of_good_luck_modifier = {
 	icon = magic_positive
@@ -110,21 +110,18 @@ ALT_ritual_of_bad_luck_modifier = {
 	enemy_scheme_secrecy_add = 15
 	owned_scheme_secrecy_add = -15
 }
-
 ALT_ritual_of_fast_movement_modifier = {
 	icon = magic_positive
 	prowess_no_portrait = 4
 	movement_speed = 0.25
 	character_travel_speed_mult = 0.25
 }
-
 ALT_ritual_of_slow_movement_modifier = {
 	icon = magic_negative
 	prowess_no_portrait = -4
 	movement_speed = -0.25
 	character_travel_speed_mult = -0.25
 }
-
 ALT_ritual_of_future_insight_modifier = {
 	icon = magic_positive
 	owned_hostile_scheme_success_chance_max_add = 30
@@ -132,7 +129,6 @@ ALT_ritual_of_future_insight_modifier = {
 	enemy_scheme_secrecy_add = -30
 	owned_scheme_secrecy_add = 30
 }
-
 ALT_ritual_of_fast_time_modifier = {
 	icon = magic_negative
 	diplomacy = -4
@@ -141,7 +137,20 @@ ALT_ritual_of_fast_time_modifier = {
 	intrigue = -4
 	learning = -4
 }
-
+ALT_ritual_of_good_fortune_modifier = {
+	icon = magic_positive
+	monthly_income_mult = 0.1
+	monthly_prestige_gain_mult = 0.1
+	monthly_piety_gain_mult = 0.1
+	monthly_dynasty_prestige_mult = 0.1
+}
+ALT_ritual_of_bad_fortune_modifier = {
+	icon = magic_negative
+	monthly_income_mult = -0.1
+	monthly_prestige_gain_mult = -0.1
+	monthly_piety_gain_mult = -0.1
+	monthly_dynasty_prestige_mult = -0.1
+}
 ALT_ritual_of_slow_time_modifier = {
 	icon = magic_positive
 	diplomacy = 4
@@ -150,7 +159,6 @@ ALT_ritual_of_slow_time_modifier = {
 	intrigue = 4
 	learning = 4
 }
-
 ALT_ritual_of_teleportation_modifier = {
 	icon = magic_positive
 	movement_speed = 50
@@ -161,7 +169,6 @@ ALT_ritual_of_space_blocked_modifier = {
 	movement_speed = -50
 	character_travel_speed_mult = -50
 }
-
 ALT_ritual_of_stopping_time_modifier = {
 	icon = magic_positive
 	diplomacy = 10
@@ -170,7 +177,6 @@ ALT_ritual_of_stopping_time_modifier = {
 	intrigue = 10
 	learning = 10
 }
-
 ALT_ritual_of_delay_death_mark_modifier = {
 	icon = magic_positive
 	health = 200
@@ -179,18 +185,32 @@ ALT_ritual_of_death_mark_modifier = {
 	icon = magic_negative
 	health = -150
 }
-
-
 ###INSCRIPTIONS
 ALT_inscription_of_harm_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 5
 	stress_gain_mult = 0.2
 }
+ALT_inscription_of_fertility_modifier = {
+	icon = prowess_positive
+	fertility = 0.25
+	stress_gain_mult = 0.2
+}
+ALT_inscription_of_health_modifier = {
+	icon = prowess_positive
+	health = 0.3
+	stress_gain_mult = 0.3
+}
 ALT_inscription_of_organ_failure_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 15
 	stress_gain_mult = 0.5
+}
+
+ALT_inscription_of_stress_loss_modifier = {
+	icon = prowess_positive
+	stress_loss_mult = 0.25
+	stress_gain_mult = 0.2
 }
 ALT_inscription_of_peace_modifier = {
 	icon = prowess_positive
@@ -200,6 +220,31 @@ ALT_inscription_of_peace_modifier = {
 	personal_scheme_phase_duration_add = 15
 	stress_gain_mult = 0.2
 }
+ALT_inscription_of_knowledge_diplomacy_modifier = {
+	icon = prowess_positive
+	diplomacy = 2
+	stress_gain_mult = 0.4
+}
+ALT_inscription_of_knowledge_martial_modifier = {
+	icon = prowess_positive
+	martial = 2
+	stress_gain_mult = 0.4
+}
+ALT_inscription_of_knowledge_stewardship_modifier = {
+	icon = prowess_positive
+	stewardship = 2
+	stress_gain_mult = 0.4
+}
+ALT_inscription_of_knowledge_intrigue_modifier = {
+	icon = prowess_positive
+	intrigue = 2
+	stress_gain_mult = 0.4
+}
+ALT_inscription_of_knowledge_learning_modifier = {
+	icon = prowess_positive
+	learning = 2
+	stress_gain_mult = 0.4
+}
 ALT_inscription_of_self_harm_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 10
@@ -207,6 +252,7 @@ ALT_inscription_of_self_harm_modifier = {
 	hostile_scheme_phase_duration_add = 15
 	stress_gain_mult = 0.5
 }
+
 ALT_inscription_of_elements_novice_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 1
@@ -228,6 +274,10 @@ ALT_inscription_of_elements_adept_modifier = {
 	siege_phase_time = -0.3
 	stress_gain_mult = 0.3
 }
+ALT_inscription_of_repair_modifier = {
+	icon = prowess_positive
+	stress_gain_mult = 0.3
+}
 ALT_inscription_of_elements_expert_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 8
@@ -242,11 +292,7 @@ ALT_inscription_of_natural_disasters_modifier = {
 	siege_phase_time = -0.5
 	stress_gain_mult = 0.6
 }
-ALT_inscription_of_organ_failure_modifier = {
-	icon = prowess_positive
-	prowess_no_portrait = 15
-	stress_gain_mult = 0.5
-}
+
 ALT_inscription_of_space_distortion_modifier = {
 	icon = prowess_positive
 	prowess_no_portrait = 7

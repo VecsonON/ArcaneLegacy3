@@ -50,7 +50,7 @@
 		}
 	}
 
-	wait_time_before_start = { months = 3 }
+	wait_time_before_start = { days = 5 }
 
 	###################
 	# OPTIONS
@@ -74,6 +74,12 @@
 
 					trigger_event = ALT_arcane_lab_events.1
 					add_to_variable_list = { name = visited_forgotten_labs target = scope:province }
+				}
+			}
+			on_end = {
+				if = {
+					limit = { this = scope:host }
+					trigger_event = ALT_arcane_lab_events.7
 				}
 			}
 		}
@@ -168,9 +174,16 @@
 		custom_tooltip = {
 			text = ALT_forgotten_lab_exploration_modifier
 			has_province_modifier = ALT_secluded_lab_modifier
+			NOT = { var:arcane_lab ?= { var:current_owner ?= scope:host } }
 		}
 	}
 	province_description = { 
+		triggered_desc = {
+			trigger = {
+				var:arcane_lab ?= { var:current_owner ?= scope:host }
+			}
+			desc = ALT_forgotten_lab_exploration_owned
+		}
 		triggered_desc = {
 			trigger = {
 				scope:host = {

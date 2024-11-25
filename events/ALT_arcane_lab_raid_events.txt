@@ -56,12 +56,12 @@ ALT_arcane_lab_events.2 = { # I couldn't find lab here.
 	}
 
 	option = { # Oh
-		name = ALT_arcane_lab_events.1.a
+		name = ALT_arcane_lab_events.2.a
                 #complete_activity = yes
                 add_stress = 75
 	}
 	option = { # By power of Mensomancy!
-		name = ALT_arcane_lab_events.1.b
+		name = ALT_arcane_lab_events.2.b
                 trigger = {
                         has_character_flag = ALT_know_mensomancy
                 }
@@ -392,5 +392,23 @@ ALT_arcane_lab_events.6 = { # Should I take this place as my own?
 	option = { # Nah
 		name = ALT_arcane_lab_events.6.b
                 add_stress = -50
+	}
+}
+ALT_arcane_lab_events.7 = {
+       type = activity_event 
+
+	title = ALT_arcane_lab_events.7.title
+	desc = ALT_arcane_lab_events.7.desc
+
+	theme = hunt_activity
+	override_background = "corridor_night"
+
+	left_portrait = {
+		character = scope:host
+		animation = thinking
+	}
+
+	option = { # Take.
+		name = ALT_arcane_lab_events.7.a
 	}
 }

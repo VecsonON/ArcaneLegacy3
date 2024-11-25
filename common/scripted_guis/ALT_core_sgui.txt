@@ -183,12 +183,15 @@ ALT_seek_new_schools = {
 	}
 	is_valid = {
 		NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_seek_new_schools } }
-		NOT = { 
-			AND = {
-				has_character_flag = ALT_know_biomancy
-				has_character_flag = ALT_know_mensomancy
-				has_character_flag = ALT_know_materomancy
-				has_character_flag = ALT_know_aetherimancy
+		custom_tooltip = {
+			text = ALT_seek_new_schools_tt2
+			NOT = { 
+				AND = {
+					has_character_flag = ALT_know_biomancy
+					has_character_flag = ALT_know_mensomancy
+					has_character_flag = ALT_know_materomancy
+					has_character_flag = ALT_know_aetherimancy
+				}
 			}
 		}
 	}

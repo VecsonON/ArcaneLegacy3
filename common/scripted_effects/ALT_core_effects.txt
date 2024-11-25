@@ -83,16 +83,17 @@ ALT_resume_paused_pursuit_effect = {
 	}
 }
 ALT_delete_pursuit_effect = {
-	if = { limit = { var:current_pursuit ?= $pursuit$ } 
+	$pursuit$ = { save_scope_as = pursuit }
+	if = { limit = { var:current_pursuit ?= scope:pursuit } 
 		remove_variable = current_pursuit
-		$pursuit$ = { end_story = yes }
 	}
 	else = {
 		remove_list_variable = {
 			name = pursuits
-			target = $pursuit$
+			target = scope:pursuit
 		}
 	}
+	scope:pursuit = { end_story = yes }
 }
 
 
@@ -167,7 +168,7 @@ ALT_become_aetherimancer = {
 
 ALT_change_secrecy = {
 	if = { limit = { NOT = { has_variable = ALT_secrecy } } set_variable = { name = ALT_secrecy value = 100 } }
-	if = { limit = { ALT_is_discovered_mage = no has_game_rule = ALT_secrecy_enabled }
+	if = { limit = { ALT_is_discovered_mage = no }
 		save_scope_value_as = { name = temp_value value = $VALUE$ }
 		if = { limit = { $VALUE$ <= 0 } custom_tooltip = ALT_change_secrecy_subtract }
 		else_if = { custom_tooltip = ALT_change_secrecy_add }
@@ -205,7 +206,29 @@ ALT_start_ai_pursuit_effect = {
 	save_scope_value_as = { name = type_value value = $TYPE_VALUE$ }
 	var:current_pursuit ?= { set_variable = { name = monthly_progress value = scope:type_value } }
 }
-
+ALT_add_insciption = {
+	if = { limit = { NOT = { has_variable = ALT_number_of_inscriptions } } set_variable = { name = ALT_number_of_inscriptions value = 1 } }
+	else = { change_variable = { name = ALT_number_of_inscriptions add = 1 } }
+	#set_artifact_feature = ALT_inscription, WHY PARADOX? WHY?!
+}
+ALT_merlin_objective_progress_gain = {
+	if = { limit = { is_landed = no NOT = { has_character_flag = ALT_landless_mage_objective_done } $TARGET$ != ROOT }
+		custom_tooltip = {
+			text = ALT_merlin_objective_progress_gain
+			if = { limit = { has_variable = ALT_merlin_progress } change_variable = { name = ALT_merlin_progress add = 1 } }
+			else = { set_variable = { name = ALT_merlin_progress value = 1 } }
+		}
+	}
+}
+ALT_erebus_objective_progress_gain = {
+	if = { limit = { is_landed = no NOT = { has_character_flag = ALT_landless_mage_objective_done } $TARGET$ != ROOT }
+		custom_tooltip = {
+			text = ALT_erebus_objective_progress_gain
+			if = { limit = { has_variable = ALT_erebus_progress } change_variable = { name = ALT_erebus_progress add = 1 } }
+			else = { set_variable = { name = ALT_erebus_progress value = 1 } }
+		}
+	}
+}
 ### ARCANE LAB
 # SCOPE = PROVINCE
 ALT_create_arcane_lab = {

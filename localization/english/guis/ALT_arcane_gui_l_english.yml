@@ -11,7 +11,8 @@
 
  arcane_start_learning: "Study"
  arcane_seek_new_school: "Study [ALT_arcane|E]"
- ALT_seek_new_schools_tt: "#weak Via random events during pursuit, success chance can be increased!#!"
+ ALT_seek_new_schools_tt: "#I Via random events during pursuit, success chance can be increased!#!"
+ ALT_seek_new_schools_tt2: "#X You have already learned all schools of [ALT_arcane|E]!#!"
 
  choose_ritual: "Chose"
  ALT_target: "Target:"
@@ -57,10 +58,13 @@
  
  ALT_sacrifice_is_not_available: "Sacrifice is no longer available!"
  ALT_target_is_not_available: "Target is no longer available!"
+ ALT_target_is_not_caster: "Caster cannot be target!"
  
  trait_ALT_discovered_mage: "Rumored Mage"
  trait_ALT_discovered_mage_desc: "Everyone thinks that this character messed with [ALT_arcane|E], and this fame won't come off easily"
 
- 
+ trait_ALT_biological_imperfect_immortality: "Imperfect biological immortality"
+ trait_ALT_biological_imperfect_immortality_desc: "Though this character doesn't age, something in them isn't #italic right#! anymore. It is like their body and mind are separated"
+ TRAIT_FLAG_DESC_imperfect_immortality: "Mind and body are no longer insync, this #X WILL#! cause trouble #weak Maybe [ALT_mensomancy|E] can help?#!"
 
  

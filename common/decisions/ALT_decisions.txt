@@ -123,11 +123,128 @@ ALT_create_arcane_lab_debug = {
 
 	is_shown = {
 		ALT_is_mage = yes
+		debug_only = yes
 	}
 
 	effect = {
 		save_scope_as = char
 		capital_province = { ALT_create_arcane_lab = yes }
 		capital_province.var:arcane_lab ?= { ALT_arcane_lab_change_ownership = { NEW_OWNER = scope:char } }
+	}	
+}
+ALT_landless_mage_objective_new_merlin_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = adventurer
+
+	ai_check_interval = 0
+
+	is_shown = {
+		ALT_is_mage = yes
+		is_landed = no
+		NOT = { has_character_flag = ALT_landless_mage_objective_done }
+	}
+	is_valid = {
+		prestige_level >= 5
+		custom_tooltip = {
+			text = ALT_has_25_merlin_progress_or_more
+			exists = var:ALT_merlin_progress
+			var:ALT_merlin_progress >= 25
+		}
+	}
+
+	effect = {
+		add_character_flag = ALT_landless_mage_objective_done
+		add_prestige = 2500
+		add_character_modifier = ALT_merlin_modifier
+		ALT_change_secrecy = { VALUE = -100 }
+	}	
+}
+ALT_landless_mage_objective_new_erebus_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = adventurer
+
+	ai_check_interval = 0
+
+	is_shown = {
+		ALT_is_mage = yes
+		is_landed = no
+		NOT = { has_character_flag = ALT_landless_mage_objective_done }
+	}
+	is_valid = {
+		prestige_level >= 5
+		custom_tooltip = {
+			text = ALT_has_25_erebus_progress_or_more
+			exists = var:ALT_erebus_progress
+			var:ALT_erebus_progress >= 25
+		}
+	}
+
+	effect = {
+		add_character_flag = ALT_landless_mage_objective_done
+		add_prestige = 2500
+		add_character_modifier = ALT_erebus_modifier
+		ALT_change_secrecy = { VALUE = -100 }
+	}	
+}
+ALT_landed_mage_objective_arcane_emperor_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = major
+
+	ai_check_interval = 0
+
+	is_shown = {
+		ALT_is_mage = yes
+		is_landed = yes
+		NOT = { has_character_flag = ALT_landed_mage_objective_done }
+	}
+	is_valid = {
+		prestige_level >= 5
+		legitimacy_level >= 5
+		is_independent_ruler = yes
+		realm_size >= 80
+	}
+
+	effect = {
+		add_character_flag = ALT_landed_mage_objective_done
+		add_prestige = 5000
+		add_character_modifier = ALT_arcane_emperor_modifier
+		ALT_change_secrecy = { VALUE = -100 }
+	}	
+}
+
+ALT_build_arcane_lab_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/fp1_decisons_hold_bolt.dds"
+	}	
+	decision_group_type = major
+
+	ai_check_interval = 0
+
+	is_shown = {
+		ALT_is_mage = yes
+		NOT = { has_variable = owned_arcane_lab }
+		ALT_has_X_xp_of_school = { SCHOOL = flag:any COUNT = 20 }
+	}
+	is_valid = {
+		custom_tooltip = {  
+			text = ALT_build_arcane_lab_decision_tt
+			NOT = { location = { has_province_modifier = ALT_secluded_lab_modifier } }
+		}
+	}
+	cost = {
+		gold = massive_gold_max_value
+	}
+
+	effect = {
+		add_stress = 150
+		save_scope_as = char
+		location = { ALT_create_arcane_lab = yes }
+		location.var:arcane_lab ?= { ALT_arcane_lab_change_ownership = { NEW_OWNER = scope:char } }
 	}	
 }

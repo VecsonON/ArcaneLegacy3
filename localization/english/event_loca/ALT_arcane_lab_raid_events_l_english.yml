@@ -10,8 +10,9 @@
  ALT_forgotten_lab_exploration_conclusion_desc: "My exploration is complete"
  ALT_forgotten_lab_exploration_searching: "Exploring"
  ALT_forgotten_lab_exploration_searching_desc: "I shall explore these ruins!"
- ALT_forgotten_lab_exploration_visited: "You have already explored this [province|E]!"
- ALT_forgotten_lab_exploration_unvisited: "You haven't explored this [province|E]!"
+ ALT_forgotten_lab_exploration_owned: "You #P;bold own#! this [ALT_arcane_lab|E]!"
+ ALT_forgotten_lab_exploration_visited: "You #N have#! already explored this [province|E]!"
+ ALT_forgotten_lab_exploration_unvisited: "You #P haven't#! explored this [province|E]!"
  ALT_forgotten_lab_exploration_modifier: "There are no rumors about anything to explore"
 
  ALT_arcane_lab_events.1.title: "Final Decision"
@@ -22,8 +23,8 @@
  ALT_arcane_lab_events.1.b: "Nah, I have better things to do."
 
  ALT_arcane_lab_events.2.title: "Nothing"
- ALT_arcane_lab_events.2.desc: "After hours of searching, I didn't managed to found anything interesting. There is nothing here, or it is very well hidden."
- ALT_arcane_lab_events.2.a: "I geuse I am coming home early"
+ ALT_arcane_lab_events.2.desc: "After hours of searching, I didn't managed to found anything interesting. There is nothing here, or it is very well hidden. #weak Remember that not every [province|E] with [GetModifier('ALT_secluded_lab_modifier').GetName] is really a [ALT_arcane_lab|E], about #V 2/3#! of them are fakes"
+ ALT_arcane_lab_events.2.a: "I guess I am coming home early"
  ALT_arcane_lab_events.2.b: "I shall use [ALT_mensomancy|E] to fight any [ALT_arcane|E] influance"
  ALT_arcane_lab_events.2.b.a: "There indeed was something here!"
  ALT_arcane_lab_events.2.b.b: "I-I can't find anything..."
@@ -66,3 +67,7 @@
  ALT_arcane_lab_events.6.desc: "After leaving that mess, I am finally outside."
  ALT_arcane_lab_events.6.a: "But maybe I could take this place as my own?"
  ALT_arcane_lab_events.6.b: "Let's go home."
+
+ ALT_arcane_lab_events.7.title: "Conclusion"
+ ALT_arcane_lab_events.7.desc: "So... that was it?"
+ ALT_arcane_lab_events.7.a: "Let's go home"

@@ -25,6 +25,7 @@
   ALT_sacrifice_title: "Sacrifice must be an Title"
 
   ALT_artifact_is_already_inscribed: "[artifact|E] already has been inscribed!"
+  feature_ALT_inscription: "This [artifact|E] is enteiraty covered in [ALT_arcane|E] runes, lines and symbols."
 
   ALT_study_effect_tt: "#weak;P Thanks to your decisions during studying, success chance has been increased#!"
 

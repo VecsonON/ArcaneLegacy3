@@ -87,3 +87,17 @@ ALT_arcane_lab_has_building = {
 		count > 0
 	}
 }
+ALT_has_reached_max_inscriptions = {
+	custom_tooltip = {
+		text = ALT_artifact_is_already_inscribed 
+		trigger_if = { limit = { NOT = { has_variable = ALT_allow_many_inscriptions } } 
+			NOT = { has_variable = ALT_number_of_inscriptions } 
+		}
+		trigger_else_if = { limit = { has_variable = ALT_number_of_inscriptions }
+			var:ALT_number_of_inscriptions < var:ALT_allow_many_inscriptions
+		}
+		trigger_else = {
+			
+		}
+	}
+}
