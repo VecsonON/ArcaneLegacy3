@@ -233,7 +233,7 @@ ALT_teach_magic_interaction = {
 
 	common_interaction = yes
 
-	#cooldown = { years = 5 }
+	cooldown = { years = 5 }
 	is_shown = {
 		scope:actor = { ALT_is_mage = yes }
 		scope:recipient = { age >= 13 }
@@ -370,7 +370,7 @@ ALT_teach_magic_interaction = {
 		opinion_modifier = { # Compare Opinion modifier.
 			who = scope:recipient
 			opinion_target = scope:actor
-			multiplier = 0.5
+			multiplier = 0.6
 		}
 		modifier = { # Say no to rivals
 			add = -25

@@ -7,17 +7,17 @@ ADDING NEW SPELLS:
     6) Create loca
     7) Profit
 1.0:
-    ✘ Create Landless government, for mages => Arcane Lab
-    ✘ Create Camp/Domicile for mages => Arcane Lab
-    ✘ Create camp purpose for mages => Arcane Lab
-    ✘ Debuff immortality / Improve Immortality to be more realistic [Added Suspicion, TODO more]
-    ✘ Domicile Arcane Lab => Arcane Lab
-    ✘ Witch hunting: DELAYED
+    ✘ Create Landless government, for mages => Arcane Lab [X]
+    ✘ Create Camp/Domicile for mages => Arcane Lab [X]
+    ✘ Create camp purpose for mages => Arcane Lab [X]
+    ✘ Debuff immortality / Improve Immortality to be more realistic [X]
+    ✘ Domicile Arcane Lab => Arcane Lab [X]
+    ✘ Witch hunting: [1.0]
         ✘ Trait
         ✘ Character Hunting
         ✘ Lab Hunting
         ✘ Playable Witch hunters
-    ✘ Start working on sub-schools: DELAYED
+    ✘ Start working on sub-schools: [1.0]
         ✘ Transformancy:
             ✘ Ritual of Metamorphosis - Make human into animal, animal into human
             ✘ Ritual of Arcane Flesh - Make human more capable in arcane, due to birth. Genetic arcane trait
@@ -31,6 +31,8 @@ ADDING NEW SPELLS:
             ✘ Ritual of Connection - Communicate with random higher being(god or demon, who knows)
             ✘ Ritual of Gate - Create army of lesser higher beings(angles, lesser demons)
             ✘ Ritual of Assendence - Slowly assend to become higher being(game over)
+    ✘ Add more mechanic depth to suspision @high @low [1.0]
+    ✘ Add Supreme spell to each school, unlockable after long and hard pursuit [1.0]
     ✔ More Inscriptions: @started @done
         ✔ Inscription of Fertility(AP) = +25 fertility @started @done
         ✔ Inscription of Health(A) = +1 Health @started @done
@@ -70,5 +72,3 @@ ADDING NEW SPELLS:
     ✔ Add objective for landless mages @low
     ✔ Add objective for landed mages @low
     ✔ Improve immortality from biomancy @started @done
-    ☐ Add more mechanic depth to suspision @high @low
-    ☐ Add Supreme spell to each school, unlockable after long and hard pursuit

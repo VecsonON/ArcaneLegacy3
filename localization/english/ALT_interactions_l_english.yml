@@ -26,6 +26,6 @@
   ALT_WITCHCRAFT_IS_SHUNNED_REASON: "I won't stray from god's path. $VALUE|+0$"
   ALT_I_AM_HEIR_OF_ACTOR_REASON: "I am heir of [ALT_arcane|E] heritage: $VALUE|+0$"
 
-  ALT_make_arcane_lab_successor_interaction: "Apoint as arcane lab successor"
-  ALT_make_arcane_lab_successor_interaction_desc: "Apoint as arcane lab successor"
+  ALT_make_arcane_lab_successor_interaction: "Appoint as arcane lab successor"
+  ALT_make_arcane_lab_successor_interaction_desc: "Appoint as arcane lab successor"
   ALT_make_arcane_lab_successor_interaction_effect: "[RECIPIENT.GetFirstName] will inherent your [ALT_arcane_lab|E] upon your death."

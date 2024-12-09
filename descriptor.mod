@@ -1,4 +1,4 @@
-version="0.9" #Should be 1.0, but due to lack of events I will break it into 2 parts
+version="0.9"
 tags={
 	"Alternative History"
 	"Total Conversion"
