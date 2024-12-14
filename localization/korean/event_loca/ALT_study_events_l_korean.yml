@@ -1,0 +1,36 @@
+﻿l_korean:
+ ALT_se_increase_success_chance_by_1: "#P Increase Success Chance#! of [Localize(Concatenate(Concatenate('pursuit_',GetPlayer.MakeScope.Var('current_pursuit').Var('type').GetFlagName),'_name'))|V]"
+ ALT_se_increase_success_chance_by_2: "#P #bold Massively#! Increase Success Chance#! of [Localize(Concatenate(Concatenate('pursuit_',GetPlayer.MakeScope.Var('current_pursuit').Var('type').GetFlagName),'_name'))|V]"
+ ALT_se_increase_success_chance_by_3: "#P #bold;italic Greatly#! Increase Success Chance#! of [Localize(Concatenate(Concatenate('pursuit_',GetPlayer.MakeScope.Var('current_pursuit').Var('type').GetFlagName),'_name'))|V]"
+
+
+ ALT_study_events.0001.title: "Something isn't adding up..."
+ ALT_study_events.0001.desc: "My studies are going as expected... at least they were until I discovered a major flaw in my thought process, and what's worse is that I made that mistake a while ago without noticing... Now a major part of my research is compromised."
+ ALT_study_events.0001.a: "I see it clearly."
+ ALT_study_events.0001.b: "Damn, looks like I'll have to start over."
+ ALT_study_events.0001.c: "It will work itself out."
+
+ ALT_study_events.0002.title: "Lack of Inspiration"
+ ALT_study_events.0002.desc: "Day after day, my work is going steadily. Though I have noticed a dramatic slowdown in progress. After some thought I conclude that I simply lack the motivation to continue working at this pace. I could start looking for a source of inspiration, or I could just soldier on."
+ ALT_study_events.0002.a: "Brute force never betrayed me!"
+ ALT_study_events.0002.b: "Time for a break!"
+ ALT_study_events.0002.c: "Everyone knows that going for a walk solves everything!"
+ ALT_study_events.0002.d: "My journal will help me here!"
+
+ ALT_study_events.0003.title: "Experimenting Time!"
+ ALT_study_events.0003.desc: "Even the greatest mind requires some practical experience to fully understand a thing. I am no different; my studies need some type of practical experiment to continue progressing. I could use a variety of subjects for it."
+ ALT_study_events.0003.a: "The greatest subject is me!"
+ ALT_study_events.0003.b: "Rats should suffice."
+ ALT_study_events.0003.c: "Nobody will mind if a few peasants go missing."
+
+ ALT_study_events.0004.title: "Studies are studying"
+ ALT_study_events.0004.desc: "Everything in my studies is going great! I could of course work even harder, but it isn't necessary. "
+ ALT_study_events.0004.a: "I can do more."
+ ALT_study_events.0004.b: "I am not finished yet!"
+ ALT_study_events.0004.c: "Great!"
+
+ ALT_study_events.0005.title: "I need some materials"
+ ALT_study_events.0005.desc: "For some time I have been working without adequate raw materials to further my studies. Of course I could continue with insufficient materials, but my work would be slower."
+ ALT_study_events.0005.a: "More materials would be better"
+ ALT_study_events.0005.b: "That should suffice"
+ ALT_study_events.0005.c: "I have enough."

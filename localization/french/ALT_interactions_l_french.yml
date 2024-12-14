@@ -1,0 +1,31 @@
+﻿l_french:
+  ATL_select_character_interaction: "Select [character|E] As..."
+  ATL_select_artifact_interaction: "Select [artifact|E] As..."
+  ATL_select_title_interaction: "Select [title|E] As..."
+
+  ATL_select_target: "Target"
+  ATL_select_sacrifice: "Sacrifice"
+  ATL_select_sacrifice_artifact: "[target.GetName] is #bold not#! held by #V you#!"
+
+  ALT_experiment_on_prisoner_interaction: "Experiment on prisoner"
+  ALT_experiment_on_prisoner_interaction_desc: "Experiment on prisoner"
+
+  ALT_experiment_on_current_location_interaction: "Experiment on Land"
+  ALT_experiment_on_current_location_interaction_desc: "Experiment on Land"
+
+  ALT_teach_magic_interaction: "Teach [ALT_arcane|E]"
+  ALT_biomancy_higher_than_recipient: "Must have more or equal [ALT_biomancy|E] experience than [recipient.GetFirstName] #weak ([recipient.MakeScope.ScriptValue('xp_ALT_school_biomancy')|0])#!"
+  ALT_mensomancy_higher_than_recipient: "Must have more or equal [ALT_mensomancy|E] experience than [recipient.GetFirstName] #weak ([recipient.MakeScope.ScriptValue('xp_ALT_school_mensomancy')|0])#!"
+  ALT_materomancy_higher_than_recipient: "Must have more or equal [ALT_materomancy|E] experience than [recipient.GetFirstName] #weak ([recipient.MakeScope.ScriptValue('xp_ALT_school_materomancy')|0])#!"
+  ALT_aetherimancy_higher_than_recipient: "Must have more or equal [ALT_aetherimancy|E] experience than [recipient.GetFirstName] #weak ([recipient.MakeScope.ScriptValue('xp_ALT_school_aetherimancy')|0])#!"
+  ALT_experimented_land_modifier: "Experimented Land"
+
+  ALT_WITCHCRAFT_IS_CRIMINAL_ZEALOUS_REASON: "I will never bow to evil! $VALUE|+0$"
+  ALT_WITCHCRAFT_IS_SHUNNED_ZEALOUS_REASON: "I will not stray from god's path! $VALUE|+0$"
+  ALT_WITCHCRAFT_IS_CRIMINAL_REASON: "I won't bow to evil. $VALUE|+0$"
+  ALT_WITCHCRAFT_IS_SHUNNED_REASON: "I won't stray from god's path. $VALUE|+0$"
+  ALT_I_AM_HEIR_OF_ACTOR_REASON: "I am heir of [ALT_arcane|E] heritage: $VALUE|+0$"
+
+  ALT_make_arcane_lab_successor_interaction: "Appoint as arcane lab successor"
+  ALT_make_arcane_lab_successor_interaction_desc: "Appoint as arcane lab successor"
+  ALT_make_arcane_lab_successor_interaction_effect: "[RECIPIENT.GetFirstName] will inherent your [ALT_arcane_lab|E] upon your death."

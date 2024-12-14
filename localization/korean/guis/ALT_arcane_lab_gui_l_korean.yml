@@ -1,0 +1,155 @@
+﻿l_korean:
+ ALT_secluded_lab_modifier: "Weird Place"
+ ALT_secluded_lab_modifier_desc: "Something here is not right, like there is something hidden..."
+ 
+ arcane_lab_button_tooltip: "[ALT_arcane_lab|E]"
+
+ ARCANE_LAB_VIEW_HEADING: "[ALT_arcane_lab|E]"
+ ARCANE_LAB_LOCATION: "[ALT_arcane_lab_location|E]: [GetPlayer.MakeScope.Var('owned_arcane_lab').Var('location').GetProvince.GetName]"
+ ARCANE_LAB_STATS: "#underline Statistics#!"
+ ARCANE_LAB_NOT_CREATED: "You don't own any [ALT_arcane_lab|E]"
+ ARCANE_LAB_CREATION_TUTORIAL: "[ALT_arcane_lab_creation_tutorial|E]"
+ BUILDING_MASTERY_REQUIREMENT: "Required Mastery: Novice"
+ BUILDING_COST: "75[stress_i|E] 250[gold_i|E] @time_icon!10 years"
+
+ ALT_upgrade_arcane_lab_building_cooldown: "[ALT_arcane_lab_building|E] construction until [GetCurrentDateWithDiff(GetVarTimeRemaining(GetPlayer.MakeScope, 'ALT_arcane_lab_cooldown') )]"
+ ALT_upgrade_arcane_lab_building_limit: "This [ALT_arcane_lab_building|E] is already maxed out!"
+ ALT_upgrade_arcane_lab_building_cost: "You don't have enough [gold|E]!"
+ ALT_upgrade_arcane_lab_building_requirement: "You do not fufill mastery requirements"
+ ALT_maxed_out_building: "This [ALT_arcane_lab_building|E] is maxed out"
+
+ ALT_arcane_lab_modifiers_advantage: "[ALT_arcane_lab_statistics_discovery_chance|E]"
+ ALT_arcane_lab_modifiers_tax_mult: "[ALT_arcane_lab_statistics_defence_success|E]"
+ ALT_pursuits_modifiers_advantage: "Study pursuit speed"
+ ALT_pursuits_modifiers_tax_mult: "Ritual pursuit speed"
+ ALT_pursuits_modifiers_levy_size: "General pursuit speed"
+
+ ALT_general_cost_1: "25 [stress_i] 150 [gold_i] @time_icon!5 years"
+ ALT_general_cost_2: "50 [stress_i] 300 [gold_i] @time_icon!5 years"
+ ALT_general_cost_3: "75 [stress_i] 450 [gold_i] @time_icon!5 years"
+ ALT_general_cost_4: "100 [stress_i] 600 [gold_i] @time_icon!5 years"
+ ALT_general_cost_5: "125 [stress_i] 750 [gold_i] @time_icon!5 years"
+ ALT_general_cost_6: "150 [stress_i] 900 [gold_i] @time_icon!5 years"
+
+ ALT_forgetful_inscriptions_1: "[GetPerk('ALT_forgetful_inscriptions_1_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_1: "Require: [ALT_mensomancy|E] $ALT_school_level_novice$"
+ ALT_forgetful_inscriptions_cost_1: "$ALT_general_cost_1$"
+ ALT_forgetful_inscriptions_1_perk_name: "$ALT_forgetful_inscriptions$ 1"
+
+ ALT_forgetful_inscriptions_2: "[GetPerk('ALT_forgetful_inscriptions_2_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_2: "Require: [ALT_mensomancy|E] $ALT_school_level_apprentice$"
+ ALT_forgetful_inscriptions_cost_2: "$ALT_general_cost_2$"
+ ALT_forgetful_inscriptions_2_perk_name: "$ALT_forgetful_inscriptions$ 2"
+
+ ALT_forgetful_inscriptions_3: "[GetPerk('ALT_forgetful_inscriptions_3_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_3: "Require: [ALT_mensomancy|E] $ALT_school_level_adept$"
+ ALT_forgetful_inscriptions_cost_3: "$ALT_general_cost_3$"
+ ALT_forgetful_inscriptions_3_perk_name: "$ALT_forgetful_inscriptions$ 3"
+
+ ALT_forgetful_inscriptions_4: "[GetPerk('ALT_forgetful_inscriptions_4_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_4: "Require: [ALT_mensomancy|E] $ALT_school_level_expert$"
+ ALT_forgetful_inscriptions_cost_4: "$ALT_general_cost_4$"
+ ALT_forgetful_inscriptions_4_perk_name: "$ALT_forgetful_inscriptions$ 4"
+
+ ALT_forgetful_inscriptions_5: "[GetPerk('ALT_forgetful_inscriptions_5_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_5: "Require: [ALT_mensomancy|E] $ALT_school_level_master$"
+ ALT_forgetful_inscriptions_cost_5: "$ALT_general_cost_5$"
+ ALT_forgetful_inscriptions_5_perk_name: "$ALT_forgetful_inscriptions$ 5"
+
+ ALT_forgetful_inscriptions_6: "[GetPerk('ALT_forgetful_inscriptions_6_perk').GetEffectDescription(GetPlayer)]"
+ ALT_forgetful_inscriptions_requirement_6: "Require: [ALT_mensomancy|E] $ALT_school_level_archmaster$"
+ ALT_forgetful_inscriptions_cost_6: "$ALT_general_cost_6$"
+ ALT_forgetful_inscriptions_6_perk_name: "$ALT_forgetful_inscriptions$ 6"
+
+
+ ALT_ritual_circle_1: "[GetPerk('ALT_ritual_circle_1_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_1: "Require: [ALT_materomancy|E] $ALT_school_level_novice$"
+ ALT_ritual_circle_cost_1: "$ALT_general_cost_1$"
+ ALT_ritual_circle_1_perk_name: "$ALT_ritual_circle$ 1"
+
+ ALT_ritual_circle_2: "[GetPerk('ALT_ritual_circle_2_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_2: "Require: [ALT_materomancy|E] $ALT_school_level_apprentice$"
+ ALT_ritual_circle_cost_2: "$ALT_general_cost_2$"
+ ALT_ritual_circle_2_perk_name: "$ALT_ritual_circle$ 2"
+
+ ALT_ritual_circle_3: "[GetPerk('ALT_ritual_circle_3_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_3: "Require: [ALT_materomancy|E] $ALT_school_level_adept$"
+ ALT_ritual_circle_cost_3: "$ALT_general_cost_3$"
+ ALT_ritual_circle_3_perk_name: "$ALT_ritual_circle$ 3"
+
+ ALT_ritual_circle_4: "[GetPerk('ALT_ritual_circle_4_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_4: "Require: [ALT_materomancy|E] $ALT_school_level_expert$"
+ ALT_ritual_circle_cost_4: "$ALT_general_cost_4$"
+ ALT_ritual_circle_4_perk_name: "$ALT_ritual_circle$ 4"
+
+ ALT_ritual_circle_5: "[GetPerk('ALT_ritual_circle_5_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_5: "Require: [ALT_materomancy|E] $ALT_school_level_master$"
+ ALT_ritual_circle_cost_5: "$ALT_general_cost_5$"
+ ALT_ritual_circle_5_perk_name: "$ALT_ritual_circle$ 5"
+
+ ALT_ritual_circle_6: "[GetPerk('ALT_ritual_circle_6_perk').GetEffectDescription(GetPlayer)]"
+ ALT_ritual_circle_requirement_6: "Require: [ALT_materomancy|E] $ALT_school_level_archmaster$"
+ ALT_ritual_circle_cost_6: "$ALT_general_cost_6$"
+ ALT_ritual_circle_6_perk_name: "$ALT_ritual_circle$ 6"
+
+
+ ALT_arcane_library_1: "[GetPerk('ALT_arcane_library_1_perk').GetEffectDescription(GetPlayer)]"
+ ALT_arcane_library_requirement_1: "Require: $ALT_school_level_novice$ Mastery"
+ ALT_arcane_library_cost_1: "$ALT_general_cost_1$"
+ ALT_arcane_library_1_perk_name: "$ALT_arcane_library$ 1"
+
+ ALT_arcane_library_2: "[GetPerk('ALT_arcane_library_2_perk').GetEffectDescription(GetPlayer)]"
+ ALT_arcane_library_requirement_2: "Require: $ALT_school_level_apprentice$ Mastery"
+ ALT_arcane_library_cost_2: "$ALT_general_cost_2$"
+ ALT_arcane_library_2_perk_name: "$ALT_arcane_library$ 2"
+
+ ALT_arcane_library_3: "[GetPerk('ALT_arcane_library_3_perk').GetEffectDescription(GetPlayer)]"
+ ALT_arcane_library_requirement_3: "Require: $ALT_school_level_adept$ Mastery"
+ ALT_arcane_library_cost_3: "$ALT_general_cost_3$"
+ ALT_arcane_library_3_perk_name: "$ALT_arcane_library$ 3"
+
+ ALT_arcane_library_4: "[GetPerk('ALT_arcane_library_4_perk').GetEffectDescription(GetPlayer)]"
+ ALT_arcane_library_requirement_4: "Require: $ALT_school_level_expert$ Mastery"
+ ALT_arcane_library_cost_4: "$ALT_general_cost_4$"
+ ALT_arcane_library_4_perk_name: "$ALT_arcane_library$ 4"
+
+ ALT_arcane_library_5: "[GetPerk('ALT_arcane_library_5_perk').GetEffectDescription(GetPlayer)]"
+ ALT_arcane_library_requirement_5: "Require: $ALT_school_level_master$ Mastery"
+ ALT_arcane_library_cost_5: "$ALT_general_cost_5$"
+ ALT_arcane_library_5_perk_name: "$ALT_arcane_library$ 5"
+
+
+ ALT_inscription_traps_1: "[GetPerk('ALT_inscription_traps_1_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_1: "Require: $ALT_school_level_novice$ Mastery"
+ ALT_inscription_traps_cost_1: "$ALT_general_cost_1$"
+ ALT_inscription_traps_1_perk_name: "$ALT_inscription_traps$ 1"
+
+ ALT_inscription_traps_2: "[GetPerk('ALT_inscription_traps_2_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_2: "Require: $ALT_school_level_apprentice$ Mastery"
+ ALT_inscription_traps_cost_2: "$ALT_general_cost_2$"
+ ALT_inscription_traps_2_perk_name: "$ALT_inscription_traps$ 2"
+
+ ALT_inscription_traps_3: "[GetPerk('ALT_inscription_traps_3_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_3: "Require: $ALT_school_level_adept$ Mastery"
+ ALT_inscription_traps_cost_3: "$ALT_general_cost_3$"
+ ALT_inscription_traps_3_perk_name: "$ALT_inscription_traps$ 3"
+
+ ALT_inscription_traps_4: "[GetPerk('ALT_inscription_traps_4_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_4: "Require: $ALT_school_level_expert$ Mastery"
+ ALT_inscription_traps_cost_4: "$ALT_general_cost_4$"
+ ALT_inscription_traps_4_perk_name: "$ALT_inscription_traps$ 4"
+
+ ALT_inscription_traps_5: "[GetPerk('ALT_inscription_traps_5_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_5: "Require: $ALT_school_level_master$ Mastery"
+ ALT_inscription_traps_cost_5: "$ALT_general_cost_5$"
+ ALT_inscription_traps_5_perk_name: "$ALT_inscription_traps$ 5"
+
+ ALT_inscription_traps_6: "[GetPerk('ALT_inscription_traps_6_perk').GetEffectDescription(GetPlayer)]"
+ ALT_inscription_traps_requirement_6: "Require: $ALT_school_level_archmaster$ Mastery"
+ ALT_inscription_traps_cost_6: "$ALT_general_cost_6$"
+ ALT_inscription_traps_6_perk_name: "$ALT_inscription_traps$ 6"
+
+ ALT_forgetful_inscriptions: "Forgetful [ALT_inscriptions|E]"
+ ALT_inscription_traps: "[ALT_inscription|E] Traps"
+ ALT_ritual_circle: "[ALT_ritual|E] Circle"
+ ALT_arcane_library: "[ALT_arcane|E] Libary"

@@ -1,0 +1,66 @@
+﻿l_german:
+ game_concept_ALT_arcane: "Arcane"
+ game_concept_ALT_arcane_desc: "#bold Arcane#!, another term referring to magic-like manipulation of reality. Arcane is divided into 4 schools each manipulating different parts of reality\n\n$BULLET_WITH_TAB$[ALT_biomancy|E] - Magic of living\n$BULLET_WITH_TAB$[ALT_mensomancy|E] - Magic of mind\n$BULLET_WITH_TAB$[ALT_materomancy|E] - Magic of non-living\n$BULLET_WITH_TAB$[ALT_aetherimancy|E] - Magic of space, time and fate\n\nTo affect reality in any way there is for [ALT_ritual|E]."
+
+ game_concept_ALT_secrecy: "Secrecy"
+ game_concept_ALT_secrecy_i: "@ALT_secrecy_icon!"
+ game_concept_ALT_secrecy_desc: "#bold Secrecy#!, a measure of how well your practice of magic is concealed from the public. As the [ALT_arcane|E] is considered diabolical by many, mages must keep their knowledge secret in most of the world. Even in places where the [ALT_arcane|E] is tolerated mages still hide their power out of an abundance of caution.\n\nIn game this is represented by #italic secrecy#!, number from #N 0#!,#weak  you are discovered and knowledge of your powers are readily known#!, to #P 100#!,#weak  your practice is unknown to even the most astute observers#!\n\nEvery month if your secrecy is above #N 0#! it will increase by your [intrigue|E] divided by 50.\n\n\nTo see your secrecy, hover over the [ALT_arcane|E] GUI button"
+
+ game_concept_ALT_inscription: "Inscription"
+ game_concept_ALT_inscriptions: "Inscriptions"
+ game_concept_ALT_inscription_desc: "#bold Inscription#!, a specific use of [ALT_ritual|E], where instead of using a ritual for a single effect, the ritual is inscribed onto [artifact|E] in an incomplete form, so during a fight or an emergency the ritual can be quickly completed and triggered. Inscriptions don't require a sacrifice, but are reduced in scope and effect.\nIt is important to note that each [artifact|E] can contain only one Inscription, but there are exceptions to this rule.\n\nIn game they are represented as [modifiers|E] on [artifact|E] giving [prowess|E], [advantage|E] or another combat [modifier|E] while also increasing [stress|E] proportional to the level of the ritual."
+ 
+ game_concept_ALT_ritual: "Ritual"
+ game_concept_ALT_rituals: "Rituals"
+ game_concept_ALT_ritual_desc: "#bold Ritual#! A complex process in which a mage can manipulate the world.\n\nRituals are mostly written or engraved circles with a variety of symbols and patterns depending on the school from which the ritual is derived. In addition to an arcane circle there is also a need for sacrifice; it can be blood, life-force, gold, material or even something as immaterial as luck. In most cases the type of sacrifice is based on which ritual the mage want to cast."
+
+ game_concept_ALT_biomancy: "Biomancy"
+ game_concept_ALT_biomancer: "Biomancer"
+ game_concept_ALT_biomancy_desc: "#bold Biomancy#!, magic of flesh, living. School of [ALT_arcane|E] focusing on controlling bodies, healing and wounding as well genetic manipulations. Theoretically, with Biomancy one could create new species, but no one has ever successfully made such [ALT_ritual|E]"
+
+ game_concept_ALT_mensomancy: "Mensomancy"
+ game_concept_ALT_mensomancer: "Mensomancer"
+ game_concept_ALT_mensomancy_desc: "#bold Mensomancy#!, magic of mind. School of [ALT_arcane|E] focusing on controlling the minds of other, improving or destroying the ability to think and reason. With this school theoretically it is possible to create new minds out of thin air, but no one has done so in millenia."
+
+ game_concept_ALT_materomancy: "Materomancy"
+ game_concept_ALT_materomancer: "Materomancer"
+ game_concept_ALT_materomancy_desc: "#bold Materomancy#!, magic of non-living. School of [ALT_arcane|E] focusing on manipulating rocks, bricks as well improving or weakening them. At the highest levels of this school one can transform themselves into, or create, golem/s, a half-living half-dead creature impervious to the ravages of time."
+
+ game_concept_ALT_aetherimancy: "Aetherimancy"
+ game_concept_ALT_aetherimancer: "Aetherimancer"
+ game_concept_ALT_aetherimancy_desc: "#bold Aetherimancy#!, magic of space, time and fate. School of [ALT_arcane|E] focusing on controlling more abstract parts of reality, such as fate, space and time. At the highest levels one can open gates to other worlds."
+
+ game_concept_ALT_transformancy: "Transformancy"
+ game_concept_ALT_transformancer: "Transformancer"
+ game_concept_ALT_transformancy_desc: "#bold Transformancy#!, Advanced use of [ALT_biomancy|E], to the point where it can be called its own school. If [ALT_biomancy|E] is like sculpting clay, Transformancy is manipulating each gene and atom."
+
+ game_concept_ALT_astralmancy: "Astralmancy"
+ game_concept_ALT_astralmancer: "Astralmancer"
+ game_concept_ALT_astralmancy_desc: "#bold Astralmancy#!, Advanced use of [ALT_mensomancy|E], to the point where it can be called its own school. If [ALT_mensomancy|E] is the School of controlling minds, Astralmancy is about controlling astral 'Space' and uniting all minds."
+
+ game_concept_ALT_morsmancy: "Morsmancy"
+ game_concept_ALT_morsmancer: "Morsmancer"
+ game_concept_ALT_morsmancy_desc: "#bold Morsmancy#!, Advanced use of [ALT_materomancy|E], to the point where it can be called its own school. While [ALT_materomancy|E] is the School of manipulating non-living, Morsmancy is about controlling the dead."
+
+ game_concept_ALT_superimancy: "Superimancy"
+ game_concept_ALT_superimancer: "Superimancer"
+ game_concept_ALT_superimancy_desc: "#bold Superimancy#!, Advanced use of [ALT_aetherimancy|E], to the point where it can be called its own school. If [ALT_aetherimancy|E] is the School of manipulating abstract concepts like fate, space and time, Superimancy is about communicating and controlling higher beings, such as gods and demons"
+
+ game_concept_ALT_arcane_lab: "Arcane Lab"
+ game_concept_ALT_arcane_lab_desc: "#bold Arcane Lab#!, a safe haven for mages of all kind, is etched with [ALT_rituals|E] and [ALT_inscriptions|E]. It is a place where most [ALT_arcane|E] studies are performed, past and present. An Arcane Lab is a very important place for most mages and the act of losing one is considered a great loss. It is here where masters of [ALT_arcane|E] perform [ALT_rituals|E] and further their study. Though it is possible to create [ALT_rituals|E] anywhere, it is much safer and easier in an [ALT_arcane|E] Lab.\n\n[ALT_arcane_lab_buildings|E] | [ALT_arcane_lab_location|E] | [ALT_arcane_lab_creation_tutorial|E]"
+
+ game_concept_ALT_arcane_lab_buildings: "Arcane Lab Buildings"
+ game_concept_ALT_arcane_lab_building: "Arcane Building"
+ game_concept_ALT_arcane_lab_buildings_desc: "#bold Arcane Lab Buildings#!, a method of upgrading [ALT_arcane_lab|E]. An [ALT_arcane_lab|E] does not do much on its own but it has the powerful ability to be upgraded with specialized buildings."
+
+ game_concept_ALT_arcane_lab_location: "Arcane Lab Location"
+ game_concept_ALT_arcane_lab_location_desc: "#bold Arcane Lab Location#!, a [province|E] where an [ALT_arcane_lab|E] is located. If this province were occupied or raided there is a chance your [ALT_secrecy|E] will decrease or damage to the [ALT_arcane_lab_buildings|E] will occur."
+
+ game_concept_ALT_arcane_lab_creation_tutorial: "Arcane Lab Creation Tutorial"
+ game_concept_ALT_arcane_lab_creation_tutorial_desc: "There are two ways to obtain an [ALT_arcane_lab|E], neither of which is easy.\n$BULLET_WITH_TAB$The first method is to take an already existing [ALT_arcane_lab|E] as your own, it may sound easy, but you need also to survive traps placed there by previous owner.\n$BULLET_WITH_TAB$The second method is to create a new [ALT_arcane_lab|E] in your current location, this option is much more difficult and expensive, requiring more insight into the Arcane."
+
+ game_concept_ALT_arcane_lab_statistics_discovery_chance: "Lab's Discovery Chance"
+ game_concept_ALT_arcane_lab_statistics_discovery_chance_desc: "Chance for [ALT_arcane_lab|E] to be discovered upon beeing occupided or raided by army, as well random events.\n\nBeing discovered decreases your [ALT_secrecy|E] by #N 50#! as well makes [ALT_arcane_lab|E] vanruable to raids from witch hunters as long lab isn't moved somewhere else"
+
+ game_concept_ALT_arcane_lab_statistics_defence_success: "Lab's Defence Success Chance"
+ game_concept_ALT_arcane_lab_statistics_defence_success_desc: "Chance for [ALT_arcane_lab|E] to defend itself from witch hunter raid\n\nFailing to defend [ALT_arcane_lab|E] will decrease every [ALT_arcane_lab_building|E] level by 1, as well chance of getting negative event"

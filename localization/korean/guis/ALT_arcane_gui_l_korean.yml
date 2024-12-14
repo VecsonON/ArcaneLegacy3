@@ -1,0 +1,70 @@
+﻿l_korean:
+ arcane_button_tooltip: "You are [GetPlayer.Custom('ALT_overall_mastery_level')] Mage [GetPlayer.Custom('ALT_secrecy_loca')]"
+ 
+ ALT_secrecy_loca_yes: "\n\nYour [ALT_secrecy|E] is: [ALT_secrecy_i][GetPlayer.MakeScope.ScriptValue('ALT_secrecy')|V1]\nMonthly [ALT_secrecy|E] change [ALT_secrecy_i][GetPlayer.MakeScope.ScriptValue('ALT_secrecy_monthly')|+=V2]"
+
+
+ ARCANE_VIEW_HEADING: "[ALT_arcane|E]"
+ ARCANE_RITUALS: "Casting"
+ ARCANE_LEARNING: "Studies"
+ ARCANE_PURSUITS: "Pursuits"
+
+ arcane_start_learning: "Study"
+ arcane_seek_new_school: "Study [ALT_arcane|E]"
+ ALT_seek_new_schools_tt: "#I Via random events during pursuit, success chance can be increased!#!"
+ ALT_seek_new_schools_tt2: "#X You have already learned all schools of [ALT_arcane|E]!#!"
+
+ choose_ritual: "Chose"
+ ALT_target: "Target:"
+ ALT_sacrifice: "Sacrifice:"
+
+ ALT_execute: "Start"
+
+ ALT_delete_pursuit_tt: "Abandon Pursuit"
+ ALT_pause_pursuit_tt: "Pause Pursuit"
+
+ ALT_ritual_casting: "Casting time is based on your [learning|E] and experience in [ALT_ritual|E]'s school"
+ ALT_ritual_casting_time: "Casting will last roughly: ~#V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
+ ALT_pursuit_casting_time: "Done in roughly: #V [SCOPE.GetValue('temp_years_calc')|0] years [SCOPE.GetValue('temp_months_calc')|0] months#!"
+
+ ALT_archmaster_name: "Archmaster [ALT_ritual|E]"
+ ALT_master_name: "Master [ALT_ritual|E]"
+ ALT_expert_name: "Expert [ALT_ritual|E]"
+ ALT_adept_name: "Adept [ALT_ritual|E]"
+ ALT_apprentice_name: "Apprentice [ALT_ritual|E]"
+ ALT_novice_name: "Novice [ALT_ritual|E]"
+
+ ALT_inscription_archmaster_name: "Archmaster [ALT_inscription|E]"
+ ALT_inscription_master_name: "Master [ALT_inscription|E]"
+ ALT_inscription_expert_name: "Expert [ALT_inscription|E]"
+ ALT_inscription_adept_name: "Adept [ALT_inscription|E]"
+ ALT_inscription_apprentice_name: "Apprentice [ALT_inscription|E]"
+ ALT_inscription_novice_name: "Novice [ALT_inscription|E]"
+
+ ALT_school_level_archmaster: "Archmaster"
+ ALT_school_level_master: "Master"
+ ALT_school_level_expert: "Expert"
+ ALT_school_level_adept: "Adept"
+ ALT_school_level_apprentice: "Apprentice"
+ ALT_school_level_novice: "Novice"
+ ALT_school_level_none: "Zero"
+
+ ALT_pursuit_events.0001.title: "Pursuit is Finished!"
+ ALT_pursuit_events.0001.desc: "Pursuit is finished. And now it is time to collect the fruits of your labours!"
+ ALT_pursuit_events.0001.a: "Finally"
+ ALT_pursuit_events.0001.a.tt: "Fire pursuit effect"
+ ALT_pursuit_events.0001.b: "You know what? I think I'll wait a bit more."
+ ALT_pursuit_events.0001.b.tt: "Pause current pursuit."
+ 
+ ALT_sacrifice_is_not_available: "Sacrifice is no longer available!"
+ ALT_target_is_not_available: "Target is no longer available!"
+ ALT_target_is_not_caster: "Caster cannot be target!"
+ 
+ trait_ALT_discovered_mage: "Rumored Mage"
+ trait_ALT_discovered_mage_desc: "Everyone thinks that this character messed with [ALT_arcane|E], and this fame won't come off easily"
+
+ trait_ALT_biological_imperfect_immortality: "Imperfect biological immortality"
+ trait_ALT_biological_imperfect_immortality_desc: "Though this character doesn't age, something in them isn't #italic right#! anymore. It is like their body and mind are separated"
+ TRAIT_FLAG_DESC_imperfect_immortality: "Mind and body are no longer insync, this #X WILL#! cause trouble #weak Maybe [ALT_mensomancy|E] can help?#!"
+
+ 

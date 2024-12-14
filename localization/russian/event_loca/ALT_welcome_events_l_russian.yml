@@ -1,0 +1,15 @@
+﻿l_russian:
+  ALT_welcome_events.0001.title: "Arcane Legacy #bold 3#!"
+  ALT_welcome_events.0001.desc: "Welcome to the third iteration of Arcane Legacy! The mod is made to introduce magic to CK3, this time with a different approach. If previous versions were about quick and flashy magic, this time it is about the occult. If before magic was widespread, now only a select few have the gift. I hope you will like this new approach!"
+  ALT_welcome_events.0001.a: "Start as a mage"
+  ALT_welcome_events.0001.a.tt: "Get an event to choose your profession"
+  ALT_welcome_events.0001.b: "Increase the chance of arcane events for current character"
+  ALT_welcome_events.0001.c: "Normal Gameplay"
+
+  ALT_welcome_events.0002.title: "Selecting a profession"
+  ALT_welcome_events.0002.desc: "You will start as a mage, but with what specialization?"
+  ALT_welcome_events.0002.a: "[ALT_biomancy|E](Magic over living flesh)"
+  ALT_welcome_events.0002.b: "[ALT_mensomancy|E](Magic over minds)"
+  ALT_welcome_events.0002.c: "[ALT_materomancy|E](Magic over the non-living)"
+  ALT_welcome_events.0002.d: "[ALT_aetherimancy|E](Magic over space, time and fate)"
+  ALT_welcome_events.0002.e: "Back"

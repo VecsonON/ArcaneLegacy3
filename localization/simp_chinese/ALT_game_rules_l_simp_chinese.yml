@@ -1,0 +1,16 @@
+﻿l_simp_chinese:
+ rule_ALT_arcane_events: "#v (AL3)#!: [ALT_arcane|E] Events Frequency"
+ setting_ALT_arcane_events_rare: "Rare"
+ setting_ALT_arcane_events_rare_desc: "[ALT_arcane|E] Events will be Rare"
+ setting_ALT_arcane_events_default: "Default"
+ setting_ALT_arcane_events_default_desc: "[ALT_arcane|E] Events will be normal"
+ setting_ALT_arcane_events_frequent: "Frequent"
+ setting_ALT_arcane_events_frequent_desc: "[ALT_arcane|E] Events will be Frequent"
+ setting_ALT_arcane_events_very_frequent: "Very Frequent"
+ setting_ALT_arcane_events_very_frequent_desc: "[ALT_arcane|E] Events will be Very Frequent"
+
+#  rule_ALT_secrecy_status: "#v (AL3)#!: [ALT_secrecy|E] Status"
+#  setting_ALT_secrecy_enabled: "Enabled"
+#  setting_ALT_secrecy_enabled_desc: "[ALT_secrecy|E] will be enabled, with all that comes with it."
+#  setting_ALT_secrecy_disabled: "Disabled"
+#  setting_ALT_secrecy_disabled_desc: "[ALT_secrecy|E] will be disabled, with all that comes with it."
