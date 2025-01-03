@@ -332,6 +332,17 @@ ALT_ritual_of_mental_health_sgui = {
 	}
 }
 
+ALT_ritual_of_mind_and_body_sgui = {
+	effect = { 
+		if = { limit = { NOT = { exists = scope:tooltip } } ALT_ritual_of_mind_and_body_effect = { TARGET = var:sellected_target.var:target }  }
+	}
+	is_valid = { 
+		NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_mind_and_body } }
+		var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
+		var:sellected_target.var:target = { has_trait = ALT_biological_imperfect_immortality }
+
+	}
+}
 ALT_ritual_of_eternal_servitude_sgui = {
 	effect = { 
 		if = { limit = { NOT = { exists = scope:tooltip } } ALT_ritual_of_eternal_servitude_effect = { TARGET = var:sellected_target.var:target SACRIFICE = var:sellected_sacriface.var:target }  }
@@ -511,17 +522,6 @@ ALT_ritual_of_golemhood_sgui = {
 	is_valid = { 
 		NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_golemhood } }
 		custom_tooltip = { text = "ALT_sacrifice_is_not_available"  exists = var:sellected_sacriface.var:target }
-	}
-}
-ALT_ritual_of_mind_and_body_sgui = {
-	effect = { 
-		if = { limit = { NOT = { exists = scope:tooltip } } ALT_ritual_of_mind_and_body_effect = { TARGET = var:sellected_target.var:target }  }
-	}
-	is_valid = { 
-		NOT = { ALT_has_pursuit_of_type = { TYPE = flag:ALT_ritual_of_mind_and_body } }
-		var:sellected_target.var:target = { custom_tooltip = { text = "ALT_target_is_not_available" is_alive = yes } }
-		var:sellected_target.var:target = { has_trait = ALT_biological_imperfect_immortality }
-
 	}
 }
 ALT_inscription_of_natural_disasters_sgui = {

@@ -59,6 +59,7 @@ ALT_pursuit_events.0001 = { #
 				flag:ALT_ritual_of_personality_morph = { ALT_ritual_of_personality_morph_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_mental_health = { ALT_ritual_of_mental_health_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				
+				flag:ALT_ritual_of_mind_and_body = { ALT_ritual_of_mind_and_body_effect = { TARGET = var:current_pursuit.var:target } }
 				flag:ALT_ritual_of_eternal_servitude = { ALT_ritual_of_eternal_servitude_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_ritual_of_mind_transfer = { ALT_ritual_of_mind_transfer_effect = { TARGET = var:current_pursuit.var:target SACRIFICE = var:current_pursuit.var:sacrifice } }
 				flag:ALT_inscription_of_self_harm = { ALT_inscription_of_self_harm_effect = { TARGET = var:current_pursuit.var:target } }

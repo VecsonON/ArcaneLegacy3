@@ -481,6 +481,21 @@ ALT_ritual_of_eternal_servitude_gain = {
 	multiply = ALT_ritual_speed_mult
 	max = 100
 }
+ALT_ritual_of_mind_and_body_gain = {
+        value = ALT_ritual_archmaster_speed
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = xp_ALT_school_mensomancy
+                divide = 20
+        }
+	add = {
+                value = ALT_ritual_archmaster_speed
+                multiply = learning
+                divide = 20
+        }
+	multiply = ALT_ritual_speed_mult
+	max = 100
+}
 ALT_ritual_of_mind_transfer_gain = {
         value = ALT_ritual_archmaster_speed
 	add = {
